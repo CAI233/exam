@@ -1,0 +1,227 @@
+<div id="examKnowledge" class="animated fadeIn">
+    <div class="main">
+        <!--顶部查询条件-->
+        <div class="tag-type">
+            <div class="logo" style="float: left;">
+                <a href="#/home" title="首页"></a>
+            </div>
+            <div class="search " style="padding: 15px;width: 500px;float: right;">
+                <div class="layui-input-block">
+                    <input type="text" name="title"  ng-model="param.searchText"  class="layui-input" style="padding-right:70px;border:1px solid #E63A3A;" placeholder="试题名称/关键字">
+                    <button class="layui-btn layui-btn-primary " ng-click="reload()" >搜索</button>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="con-content">
+            <div class="top_nav">
+                <i class="iconfont icon-weizhi"></i>位置：
+                <a href="#/home">首页</a>
+                <em>&gt;</em>
+                <a>智能组卷</a>
+                <em>&gt;</em>
+                <label>知识点组卷</label>
+            </div>
+        </div>
+
+        <div class="content_page_left">
+            <div class="layui-form-item" style="border-bottom:1px solid #ccc;background: #E63A3A;color: #fff;margin-bottom: 0">
+                <div class="dropdown col-xs-12">
+                    <div class="input_group"
+                         style="display: block;text-align: center;height: 40px;line-height: 40px;cursor: pointer;">
+                        <a class="title text-overflow" style="color: #fff;font-size:15px">选择知识点</a>
+                    </div>
+                </div>
+            </div>
+            <!--知识点公共树-->
+            <div class="accordion_tree_parent">
+                <accordion   expander='expander' children='expander.children' ng-repeat='expander in knowledges'></accordion>
+            </div>
+
+            <div class="shitilan">
+                <div class="exam_title">
+                    <label class="ll">试题篮</label>
+                    <label class="mm" ng-click="openExamKnow()" ng-show="BasketExams.length > 0"><i class="iconfont icon-iconfontshijuan"></i>生成试卷</label>
+                </div>
+                <div class="exam_list">
+                    <ul ng-repeat="kc in curriculums;" ng-show="kc.hasst && kc.hasst > 0">
+                        <li style="font-size: 14px;font-weight: bold" ng-show="showCurriculumsTitle > 1">{{kc.dic_name}}部分</li>
+                        <li ng-repeat="item in kc.children" ng-show="item.children.length > 0">
+                            {{item.dic_name}}：<em>{{item.children.length}}</em>小题
+                            <a title="删除" ng-click="_delQuestionArray(item)"><i class="iconfont icon-iconzhenghe62"></i></a>
+                        </li>
+                    </ul>
+                    <p class="not-question" ng-show="!BasketExams || BasketExams.length == 0">您还没有添加试题~</p>
+                </div>
+            </div>
+
+        </div>
+        <div class="content_page_right">
+            <div class="tag-type">
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">题型：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type"
+                                       ng-click="all_param.subject_type=null;reload()"
+                                       ng-class="{'type-active':!all_param.subject_type}">全部</a>
+                                    <a data-name="question_channel_type" ng-repeat="item in questionDataTypes"
+                                       ng-click="all_param.subject_type=item.id;reload()"
+                                       ng-class="{'type-active':all_param.subject_type==item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">难度：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type"
+                                       ng-click="all_param.subject_level=null;reload()"
+                                       ng-class="{'type-active':!all_param.subject_level}">全部</a>
+                                    <a data-name="question_channel_type" ng-repeat="item in questionLevelTypes"
+                                       ng-click="all_param.subject_level=item.id;reload()"
+                                       ng-class="{'type-active':all_param.subject_level==item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">题库：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type" ng-repeat="item in all_banks"
+                                       ng-click="all_param.bank_id=item.id;reload()"
+                                       ng-class="{'type-active':all_param.bank_id==item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sort" ng-if="subjectList && subjectList.length!=0">
+                <span>排序：</span>
+                <a class="select-btn" ng-class="{'at':all_param.timeOrder}" href="javascript:void(0);" ng-click="sort_time()">时间 <i class="iconfont" ng-class="{'icon-xia':all_param.timeOrder == 'desc','icon-xia1':all_param.timeOrder != 'desc'}"></i></a>
+                <a class="select-btn" ng-class="{'at':all_param.countOrder}" href="javascript:void(0);" ng-click="sort_nums()">组卷次数 <i class="iconfont" ng-class="{'icon-xia':all_param.countOrder == 'desc','icon-xia1':all_param.countOrder != 'desc'}"></i></a>
+                <label>共有<em>{{all_param.total}}</em>道试题</label>
+            </div>
+            <!--试题列表-->
+            <div class="search-list">
+                <p class="not_pages" ng-if="!subjectList">试题正在加载，请稍后~</p>
+                <p class="not_pages" ng-if="subjectList && subjectList.length==0">当前条件下没有试题，请重新选择~</p>
+                <ul id="J_QuestionList">
+                    <li class="uglify-man" ng-repeat="item in subjectList" >
+                        <div class="search-exam">
+                            <div class="exam-head">
+                                <p class="exam-head-left">
+                                    <span>题型：<i ng-bind="_get_exam_name_byid(item.subject_curriculum, item.subject_type)"></i></span>
+                                    <span>难易度：<i ng-bind="_get_qustion_leve(item.subject_level)"></i></span>
+                                    <span class="exam-foot-right" style="float: right;margin: 0 5px">
+                                        <a class="addbtn"  ng-click="knowSub(item,$index)"><i class="iconfont icon-yulan1"></i>预览</a>
+                                        <a class="addbtn {{_judgeBasket(item) == true && 'active' || ''}}"  ng-click="_addBasket(item)">
+                                            <i class="iconfont {{_judgeBasket(item) == true && 'icon-gouwucheman1' || 'icon-gouwuche1'}} "></i>
+                                            <em ng-if="_judgeBasket(item)">已在</em>试题篮
+                                        </a>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="exam-con">
+                                <div class="exam-q">
+                                    <div class="esam_m_t" ng-bind-html="_trustAsHtml(replacehtml(item.subject_question))" style="text-align:justify"></div>
+                                </div>
+                                <div class="exam-s" ng-hide="false">
+                                    <ol ng-if="item.subjectList && item.subjectList.length > 0" class="exam-t" type="1">
+                                        <li ng-repeat="items in item.subjectList" style="margin: 5px 0;text-align:justify;list-style:inherit;">
+                                            <div ng-bind-html="_trustAsHtml(replacehtml(items.subject_question))"></div>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div style="position:relative;" ng-show="subjectList && subjectList.length > 0">
+                    <div id="pager" style="float: left;"></div>
+                    <div style="float:right;line-height:55px;">
+                        共<span style="padding: 0 5px;color: #E63A3A">{{all_param.pages}}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{all_param.total}}</span>条
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--试题预览-->
+    <div class="form_content animated none">
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+            <div class="form_btns" >
+                <button class="layui-btn layui-btn-normal layui-btn-small"  ng-click="see_add(selRow)">上一题</button>
+                <button class="layui-btn layui-btn-normal layui-btn-small"  ng-click="see_min(selRow)">下一题</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <!--预览-->
+                <div id="know_sub" >
+                    <div ng-if="selRow">
+                        <div class="know_title" ng-bind-html="_trustAsHtml(selRow.subject_question)"></div>
+                        <div ng-if="selRow.subjectList.length==0 || !selRow.subjectList">
+                            <h3 ng-if="selRow.option && selRow.option.length > 0">选项</h3>
+                            <div class="option_con" ng-if="selRow.option && selRow.option.length > 0">
+                                <ol class="op-item"  type="A" style="padding-left: 2em">
+                                    <li ng-repeat="opt in selRow.option" class="op-item-meat" style="margin: 5px 0;text-align:justify;list-style: inherit" ng-bind-html="_trustAsHtml(replacehtml(opt.option_context))"></li>
+                                </ol>
+                            </div>
+                            <div class="option_con">
+                                <dl class="option_con_li">
+                                    <dt><b>【答案】</b></dt>
+                                    <dd><span class="know_space"  ng-bind-html="_trustAsHtml(selRow.subject_answer)"></span></dd>
+                                </dl>
+                            </div>
+                            <div class="option_con">
+                                <dl class="option_con_li">
+                                    <dt><b>【解析】</b></dt>
+                                    <dd>
+                                        <div class="know_space"  ng-if="selRow.subject_analysis" ng-bind-html="_trustAsHtml(selRow.subject_analysis)"></div>
+                                        <div class="un-data" ng-if="!selRow.subject_analysis">暂无解析</div>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <ol ng-if="selRow.subjectList && selRow.subjectList.length > 0" style="padding: 0 15px 0 3em;" type="1">
+                            <li ng-repeat="item in selRows" style="margin:15px 0;text-align:justify;list-style:inherit;">
+                                <div class="know_title" style="border:none;padding:0;" ng-bind-html="_trustAsHtml(replacehtml(item.subject_question))"></div>
+                                <div ng-if="!item.subjectList" style="margin-left: -15px;margin-right: -15px">
+                                    <div class="option_con">
+                                        <dl class="option_con_li">
+                                            <dt><b>【答案】</b></dt>
+                                            <dd><span class="know_space"  ng-bind-html="_trustAsHtml(item.subject_answer)"></span></dd>
+                                        </dl>
+                                    </div>
+                                    <div class="option_con">
+                                        <dl class="option_con_li">
+                                            <dt><b>【解析】</b></dt>
+                                            <dd>
+                                                <div class="know_space"  ng-if="selRow.subject_analysis" ng-bind-html="_trustAsHtml(item.subject_analysis)"></div>
+                                                <div class="un-data" ng-if="!selRow.subject_analysis">暂无解析</div>
+                                            </dd>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

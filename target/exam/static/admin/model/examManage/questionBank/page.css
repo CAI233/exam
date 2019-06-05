@@ -1,0 +1,12 @@
+#questionBank .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#questionBank .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 30px
+}
+#questionBank .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}

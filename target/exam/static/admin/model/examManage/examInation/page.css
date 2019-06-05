@@ -1,0 +1,157 @@
+
+/*#examInation*/
+
+#examInation .main .center_content{
+    float:none;
+}
+#examInation .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#examInation .main form.center_cont{
+    width:600px;
+    margin:50px auto 20px;
+}
+#examInation .main form.center_cont em{
+    color:#e63a3a;
+}
+#examInation .list_bar_row .search_plan{
+    width:475px;
+}
+#examInation .main form.center_cont .layui-form-label{
+    width:110px;
+}
+#examInation .main form.center_cont .layui-input-block{
+    margin-left:110px;
+}
+
+#examInation .main form.center_cont .layui-form-select li{line-height: 36px;
+    overflow: hidden;
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#examInation .active{
+    background:#ccc;
+}
+/*发布操作----------start*/
+#examInation .form_content{
+    width: 500px;
+    border-left: 1px solid #ccc;
+    position: fixed;
+}
+#examInation .form_content .form_html{
+    width:100%;
+}
+#examInation .form_content .form_title .form_btns button {
+    background: #E63A3A;
+}
+#examInation .form_content .form_html .layui-form-item .layui-form-label{
+    width:110px;
+}
+/*-----------end*/
+
+/*添加学生*/
+/*#examInation .main .stu_context .stu_context_head:after{*/
+    /*content:"";*/
+    /*display:block;*/
+    /*clear:both;*/
+/*}*/
+/*#examInation .main .stu_context .stu_context_head h2{*/
+    /*float: left;*/
+/*}*/
+/*#examInation .main .stu_context .stu_context_head span{*/
+    /*float: right;*/
+    /*padding: 5px 0;*/
+    /*cursor: pointer;*/
+/*}*/
+
+/*学生弹出层*/
+/*#examInation #stu_nums{*/
+    /*padding:20px 20px 100px;*/
+    /*position:relative;*/
+    /*height:600px;*/
+/*}*/
+/*#examInation #stu_nums>div.stu_nums_cont{*/
+    /*height:100%;*/
+    /*!*padding:5px 10px;*!*/
+    /*border: 2px solid #e2e2e2;*/
+    /*position: relative;*/
+/*}*/
+/*#examInation #stu_nums>div.stu_nums_cont:after{*/
+    /*content:"";*/
+    /*display:block;*/
+    /*clear:both;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_left{*/
+    /*width:150px;*/
+    /*height:100%;*/
+    /*float: left;*/
+    /*margin-right: -2px;*/
+    /*border-right: 2px solid #e2e2e2;*/
+    /*position: absolute;*/
+    /*padding: 5px 10px;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right{*/
+    /*float: left;*/
+    /*width:100%;*/
+    /*!*margin-left:-150px;*!*/
+    /*padding-left:150px;*/
+    /*height: 100%;*/
+    /*overflow-y: auto;*/
+/*}*/
+/*#examInation #stu_nums dl dd{*/
+    /*font-size: 14px;*/
+    /*box-sizing: border-box;*/
+    /*padding: 5px;*/
+    /*margin-bottom: 5px;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_left dl dd{*/
+    /*text-align:center;*/
+    /*cursor: pointer;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_left dl dd.layui-this{*/
+    /*background-color: #e63a3a;*/
+    /*color: #fff;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl{*/
+    /*padding: 5px 10px;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd{*/
+    /*padding-left:20px;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd p{*/
+    /*position: relative;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd p:after{*/
+    /*content:"";*/
+    /*display:block;*/
+    /*clear:both;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd span{*/
+    /*!*margin-right:20px;*!*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd span{*/
+    /*position:absolute;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd span:nth-child(1){*/
+    /*left:0;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd span:nth-child(2){*/
+    /*right:250px;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd span:nth-child(3){*/
+    /*right:100px;*/
+/*}*/
+/*#examInation #stu_nums>div .stu_nums_right dl dd a{*/
+    /*float:right;*/
+    /*color:#e63a3a;*/
+/*}*/
+/*#examInation #stu_nums>div.stu_nums_foot{*/
+    /*text-align:center;*/
+    /*position:absolute;*/
+    /*bottom: 20px;*/
+    /*left: 50%;*/
+    /*margin-left: -30px;*/
+/*}*/

@@ -1,0 +1,91 @@
+
+#subject_add .main .center_content{
+    float:none;
+}
+#subject_add .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#subject_add .main .center_cont{
+    margin-top:20px;
+}
+
+#subject_add .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1;
+}
+#subject_add .tag-tit {
+    float:left;
+    width:72px;
+    margin-right:-72px;
+    color:#666;
+    text-align:right
+}
+
+#subject_add .tag-conbox {
+    width:100%;
+    float:right
+}
+
+#subject_add .tag-con {
+    margin-left:72px
+}
+#subject_add .tag-con a {
+    display:inline-block;
+    line-height:20px;
+    margin:0 10px;
+    padding:2px 10px;
+    cursor:pointer;
+    color:#666;
+}
+#subject_add .tag-con a:hover, #subject_add .tag-con a.type-active {
+    background:#E63A3A;
+    color:#fff;
+    border-radius:5px
+}
+
+#subject_add .con-answer{
+    display:inline-block;
+    float:left;
+    margin-left: 10px
+}
+#subject_add .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#subject_add .con-answer a:hover{
+    background:white;
+    color:black;
+}
+#subject_add .layui-form-item{
+    margin-bottom:0;
+}
+#subject_add .box-select-s{
+    padding:4px;
+    border:1px #ddd solid;
+    min-height:40px;
+}
+#subject_add .tag-type .accordion_tree_parent{
+    display:none;
+    padding:5px 15px;
+    position:absolute;
+    background:#fff;
+    z-index:1;
+    height:300px;
+    overflow-y:auto;
+    border:1px #ccc solid;
+}
+#subject_add .tag-type .layui-form-selected .accordion_tree_parent{
+    display:block;
+}
+#subject_add .box-select-s a {
+    display: inline-block;
+    margin: 4px 4px 4px 4px;
+    line-height: 16px;
+    padding: 3px 6px;
+    background: #dcdcdc;
+}

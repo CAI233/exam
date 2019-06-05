@@ -1,0 +1,155 @@
+body{
+    /*background:#f3f3f3;*/
+}
+#classesAnalisis{
+    float: left;
+    width: 100%;
+    min-height: 780px;
+    background:#f3f3f3;
+}
+/*#classesAnalisis .row_line .main .row_line .opton_bank_left:after{*/
+    /*content:"";*/
+    /*display:block;*/
+    /*clear:both;*/
+/*}*/
+/*顶部样式-----------start*/
+#classesAnalisis .con-content{
+    /*float: left;*/
+    /*width: 100%;*/
+}
+#classesAnalisis .con-content .top_nav{
+    /*float: left;*/
+    /*width: 100%;*/
+    /*margin: 40px 82px;*/
+    line-height: 24px;
+    color: #676767;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+#classesAnalisis .con-content .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#classesAnalisis .con-content .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#classesAnalisis .con-content .top_nav a{
+    cursor: pointer;
+}
+#classesAnalisis .con-content .top_nav label{
+    color: #999;
+}
+#classesAnalisis .con-content .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+/*----------end*/
+
+#classesAnalisis .cont{
+    width:100%;
+}
+#classesAnalisis .cont .cont_left{
+    width:200px;
+    float:left;
+    margin-right:-200px;
+    background:#fff;
+    /*padding-left:30px;*/
+}
+#classesAnalisis .cont .cont_left .cont_left_head{
+    float: left;
+    width: 100%;
+    line-height: 48px;
+    padding: 0 30px;
+    font-size: 14px;
+    background: #fff;
+    color: #676767;
+    font-family: microsoftYaHei;
+    border-bottom: 1px solid #eeeeee;
+    margin-bottom: -1px;
+}
+#classesAnalisis .cont .cont_left .cont_left_cont ul li{
+    cursor: pointer;
+    padding: 0 30px;
+    line-height: 48px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color:#888888;
+    position: relative;
+}
+#classesAnalisis .cont .cont_left .cont_left_cont ul li i{
+    position:absolute;
+    display:inline-block;
+    width:3px;
+    height:33px;
+    display:none;
+    left: 0;
+    top: 7.5px;
+}
+#classesAnalisis .cont .cont_left .cont_left_cont ul li.check_this{
+    /*color:#444444;*/
+    background:#E63A3A;
+    color:#fff;
+}
+
+#classesAnalisis .cont .cont_left .cont_left_cont ul li:hover{
+    /*background:#E63A3A;*/
+    /*display:block;*/
+    color:#444444;
+}
+#classesAnalisis .cont .cont_left .cont_left_cont ul li.check_this:hover{
+    color:#fff;
+}
+#classesAnalisis .cont .cont_left .cont_left_cont ul li:hover>i{
+    /*background:#E63A3A;*/
+    /*color:#fff;*/
+    background:#E63A3A;
+    display:block;
+}
+#classesAnalisis .cont .cont_right{
+    float: left;
+    margin-left: 200px;
+    /*padding: 0 20px;*/
+    padding-left: 24px;
+    width: calc(100% - 200px);
+    width: -moz-calc(100% - 200px);
+    width: -webkit-calc(100% - 200px);
+}
+#classesAnalisis .cont .cont_right .layui-table{
+    margin:0;
+}
+#classesAnalisis .cont .cont_right .layui-table tr{
+    background:#fff;
+    line-height:48px;
+    height:48px;
+}
+#classesAnalisis .cont .cont_right .layui-table tr th,#classesAnalisis .cont .cont_right .layui-table tr td{
+    padding-left:40px;
+    color:#888888;
+    border:none;
+}
+#classesAnalisis .cont .cont_right .layui-table tr th{
+    color:#444444;
+}
+#classesAnalisis .cont .cont_right .layui-table tr td{
+    border-top:1px solid #eeeeee;
+}
+#classesAnalisis .layui-table tbody tr:hover td{
+    color:#444444 !important;
+    /*background:#f8f8f8 !important;*/
+    background:#fff !important;
+
+}
+/*底部分页样式---------------------*/
+#classesAnalisis .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#classesAnalisis .layui-laypage input:focus,#classesAnalisis .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#classesAnalisis .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

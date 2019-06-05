@@ -1,0 +1,163 @@
+<div id="allPapers">
+    <div class="content_main">
+        <div class="content_page">
+            <div class="content_page_head">
+                <button class="layui-btn layui-btn-primary " ng-click="create_exam()" style="background:#16A3FB;color:#fff;float:left;border: 1px solid #C9C9C9;">新建考试</button>
+                <div style="width:475px;float:left;">
+                    <label class="layui-form-label">智能组卷:</label>
+                    <div style="margin-top:10px;" class="layui-unselect layui-form-checkbox layui-form-checked" ng-class="{'layui-form-checked':param.creat_type== 0}" lay-skin="primary" ng-click="creat_paper(0,event);"><span>模板组卷</span><i class="layui-icon"></i></div>
+                    <div style="margin-top:10px;" class="layui-unselect layui-form-checkbox" ng-class="{'layui-form-checked':param.creat_type== 1}" lay-skin="primary" ng-click="creat_paper(1,event);"><span>知识点组卷</span><i class="layui-icon"></i></div>
+                </div>
+                <div class="search_plan" style="width: 350px;float: right;}">
+                    <div class="input_group">
+                        <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                        <span class="group_addon layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="reload()"
+                              ng-mouseover="btnTip($event,'搜索')"></span>
+                        <span class="group_addon layui-btn  layui-btn-primary iconfont icon-qingkong" ng-click="Dreload()"
+                              ng-mouseover="btnTip($event,'清空')"></span>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+            <div class="list_bar_row">
+                <div class="col-xs-4">
+                    <label class="layui-form-label">课程:</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="请选择" ng-model="param.paper_curriculum_name"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in curriculumData"
+                                    ng-click="param.paper_curriculum=item.id;param.paper_curriculum_name=item.dic_name;reload()"
+                                    ng-class="{'layui-this':param.paper_curriculum_name == item.dic_name}">{{item.dic_name}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label class="layui-form-label">试卷类别:</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="请选择" ng-model="param.paper_type_name"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in categoryData"
+                                    ng-click="param.paper_type=item.id;param.paper_type_name=item.dic_name;reload()"
+                                    ng-class="{'layui-this':param.paper_type_name == item.dic_name}">{{item.dic_name}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-4">
+                    <label class="layui-form-label">试卷难易度:</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="请选择" ng-model="param.paper_level_name"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in paperLevelTypes"
+                                    ng-click="param.paper_level=item.id;param.paper_level_name=item.dic_name;reload()"
+                                    ng-class="{'layui-this':param.paper_level_name == item.dic_name}">{{item.dic_name}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 列表 -->
+            <grid-table data-control="tableControl"></grid-table>
+        </div>
+    </div>
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+            <div class="form_btns">
+                <button class="layui-btn layui-btn-normal" ng-click="_form_submit()">确认发布</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><em>*</em>标题:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input"  ng-model="selRow.paper_title" maxlength="20"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">考试地点:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" ng-model="selRow.paper_addr" maxlength="50"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><em>*</em>及格分数:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" ng-model="selRow.paper_pass"
+                               onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="3"/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><em>*</em>开始时间:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="date-time-picker layui-input"  ng-change="getPaperDuration()" plugintype="date" ng-model="selRow.paper_start" readonly/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><em>*</em>结束时间:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="date-time-picker layui-input"  ng-change="getPaperDuration()" plugintype="date" ng-model="selRow.paper_end" readonly/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><em>*</em>时长:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class=" layui-input" ng-model="selRow.paper_duration"  readonly/>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label"><em>*</em>验证码:</label>
+                    <div class="layui-input-block">
+                        <div class="input_group">
+                            <input type="text" class="layui-input" ng-model="selRow.paper_vcode" readonly maxlength="6"/>
+                            <span class="group_addon layui-btn layui-btn-warm" ng-click="selRow.paper_vcode=getRand()">自动生成</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">试卷解析:</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea" ng-model="selRow.paper_explain" maxlength="300"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="open_test" style="display: none">
+        <div class="layui-form-item" id="yanzheng">
+            <label class="layui-form-label"><em>*</em>验证码:</label>
+            <div class="layui-input-block">
+                <div class="input_group">
+                    <input type="text" class="layui-input" ng-model="selRow.paper_vcode_all" readonly maxlength="6"/>
+                    <span class="group_addon layui-btn layui-btn-warm" ng-click="selRow.paper_vcode_all=getRand()">自动生成</span>
+                </div>
+            </div>
+        </div>
+        <div style="margin-top: 20px; text-align: center">
+            <button class="layui-btn" ng-click="sendValue()">确定</button>
+            <button class="layui-btn " ng-click="escValue()">关闭</button>
+        </div>
+    </div>
+</div>

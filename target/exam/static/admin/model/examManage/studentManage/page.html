@@ -1,0 +1,60 @@
+<div id="studentManage">
+    <div class="content_main">
+        <div class="content_page">
+            <div class="list_bar_row">
+                <div class="bars">
+                    <button class="layui-btn layui-btn-warm iconfont icon-return" ng-click="backPage()"></button>
+                    <button class="layui-btn layui-btn-normal iconfont icon-jiaru" ng-click="addRow()"
+                            ng-mouseover="btnTip($event,'加入考生')"></button>
+                    <button class="layui-btn layui-btn-normal iconfont icon-delete" ng-click="delRow()"
+                            ng-mouseover="btnTip($event,'移除考生')"></button>
+                </div>
+                <div class="col-xs-3">
+                    <label class="layui-form-label">班级:</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="请选择" ng-model="param.classes_name"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in classesData"
+                                    ng-click="param.classes_id=item.id;param.classes_name=item.class_name; selectClasses(item)"
+                                    ng-class="{'layui-this':param.classes_name == item.class_name}">{{item.class_name}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-3">
+                    <label class="layui-form-label">考生状态:</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                       placeholder="请选择" ng-model="param.status_text"/>
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in [{id:0,text:'全部'},{id:1,text:'已参加'},{id:2,text:'未参加'}]"
+                                    ng-click="param.person_status=item.id;param.status_text=item.text; selectStatus(item)"
+                                    ng-class="{'layui-this':param.status_text == item.text}">{{item.text}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="search_plan">
+                    <div class="input_group">
+                        <input class="layui-input " type="text" placeholder="模糊搜索" ng-model="param.searchText">
+                        <span class="group_addon layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="reload()"
+                        ng-mousemove="btnTip($event,'搜索')"></span>
+                    </div>
+                </div>
+            </div>
+            <!-- 列表 -->
+            <grid-table data-control="tableControl"></grid-table>
+        </div>
+    </div>
+</div>

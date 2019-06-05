@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../include/public_file.ftl" />
+    <script type="application/javascript" src="${ctxPath}/static/web/js/exam.js"></script>
+    <script type="text/javascript">
+        var data = eval(${data})
+        var papers = eval(${papers})
+    </script>
+</head>
+<body>
+<!-- 公共头 -->
+<#include "../include/public_header.ftl" />
+
+<div class="w_center" style="padding:20px 0;background:#f5f5f5;" id="exam">
+
+    <div class="cont">
+        <div class="cont-left" style="float:left;width:calc(100% - 350px);width:-moz-calc(100% - 350px);width:-webkit-calc(100% - 350px);">
+            <div style="margin:10px 30px 0 0;padding:0 20px;background:#fff;" >
+                <div class="cont-left-top">
+                </div>
+                <div class="cont-left-cont" style="min-height:550px;">
+                    <div class="head_left">
+                    </div>
+                    <div class="cont_left">
+                        <div id="cont_cont" style="min-height:455px;font-size:16px;padding:25px 0;">
+                        </div>
+                        <div class="answe_list">
+                            <p style="font-size:14px;color:#999999;">单选题,请选择你认为正确的答案！</p>
+                            <ul>
+                            </ul>
+                            <input type="text">
+                        </div>
+                    </div>
+
+                    <div class="footer_left" style="text-align:right;padding:25px 50px;border-top:1px solid #ccc;margin-left:-20px;margin-right:-20px;">
+                        <button class="layui-btn layui-btn-normal" id="prev" onclick="prev();">上一题</button>
+                        <button class="layui-btn layui-btn-normal" id="next" onclick="next();">下一题</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="cont-right" style="float:left;width:300px;margin:10px 0 0  0;background:#fff;">
+            <div class="cont-right_top">
+                <h3>考生信息</h3>
+                <dl class="stu_message">
+                </dl>
+            </div>
+            <div class="cont-right_top">
+                <div class="exams_list">
+
+                </div>
+            </div>
+            <div class="footer" style="text-align:center;padding-top:50px;">
+                <p style="font-size:16px;color:#999999;">考试剩余时间</p>
+                <p class="low_time" style="font-size:30px;font-weight:bold;margin:15px;">20:00</p>
+                <button class="layui-btn layui-btn-normal" onclick="submitExam()">提交试卷</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共底 -->
+<#include "../include/public_footer.ftl" />
+</body>
+</html>

@@ -1,0 +1,145 @@
+
+/*#new_Exampaper*/
+
+#new_Exampaper .main .center_content{
+    float:none;
+}
+#new_Exampaper .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#new_Exampaper .main form.center_cont{
+    width:600px;
+    margin:50px auto;
+}
+#new_Exampaper .main form.center_cont em{
+    color:#e63a3a;
+}
+#new_Exampaper .main form.center_cont .layui-form-label{
+    width:110px;
+}
+#new_Exampaper .active{
+    background:#ccc;
+}
+/*添加学生*/
+#new_Exampaper .main .stu_context .stu_context_head:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#new_Exampaper .main .stu_context .stu_context_head h2{
+    float: left;
+}
+#new_Exampaper .main .stu_context .stu_context_head span{
+    float: right;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/*学生弹出层*/
+#new_Exampaper #stu_nums{
+    padding:20px 20px 100px;
+    position:relative;
+    height:600px;
+}
+#new_Exampaper #stu_nums>div.stu_nums_cont{
+    height:100%;
+    border: 1px solid #e2e2e2;
+    position: relative;
+}
+#new_Exampaper #stu_nums>div.stu_nums_cont:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#new_Exampaper #stu_nums>div .stu_nums_left{
+    width:150px;
+    height:100%;
+    float: left;
+    margin-right: -2px;
+    border-right: 1px solid #e2e2e2;
+    position: absolute;
+    padding: 5px 10px;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right{
+    float: left;
+    width:100%;
+    padding-left:150px;
+    height: 100%;
+    overflow-y: auto;
+}
+#new_Exampaper #stu_nums dl dd{
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ddd dashed;
+}
+#new_Exampaper #stu_nums>div .stu_nums_left dl dd{
+    text-align:center;
+    cursor: pointer;
+}
+#new_Exampaper #stu_nums>div .stu_nums_left dl dd.layui-this{
+    background-color: #e63a3a;
+    color: #fff;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl{
+    padding: 5px 10px;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd{
+    padding-left:20px;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd:hover{
+    background:#e63a3a;
+    color:#fff;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd:hover a{
+    /*background:#e63a3a;*/
+    color:#fff;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd p{
+    position: relative;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd p:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd span{
+    /*margin-right:20px;*/
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd span{
+    position:absolute;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd span:nth-child(1){
+    left:0;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd span:nth-child(2){
+    right:250px;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd span:nth-child(3){
+    right:100px;
+}
+#new_Exampaper #stu_nums>div .stu_nums_right dl dd a{
+    float:right;
+    color:#e63a3a;
+}
+#new_Exampaper #stu_nums>div.stu_nums_foot{
+    text-align:center;
+    position:absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -30px;
+}
+/*底部分页样式---------------------*/
+#new_Exampaper .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#new_Exampaper .layui-laypage input:focus,#new_Exampaper .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#new_Exampaper .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

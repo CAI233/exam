@@ -1,0 +1,155 @@
+<div id="intelligentPaper">
+    <div class="content_main">
+        <div class="form-bars" style="text-align:right">
+            <button class="layui-btn layui-btn-normal" ng-click="generateExam()">生成试卷</button>
+        </div>
+        <div class="content_page">
+            <h3>试卷设置</h3>
+            <div class="tag-type">
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">课程：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type" ng-repeat="item in curriculumData"
+                                       ng-click="item.check=!item.check;selectCurr(item)"
+                                       ng-class="{'type-active': item.check}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">年级：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type" ng-repeat="item in gradeData"
+                                       ng-click="item.check=!item.check;selectGra(item)"
+                                       ng-class="{'type-active': item.check}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">专业：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type" ng-repeat="item in specialtyData"
+                                       ng-click="item.check=!item.check;selectSpe(item)"
+                                       ng-class="{'type-active':item.check}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items">
+                        <div class="tag-tit">难易度：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type" ng-repeat="item in levelList"
+                                       ng-click="selRow.subject_level=item.id;item.check=!item.check;selectLevel(item)"
+                                       ng-class="{'type-active': item.check}">{{item.name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="result_head">题型/数量设置</h3>
+            <div class="tag-con row">
+                <div class="tag-conleft col-xs-4" ng-repeat="(key,value) in typeList" >
+                    <!--<h3 style="position: relative;height: 40px;margin: 5px 0;line-height: 40px;background: rgb(236,240,241);text-align:center;">{{selRow.curriculum_name}}</h3>-->
+                    <h3 style="position: relative;height: 40px;margin: 5px 0;line-height: 40px;background: rgb(236,240,241);text-align:center;"
+                    ng-repeat="item in curriculumData" ng-if="item.id==key">{{item.dic_name}}</h3>
+                    <ul>
+                        <li ng-repeat="item in value">
+                            <div>
+                                <a data-name="question_channel_type">{{item.name}}</a>
+                            </div>
+                            <div>
+                                <!--<span class="tag_con_cont"><i>0</i>道试题可用</span>-->
+                                <span class="tag_con_right"><input type="number"  ng-model="item.num" placeholder="0">道</span>
+                                <span class="tag_con_right" ng-if="item.id!=6">每题<input type="number"  ng-model="item.score" placeholder="0"  />分</span>
+                                <span class="tag_con_right" style="margin-left:18px;" ng-if="item.id==6">每小题<input type="number"  ng-model="item.score" placeholder="0"  />分</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!--<a class="return" onclick="$('.parent_view').animate().scrollTop(0,0)" href="javascript:;" style="display: inline;"><i-->
+                <!--class="icon iconfont icon-dingbu"-->
+                <!--style="font-size: 18px;"></i></a>-->
+        <div class="generateExam" style="display: none">
+            <form class="form_html" style="padding: 40px 40px 20px 40px">
+                <div class="row">
+                    <div class="layui-form-item col-xs-12">
+                        <label class="layui-form-label"><em>*</em>试卷标题:</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input"  ng-model="examRow.paper_title" maxlength="100"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="layui-form-item col-xs-12">
+                        <label class="layui-form-label">考试地点:</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input"  ng-model="examRow.paper_addr" maxlength="100"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="layui-form-item col-xs-6">
+                        <label class="layui-form-label"><em>*</em>考试时间:</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="date-time-picker layui-input" ng-change="getPaperDuration()" plugintype="date2" ng-model="examRow.paper_start" readonly/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item col-xs-6">
+                        <label class="layui-form-label"><em>*</em>到:</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="date-time-picker layui-input"  ng-change="getPaperDuration()" plugintype="date2" ng-model="examRow.paper_end" readonly/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="layui-form-item col-xs-6">
+                        <label class="layui-form-label"><em>*</em>时长:</label>
+                        <div class="layui-input-block">
+                            <input type="text" class=" layui-input" ng-model="examRow.paper_duration"  readonly/>
+                        </div>
+                    </div>
+                    <div class="layui-form-item col-xs-6">
+                        <label class="layui-form-label"><em>*</em>及格分数:</label>
+                        <div class="layui-input-block">
+                            <input type="text" class="layui-input" ng-change="show_socre(examRow.paper_pass)" ng-model="examRow.paper_pass" maxlength="3" />
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="layui-form-item col-xs-12">
+                        <label class="layui-form-label">试卷解析:</label>
+                        <div class="layui-input-block">
+                            <textarea class="layui-textarea" ng-model="examRow.paper_explain" style="resize:none;" maxlength="300"/>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="form-bars" style="text-align: center">
+                <button class="layui-btn layui-btn-normal" ng-click="generateSubmit()">生成试卷</button>
+                <button class="layui-btn layui-btn-primary" ng-click="generateExamClose()">取消
+                </button>
+            </div>
+        </div>
+    </div>
+</div>

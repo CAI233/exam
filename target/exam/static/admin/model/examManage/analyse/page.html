@@ -1,0 +1,61 @@
+<div id="analyse">
+    <div class="content_main">
+        <div class="content_page" >
+            <div class="content_page">
+                <div class="layui-form-item col-xs-4" style="position: relative;padding-left: 15px;margin-top: 5px;margin-bottom: 5px;">
+                    <label class="layui-form-label"><em>*</em>试卷名称：</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" ng-model="param.searchText" class="layui-input ng-pristine ng-untouched ng-valid" placeholder="请输入搜索条件">
+                    </div>
+                    <button class="layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="reload()" style="position: absolute;top: 0;right:0;"
+                            ng-mouseover="btnTip($event,'查询')"></button>
+                    <button class="layui-btn layui-btn-primary iconfont icon-qingkong" ng-click="Dreload()" style="position: absolute;top: 0;right: -64px;"
+                            ng-mouseover="btnTip($event,'清空')"></button>
+                    <!--<button class="layui-btn layui-btn-normal" style="position: absolute;top: 0;right: -180px;">导出EXCL</button>-->
+                </div>
+
+            </div>
+
+            <!-- 列表 -->
+            <grid-table data-control="tableControl"></grid-table>
+        </div>
+        <div id="pages_tu" style="display:none;">
+            <div class="contain_context">
+                <div class="context_left col-xs-6" >
+                    <h3>知识点答题情况</h3>
+                    <!-- 列表 -->
+                    <!--<grid-table data-control="tableControl"></grid-table>-->
+                    <div>
+                        <table style="width:100%;text-align:center;" class="layui-table">
+                            <thead>
+                            <tr style="background:#D5D5D5;">
+                                <th>序号</th>
+                                <th>知识点</th>
+                                <th>分值（占比）</th>
+                                <th>对应题号</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="(key,value) in all_nums">
+                                <td>{{$index+1}}</td>
+                                <td>{{key}}</td>
+                                <td>{{value.all_marks}}（{{((value.all_marks/socers)*100).toFixed(2)}}%）</td>
+                                <td>{{value.all_ids}}</td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+                <div class="context_right col-xs-6">
+                    <div id="main" style="width:100%;height:400px;"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- 列表 -->
+
+    </div>
+
+</div>

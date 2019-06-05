@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../include/public_file.ftl" />
+    <script type="application/javascript" src="${ctxPath}/static/web/js/errorTitles.js"></script>
+</head>
+<body>
+<!-- 公共头 -->
+<#include "../include/public_header.ftl" />
+<div class="w_center" style="padding: 20px 0;min-height:717px;" id="errorTitles">
+    <div class="cont">
+        <div class="tag-type">
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit">课程：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div id="currms">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit">题型：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div id="subType">
+                                <a data-name="question_channel_type" class="active" onclick="load()">全部</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit">难易度：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div id="subLevel">
+                                <!--<a data-name="question_channel_type" onclick="LevelCheck(0)">全部</a>-->
+                                <!--<a data-name="question_channel_type">基础题</a>-->
+                                <!--<a data-name="question_channel_type">中等题</a>-->
+                                <!--<a data-name="question_channel_type">较难题</a>-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="cont-content" style="margin-top:15px">
+            <ul id="textList">
+
+            </ul>
+            <div id="not_show" style="display:none;">
+                <p style="line-height:300px;text-align:center;font-size:14px;">当前条件下没有错误的试题！</p>
+            </div>
+            <div style="position:relative;" >
+                <div id="data_pager" style="float: left;"></div>
+                <div style="float:right;line-height:55px;">
+                    共<span id="pager_pages">0</span>页，合计<span id="pager_total">0</span>条
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共底 -->
+<#include "../include/public_footer.ftl" />
+</body>
+</html>

@@ -1,0 +1,42 @@
+#levelCat .cl li:hover {
+    background: none
+}
+
+#levelCat .cl li {
+    padding: 0;
+}
+
+#levelCat .box .check {
+    width: 100%;
+}
+
+#levelCat .box .check i {
+    width: 100%;
+}
+
+#levelCat select {
+    border: none;
+    background: none;
+}
+
+#levelCat .form_sm .form_html {
+    height: 800px
+}
+
+#levelCat .form-left {
+    float: left;
+    width: 40%;
+    margin-top: 100px;
+}
+
+#levelCat .form-right {
+    float: left;
+    width: 50%;
+}
+
+#levelCat .form-left-bottom {
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+
+

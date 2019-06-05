@@ -1,0 +1,13 @@
+#resultManage{
+    float: left;
+    width: 100%;
+}
+
+#resultManage .book_up{
+    float: left;
+    width: 100px;
+}
+
+#resultManage .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}

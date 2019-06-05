@@ -1,0 +1,45 @@
+#specialtyCat .cl li:hover {
+    background: none
+}
+
+#specialtyCat .cl li {
+    padding: 0;
+}
+
+#specialtyCat .box .check {
+    width: 100%;
+}
+
+#specialtyCat .box .check i {
+    width: 100%;
+}
+
+#specialtyCat select {
+    border: none;
+    background: none;
+}
+
+#specialtyCat .form_sm .form_html {
+    height: 800px
+}
+
+#specialtyCat .form-left {
+    float: left;
+    width: 40%;
+    margin-top: 100px;
+}
+
+#specialtyCat .form-right {
+    float: left;
+    width: 50%;
+}
+
+#specialtyCat .form-left-bottom {
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+
+

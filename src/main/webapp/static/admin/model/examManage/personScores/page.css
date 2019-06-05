@@ -1,0 +1,117 @@
+ .top_header{
+    display:none;
+}
+ .left_main_menu{
+    display:none;
+}
+.center_main_content{
+    height:100%;
+    width:100%;
+}
+#personScores{background:#f1f3f5;min-height:100%;}
+#personScores .cont h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#personScores .cont {
+    margin:0 auto;
+    width: 800px;
+    position: relative;
+    background: #fff;
+    padding: 20px 0;
+    height:100%;
+}
+
+#personScores .cont .cont_header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#personScores .cont h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+#personScores .cont .cont_header label {
+    font-weight: bold;
+}
+#personScores .cont .cont_header p{
+    font-size:16px;
+    margin:10px auto;
+}
+#personScores #know_sub .know_head{
+    background: #ddd;
+    margin: 0 10px;
+    padding: 15px 20px;
+}
+#personScores #know_sub .know_context{
+    border: 1px solid transparent;
+    padding: 10px;
+    letter-spacing: 1px;
+    text-align: justify;
+    position: relative;
+    margin: 0 10px 15px;
+}
+#personScores #know_sub .know_context:hover{
+    border: 1px solid #4498ee;
+}
+#personScores #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#personScores #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#personScores #know_sub h1{
+    font-size:28px;
+    font-weight:bold;
+}
+#personScores #know_sub>div{
+    /*padding:15px 20px;*/
+}
+#personScores #know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:0 20px;
+    word-wrap:break-word;
+}
+ #personScores #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+ #personScores #know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:10px auto;
+    min-height: 20px;
+    position:relative;
+    word-wrap:break-word;
+}
+ #personScores #know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+ #personScores #know_sub>div .know_space .know_item_right{
+    /*display:block;*/
+    /*position:relative;*/
+    padding: 5px;
+     margin-right:10px;
+}
+ /*#personScores .active{*/
+     /*border:1px solid green;*/
+ /*}*/
+
+ #personScores .know_true{
+     display:inline-block;
+     width:10px;
+     height:20px;
+     border-right: 1px solid green;
+     border-bottom: 1px solid green;
+     transform:rotate(45deg);
+ }
+ #personScores .active{
+     background:#f1f3f5;
+ }

@@ -1,0 +1,160 @@
+#questionManage{
+    float: left;
+    width: 100%;
+}
+#questionManage .book_up{
+    float: left;
+    width: 100px;
+}
+#questionManage .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+#questionManage img{
+    vertical-align: middle !important;
+}
+
+#questionManage .tree-checkbox{
+    background-position-y: -28px;
+}
+#questionManage .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#questionManage #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#questionManage #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#questionManage #know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#questionManage #know_sub>div{
+    padding:15px 20px;
+}
+#questionManage #know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#questionManage #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#questionManage #know_sub>div .know_space{
+    margin: 5px auto;
+    min-height: 20px;
+    position: relative;
+    word-wrap: break-word;
+}
+
+#questionManage #know_sub .option_con .option_con_li{
+    display: inline-block;
+    width: 100%;
+}
+#questionManage #know_sub .option_con .option_con_li > dt{
+    float: left;
+    width: 60px;
+}
+#questionManage #know_sub .option_con .option_con_li > dd {
+    float: left;
+    width: 460px;
+}
+#questionManage #know_sub>div .know_space .know_space{
+    margin:0 10px;
+}
+#questionManage #know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#questionManage #know_sub>div .know_space .know_item_right{
+    display:block;
+}
+#questionManage .row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#questionManage .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#questionManage .tag-type .tag-items{
+    border-bottom: 1px dashed #dcdcdc;
+}
+
+#questionManage .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#questionManage .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#questionManage .tag-con {
+    margin-left: 72px
+}
+#questionManage .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 1px 10px;
+    cursor: pointer;
+}
+#questionManage .tag-con a:hover, #questionManage .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#questionManage .con-answer{
+    display:inline-block;
+    float: left;
+}
+#questionManage .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#questionManage .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#questionManage .layui-form-item{
+    margin-bottom:0;
+}
+#questionManage .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#questionManage .layui-input-block{
+    margin-left: 72px;
+}
+#questionManage .tag-type {
+    /*margin: 20px auto 10px;*/
+    border:1px solid #dcdcdc;
+}
+#questionManage .form_content{
+    width: 800px;
+    border-left: 1px solid #ccc;
+}
+#questionManage .form_content .form_html{
+    width:100%;
+}

@@ -1,0 +1,336 @@
+#myOptionsBanks{
+    float: left;
+    width: 100%;
+}
+#myOptionsBanks .row_line .main .row_line .opton_bank_left:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#myOptionsBanks .opton_bank_left{
+    float: left;
+    width: 250px;
+    border: 1px #dcdcdc solid;
+    margin: 25px 0;
+}
+#myOptionsBanks .opton_bank_left .left_col_title{
+    float: left;
+    width: 100%;
+    line-height: 40px;
+    padding:  0 15px;
+    font-size: 14px;
+    background: #f4f4f4;
+    color: #676767;
+}
+#myOptionsBanks .opton_bank_left .left_col_title i{
+    float: left;
+    font-size: 20px;
+    margin-right: 5px;
+}
+#myOptionsBanks .left_content{
+    padding: 10px 15px;
+    background: #fff;
+    float: left;
+    width: 100%;
+    min-height: 150px;
+}
+#myOptionsBanks .left_content p{
+    text-align: center;
+    line-height: 100px;
+    float: left;
+    width: 100%;
+    color: #999;
+}
+#myOptionsBanks .left_content li{
+    line-height: 30px;
+    cursor: pointer;
+}
+#myOptionsBanks .left_content li:hover, #myOptionsBanks .left_content li.active{
+    color: #e63a3a;
+}
+
+#myOptionsBanks .not-pp_cont{
+    text-align: center;
+    line-height: 200px;
+    color: #999;
+    background:url('../../img/none_2.png') no-repeat center;
+    padding-top:150px;
+}
+#myOptionsBanks .opton_bank_right{
+    float: right;
+    width: calc(100% - 270px);
+    width: -moz-calc(100% - 270px);
+    width: -webkit-calc(100% - 270px);
+    margin: 25px 0;
+}
+/*清除浮动*/
+#myOptionsBanks .opton_bank_right:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#myOptionsBanks .opton_bank_right .not-pp{
+    text-align: center;
+    line-height: 200px;
+    color: #999;
+    background:url("../../img/none_exam.png") no-repeat center ;
+    padding-top:150px;
+}
+/*#myOptionsBanks .opton_bank_right .not-pp .down_foot{}*/
+#myOptionsBanks .opton_bank_right_title{
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+}
+#myOptionsBanks .opton_bank_right_title span{
+    float: left;
+}
+#myOptionsBanks .opton_bank_right_title span s{
+    float: left;
+    font-size: 24px;
+    text-decoration: none;
+    line-height: 40px;
+    margin-right: 5px;
+}
+#myOptionsBanks .opton_bank_right_title span em{
+    float: left;
+    font-size: 20px;
+    color: #777;
+    padding-top: 6px;
+    margin-right: 20px;
+}
+#myOptionsBanks .opton_bank_right_title span em i{
+    padding: 0 5px;
+    color: #e63a3a;
+}
+#myOptionsBanks .opton_bank_right_title label{
+    float: left;
+    padding-top: 18px;
+    color: #999;
+    font-size: 12px;
+}
+#myOptionsBanks .opton_bank_right_title label i{
+    font-size: 12px;
+    margin-right: 5px;
+}
+#myOptionsBanks .r_actions{
+    float: right;
+}
+#myOptionsBanks .r_actions a{
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #999;
+    padding-top: 15px;
+}
+#myOptionsBanks .r_actions a:hover{
+    color: #e63a3a;
+}
+/*新建题库*/
+#myOptionsBanks #bank_open{
+    padding:20px 50px 100px;
+    position:relative;
+    height: 100%;
+    overflow-y: visible;
+}
+#myOptionsBanks #bank_open .bank_open_context h3{
+    font-size: 16px;
+    text-align: center;
+    padding: 5px 0;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item{
+    margin:15px 0 ;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .layui-form-label{
+    width:100px;
+    text-align:left;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .layui-input-block{
+    margin-left:100px;
+}
+/*#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .layui-form-select:hover dl{*/
+    /*display:block;*/
+/*}*/
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .layui-form-select dl{
+    max-height:150px;
+    top: 38px;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title{
+    width: 100%;
+    min-height: 40px;
+    padding: 4px;
+    border: 1px solid #e6e6e6
+}
+/*#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper .assistant:empty::before {*/
+    /*content: attr(placeholder);*/
+    /*heigth:40px;*/
+    /*line-height:40px;*/
+/*}*/
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper dl dd{
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper dl dd.layui-this{
+    background-color: #e63a3a !important;
+    color: #fff!important;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title a{
+    display: inline-block;
+    box-sizing: border-box;
+    background:#f4f4f4;
+    padding:2px 5px 2px 10px;
+    line-height: 18px;
+    font-size: 12px;
+    margin:4px;
+    border-radius: 3px;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title a i{
+    float: right;
+    font-size: 14px;
+    margin-top: 1px;
+}
+#myOptionsBanks #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title a i{
+    vertical-align: middle;
+    margin-left: 5px;
+}
+#myOptionsBanks #bank_open .bank_open_foot{
+    position:absolute;
+    bottom:20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+#myOptionsBanks #bank_open .bank_open_foot button{
+    width:150px;
+}
+/*试题列表--------start*/
+#myOptionsBanks .search-list{
+    margin-top:15px;
+    width:100%;
+    float: left;
+}
+#myOptionsBanks .search-list .not_pages{
+    line-height:500px;
+    text-align: center;
+    color: #999;
+}
+#myOptionsBanks .search-list ul > li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#myOptionsBanks .search-list ol li{
+    line-height: 30px;
+}
+
+#myOptionsBanks .esam_m_t p:nth-child(2){
+    /*display: inline;*/
+    /*padding-left: 1em;*/
+}
+#myOptionsBanks .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #f4f4f4;
+}
+#myOptionsBanks .exam-head-left, #myOptionsBanks .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#myOptionsBanks .exam-head-left span {
+    margin: 0 0 0 20px;
+}
+#myOptionsBanks .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+    display: none;
+}
+#myOptionsBanks .search-exam > .exam-con {
+    padding: 20px;
+    font-size:14px;
+}
+#myOptionsBanks .exam-q {
+    color: #333;
+    line-height: 24px;
+}
+#myOptionsBanks .exam-s {
+    margin-top: 15px;
+}
+#myOptionsBanks .exam-t{
+    margin: 10px;
+    position: relative;
+}
+/*#myOptionsBanks .exam-t li:before{*/
+    /*content:')';*/
+    /*position: absolute;*/
+    /*left:-5px;*/
+/*}*/
+#myOptionsBanks .exam-t .exam-s{
+    margin-left: 20px;
+    color: #333
+}
+#myOptionsBanks .exam-s span.op-item {
+    position: relative;
+    padding:5px 17px;
+    color: #333;
+    zoom: 1;
+    display: block;
+    min-height: 20px;
+}
+#myOptionsBanks .op-item .op-item-meat {
+    margin-top: 0px;
+    line-height: 30px;
+}
+
+#myOptionsBanks .exam-foot {
+    height: 50px;
+    /*padding: 0 18px;*/
+    border-top: 1px dashed #dcdcdc;
+}
+/*#myOptionsBanks .exam-foot:after{*/
+/*content:"";*/
+/*display:block;*/
+/*clear:both;*/
+/*}*/
+#myOptionsBanks .exam-foot-right .addbtn {
+    /*background: #4498ee;*/
+    /*font-size: 20px;*/
+}
+#myOptionsBanks .exam-foot-right .addbtn i {
+    margin-right:5px;
+}
+#myOptionsBanks .exam-foot-right .addbtn:hover,#myOptionsBanks .exam-foot-right .addbtn.active{
+    color:#E63A3A;
+}
+#myOptionsBanks .exam-foot-right .addbtn, #myOptionsBanks .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    color: #777;
+    display: inline-block;
+    cursor: pointer;
+}
+#myOptionsBanks .exam-foot-right a b {
+    margin-right: 2px;
+}
+#myOptionsBanks .esam_m_t p{
+    text-indent:2em;
+}
+#myOptionsBanks .searchTxt{
+    background: #E63A3A!important;
+    color: #fff!important;
+    padding: 0 2px;
+}
+/*试题列表-----end*/
+/*底部分页样式---------------------*/
+#myOptionsBanks .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#myOptionsBanks .layui-laypage input:focus,#myOptionsBanks .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#myOptionsBanks .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

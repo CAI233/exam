@@ -1,0 +1,61 @@
+#curriculumCat .cl li:hover {
+    background: none
+}
+
+#curriculumCat .cl li {
+    padding: 0;
+}
+
+#curriculumCat .box .check {
+    width: 100%;
+}
+
+#curriculumCat .box .check i {
+    width: 100%;
+}
+
+#curriculumCat select {
+    border: none;
+    background: none;
+}
+
+#curriculumCat .form_sm .form_html {
+    height: 800px
+}
+
+#curriculumCat .form-left {
+    float: left;
+    width: 40%;
+    margin-top: 100px;
+}
+
+#curriculumCat .form-right {
+    float: left;
+    width: 50%;
+}
+
+#curriculumCat .form-left-bottom {
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+
+#curriculumCat #col_comTree{
+    float: left;
+    width: 220px;
+    margin: -10px -15px -15px -15px;
+    padding: 15px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#curriculumCat .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}

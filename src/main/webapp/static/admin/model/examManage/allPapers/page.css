@@ -1,0 +1,10 @@
+#allPapers .content_page_head{
+    margin-bottom:15px;
+}
+#allPapers .content_page_head .layui-form-checked[lay-skin=primary] i{
+    background-color: #16A3FB;
+    color: #fff;
+}
+#allPapers .content_page_head .layui-form-checkbox[lay-skin=primary]:hover i{
+    border-color:#16A3FB;
+}

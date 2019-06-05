@@ -1,0 +1,26 @@
+#analyse{}
+#analyse h3{
+    font-size:16px;
+    border-bottom:2px solid gray ;
+}
+#analyse .content_page:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#analyse .contain_context:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#analyse .contain_context{
+    margin-top:100px;
+}
+#analyse .contain_context .context_right{
+    padding-left:0px;
+    padding-right:0px;
+}
+#analyse .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}

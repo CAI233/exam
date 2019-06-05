@@ -1,0 +1,127 @@
+#myExamManage{
+    float: left;
+    width: 100%;
+}
+#myExamManage .main .center_content{
+    float:none;
+}
+#myExamManage .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#myExamManage .main .table_control{
+    margin-top:20px;
+    text-align:center;
+}
+#myExamManage .main .table_control .layui-table tr th{
+    text-align:center;
+}
+#myExamManage .main .table_control .layui-table tr .last_td{
+    text-align: left;
+    padding-left: 50px;
+    font-size:0;
+}
+#myExamManage .main .table_control .layui-table tr .last_td a{
+    color:#16A3FB;
+    font-size:14px;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+    margin-left:5px;
+}
+#myExamManage .main .not_pages{
+    line-height:300px;
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+    background:url("../../img/none_exam.png") no-repeat center ;
+    padding-top:150px;
+
+}
+#myExamManage .main .not_pages .down_foot a{
+    text-decoration: underline;
+    color:#e53939;
+}
+/*发布试卷-------start*/
+#myExamManage .form_content{
+    width: 500px;
+    border-left: 1px solid #ccc;
+    position: fixed;
+}
+#myExamManage .form_content .form_html{
+    width:100%;
+}
+#myExamManage .form_content .form_title .form_btns button {
+    background: #E63A3A;
+}
+#myExamManage .form_content .form_html .layui-form-item .layui-form-label{
+    width:110px;
+}
+/*-----------end*/
+/*下载试卷----------start*/
+#myExamManage #down_test .down_cont .down_text{
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    padding: 6px 0;
+}
+#myExamManage #down_test .down_cont .down_select{
+    text-align:center;
+    font-size: 16px;
+    line-height: 40px;
+}
+#myExamManage #down_test .down_cont .down_select>div{
+    margin: 0 15px;
+    display:flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    justify-content:space-around;
+}
+#myExamManage #down_test .down_cont .down_select>div>div{
+    width:30%;
+    cursor:pointer;
+}
+#myExamManage #down_test .down_cont .down_select>div>div i{
+    margin-left:10px;
+    color:#e63a3a;
+}
+
+#myExamManage #down_test .down_cont .down_foot{
+    text-align:center;
+    margin-top: 50px;
+}
+#myExamManage #down_test .down_cont .down_foot button{
+    background:#e63a3a;
+    color:#fff;
+}
+/*------------end*/
+#myExamManage .main .table_control .layui-table tr .last_td a.not_check{
+    color:#ccc;
+}
+#myExamManage .main .table_control .layui-table tr .last_td:hover>a.not_check{
+    cursor:not-allowed;
+}
+
+
+/*单选按钮样式-------*/
+#myExamManage .layui-form-radio i{
+    color:#e63a3a;
+    font-size: 16px;
+}
+
+/*----------end*/
+/*底部分页样式---------------------*/
+#myExamManage .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#myExamManage .layui-laypage input:focus,#myExamManage .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#myExamManage .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

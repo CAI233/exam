@@ -1,0 +1,130 @@
+#subChildren{
+    float: left;
+    width: 100%;
+}
+#subChildren .form_content_Y{
+    overflow: scroll;
+}
+#subChildren .form_content  .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#subChildren .tree-checkbox{
+    background-position-y: -28px;
+}
+#know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#know_sub>div{
+    padding:15px 20px;
+}
+#know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+.xxx-form-select {
+    position: relative
+}
+
+.xxx-form-select .layui-input {
+    padding-right: 30px;
+    cursor: pointer
+}
+
+.xxx-form-select dl dd, .xxx-form-select dl dt {
+    padding: 0 10px;
+    line-height: 36px;
+    white-space: nowrap;
+    margin: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.xxx-form-select dl dt {
+    font-size: 12px;
+    color: #999
+}
+
+.xxx-form-select dl dd {
+    cursor: pointer
+}
+
+.xxx-form-select dl dd:hover {
+    background-color: #f2f2f2
+}
+
+.xxx-form-select .layui-select-group dd {
+    padding-left: 20px
+}
+
+.xxx-form-select dl dd.layui-this {
+    background-color: #dedede;
+    color: #000
+}
+.xxx-form-select dl {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    padding: 0px 0;
+    z-index: 999;
+    border: 1px solid #d2d2d2;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.xxx-form-selected dl {
+    display: block
+}
+.xxx-form-select dl, .layui-nav-child {
+    min-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+}
+
+.xxx-form-select .layui-edge {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    cursor: pointer;
+    border-width: 6px;
+    border-top-color: #c2c2c2;
+    border-top-style: solid;
+    transition: all .3s;
+    -webkit-transition: all .3s
+}
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+.table_control td > span {
+    display: initial;
+    word-break: break-all;
+    overflow: hidden;
+    max-width: 300px;
+    text-overflow: ellipsis;
+}
+

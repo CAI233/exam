@@ -1,0 +1,167 @@
+<div id="examInation">
+
+    <div class="list_bar_row" style="background:rgb(248,248,248);padding: 10px 20px;">
+        <div class="search_plan">
+            <div class="input_group">
+                <input class="layui-input" type="text" placeholder="请输入搜索内容" ng-model="param.searchText">
+                        <span class="group_addon layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="reload()"
+                              ng-mousemove="btnTip($event,'搜索')"></span>
+                        <span class="group_addon layui-btn  layui-btn-primary iconfont icon-qingkong" ng-click="Dreload()"
+                              ng-mousemove="btnTip($event,'清空')"></span>
+            </div>
+        </div>
+    </div>
+
+    <!-- 列表 -->
+    <grid-table data-control="tableControl"></grid-table>
+
+    <div class="form_content animated none form_sm">
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+            <div class="form_btns">
+                <button class="layui-btn layui-btn-normal" ng-click="_form_submit()">确认发布</button>
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <div class="center_header">
+                    <div class="main">
+                        <form class="center_cont layui-form">
+                            <div class="layui-form-item " >
+                                <label class="layui-form-label"><em>*</em>标题：</label>
+                                <div class="layui-input-block" >
+                                    <input type="text" name="title"  ng-model="_submit.paper_title"  class="layui-input"  lay-verify="required">
+                                </div>
+                            </div>
+                            <div class="layui-form-item">
+                                <label class="layui-form-label"><em>*</em>试卷：</label>
+                                <div class="layui-input-block thisFalse">
+                                    <div class="layui-unselect layui-form-select">
+                                        <div class="layui-select-title pages" style="border: 1px solid #e6e6e6;min-height: 38px;">
+                                            <input type="text" class="layui-input layui-unselect layui-unselected"  value=""
+                                                   placeholder="请选择" ng-model="_submit.papername" lay-verify="required" readonly/>
+                                            <i class="layui-edge"></i>
+                                        </div>
+                                        <dl class="layui-anim layui-anim-upbit nowFalse" style="padding: 0!important;top:99%" ng-click="stopEvent($event)">
+                                            <dd class="layui-select-tips" style="padding:5px!important;">
+                                                <input type="text" class="layui-input layui-unselect" placeholder="搜索试卷名称" ng-model="_submit.search_name">
+                                            </dd>
+                                            <ul>
+                                                <li ng-repeat="item in paperData | filter : {paper_title: _submit.search_name}" ng-class="{'layui-this': _submit.pbank_id==item.id}"
+                                                    ng-click="_submit.papername=item.paper_title;_submit.pbank_id=item.id;slow_check();">{{item.paper_title}}</li>
+                                            </ul>
+                                        </dl>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item " >
+                                <label class="layui-form-label"><em>*</em>考试地点：</label>
+                                <div class="layui-input-block" >
+                                    <input type="text" name="title"  ng-model="_submit.paper_addr"  class="layui-input"  lay-verify="required">
+                                </div>
+                            </div>
+                            <div style="display:flex;">
+                                <div class="layui-form-item " style="width:50%;">
+                                    <label class="layui-form-label"><em>*</em>开始时间：</label>
+                                    <div class="layui-input-block" >
+                                        <input type="text" id="change_date" readonly="readonly" plugintype="date2" class="layui-input date-time-picker" ng-model="_submit.paper_start"  lay-verify="required">
+                                    </div>
+                                </div>
+                                <div class="layui-form-item " style="width:50%;">
+                                    <label class="layui-form-label"><em>*</em>考试时长：</label>
+                                    <div class="layui-input-block" >
+                                        <input type="text" name="title"  ng-model="_submit.paper_duration" maxlength="3"   class="layui-input"  lay-verify="required|number">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="layui-form-item " style="position: relative;">
+                                <label class="layui-form-label"><em>*</em>验证码：</label>
+                                <div class="layui-input-block" style="margin-right:100px;">
+                                    <input type="text" name="title"  ng-model="_submit.paper_vcode" readonly="readonly" class="layui-input"  lay-verify="required">
+                                </div>
+                                <button ng-click="_submit.paper_vcode=getRand()" class="layui-btn layui-btn-primary " style="position: absolute;top: 0;right: 0;background:#e63a3a;color:#fff;">自动生成</button>
+                            </div>
+                            <div class="layui-form-item" style="text-align:center;">
+                                <button class="layui-btn layui-btn-primary " ng-click="new_Exam()" lay-submit lay-filter="formDemo" style="background:#e63a3a;color:#fff;">保存</button>
+                                <!--<button class="layui-btn layui-btn-primary " ng-click="" style="border:1px solid #C9C9C9;">取消</button>-->
+                            </div>
+                        </form>
+                        <div class="stu_context" style="padding:0 50px;">
+                            <div class="stu_context_head">
+                                <h2>参考学生：</h2>
+                                <span ng-click="stu_open()"><i class="iconfont icon-jia"></i>添加</span>
+                            </div>
+                            <div class="table_control">
+                                <table class="layui-table">
+                                    <thead>
+                                    <tr>
+                                        <th>姓名</th>
+                                        <th>姓名全拼</th>
+                                        <th>学号</th>
+                                        <th>性别</th>
+                                        <th>邮箱</th>
+                                        <th>手机</th>
+                                        <th>操作</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr ng-repeat="item in exam_classes">
+                                        <td>{{item.person_name}}</td>
+                                        <td>{{item.person_spell}}</td>
+                                        <td>{{item.person_studentid}}</td>
+                                        <td>{{['男','女'][item.person_sex-1]}}</td>
+                                        <td>{{item.person_email}}</td>
+                                        <td>{{item.person_phone}}</td>
+                                        <td><a href="javascript:void(0);" ng-click="del_Examclass(item,$index)">删除</a></td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="stu_nums" style="display: none">
+                    <div class="stu_nums_cont">
+                        <div class="stu_nums_left">
+                            <dl >
+                                <dd ng-click="select(item)" ng-class="{'layui-this':item.selected}" ng-repeat="item in result">{{item.class_name}}</dd>
+                            </dl>
+                        </div>
+                        <div class="stu_nums_right">
+                            <dl>
+                                <!--<dd ng-repeat="item in classes">-->
+                                <!--<p>-->
+                                <!--<span class="stu_nums_right_name">{{item.person_name}}</span>-->
+                                <!--<span class="stu_nums_right_sex">{{['男','女'][item.person_sex-1]}}</span>-->
+                                <!--<span class="stu_nums_right_tel">{{item.person_phone}}</span>-->
+                                <!--<a href="javascript:void(0);" ng-click="item.check=!item.check;add_class(item);" class="stu_nums_right_operation"><i class="iconfont {{item.check == true && 'icon-jian' || 'icon-jia'}}"></i></a>-->
+                                <!--</p>-->
+                                <!--</dd>-->
+                                <dd ng-repeat="item in classes">
+                                    <p style="cursor:pointer;" ng-click="del_class(item);">
+                                        <span class="stu_nums_right_name">{{item.person_name}}</span>
+                                        <span class="stu_nums_right_sex">{{['男','女'][item.person_sex-1]}}</span>
+                                        <span class="stu_nums_right_tel">{{item.person_phone}}</span>
+                                        <a href="javascript:void(0);"  class="stu_nums_right_operation"><i class="iconfont icon-jian"></i></a>
+                                    </p>
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <div class="stu_nums_foot">
+                        <button class="layui-btn layui-btn-primary " ng-click="save_class()" style="background:#e63a3a;color:#fff;">保存</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+</div>

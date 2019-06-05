@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <#include "../include/public_file.ftl" />
+
+    <link rel="stylesheet" href="${ctxPath}/static/web/css/login.css">
+    <script type="application/javascript" src="${ctxPath}/static/web/js/login.js"></script>
+</head>
+<body>
+<div class="bg-login">
+    <div class="img-wrap" style="text-align: center;padding: 10px 0;">
+        <h1 class="logo"><img src="${ctxPath}/static/admin/img/login_logo.png"></h1>
+    </div>
+    <div class="my-form">
+        <div class="user-input user-input1">
+            <label class="ie-placeholder" for="user-name">登录账号</label>
+            <input type="text" placeholder="登录账号" id="user-name">
+        </div>
+        <div class="user-input">
+            <label class="ie-placeholder" for="user-pwd">登录密码</label>
+            <input type="password"  placeholder="登录密码" id="user-pwd">
+        </div>
+        <p class="pwd f-usn">
+            <label><input class="user_check" type="checkbox" style="margin-right: 5px;margin-top: 2px">记住密码</label>
+        </p>
+        <button class="btn" onclick="login()">登录</button>
+    </div>
+</div>
+</body>
+</html>

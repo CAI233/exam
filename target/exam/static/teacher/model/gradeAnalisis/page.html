@@ -1,0 +1,62 @@
+<div id="gradeAnalisis" class="animated fadeIn">
+    <div class="center_header">
+        <div class="main">
+            <div class="con-content">
+                <div class="top_nav">
+                    <i class="iconfont icon-weizhi"></i>位置：
+                    <a href="#/home">首页</a>
+                    <em>&gt;</em>
+                    <a>统计分析</a>
+                    <em>&gt;</em>
+                    <label>年级统计</label>
+                </div>
+            </div>
+            <div class="cont">
+                <div class="cont_left">
+                    <div class="cont_left_head">
+                        年级列表
+                    </div>
+                    <div class="cont_left_cont">
+                        <ul>
+                            <li ng-repeat="item in now_grade" ng-click="now_param.check_id=item.id;show_papers(item)" ng-class="{'check_this':now_param.check_id==item.id}"
+                            ><i></i>{{item.dic_name}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cont_right">
+                    <div class="cont_right_head">
+
+                    </div>
+                    <div class="cont_right_cont  table_control">
+                        <table class="layui-table">
+                            <thead>
+                            <tr style="background:#fff;">
+                                <th>考试标题</th>
+                                <th>考试时间</th>
+                                <th>考试类别</th>
+                                <th>考试方式</th>
+                                <th>试卷总分</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr ng-repeat="item in now_papers">
+                                <td>{{item.paper_title}}</td>
+                                <td>始：{{item.paper_start}}<br>终：{{item.paper_end}}</td>
+                                <td>{{_get_paper_type_name(item.paper_type)}}</td>
+                                <td>{{["笔试","机试"][item.paper_mode]}}</td>
+                                <td>{{item.paper_full}}</td>
+                                <td><a href="javascript:;" style="color:#4092f8;cursor:pointer;" ng-click="go_analisis(item)">考试分析</a></td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <p ng-if="!now_papers || now_papers.length==0" style="line-height:200px;text-align:center;background:#fff;">当前年级没有考试数据~</p>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,397 @@
+<div id="chapterPaper">
+    <div class="content_main">
+        <div class="tag-type">
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit">课程：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in curriculumData"
+                                   ng-click="item.check=!item.check;selectCurr(item)"
+                                   ng-class="{'type-active':item.check}">{{item.dic_name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit">年级：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in gradeData"
+                                   ng-click="item.check=!item.check;selectGra(item)"
+                                   ng-class="{'type-active': item.check}">{{item.dic_name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit">专业：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in specialtyData"
+                                   ng-click="item.check=!item.check;selectSpe(item)"
+                                   ng-class="{'type-active':item.check}">{{item.dic_name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content_page_left">
+            <div class="layui-form-item" style="border-bottom:1px solid #E2E7EB;background: #1b92e2;color: #fff;margin-bottom: 0">
+                <div class="dropdown col-xs-12">
+                    <div class="input_group"
+                         style="display: block;text-align: center;height: 40px;line-height: 40px;cursor: pointer;">
+                        <a class="title text-overflow" style="color: #fff;font-weight: bold;font-size:15px">选择章节</a>
+                    </div>
+                </div>
+            </div>
+            <div id="col_comTree">
+                <ul id="comTree" style="overflow-x: auto;height: 100%;"></ul>
+            </div>
+        </div>
+        <div class="content_page_right" style="margin-right: 185px;min-width:750px;margin-left: 300px;">
+
+            <div class="row" style="margin-left: 10px">
+                <div class="tag-items ">
+                    <div class="tag-tit">题型：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in typeList"
+                                   ng-click="param.type=item.id;load()"
+                                   ng-class="{'type-active':param.type==item.id}">{{item.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 10px">
+                <div class="tag-items" >
+                    <div class="tag-tit">难易度：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in levelList"
+                                   ng-click="param.subject_level=item.id;load()"
+                                   ng-class="{'type-active':param.subject_level==item.id}">{{item.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="margin-left: 10px">
+                <div class="tag-items ">
+                    <div class="tag-tit">题库：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in bankData"
+                                   ng-click="param.bank_id=item.id;load()"
+                                   ng-class="{'type-active':param.bank_id==item.id}">{{item.bank_title}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sort">
+                <div class="layui-form-item col-xs-4" style="position: relative;padding-left: 15px;margin-top: 5px;margin-bottom: 5px;">
+                    <label class="layui-form-label"><em>*</em>试题搜索：</label>
+                    <div class="layui-input-block" >
+                        <input type="text" name="title"  ng-model="param.searchText"  class="layui-input" placeholder="请输入搜索条件">
+                    </div>
+                    <button class="layui-btn layui-btn-normal" ng-click="reload()" style="position: absolute;top: 0;right: -64px;">搜索</button>
+                </div>
+                <div style="padding-top:10px;">
+                    <div class="sort-left">
+                    </div>
+                    <a class="select-btn" href="javascript:;" ng-click="addKepAll()">选择本页全部试题</a>
+
+                    <div class="total">
+                        共计：<i ng-bind="countAll"></i> 题
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+            <div class="search-list">
+                <ul id="J_QuestionList" style="margin: 10px">
+                    <li class="uglify-man" ng-repeat="item in subjectList">
+                        <div class="search-exam">
+                            <div class="exam-head">
+                                <p class="exam-head-left">
+                                    <span>题型：<i
+                                            ng-bind="['单选题','多选题','判断题','填空题','问答题','综合题','写作题'][item.subject_type-1]"></i></span><i
+                                        class="line"></i>
+                                    <span>难易度：<i ng-bind="['简单','偏难','较难'][item.subject_level-1]"></i></span><i
+                                        class="line"></i>
+                                    <span>分数：{{item.subject_marks != now_marks && item.subject_marks || 0}}</span>
+                                </p>
+                            </div>
+                            <div class="exam-con">
+                                <div class="exam-q">
+                                    <div ng-bind-html="_trustAsHtml($index+1+'.'+item.subject_question)"></div>
+                                </div>
+                                <div class="exam-s">
+                                    <span class="op-item"  ng-repeat="opt in item.option" ng-if="item.subject_type ==1 || item.subject_type==2 ">
+                                        <span class="op-item-meat" style="margin-top: 0px;"
+                                              ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+opt.option_context)"></span>
+                                    </span>
+                                </div>
+                                <div ng-if="item.subject_type==6 && item.subjectList!= null" ng-repeat="items in item.subjectList" class="exam-t">
+                                    <div class="exam-q" ng-if="items.subject_marks== now_marks">
+                                        <div ng-bind-html="_trustAsHtml(['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩'][$index]+'（'+['单选题','多选题','判断题','填空题','问答题','综合题'][items.subject_type-1]+'）'+items.subject_question+'（0分）')"></div>
+                                    </div>
+                                    <div class="exam-q" ng-if="items.subject_marks!= now_marks">
+                                        <div ng-bind-html="_trustAsHtml(['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩'][$index]+'（'+['单选题','多选题','判断题','填空题','问答题','综合题'][items.subject_type-1]+'）'+items.subject_question+'（'+items.subject_marks+'分）')"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="exam-foot">
+
+                                <!--<p class="exam-foot-left">
+                                    <a href="javascript:;" target="_blank" class="icon iconfont icon-chakan"></i>
+                                        查看解析</a>
+                                    <a href="javascript:;"><i class="icon iconfont icon-shoucang"></i>收藏</a>
+                                    <a href="javascript:;"><i class="icon iconfont icon-zhuyi"></i>纠错</a>
+                                </p>-->
+
+                                <p class="exam-foot-right">
+                                    <!--<span>组卷次数：暂无</span>-->
+                                    <a class="addbtn J_AddQuestion" ng-click="knowSub(item.id)"><b>预览</b></a>
+                                    <a class="addbtn J_AddQuestion" ng-class="{'removebtn':item.select=='del'}"
+                                       ng-click="addKep(item)"><b
+                                            ng-bind="(!item.select || item.select=='add')?'+选题':'-移除'"
+                                    ></b></a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div id="pager"></div>
+            </div>
+        </div>
+    </div>
+    <div class="basket" id="J_Basket" ng-class="{'active':shiTiLan}"
+         ng-init="shiTiLan=true">
+        <div class="basket-tit" ng-click="shiTiLan=!shiTiLan">
+            <p><i class="icon iconfont icon-xuexilanzi"></i><em>试题篮</em></p>
+            <span><i class="icon iconfont "
+                     ng-class="{'icon-jiantouyou':shiTiLan,'icon-jiantouzuo':!shiTiLan}"></i></span>
+        </div>
+        <div class="basket-con">
+            <div class="basket-count">
+                <div class="basket-head">
+                    共计：（<span>{{conut_nums}}</span>）道题
+                </div>
+                <div class="baskrt-list">
+
+                    <p ng-repeat="item in kepList" ng-click="delKep(item.type)">{{item.type_name}}：<span>{{item.ids.length}}</span>道
+                        <i class="icon iconfont icon-shanchu"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="basket-foot">
+                <a id="to-paper-edit" class="basket-btn" ng-click="generateExam()"style="height:35px;line-height:35px;">生成试卷</a>
+            </div>
+        </div>
+    </div>
+    <a class="return" onclick="$('.parent_view').animate().scrollTop(0,0)" href="javascript:;" style="display: inline;"><i
+            class="icon iconfont icon-dingbu"
+            style="font-size: 18px;"></i></a>
+
+    <div class="form_content animated none">
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <!--预览-->
+                <div id="know_sub" >
+                    <div>
+                        <h3>题目题干</h3>
+                        <div class="know_title" ng-bind-html="_trustAsHtml(selRow.subject_question)"></div>
+                        <h3 ng-show="selRow.subject_type ==1 || selRow.subject_type ==2 ">选项</h3>
+                        <div ng-show="selRow.subject_type ==1 || selRow.subject_type ==2">
+                            <div class="know_space" ng-repeat="item in selRow.option" class="know_context" >
+                                <span class="know_item_right"  ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+item.option_context)"></span>
+                            </div>
+                            <h3>答案：</h3>
+                            <div class="know_space" >
+                                <span class="know_span" ng-repeat="item in selRow.option" ng-if="item.option_right==1" ng-bind-html="_trustAsHtml(['A','B','C','D','E'][$index])"></span>
+                            </div>
+                        </div>
+                        <div ng-show="selRow.subject_type ==3">
+                            <h3>答案：</h3>
+                            <div class="know_space"  ng-bind-html="_trustAsHtml(selRow.subject_answer)"></div>
+                        </div>
+                        <div ng-show="selRow.subject_type ==4">
+                            <h3>答案：</h3>
+                            <div class="know_space" ng-repeat="item in selRow.option" ng-bind-html="_trustAsHtml($index+1+'、'+item.option_context)"></div>
+                        </div>
+                        <div ng-show="selRow.subject_type ==5">
+                            <h3>答案：</h3>
+                            <div class="know_space" ng-bind-html="_trustAsHtml(selRow.subject_answer)"></div>
+                        </div>
+                        <div ng-show="selRow.subject_type ==7">
+                            <h3>答案：</h3>
+                            <div class="know_space" ng-bind-html="_trustAsHtml(selRow.subject_answer)"></div>
+                        </div>
+                        <div ng-show="selRow.subject_type ==6" ng-repeat="item in selRows" style="margin-top:10px;border:1px solid #dcdcdc;padding:10px;">
+                            <div class="know_title" ng-if="item.subject_marks==now_marks" ng-bind-html="_trustAsHtml($index+1+'、（'+['单选题', '多选题', '判断题', '填空题', '问答题', '综合题'][item.subject_type-1]+'）'+item.subject_question+'（0分）')"></div>
+                            <div class="know_title" ng-if="item.subject_marks!=now_marks" ng-bind-html="_trustAsHtml($index+1+'、（'+['单选题', '多选题', '判断题', '填空题', '问答题', '综合题'][item.subject_type-1]+'）'+item.subject_question+'（'+item.subject_marks+'分）')"></div>
+                            <h3 ng-show="item.subject_type ==1 || item.subject_type ==2 ">选项</h3>
+                            <div ng-show="item.subject_type ==1 || item.subject_type ==2">
+                                <div class="know_space"  ng-repeat="items in item.option" class="know_context" >
+                                    <span class="know_item_right"  ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+items.option_context)"></span>
+                                </div>
+                                <h3>答案：</h3>
+                                <div class="know_space" >
+                                    <span class="know_span" ng-repeat="items in item.option" ng-if="items.option_right==1" ng-bind-html="_trustAsHtml(['A','B','C','D','E'][$index])"></span>
+                                </div>
+                            </div>
+                            <div ng-show="item.subject_type ==3">
+                                <h3>答案：</h3>
+                                <div class="know_space"  ng-bind-html="_trustAsHtml(item.subject_answer)"></div>
+                            </div>
+                            <div ng-show="item.subject_type ==4">
+                                <h3>答案：</h3>
+                                <div class="know_space" ng-repeat="items in item.option" ng-bind-html="_trustAsHtml($index+1+'、'+items.option_context)">{</div>
+                            </div>
+                            <div ng-show="item.subject_type ==5">
+                                <h3>答案：</h3>
+                                <div class="know_space" ng-bind-html="_trustAsHtml(item.subject_answer)">{</div>
+                            </div>
+                            <h3 >解析：</h3>
+                            <div class="know_space"  ng-bind-html="_trustAsHtml(item.subject_analysis)"></div>
+                        </div>
+                        <h3 ng-show="selRow.subject_type!=6">解析：</h3>
+                        <div ng-show="selRow.subject_type!=6" class="know_space"  ng-bind-html="_trustAsHtml(selRow.subject_analysis)"></div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="generateExam" style="display: none">
+        <form class="form_html" style="padding: 40px 40px 20px 40px">
+            <div class="row">
+                <div class="layui-form-item col-xs-12">
+                    <label class="layui-form-label"><em>*</em>试卷标题:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input"  ng-model="examRow.paper_title" maxlength="100"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="layui-form-item col-xs-12">
+                    <label class="layui-form-label">考试地点:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input"  ng-model="examRow.paper_addr" maxlength="100"/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit"><em>*</em>年级：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in _gradeData"
+                                   ng-click="examRow.paper_grade=item.id;item.check=!item.check;_selectGra(item)"
+                                   ng-class="{'type-active': item.check}">{{item.dic_name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="tag-items ">
+                    <div class="tag-tit"><em>*</em>专业：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in _specialtyData"
+                                   ng-click="examRow.paper_specialty=item.id;item.check=!item.check;_selectSpe(item)"
+                                   ng-class="{'type-active':item.check}">{{item.dic_name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="layui-form-item col-xs-6">
+                    <label class="layui-form-label"><em>*</em>考试时间:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="date-time-picker layui-input" ng-change="getPaperDuration()" plugintype="date2" ng-model="examRow.paper_start" readonly/>
+                    </div>
+                </div>
+                <div class="layui-form-item col-xs-6">
+                    <label class="layui-form-label"><em>*</em>到:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="date-time-picker layui-input"  ng-change="getPaperDuration()" plugintype="date2" ng-model="examRow.paper_end" readonly/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="layui-form-item col-xs-6">
+                    <label class="layui-form-label"><em>*</em>时长:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class=" layui-input" ng-model="examRow.paper_duration"  readonly/>
+                    </div>
+                </div>
+                <div class="layui-form-item col-xs-6">
+                    <label class="layui-form-label"><em>*</em>总分:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class=" layui-input" ng-model="examRow.paper_full"  readonly="readonly" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="layui-form-item col-xs-6" >
+                    <label class="layui-form-label"><em>*</em>试卷类别:</label>
+                    <div class="layui-unselect layui-form-select" style="margin-left:90px;">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                   placeholder="请选择" ng-model="examRow.paper_typename"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="padding-left:10px;">
+                            <dd ng-repeat="item in papersTypeDataList"
+                                ng-click="examRow.paper_type=item.id;examRow.paper_typename=item.dic_name"
+                                ng-class="{'layui-this':examRow.paper_typename == item.dic_name}">{{item.dic_name}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="layui-form-item col-xs-6">
+                    <label class="layui-form-label"><em>*</em>及格分数:</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" ng-change="show_socre(examRow.paper_pass)" ng-model="examRow.paper_pass" maxlength="3" />
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="layui-form-item col-xs-12">
+                    <label class="layui-form-label">试卷解析:</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea" ng-model="examRow.paper_explain" style="resize:none;" maxlength="300"/>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <div class="form-bars" style="text-align: center">
+            <button class="layui-btn layui-btn-normal" ng-click="generateSubmit()">生成</button>
+            <button class="layui-btn layui-btn-primary" ng-click="generateExamClose()">取消
+            </button>
+        </div>
+    </div>
+    <sel-curr></sel-curr>
+</div>

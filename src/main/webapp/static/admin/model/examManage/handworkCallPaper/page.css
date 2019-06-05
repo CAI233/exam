@@ -1,0 +1,873 @@
+#handworkCallPaper:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#handworkCallPaper .content_page_left .title {
+    border-bottom: 1px solid #E2E7EB;
+    /*background: rgb(105, 155, 252);*/
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    /*height: 40px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#handworkCallPaper  .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#handworkCallPaper img{
+    vertical-align: middle !important;
+}
+#handworkCallPaper .layui-form-select dl dd.layui-this{
+    background: #4498ee;
+}
+#handworkCallPaper .box {
+    cursor: pointer;
+}
+
+#handworkCallPaper .box label i.active {
+    color: #4498ee;
+}
+
+
+#handworkCallPaper body, #handworkCallPaper button {
+    font-family: "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", arial, "\5b8b\4f53"
+}
+
+#handworkCallPaper .op-item em, #handworkCallPaper .text-select em {
+    font-weight: 400
+}
+
+/*#handworkCallPaper .exam-s, #handworkCallPaper .lx-teacher, #handworkCallPaper .op-item {*/
+/*clear: both*/
+/*}*/
+
+#handworkCallPaper .basket, #handworkCallPaper .kefu {
+    transition: all .2s linear
+}
+
+#handworkCallPaper .analyticbox-tips a:hover, #handworkCallPaper .footer-top a:hover, #handworkCallPaper .notice-pjq:hover {
+    text-decoration: underline
+}
+
+#handworkCallPaper body {
+    background: #FFF;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 1;
+    font-size: 12px
+}
+
+#handworkCallPaper i {
+    display: inline-block;
+}
+
+
+#handworkCallPaper .g-mn {
+    width: 100%;
+    float: left
+}
+
+#handworkCallPaper .op-item {
+    display: block;
+    min-height: 20px;
+    margin: 5px 0;
+}
+
+#handworkCallPaper .op-item em {
+    display: inline-block
+}
+
+#handworkCallPaper .op-item u {
+    border-bottom: 1px solid #333
+}
+
+#handworkCallPaper .topbox, #handworkCallPaper .topinner {
+    height: 40px;
+    background: #f6f6f6
+}
+
+#handworkCallPaper .op-item .op-item-meat {
+    display: block;
+}
+
+#handworkCallPaper .op-item .op-item-meat span {
+    font-size: 14px !important
+}
+
+#handworkCallPaper .op-item .checkbox .op-item-meat, #handworkCallPaper .op-item .radiobox .op-item-meat {
+    padding-left: 40px
+}
+
+#handworkCallPaper .op-items-xv .op-item .radiobox .op-item-meat {
+    padding-left: 20px
+}
+
+#handworkCallPaper .op-item .checked {
+    color: #27AE61
+}
+
+
+
+
+#handworkCallPaper .btn:hover {
+    background: #308eef
+}
+
+
+#handworkCallPaper .lx-teacher a {
+    float: left;
+    margin-top: 25px;
+    width: 50%;
+    color: #fff
+}
+
+#handworkCallPaper .lx-teacher a:hover {
+    background-color: #ff8a00
+}
+
+
+#handworkCallPaper .icona-top {
+    position: relative;
+    top: 4px
+}
+
+#handworkCallPaper .kefu, #handworkCallPaper .return {
+    position: fixed
+}
+
+#handworkCallPaper .return {
+    right: 162px;
+    bottom: 30px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background: #474443;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+#handworkCallPaper .exam-head-left,#handworkCallPaper .exam-foot-left{
+    float: left;
+}
+#handworkCallPaper .exam-head-left .line, #handworkCallPaper .exam-head-left span, #handworkCallPaper .header-inner a, #handworkCallPaper .pagenum a, #handworkCallPaper .q-blank, #handworkCallPaper .search-list-right a {
+    display: inline-block
+}
+
+#handworkCallPaper .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px
+}
+
+#handworkCallPaper .search-list ul li:hover {
+    border: 1px solid #308eef
+}
+
+
+#handworkCallPaper .search-list-right a i, #handworkCallPaper .test-txt p span i {
+    margin: -2px 5px 0 0
+}
+
+#handworkCallPaper .search-list-right {
+    float: left;
+    width: 320px;
+    margin-left: -330px
+}
+
+#handworkCallPaper .search-list-right a {
+    margin: 37px 20px 37px 0;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333
+}
+
+
+#handworkCallPaper .search-exam {
+    background: #fff
+}
+
+#handworkCallPaper .dj-search-exam {
+    border: 1px solid #dcdcdc
+}
+
+#handworkCallPaper .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px
+}
+
+#handworkCallPaper .exam-foot-right, #handworkCallPaper .exam-head-right {
+    float: right
+}
+
+#handworkCallPaper .exam-head-left, #handworkCallPaper .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px
+}
+
+#handworkCallPaper .exam-head-left span {
+    margin: 0 20px
+}
+
+#handworkCallPaper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+
+#handworkCallPaper .exam-head-right a:hover {
+    color: #4498ee
+}
+
+#handworkCallPaper .exam-con {
+    cursor: pointer
+}
+
+#handworkCallPaper .exam-q {
+    font-size: 14px !important;
+    color: #333;
+    line-height: 24px
+}
+
+#handworkCallPaper .uglify-man .analyticbox-brick, #handworkCallPaper .visible-ake .analyticbox-brick-normal, #handworkCallPaper .visible-ake .exam-qlist {
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 20px
+}
+
+#handworkCallPaper .uglify-man .exam-qlist {
+    border: 0;
+    padding-top: 0
+}
+
+#handworkCallPaper .analyticbox-brick {
+    margin: 0 20px
+}
+
+#handworkCallPaper .exam-q img {
+    max-width: 100%
+}
+
+#handworkCallPaper .exam-q table td {
+    vertical-align: top
+}
+
+#handworkCallPaper .exam-q .filling {
+    border-bottom: 1px solid #ccc;
+    padding: 0 16px;
+    color: #ff1c1c
+}
+
+#handworkCallPaper .exam-q .q-blank2 {
+    color: #999
+}
+
+#handworkCallPaper .exam-qlist .exam-con {
+    border: none
+}
+
+#handworkCallPaper .exam-qlist .exam-con .exam-s {
+    margin-left: 60px
+}
+
+#handworkCallPaper .exam-s {
+    zoom: 1
+}
+
+#handworkCallPaper .exam-con .w .exam-s {
+    margin-left: 80px
+}
+
+#handworkCallPaper .search-exam > .exam-con {
+    margin: 20px 20px 0
+}
+
+#handworkCallPaper .exam-con .w {
+    width: 100%;
+    float: left
+}
+
+#handworkCallPaper .op-order-sub {
+    float: left;
+    width: 80px;
+    margin-right: -80px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px
+}
+
+#handworkCallPaper .analyticbox > span, #handworkCallPaper .q-blank {
+    width: 60px;
+    text-align: center
+}
+
+#handworkCallPaper .exam-con>.exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1
+}
+
+#handworkCallPaper .exam-s span.op-item img {
+    vertical-align: middle
+}
+
+#handworkCallPaper .op-items0 .op-item {
+    margin-right: 40px
+}
+
+#handworkCallPaper .exam-a {
+    height: 40px;
+    background: #eff7f0
+}
+
+#handworkCallPaper .exam-a span {
+    line-height: 40px;
+    margin-left: 18px;
+    font-size: 12px;
+    color: #333
+}
+
+#handworkCallPaper .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc
+}
+
+#handworkCallPaper .exam-foot-left a i {
+    margin: -2px 5px 0 0;
+    color: #4498ee;
+}
+
+#handworkCallPaper .exam-foot-left a {
+    margin-right: 25px;
+    font-size: 14px;
+    color: #333;
+    line-height: 50px
+}
+
+#handworkCallPaper .exam-foot-left a:hover {
+    color: #4498ee
+}
+
+#handworkCallPaper .exam-foot-right span {
+    margin-right: 30px;
+    font-size: 12px;
+    color: #999;
+    line-height: 50px
+}
+
+#handworkCallPaper .exam-foot-right a b {
+    margin-right: 2px
+}
+
+#handworkCallPaper .exam-foot-right .addbtn, #handworkCallPaper .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    margin: 7px 0;
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#handworkCallPaper .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 14px
+}
+
+#handworkCallPaper .exam-foot-right .removebtn {
+    background: #adadad;
+    font-size: 14px
+}
+
+#handworkCallPaper .analyticbox .analyticbox-body, #handworkCallPaper .analyticbox > span, #handworkCallPaper .exam-mynum {
+    line-height: 24px;
+    font-size: 14px
+}
+
+#handworkCallPaper .exam-foot-right .addbtn:hover {
+    background: #078ee8
+}
+
+#handworkCallPaper .exam-foot-right .removebtn:hover {
+    background: #919191
+}
+
+#handworkCallPaper .q-blank {
+    border-bottom: 1px solid #dedede;
+    color: #ff1c1c;
+    vertical-align: baseline
+}
+
+#handworkCallPaper .analyticbox > span {
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    float: left
+}
+
+#handworkCallPaper .analyticbox .analyticbox-body {
+    color: #333;
+    margin-left: 60px;
+    padding-bottom: 20px
+}
+
+#handworkCallPaper .analyticbox-tips {
+    font-size: 14px;
+    color: #999;
+    padding-bottom: 20px
+}
+
+#handworkCallPaper .analyticbox-tips a {
+    color: #ff8a00
+}
+
+#handworkCallPaper .cancel {
+    margin-left: 10px;
+    background: #dfdfdf;
+    color: #333
+}
+
+#handworkCallPaper .confirm:hover {
+    background: #295
+}
+
+#handworkCallPaper .cancel:hover {
+    background: #b9b9b9
+}
+
+#handworkCallPaper .basket {
+    position: fixed;
+    padding-left: 40px;
+    right: -150px;
+    top: 50%;
+    margin-top: -150px;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    z-index: 2;
+}
+
+#handworkCallPaper .basket-tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: #4498ee;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff
+}
+
+#handworkCallPaper .basket-tit p i {
+    margin-left: 12px
+}
+
+#handworkCallPaper .basket-tit p {
+    margin-top: 20px
+}
+
+#handworkCallPaper .basket.active {
+    right: 11px;
+}
+
+#handworkCallPaper .basket-tit p em {
+    display: block;
+    width: 1em;
+    margin: 10px auto 0;
+    line-height: 18px;
+    font-weight: 400
+}
+
+#handworkCallPaper .basket-tit span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #FFBE8F;
+    display: block
+}
+
+#handworkCallPaper .basket-tit span i {
+    margin:11px 0 0 13px
+}
+
+#handworkCallPaper .basket-con {
+    float: left;
+    width: 150px;
+    border: 1px solid #DAD4CE;
+    border-left: 0;
+    min-height: 215px
+}
+
+#handworkCallPaper .basket-con span {
+    color: #fe8a00
+}
+
+#handworkCallPaper .basket-head {
+    background: #d5eaff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #333;
+    margin: 2px;
+    padding-left: 13px
+}
+
+#handworkCallPaper .baskrt-list {
+    min-height: 130px
+}
+
+#handworkCallPaper .baskrt-list p {
+    margin: 20px 20px 0 15px;
+    cursor: pointer
+}
+
+#handworkCallPaper .baskrt-list p i {
+    float: right;
+    color: #ccc;
+}
+#handworkCallPaper .baskrt-list p:hover i {
+    color: red;
+}
+
+#handworkCallPaper .basket-btn {
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 10px 20px;
+    padding: 0 30px;
+    font-size: 12px;
+    color: #fff;
+    background: #4498ee;
+    border-radius: 5px
+}
+
+#handworkCallPaper .basket-btn:hover {
+    background: #078ee8;
+    color: #fff
+}
+
+#handworkCallPaper .search-type .type-items + .type-items {
+    border-top: 1px dashed #dcdcdc
+}
+
+/*#handworkCallPaper .search-list {*/
+/*margin-top: 15px*/
+/*}*/
+
+#handworkCallPaper .tag-con .show-more, #handworkCallPaper .type-con .show-more {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #999;
+    padding-right: 16px;
+    font-size: 12px;
+    cursor: pointer
+}
+
+#handworkCallPaper .tag-con .show-more:hover, #handworkCallPaper .type-con .show-more:hover {
+    color: #666
+}
+
+#handworkCallPaper .tag-con .show-more:hover i, #handworkCallPaper .type-con .show-more:hover i {
+    border-color: #999
+}
+
+#handworkCallPaper .dj-detail h1, #handworkCallPaper .dj-detail ul li a {
+    font-size: 14px;
+    font-family: "Microsoft YaHei"
+}
+
+#handworkCallPaper .icon-trash:hover {
+    opacity: .8
+}
+
+#handworkCallPaper .exam-head > .icon-trash {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: none
+}
+
+#handworkCallPaper .search-list ul li:hover .exam-head > .icon-trash {
+    display: block
+}
+
+#handworkCallPaper .Govip-btn {
+    margin-top: 33px;
+    float: left;
+    margin-left: -310px;
+    width: 220px
+}
+
+#handworkCallPaper .select-btn, #handworkCallPaper .sort, #handworkCallPaper .tag-con a, #handworkCallPaper .tag-tit {
+    font-size: 12px
+}
+
+#handworkCallPaper .sort-left, #handworkCallPaper .switch-detail, #handworkCallPaper .total {
+    line-height: 22px
+}
+
+#handworkCallPaper .tag-con .con-items>li{
+    float:left;
+    height:20px;
+    line-height:20px;
+    box-sizing:border-box;
+    padding:5px;
+    margin-left:5px;
+
+
+}
+#handworkCallPaper .sort {
+    margin: 5px auto;
+    overflow: hidden;
+    color: #999
+}
+
+#handworkCallPaper .sort-left {
+    margin-left: 15px;
+    float: left
+}
+
+#handworkCallPaper .sort .sort-left i {
+    margin: -2px 0 0 3px;
+}
+
+#handworkCallPaper .sort-left a {
+    margin-left: 15px;
+    color: #333
+}
+
+#handworkCallPaper .sort-left a:hover, #handworkCallPaper a.sort-active {
+    color: #333;
+    font-weight: 700
+}
+
+#handworkCallPaper .switch-detail {
+    margin-left: 20px
+}
+
+#handworkCallPaper .switch-detail .checkbox {
+    color: #333;
+    cursor: pointer
+}
+
+#handworkCallPaper .switch-detail .icona-check {
+    float: left;
+    margin-top: 4px;
+    margin-right: 3px
+}
+
+#handworkCallPaper .total {
+    margin-right: 25px;
+    float: right;
+    color: #333
+}
+
+#handworkCallPaper .select-btn {
+    float: right;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #4498ee;
+    border: 1px solid #4498ee
+}
+#handworkCallPaper #col_comTree{
+    float: left;
+    width: 220px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom:50px;
+}
+#handworkCallPaper .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#handworkCallPaper .select-btn:hover {
+    color: #078ee8;
+    border: 1px solid #078ee8
+}
+.layui-btn-primary:focus,.layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#know_sub>div{
+    padding:15px 20px;
+}
+#know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+    word-wrap:break-word;
+}
+#know_sub>div .know_space .know_span{
+    margin:0 10px;
+}
+#know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#know_sub>div .know_space .know_item_right{
+    display:block;
+}
+#handworkCallPaper #search_context{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    background: white;
+    z-index: 3;
+    margin: -15px
+}
+#handworkCallPaper .exam-t{
+    margin: 10px;
+
+}
+#handworkCallPaper .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#handworkCallPaper .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    border-bottom: 1px dashed #dcdcdc;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#handworkCallPaper .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#handworkCallPaper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#handworkCallPaper .tag-con {
+    margin-left: 72px
+}
+#handworkCallPaper .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#handworkCallPaper .tag-con a:hover, #handworkCallPaper .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#handworkCallPaper .tag-type {
+    /*width: 980px;*/
+    /*margin: 20px auto 10px;*/
+    margin-bottom:10px;
+    border:1px solid #dcdcdc;
+}
+#handworkCallPaper .tag-type .layui-form-item{
+    margin-bottom:0;
+}
+#handworkCallPaper .tag-type .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#handworkCallPaper .tag-type .layui-input-block{
+    margin-left: 72px;
+}
+#handworkCallPaper .generateExam .layui-form-item{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+#handworkCallPaper .generateExam .tag-tit {
+    float: left;
+    width: 90px;
+    margin-right: -90px;
+    color: #666;
+    text-align: right
+}
+#handworkCallPaper .generateExam .tag-con {
+    margin-left: 90px
+}
+#handworkCallPaper .content_page_left:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#handworkCallPaper .content_page_left{
+    position:static;
+    padding:0;
+    float: left;
+}
+#handworkCallPaper .content_page_right{
+    position: relative;
+}
+#handworkCallPaper .form_content{
+    width: 800px;
+    border-left: 1px solid #ccc;
+}
+#handworkCallPaper .form_content .form_html{
+    width:100%;
+}

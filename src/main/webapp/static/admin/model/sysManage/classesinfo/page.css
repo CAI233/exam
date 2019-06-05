@@ -1,0 +1,36 @@
+#classesinfo .cl li:hover{background:none}
+#classesinfo .cl li{
+    padding: 0;
+}
+#classesinfo .box .check{
+    width: 100%;
+}
+#classesinfo .box .check i{
+    width:100%;
+}
+#classesinfo select{
+    border: none;
+    background: none;
+}
+#classesinfo .form_sm .form_html{
+    height:800px
+}
+
+#classesinfo .form-left{
+    float: left;
+    width:40%;
+    margin-top: 100px;
+}
+#classesinfo .form-right{
+    float: left;
+    width:50%;
+}
+
+#classesinfo .form-left-bottom{
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+#classesinfo .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+

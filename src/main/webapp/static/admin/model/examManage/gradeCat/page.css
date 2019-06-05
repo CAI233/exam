@@ -1,0 +1,45 @@
+#gradeCat .cl li:hover {
+    background: none
+}
+
+#gradeCat .cl li {
+    padding: 0;
+}
+
+#gradeCat .box .check {
+    width: 100%;
+}
+
+#gradeCat .box .check i {
+    width: 100%;
+}
+
+#gradeCat select {
+    border: none;
+    background: none;
+}
+
+#gradeCat .form_sm .form_html {
+    height: 800px
+}
+
+#gradeCat .form-left {
+    float: left;
+    width: 40%;
+    margin-top: 100px;
+}
+
+#gradeCat .form-right {
+    float: left;
+    width: 50%;
+}
+
+#gradeCat .form-left-bottom {
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+
+

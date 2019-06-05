@@ -1,0 +1,84 @@
+<div id="Seepaper" class="animated fadeIn">
+    <div class="main">
+        <div class="now_paper">
+            <div class="paper_cont">
+                <div class="paper_left" style="width:300px;min-height:100%;"></div>
+                <div class="cont">
+                    <!--<div class="paper_close" style="padding: 10px 20px;background:#f4f4f4;"><button class="layui-btn layui-btn-primary " ng-click="paper_close()" style="cursor: pointer;background:#E63A3A;color:#fff;">关闭 <i class="iconfont icon-gengduo"></i></button></div>-->
+                    <div class="cont_header" style="padding: 0px 80px;">
+                        <h1>{{papers_message.paper_title}}</h1>
+                        <p><label>本试卷共 {{result_message.length !=0 && result_message.length||0}} 小题。全卷满分 {{papers_message.paper_full !=0 && papers_message.paper_full||0}} 分。考试用时 {{papers_message.paper_duration !=0 && papers_message.paper_duration||0}} 分钟。</label></p>
+                        <p><label>★祝考试顺利★</label></p>
+                        <p style="text-align: left"><label>注意事项：</label></p>
+                        <p style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 1. 答题前，先将自己的姓名、准考证号填写在试题卷和答题卡上，并将准考证号条形
+                            码粘贴在答题卡上的指定位置。用 2B 铅笔将答题卡上试卷类型 A 后的方框涂黑。</p>
+                        <p style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2. 选择题的作答：每小题选出答案后，用 2B 铅笔把答题卡上对应题目的答案标号涂黑。
+                            写在试题卷、草稿纸和答题卡上的非答题区域均无效。</p>
+                        <p style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3. 非选择题的作答：用签字笔直接答在答题卡上对应的答题区域内。写在试题卷、草
+                            稿纸和答题卡上的非答题区域均无效。</p>
+                        <p style="text-align: left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 4. 考试结束后，请将本试题卷和答题卡一并上交。</p>
+                    </div>
+                    <div class="cont_context" style="padding: 0px 80px;">
+                        <!--预览-->
+                        <div id="know_sub">
+                            <div ng-repeat="(key,value) in now_paper " >
+                                <div class="cont_header" ng-if="k==key" ng-repeat="(k,v) in now_marks">
+                                    <p style="text-align: left"><label>{{['一、','二、','三、','四、','五、','六、','七、','八、','九、','十、'][$index]}}{{["选择题","多选题","判断题","填空题","问答题","综合题"][key-1]}}（本大题共{{value.length}}小题，共{{v}}分） </label></p>
+                                    <p style="text-align: left" ng-if="key== 1"><label>在每小题给出的四个备选项中，只有一项是符合题目要求的，请将其选出。未选、错选或多选均不得分。</label></p>
+                                    <p style="text-align: left" ng-if="key== 2"><label>在每小题给出的四个备选项中，不止一项是符合题目要求的，请将其选出。未选、错选或多选均不得分。</label></p>
+                                    <p style="text-align: left" ng-if="key== 3"><label>判断下列说法是否正确。若正确请选择对，若错误请选择错。</label></p>
+                                    <p style="text-align: left" ng-if="key== 4"><label>把答案填在答题卡相应题号的横线上。</label></p>
+                                </div>
+                                <div ng-repeat="item in value track by $index" class="know_context" ng-if="key!=6" >
+                                    <div class="know_title" ng-bind-html="_trustAsHtml(item.my_index+'、'+item.subject_question+'（'+item.detail_marks+'分）')"></div>
+                                    <div ng-show="key ==1 || key ==2">
+                                        <div class="know_space" ng-repeat="itema in item.option" class="know_context" >
+                                            <span class="know_item_right"  ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+itema.option_context)"></span>
+                                        </div>
+                                    </div>
+                                    <div ng-show="key ==3">
+                                        <p class="know_space ">
+                                            <span class="know_item_right " style="margin-botom:5px;">对</span >
+                                        </p>
+                                        <p class="know_space ">
+                                            <span class="know_item_right ">错</span>
+                                        </p>
+                                    </div>
+                                    <div ng-show="key ==4 || key==5">
+                                        <div class="know_space" style="margin-top: 20px;padding: 0;min-height: 1px;">
+                                            <p type="text" style="border:none;border-bottom:1px solid black;"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div ng-repeat="item in value track by $index" class="know_context" ng-if="key==6">
+                                    <div ng-bind-html="_trustAsHtml(item.my_index+'、'+item.subject_question)"></div>
+                                    <div ng-repeat="itemb in item.subjectList | orderBy :'subject_type'" style="margin-top:10px;padding:10px;">
+                                        <div class="know_title" ng-bind-html="_trustAsHtml(['①','②','③','④','⑤','⑥','⑦','⑧','⑨','⑩'][$index]+'、'+itemb.subject_question+'（'+itemb.detail_marks+'分）')" ng-class="all"></div>
+                                        <div ng-show="itemb.subject_type ==1 || itemb.subject_type ==2">
+                                            <div class="know_space " ng-repeat="itema in itemb.option" class="know_context" >
+                                                <span class="know_item_right"  ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+itema.option_context)"></span>
+                                            </div>
+                                        </div>
+                                        <div ng-show="itemb.subject_type ==3">
+                                            <p class="know_space ">
+                                                <span class="know_item_right " style="margin-botom:5px;">对</span >
+                                            </p>
+                                            <p class="know_space ">
+                                                <span class="know_item_right ">错</span>
+                                            </p>
+                                        </div>
+                                        <div ng-show="itemb.subject_type ==4 || itemb.subject_type ==5">
+                                            <div class="know_space" style="margin-top: 20px;padding: 0;min-height: 1px;">
+                                                <p type="text" style="border:none;border-bottom:1px solid black;"></p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

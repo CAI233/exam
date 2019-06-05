@@ -1,0 +1,81 @@
+#resource .cl li:hover {
+    background: none
+}
+
+#resource .cl li {
+    padding: 0;
+}
+
+#resource .form_label {
+    padding: 0;
+}
+#resource .content_page_left{
+    padding: 0;
+}
+#resource .col-xs-9 {
+    padding: 0 5px;
+    width: 75%;
+}
+
+#resource #col_comTree {
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#resource #col_comTree:hover {
+    overflow-y: auto;
+}
+
+#resource .input_group a {
+    text-decoration: underline;
+}
+
+#resource .input_group {
+    margin: 0 auto;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+#resource .title {
+    float: left;
+    width: 100%;
+    height: 38px;
+    line-height: 38px;
+}
+
+#resource .form_sm .form_html {
+    height: 800px;
+}
+
+#resource #col_comTree {
+    float: left;
+    width: 100%;
+    padding: 15px;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#resource #col_comTree.maxHeight {
+    height: calc(100% + 30px) !important;
+    height: -moz-calc(100% + 30px) !important;
+    height: -webkit-calc(100% + 30px) !important;
+    margin: -15px -15px -15px -15px !important;
+}
+
+#resource .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+}
+#resource .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#resource .layui-form-onswitch {
+    border-color: #16A3FB;
+    background-color: #16A3FB;
+}

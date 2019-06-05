@@ -1,0 +1,37 @@
+<div id="paperRank">
+    <div class="content_main">
+        <div class="content_page">
+
+            <div class="list_bar_row">
+                <div class="bars" >
+                    <button class="layui-btn layui-btn-warm iconfont icon-return" ng-click="backPage()"></button>
+                </div>
+                <div class="col-xs-4">
+                    <div class="input_group">
+                        <input class="layui-input ng-pristine ng-untouched ng-valid " type="text" name="title" placeholder="模糊搜索" ng-model="param.searchText">
+                        <span class="group_addon layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="_chaData()"
+                              ng-mousemove="btnTip($event,'搜索')"></span>
+                        <span class="group_addon layui-btn  layui-btn-primary iconfont icon-qingkong" ng-click="_DechaData()"
+                              ng-mousemove="btnTip($event,'清空')"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="table_control" id="rank_table">
+                <table class="layui-table">
+                    <thead>
+                    <tr>
+                        <th>名次</th>
+                        <th>姓名</th>
+                        <th>成绩</th>
+                        <th>试卷分析</th>
+                    </tr>
+                    </thead>
+                    <tbody id="show">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

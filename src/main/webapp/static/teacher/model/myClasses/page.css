@@ -1,0 +1,204 @@
+#myClasses{
+    float: left;
+    width: 100%;
+}
+#myClasses .opton_bank_left{
+    float: left;
+    width: 250px;
+    border: 1px #dcdcdc solid;
+    margin: 25px 0;
+}
+#myClasses .opton_bank_left .left_col_title{
+    float: left;
+    width: 100%;
+    line-height: 40px;
+    padding:  0 15px;
+    font-size: 14px;
+    background: #f4f4f4;
+    color: #676767;
+}
+#myClasses .opton_bank_left .left_col_title i{
+    float: left;
+    font-size: 20px;
+    margin-right: 5px;
+}
+#myClasses .left_content{
+    padding: 10px 15px;
+    background: #fff;
+    float: left;
+    width: 100%;
+    min-height: 150px;
+}
+#myClasses .left_content p{
+    text-align: center;
+    line-height: 100px;
+    float: left;
+    width: 100%;
+    color: #999;
+}
+#myClasses .left_content li{
+    line-height: 30px;
+    cursor: pointer;
+}
+#myClasses .left_content li:hover, #myClasses .left_content li.active{
+    color: #e63a3a;
+}
+
+
+#myClasses .opton_bank_right{
+    float: right;
+    width: calc(100% - 270px);
+    width: -moz-calc(100% - 270px);
+    width: -webkit-calc(100% - 270px);
+    margin: 25px 0;
+}
+/*清除浮动*/
+#myClasses .opton_bank_right:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+#myClasses .opton_bank_right .not-pp{
+    text-align: center;
+    line-height: 200px;
+    color: #999;
+    background:url('../../img/none_4.png') no-repeat center;
+    padding-top:150px;
+}
+#myClasses .opton_bank_right_title{
+    float: left;
+    width: 100%;
+    padding: 0 15px;
+}
+#myClasses .opton_bank_right_title span{
+    float: left;
+}
+#myClasses .opton_bank_right_title span s{
+    float: left;
+    font-size: 24px;
+    text-decoration: none;
+    line-height: 40px;
+    margin-right: 5px;
+}
+#myClasses .opton_bank_right_title span em{
+    float: left;
+    font-size: 20px;
+    color: #777;
+    padding-top: 6px;
+    margin-right: 20px;
+}
+#myClasses .opton_bank_right_title span em i{
+    padding: 0 5px;
+    color: #e63a3a;
+}
+#myClasses .opton_bank_right_title label{
+    float: left;
+    padding-top: 18px;
+    color: #999;
+    font-size: 12px;
+}
+#myClasses .opton_bank_right_title label i{
+    font-size: 12px;
+    margin-right: 5px;
+}
+#myClasses .r_actions{
+    float: right;
+}
+#myClasses .r_actions a{
+    float: left;
+    margin-left: 20px;
+    cursor: pointer;
+    color: #999;
+    padding-top: 15px;
+}
+#myClasses .r_actions a:hover{
+    color: #e63a3a;
+}
+/*新建题库*/
+#myClasses #bank_open{
+    padding:20px 50px 100px;
+    position:relative;
+    height: 100%;
+    overflow-y: visible;
+}
+#myClasses #bank_open .bank_open_context h3{
+    font-size: 16px;
+    text-align: center;
+    padding: 5px 0;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item{
+    margin:15px 0 ;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .layui-form-label{
+    width:100px;
+    text-align:left;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .layui-input-block{
+    margin-left:100px;
+}
+/*#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .layui-form-select:hover dl{*/
+/*display:block;*/
+/*}*/
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .layui-form-select dl{
+    max-height:150px;
+    top: 38px;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title{
+    width: 100%;
+    min-height: 40px;
+    padding: 4px;
+    border: 1px solid #e6e6e6
+}
+/*#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper .assistant:empty::before {*/
+/*content: attr(placeholder);*/
+/*heigth:40px;*/
+/*line-height:40px;*/
+/*}*/
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper dl dd{
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper dl dd.layui-this{
+    background-color: #e63a3a !important;
+    color: #fff!important;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title a{
+    display: inline-block;
+    box-sizing: border-box;
+    background:#f4f4f4;
+    padding:2px 5px 2px 10px;
+    line-height: 18px;
+    font-size: 12px;
+    margin:4px;
+    border-radius: 3px;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title a i{
+    float: right;
+    font-size: 14px;
+    margin-top: 1px;
+}
+#myClasses #bank_open .bank_open_context .center_cont .layui-form-item .cooper .layui-select-title a i{
+    vertical-align: middle;
+    margin-left: 5px;
+}
+#myClasses #bank_open .bank_open_foot{
+    position:absolute;
+    bottom:20px;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+#myClasses #bank_open .bank_open_foot button{
+    width:150px;
+}
+
+/*底部分页样式---------------------*/
+#myClasses .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#myClasses .layui-laypage input:focus,#myClasses .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#myClasses .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

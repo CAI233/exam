@@ -1,0 +1,42 @@
+#subjectTypeCat .cl li:hover {
+    background: none
+}
+
+#subjectTypeCat .cl li {
+    padding: 0;
+}
+
+#subjectTypeCat .box .check {
+    width: 100%;
+}
+
+#subjectTypeCat .box .check i {
+    width: 100%;
+}
+
+#subjectTypeCat select {
+    border: none;
+    background: none;
+}
+
+#subjectTypeCat .form_sm .form_html {
+    height: 800px
+}
+
+#subjectTypeCat .form-left {
+    float: left;
+    width: 40%;
+    margin-top: 100px;
+}
+
+#subjectTypeCat .form-right {
+    float: left;
+    width: 50%;
+}
+
+#subjectTypeCat .form-left-bottom {
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+
+

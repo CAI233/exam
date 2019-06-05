@@ -1,0 +1,336 @@
+<div id="subjectAdd">
+    <div class="content_main">
+        <div class="form_content animated">
+            <div class="form_title">
+                <div class="form_btns">
+                    <button class="layui-btn layui-btn-normal" ng-click="_form_submit(false)">保存</button>
+                    <button class="layui-btn layui-btn-normal" ng-click="_form_submit(true)">保存并新增</button>
+                </div>
+            </div>
+            <div class="form_content_Y">
+                <form class="form_html">
+                    <div class="row">
+                        <div class="tag-items ">
+                            <div class="tag-tit">课程：</div>
+                            <div class="tag-conbox">
+                                <div class="tag-con">
+                                    <div class="con-items">
+                                        <a data-name="question_channel_type" ng-repeat="item in curriculumData"
+                                           ng-click="selRow.subject_curriculum=item.id;item.check=!item.check;selectCurr(item)"
+                                           ng-class="{'type-active': item.check}">{{item.dic_name}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">-->
+                        <!--<div class="tag-items ">-->
+                            <!--<div class="tag-tit">年级：</div>-->
+                            <!--<div class="tag-conbox">-->
+                                <!--<div class="tag-con">-->
+                                    <!--<div class="con-items">-->
+                                        <!--<div class="con-answer"  ng-repeat="item in gradeData" ng-click="item.check=!item.check;selectGra(item)">-->
+                                            <!--<div class="box" style="width: 20px;">-->
+                                                <!--<label class="check">-->
+                                                    <!--<i ng-class="{'active': item.check}"></i>-->
+                                                <!--</label>-->
+                                            <!--</div>-->
+                                            <!--<a data-name="question_channel_type">{{item.dic_name}}</a>-->
+                                        <!--</div>-->
+                                        <!--&lt;!&ndash;<a data-name="question_channel_type" ng-repeat="item in gradeData"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;ng-click="item.check=!item.check;selectGra(item)"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;ng-class="{'type-active': item.check}">{{item.dic_name}}</a>&ndash;&gt;-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <!--<div class="row">-->
+                        <!--<div class="tag-items ">-->
+                            <!--<div class="tag-tit">专业：</div>-->
+                            <!--<div class="tag-conbox">-->
+                                <!--<div class="tag-con">-->
+                                    <!--<div class="con-items">-->
+                                        <!--<div class="con-answer"  ng-repeat="item in specialtyData" ng-click="item.check=!item.check;selectSpe(item)">-->
+                                            <!--<div class="box" style="width: 20px;">-->
+                                                <!--<label class="check">-->
+                                                    <!--<i ng-class="{'active': item.check}"></i>-->
+                                                <!--</label>-->
+                                            <!--</div>-->
+                                            <!--<a data-name="question_channel_type">{{item.dic_name}}</a>-->
+                                        <!--</div>-->
+                                        <!--&lt;!&ndash;<a data-name="question_channel_type" ng-repeat="item in specialtyData"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;ng-click="item.check=!item.check;selectSpe(item)"&ndash;&gt;-->
+                                           <!--&lt;!&ndash;ng-class="{'type-active':item.check}">{{item.dic_name}}</a>&ndash;&gt;-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                    <div class="row" style="padding:5px 0;">
+                        <!--<div class="layui-form-item col-xs-6" >-->
+                            <!--<label class="layui-form-label">章节：</label>-->
+                            <!--<div class="layui-input-block">-->
+                                <!--<div class="layui-unselect layui-form-select">-->
+                                    <!--<div class="layui-select-title">-->
+                                        <!--<input type="text" class="layui-input layui-unselect" readonly="readonly" placeholder="请选择"-->
+                                               <!--ng-model="selRow.chapter_name"/>-->
+                                        <!--<i class="layui-edge"></i>-->
+                                    <!--</div>-->
+                                    <!--<dl class="layui-anim layui-anim-upbit" style="width:100%;">-->
+                                        <!--<ul id="chaTree"></ul>-->
+                                    <!--</dl>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <div class="layui-form-item col-xs-6" >
+                            <label class="layui-form-label">知识点：</label>
+                            <div class="layui-input-block">
+                                <div class="layui-unselect layui-form-select">
+                                    <div class="layui-select-title">
+                                        <input type="text" class="layui-input layui-unselect" readonly="readonly" placeholder="请选择"
+                                               ng-model="selRow.know_name"/>
+                                        <i class="layui-edge"></i>
+                                    </div>
+                                    <dl class="layui-anim layui-anim-upbit" style="width:100%;">
+                                        <ul id="knowTree"></ul>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="padding:5px 0;">
+                        <div class="tag-items" style="width:50%;margin-bottom:0;border-bottom:none;">
+                            <div class="tag-tit">难易度：</div>
+                            <div class="tag-conbox">
+                                <div class="tag-con">
+                                    <div class="con-items">
+                                        <a data-name="question_channel_type" ng-repeat="item in levelData"
+                                           ng-click="selRow.subject_level=item.id;item.check=!item.check;selectLevel(item)"
+                                           ng-class="{'type-active': item.check}">{{item.text}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="layui-form-item " ng-if="selRow.subject_type != 6" style="width:50%;padding:0 15px;">-->
+                            <!--<label class="layui-form-label">分&nbsp;&nbsp;数：</label>-->
+                            <!--<div class="layui-input-block">-->
+                                <!--<input type="text" class="layui-input" ng-change="show_socre(selRow.subject_marks)" ng-model="selRow.subject_marks" maxlength="2" />-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    </div>
+                    <div class="row" ng-if="_USERINFO.user_type == 1 && _USERINFO.dept_id != 1">
+                        <div class="tag-items ">
+                            <div class="tag-tit">题库：</div>
+                            <div class="tag-conbox">
+                                <div class="tag-con">
+                                    <div class="con-items">
+                                        <a data-name="question_channel_type" ng-repeat="item in bankData"
+                                           ng-click="selRow.bank_id=item.id;item.check=!item.check;selectBank(item)"
+                                           ng-class="{'type-active':item.check}">{{item.bank_title}}</a>
+                                        <button class="layui-btn layui-btn-small layui-btn-primary iconfont icon-jia" ng-click="openSetBank()"><label style="font-size: 14px;margin-left: 10px;"></label></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="tag-items ">
+                            <div class="tag-tit">题型：</div>
+                            <div class="tag-conbox">
+                                <div class="tag-con">
+                                    <div class="con-items">
+                                        <a data-name="question_channel_type" ng-repeat="item in subTypeList"
+                                           ng-click="selRow.subject_type=item.id;item.check=!item.check;initOption(item)"
+                                           ng-class="{'type-active':item.check}">{{item.dic_name}}</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="tag-items" style="line-height:36px;">
+                            <div class="tag-tit" style="margin-right: 1px;">是否有子题：</div>
+                            <div class="con-answer" ng-repeat="item in subChildren" ng-click="item.check=!item.check;select_bank(item);">
+                                <div class="box" style="width: 20px;">
+                                    <label class="check">
+                                        <i ng-class="{'active': item.check}"></i>
+                                    </label>
+                                </div>
+                                <a data-name="question_channel_type">{{item.name}}</a>
+                            </div>
+                            <!--<button class="iconfont icon-jian" ng-click="delSubChild()"></button>-->
+                            <!--<button class="iconfont icon-jia" ng-click="addSubChild()"></button>-->
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="layui-form-item col-xs-12">
+                            <label class="layui-form-label"><em>*</em>题目：</label>
+                            <div class="layui-input-block">
+                                <iframe id="myIframe2"
+                                        ng-src="{{ctxPath+'/static/admin/plugin/ueditor/edit.html'}}"
+                                        scrolling="no" style="border: 1px #ddd solid" width="100%" height="500"
+                                        frameborder="0"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <!--<div class="row">-->
+                        <!--<div class="layui-form-item"  style="padding-left:15px;" ng-if="selRow.subject_type == 10062 || selRow.subject_type == 10067 || selRow.subject_type == 10070 ||selRow.subject_type == 10072  ||selRow.subject_type == 10074">-->
+                            <!--<div class="col-xs-12" style="padding-left: 0;">-->
+                                <!--<div class="row">-->
+                                    <!--<div class="tag-items ">-->
+                                        <!--<div class="tag-tit">答案：</div>-->
+                                        <!--<div class="tag-conbox" >-->
+                                            <!--<div class="tag-con">-->
+                                                <!--<div class="con-answer"  ng-repeat="item in _level_answer" ng-click="selRow.subject_answer = item.answer;item.check=!item.check;changeRight(item)">-->
+                                                    <!--<div class="box" style="width: 20px;">-->
+                                                        <!--<label class="check">-->
+                                                            <!--<i ng-class="{'active': item.check}"></i>-->
+                                                        <!--</label>-->
+                                                    <!--</div>-->
+                                                    <!--<a data-name="question_channel_type">{{item.answer}}</a>-->
+                                                <!--</div>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                        <!--<div class="layui-form-item"  style="padding-left:15px;" ng-show="selRow.subject_type == 10073">-->
+                            <!--<div class="col-xs-12" style="padding-left: 0;">-->
+                                <!--<div class="tag-items ">-->
+                                    <!--<div class="tag-tit">答案：</div>-->
+                                    <!--<div class="tag-conbox" >-->
+                                        <!--<div class="tag-con">-->
+                                            <!--<div class="con-answer"  ng-repeat="item in _level_answer" ng-click="item.check=!item.check;selectClick(item)">-->
+                                                <!--<div class="box" style="width: 20px;">-->
+                                                    <!--<label class="check">-->
+                                                        <!--<i ng-class="{'active': item.check}"></i>-->
+                                                    <!--</label>-->
+                                                <!--</div>-->
+                                                <!--<a data-name="question_channel_type">{{item.answer}}</a>-->
+                                            <!--</div>-->
+                                        <!--</div>-->
+                                    <!--</div>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                </form>
+            </div>
+        </div>
+    </div>
+    <!--预览-->
+    <div id="form_content1" class="form_content1 animated none" >
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose1()" class="back_link">关闭</a>
+            <div class="form_btns" >
+                <button class="layui-btn layui-btn-normal" ng-if="selRow_all.subject_type==6" ng-click="CaddRow(selRow_all.id)">新增子题</button>
+                <button class="layui-btn layui-btn-normal" ng-click="updateSub(selRow_all.id)">调整</button>
+                <button class="layui-btn layui-btn-normal" ng-click="delRow(selRow_all.id)">删除</button>
+            </div>
+            <!--<h2>预览<a href="javascript:void(0)" ng-click="formClose1()" class="back_link sub_link">关闭</a></h2>-->
+        </div>
+        <div class="form_content_Y" >
+            <div class=" form_html">
+                <!--预览-->
+                <div id="know_sub" >
+                    <div>
+                        <h3>题干</h3>
+                        <div class="know_title" ng-bind-html="_trustAsHtml(selRow_all.subject_question)"></div>
+                        <h3 ng-if="selRow_all.subject_type ==1 || selRow_all.subject_type ==2 ">选项</h3>
+                        <div ng-if="selRow_all.subject_type ==1 || selRow_all.subject_type ==2">
+                            <div class="know_space" ng-repeat="item in selRow_all.option" class="know_context" >
+                                <span class="know_item_right"  ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+item.option_context)"></span>
+                            </div>
+                            <h3>答案：</h3>
+                            <div class="know_space" >
+                                <span class="know_span" ng-repeat="item in selRow_all.option" ng-if="item.option_right==1" ng-bind-html="_trustAsHtml(['A','B','C','D','E'][$index])"></span>
+                            </div>
+                        </div>
+                        <div ng-if="selRow_all.subject_type ==3">
+                            <h3>答案：</h3>
+                            <div class="know_space"  ng-bind-html="_trustAsHtml(selRow_all.subject_answer)"></div>
+                        </div>
+                        <div ng-if="selRow_all.subject_type ==4">
+                            <h3>答案：</h3>
+                            <div class="know_space" ng-repeat="item in selRow_all.option" ng-bind-html="_trustAsHtml($index+1+'、'+item.option_context)"></div>
+                        </div>
+                        <div ng-if="selRow_all.subject_type ==5">
+                            <h3>答案：</h3>
+                            <div class="know_space"  ng-bind-html="_trustAsHtml(selRow_all.subject_answer)"></div>
+                        </div>
+                        <div ng-if="selRow_all.subject_type ==7">
+                            <h3>答案：</h3>
+                            <div class="know_space"  ng-bind-html="_trustAsHtml(selRow_all.subject_answer)"></div>
+                        </div>
+                        <h3 ng-if="selRow_all.subject_type!=6">解析：</h3>
+                        <div ng-if="selRow_all.subject_type!=6" class="know_space"  ng-bind-html="_trustAsHtml(selRow_all.subject_analysis)"></div>
+                        <!--<div calss="know_foot" style="text-align:center;">-->
+                        <!--<button class="layui-btn layui-btn-primary"  ng-click="updateSub(item.id)">修改</button>-->
+                        <!--</div>-->
+                        <div ng-if="selRow_all.subject_type ==6" ng-repeat="item in selRows_all" style="margin-top:10px;border:1px solid #dcdcdc;padding:10px;">
+                            <div style="padding-right:20%;position:relative;">
+                                <div class="know_title" ng-if="item.subject_marks==now_marks" ng-bind-html="_trustAsHtml($index+1+'、（'+['单选题', '多选题', '判断题', '填空题', '问答题', '综合题'][item.subject_type-1]+'）'+item.subject_question+'（0分）')"></div>
+                                <div class="know_title" ng-if="item.subject_marks!=now_marks" ng-bind-html="_trustAsHtml($index+1+'、（'+['单选题', '多选题', '判断题', '填空题', '问答题', '综合题'][item.subject_type-1]+'）'+item.subject_question+'（'+item.subject_marks+'分）')"></div>
+                                <h3 ng-if="item.subject_type ==1 || item.subject_type ==2 ">选项</h3>
+                                <div ng-if="item.subject_type ==1 || item.subject_type ==2">
+                                    <div class="know_space"  ng-repeat="items in item.option" class="know_context" >
+                                        <span class="know_item_right"  ng-bind-html="_trustAsHtml(['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]+items.option_context)"></span>
+                                    </div>
+                                    <h3>答案：</h3>
+                                    <div class="know_space" >
+                                        <span class="know_span" ng-repeat="items in item.option" ng-if="items.option_right==1" ng-bind-html="_trustAsHtml(['A','B','C','D','E'][$index])"></span>
+                                    </div>
+                                </div>
+                                <div ng-if="item.subject_type ==3">
+                                    <h3>答案：</h3>
+                                    <div class="know_space"  ng-bind-html="_trustAsHtml(item.subject_answer)"></div>
+                                </div>
+                                <div ng-if="item.subject_type ==4">
+                                    <h3>答案：</h3>
+                                    <div class="know_space" ng-repeat="items in item.option" ng-bind-html="_trustAsHtml($index+1+'、'+items.option_context)">{</div>
+                                </div>
+                                <div ng-if="item.subject_type ==5">
+                                    <h3>答案：</h3>
+                                    <div class="know_space"  ng-bind-html="_trustAsHtml(item.subject_answer)">{</div>
+                                </div>
+                                <h3 >解析：</h3>
+                                <div class="know_space"  ng-bind-html="_trustAsHtml(item.subject_analysis)"></div>
+                                <div  calss="know_operation" style="position:absolute;bottom:0;right:0;">
+                                    <div calss="know_foot">
+                                        <button class="layui-btn layui-btn-primary iconfont icon-bi"  ng-click="CupdateSub(item.id)"
+                                                ng-mouseover="btnTip($event,'修改')"></button>
+                                        <button class="layui-btn layui-btn-primary iconfont icon-shanchu" ng-click="CdelRow(item.id)"
+                                                ng-mouseover="btnTip($event,'删除')"></button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--<div style="clear:both;"></div>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--添加题库-->
+    <div id="addBank" style="display: none;margin-top: 50px;padding: 0 50px;">
+        <div class="layui-form-item">
+            <label class="layui-form-label"><em>*</em>题库标题:</label>
+            <div class="layui-input-block">
+                <input class="layui-input"  ng-model="_bank_param.bank_title" type="text" maxlength="24" />
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">题库解析:</label>
+            <div class="layui-input-block">
+                <textarea class="layui-textarea" maxlength="300" ng-model="_bank_param.bank_explain" style="resize:none;"></textarea>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <button class="layui-btn layui-btn-normal" ng-click="save_bank()">保存</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,459 @@
+#examKnowledge{
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#examKnowledge .form_content .form_html{
+    margin: 0 auto;
+}
+#examKnowledge .exam-q img{
+    vertical-align: middle !important;
+}
+/*#examKnowledge .exam-s p{*/
+/*text-indent: 2em;*/
+/*}*/
+#examKnowledge .main>.tag-type{padding: 20px 0;float: left;width: 100%}
+#examKnowledge .main>.tag-type .logo a{
+    display:inline-block;
+    height:60px;
+    width:150px;
+    background:url('../../img/l-logo.png') no-repeat center center;
+    background-size: contain;
+
+}
+#examKnowledge .main>.tag-type .search .layui-input-block{
+    margin-left: 15px;
+}
+#examKnowledge .main>.tag-type .search .layui-input:hover,#examKnowledge .main>.tag-type .search .layui-input:focus{
+    border:1px solid #E63A3A !important;
+}
+#examKnowledge .main>.tag-type .search button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background:#E63A3A;
+    color:#fff;
+}
+#examKnowledge .content_page_left:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#examKnowledge .content_page_left{
+    position:static;
+    padding:0;
+    float: left;
+    width: 300px;
+}
+#examKnowledge .content_page_right{
+    float: right;
+    width: calc(100% - 320px);
+    width: -moz-calc(100% - 320px);
+    width: -webkit-calc(100% - 320px);
+}
+#examKnowledge .content_page_left .accordion_tree_parent{
+    padding:15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+}
+#examKnowledge .content_page_right .tag-type{
+    background:#f4f4f4;
+    /*float: left;*/
+    width: 100%;
+    padding: 5px 0;
+}
+#examKnowledge .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1;
+}
+#examKnowledge .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#examKnowledge .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#examKnowledge .tag-con {
+    margin-left: 72px
+}
+#examKnowledge .tag-con a {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 2px 10px;
+    cursor: pointer;
+    color: #666;
+}
+#examKnowledge .tag-con a:hover, #examKnowledge .tag-con a.type-active {
+    background: #E63A3A;
+    color: #fff;
+    border-radius: 5px
+}
+
+#examKnowledge .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#examKnowledge .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#examKnowledge .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#examKnowledge .layui-form-item{
+    margin-bottom:0;
+}
+#examKnowledge .layui-form-label{
+    width:72px;
+    padding:0;
+    line-height:40px;
+}
+
+#examKnowledge .content_page_right .sort{
+    position: relative;
+    margin :15px 0 2px;
+    height: 20px;
+    color: #676767;
+}
+#examKnowledge .content_page_right .sort > span{
+    float: left;
+}
+#examKnowledge .content_page_right .sort > label{
+    float: right;
+}
+#examKnowledge .content_page_right .sort > label em{
+    margin: 0 5px;
+    font-weight: bold;
+    color: #E63A3A;
+}
+#examKnowledge .content_page_right .sort a{
+    margin-right:15px;
+    float: left;
+    line-height: 20px;
+}
+#examKnowledge .content_page_right .sort a i{
+    float: right;
+}
+#examKnowledge .content_page_right .sort a:hover{
+    color: #E63A3A;
+}
+#examKnowledge .content_page_right .sort a.at{
+    color: #E63A3A;
+}
+/*试题展示*/
+
+#examKnowledge .search-list{
+    /*margin-top:15px;*/
+    width:100%;
+    float: left;
+    font-size: 14px;
+}
+#examKnowledge .search-list .not_pages{
+    line-height:500px;
+    text-align: center;
+    color: #999;
+}
+#examKnowledge .search-list ul > li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#examKnowledge .search-list ol li{
+    line-height: 30px;
+}
+#examKnowledge .search-list ol li p{
+    text-indent: 0!important;
+}
+#examKnowledge .esam_m_t p:nth-child(2){
+    /*margin-top: -1.5em;*/
+}
+#examKnowledge .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #f4f4f4;
+}
+#examKnowledge .exam-head-left, #examKnowledge .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#examKnowledge .exam-head-left span {
+    margin: 0 0 0 20px;
+}
+#examKnowledge .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+    display: none;
+}
+#examKnowledge .searchTxt{
+    background: #E63A3A!important;
+    color: #fff!important;
+    padding: 0 2px;
+}
+#examKnowledge .search-exam > .exam-con {
+    padding: 20px;
+}
+#examKnowledge .exam-q {
+    color: #333;
+    line-height: 24px;
+}
+#examKnowledge .exam-s {
+    margin-top: 15px;
+}
+#examKnowledge .exam-t{
+    margin: 10px;
+    position: relative;
+    padding-left: 2em;
+}
+#examKnowledge .exam-t li:before{
+    /*content:')';*/
+    /*position: absolute;*/
+    /*left:-5px;*/
+}
+#examKnowledge .exam-t .exam-s{
+    margin-left: 20px;
+    color: #333
+}
+#examKnowledge .exam-s span.op-item {
+    position: relative;
+    padding:5px 17px;
+    color: #333;
+    zoom: 1;
+    display: block;
+    min-height: 20px;
+}
+#examKnowledge .op-item .op-item-meat {
+    margin-top: 0px;
+}
+#examKnowledge .exam-foot {
+    height: 50px;
+    /*padding: 0 18px;*/
+    border-top: 1px dashed #dcdcdc;
+}
+/*#examKnowledge .exam-foot:after{*/
+/*content:"";*/
+/*display:block;*/
+/*clear:both;*/
+/*}*/
+#examKnowledge .exam-foot-right .addbtn {
+    /*background: #4498ee;*/
+    /*font-size: 20px;*/
+}
+#examKnowledge .exam-foot-right .addbtn i {
+    margin-right:5px;
+}
+#examKnowledge .exam-foot-right .addbtn:hover,#examKnowledge .exam-foot-right .addbtn.active{
+    color:#E63A3A;
+}
+#examKnowledge .exam-foot-right .addbtn, #examKnowledge .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    padding: 0 10px;
+    color: #777;
+    display: inline-block;
+    cursor: pointer;
+}
+#examKnowledge .exam-foot-right a b {
+    margin-right: 2px;
+}
+#examKnowledge .esam_m_t p{
+    text-indent:2em;
+}
+    /*预览---------------------------*/
+#examKnowledge .form_content{
+    width: 600px;
+    border-left: 1px solid #ccc;
+    position: fixed;
+}
+#examKnowledge .form_content .form_html{
+    width:100%;
+}
+#examKnowledge .form_content .form_title .form_btns button{
+    background:#E63A3A;
+}
+#examKnowledge .form_content .form_title .form_btns button:hover,#examKnowledge .form_content .form_title .form_btns button:focus{
+    border-color: #E63A3A!important;
+}
+#examKnowledge #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    padding: 10px;
+}
+#examKnowledge #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:14px;
+    padding-left:10px;
+}
+#examKnowledge #know_sub h3{
+    font-size:14px;
+    font-weight:bold;
+    padding: 10px;
+}
+#examKnowledge #know_sub img{
+    vertical-align: middle !important;
+}
+#examKnowledge #know_sub>div .know_title{
+    padding:10px 20px;
+    word-wrap:break-word;
+}
+#examKnowledge #know_sub .know_title p{
+    text-indent: 2em!important;
+    font-size: 14px;
+}
+#examKnowledge #know_sub ol .know_title p{
+    text-indent: 0!important;
+    font-size: 14px;
+}
+#examKnowledge #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#examKnowledge #know_sub>div .know_space{
+    position:relative;
+    word-wrap:break-word;
+}
+#examKnowledge .un-data{
+    color: #999;
+}
+#examKnowledge #know_sub>div .know_space .know_span{
+    margin:0 10px;
+}
+#examKnowledge #know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#examKnowledge #know_sub>div .know_space .know_item_right{
+    display:block;
+}
+#examKnowledge #know_sub .option_con{
+    padding: 10px 15px;
+    /*border-left: 1px #f4f4f4 solid;*/
+    /*border-right: 1px #f4f4f4 solid;*/
+}
+#examKnowledge .option_con_li{
+    display: inline-block;
+    width: 100%;
+    line-height: 24px;
+    font-size: 14px;
+}
+#examKnowledge .option_con_li > dt{
+    float: left;
+    width: 60px;
+}
+#examKnowledge .option_con_li > dd{
+    float: left;
+    width: calc(100% - 60px);
+    width: -moz-calc(100% - 60px);
+    width: -webkit-calc(100% - 60px);
+}
+/*预览-------------------------end*/
+
+/*底部分页样式---------------------*/
+#examKnowledge .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#examKnowledge .layui-laypage input:focus,#examKnowledge .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#examKnowledge .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/
+#examKnowledge .esam_m_t p{
+    text-indent: 2em !important;
+    line-height: 1.5rem!important;
+}
+/*#examKnowledge .esam_m_t p:first-child{*/
+    /*text-indent: 0 !important;*/
+/*}*/
+/*#examKnowledge #know_sub .know_title p:first-child{*/
+    /*text-indent: 0!important;*/
+/*}*/
+
+
+
+
+
+
+#examKnowledge .shitilan{
+    float: left;
+    width: 100%;
+    margin-top: 20px;
+}
+#examKnowledge .shitilan .exam_title{
+    float: left;
+    width: 100%;
+    background: #E63A3A;
+    color: #fff;
+    padding: 10px;
+    line-height: 20px;
+}
+#examKnowledge .shitilan .exam_title .mm{
+    float: right;
+    cursor: pointer;
+}
+#examKnowledge .shitilan .exam_title .ll{
+    font-size: 15px;
+}
+#examKnowledge .shitilan .exam_title i{
+    margin-right: 5px;
+}
+#examKnowledge .shitilan .exam_list{
+    float: left;
+    width: 100%;
+    border: 1px #ccc solid;
+    min-height: 160px;
+}
+#examKnowledge .shitilan .exam_list ul{float:left;width:100%;padding:15px 30px;font-size:14px}
+#examKnowledge .shitilan .exam_list ul li{line-height:20px;padding:5px 0;position:relative}
+#examKnowledge .shitilan .exam_list ul li a{position:absolute;line-height:30px;top:0;right:0;cursor:pointer}
+#examKnowledge .shitilan .exam_list .not-question{float:left;width:100%;line-height:160px;text-align:center;color:#999;font-size:14px}
+#examKnowledge .shitilan .exam_list ul li a i{font-size:18px}
+#examKnowledge .shitilan .exam_list ul li em{font-weight:700;font-size:16px;color:#e63a3a;padding:0 5px}
+
+#examKnowledge .con-content{
+    float: left;
+    width: 100%;
+}
+#examKnowledge .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#examKnowledge .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#examKnowledge .top_nav a{
+    cursor: pointer;
+}
+#examKnowledge .top_nav label{
+    color: #999;
+}
+#examKnowledge .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+#examKnowledge .top_nav{
+    float: left;
+    width: 100%;
+    line-height: 24px;
+    color: #676767;
+    margin-bottom: 10px;
+}

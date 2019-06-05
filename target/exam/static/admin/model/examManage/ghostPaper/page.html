@@ -1,0 +1,218 @@
+<div id="ghostPaper">
+    <div class="content_main">
+        <div class="content_page_left" style="padding-top: 55px;">
+            <div class="layui-form-item title display-flex align-items">
+                <div class="dropdown col-xs-12">
+                    <div class="input_group" style="display: block;text-align: center">
+                        选择知识点
+                    </div>
+                </div>
+            </div>
+            <div id="comTree">
+            </div>
+        </div>
+        <div class="content_page_right" style="margin-right: 185px;">
+            <div class="tag-type">
+                <div class="tag-items">
+                    <div class="tag-tit">题型：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in typeList"
+                                   ng-click="param.type=item.id;load()"
+                                   ng-class="{'type-active':param.type==item.id}">{{item.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag-items">
+                    <div class="tag-tit">难易度：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con">
+                            <div class="con-items">
+                                <a data-name="question_channel_type" ng-repeat="item in levelList"
+                                   ng-click="param.subject_level=item.id;load()"
+                                   ng-class="{'type-active':param.subject_level==item.id}">{{item.name}}</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tag-items" style="line-height: 50px;overflow: initial;display: inline-block;border-bottom: none;">
+                    <div class="tag-tit">题库：</div>
+                    <div class="tag-conbox">
+                        <div class="tag-con" style="padding: 7px;height: 50px;">
+                            <div class="layui-form-item" style="width: 200px;margin-left: 7px;">
+                                <div class="layui-unselect layui-form-select">
+                                    <div class="layui-select-title">
+                                        <input type="text"class="layui-input layui-unselect"
+                                               readonly="readonly" value="" placeholder="请选择"
+                                               ng-model="param.bank_name">
+                                        <i class="layui-edge"></i>
+                                    </div>
+                                    <dl class="layui-anim layui-anim-upbit">
+                                        <dd ng-repeat="item in bankDataList"
+                                            ng-click="param.bank_id=item.id;param.bank_name=item.bank_title;load()"
+                                            ng-class="{'layui-this': param.bank_name == item.bank_title}">{{item.bank_title}}
+                                        </dd>
+                                    </dl>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="sort">
+                <div class="sort-left">
+                    <input type="hidden" name="sortField" value="time">
+                    排序：
+                    <a href="javascript:;" id="sort-time" class="time sort-active">时间<i
+                            class="icon iconfont icon-shangsheng1" style="font-size: 12px;"></i></a>
+                    <a href="javascript:;" id="sort-count" class="count">组卷次数<i class="icon iconfont icon-xiajiang"
+                                                                                style="font-size: 12px"></i></a>
+                </div>
+                <!--
+                <div class="switch-detail f-fl">
+                    <span class="checkbox">
+                        <i class="icona-check"></i>
+                        <input type="checkbox" name="show_answer_explain" value="0" style="display:none">
+                        显示答案与解析
+                    </span>
+                    （提示：点击题干可显示答案与解析）
+                </div>
+                -->
+                <a class="select-btn" href="javascript:;" ng-click="addKepAll()">选择本页全部试题</a>
+
+                <div class="total">
+                    共计：<i ng-bind="countAll"></i> 题
+                </div>
+            </div>
+            <div class="search-list">
+                <ul id="J_QuestionList">
+                    <li class="uglify-man" ng-repeat="item in subjectList">
+                        <div class="search-exam">
+                            <div class="exam-head">
+                                <p class="exam-head-left">
+                                    <span>题型：<i
+                                            ng-bind="['单选题','多选题','判断题','填空题','问答题'][item.subject_type-1]"></i></span><i
+                                        class="line"></i>
+                                    <span>难易度：<i ng-bind="['简单','偏难','较难'][item.subject_level-1]"></i></span><i
+                                        class="line"></i>
+                                    <span>分数：{{item.subject_marks}}</span>
+                                </p>
+                            </div>
+                            <div class="exam-con">
+                                <div class="exam-q">
+                                    <div style="float: left">{{$index+1}}.</div>
+                                    <div ng-bind-html="_trustAsHtml(item.subject_question)"></div>
+
+                                </div>
+
+                                <div class="exam-s">
+                                    <span class="op-item" style="clear: none;" ng-repeat="opt in item.option">
+                                        <span class="op-item-nut" style="margin-top: 0px;" ng-bind="['A、','B、','C、','D、','E、','F、','G、','H、','I、'][$index]"></span>
+                                        <span class="op-item-meat" style="margin-top: 0px;" ng-bind-html="_trustAsHtml(opt.option_context)"></span>
+                                    </span>
+
+
+                                </div>
+                            </div>
+                            <div class="exam-foot">
+
+                                <!--<p class="exam-foot-left">
+                                    <a href="javascript:;" target="_blank" class="icon iconfont icon-chakan"></i>
+                                        查看解析</a>
+                                    <a href="javascript:;"><i class="icon iconfont icon-shoucang"></i>收藏</a>
+                                    <a href="javascript:;"><i class="icon iconfont icon-zhuyi"></i>纠错</a>
+                                </p>-->
+
+                                <p class="exam-foot-right">
+                                    <span>组卷次数：暂无</span>
+                                    <a class="addbtn J_AddQuestion" ng-class="{'removebtn':item.select=='del'}"
+                                       ng-click="addKep(item)"><b
+                                            ng-bind="(!item.select || item.select=='add')?'+选题':'-移除'"
+                                    ></b></a>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div id="pager"></div>
+            </div>
+
+        </div>
+    </div>
+    <div class="basket" id="J_Basket" ng-class="{'active':shiTiLan}"
+         ng-init="shiTiLan=true">
+        <div class="basket-tit" ng-click="shiTiLan=!shiTiLan">
+            <p><i class="icon iconfont icon-xuexilanzi"></i><em>试题篮</em></p>
+            <span><i class="icon iconfont "
+                     ng-class="{'icon-jiantouyou':shiTiLan,'icon-jiantouzuo':!shiTiLan}"></i></span>
+        </div>
+        <div class="basket-con">
+            <div class="basket-count">
+                <div class="basket-head">
+                    共计：（<span>{{conut_nums}}</span>）道题
+                </div>
+                <div class="baskrt-list">
+
+                    <p ng-repeat="item in kepList" ng-click="delKep(item.type)">{{item.type_name}}：<span>{{item.ids.length}}</span>道
+                        <i class="icon iconfont icon-shanchu"></i>
+                    </p>
+                </div>
+            </div>
+            <div class="basket-foot">
+                <a id="to-paper-edit" class="basket-btn" ng-click="generateExam()">生成试卷</a>
+            </div>
+        </div>
+    </div>
+    <a class="return" onclick="$('.parent_view').animate().scrollTop(0,0)" href="javascript:;" style="display: inline;"><i
+            class="icon iconfont icon-dingbu"
+            style="font-size: 18px;"></i></a>
+
+    <div class="generateExam" style="display: none">
+        <form class="form_html" style="padding: 40px 40px 20px 40px">
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>试卷标题:</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input"  ng-model="examRow.paper_title" maxlength="100"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>及格分数:</label>
+                <div class="layui-input-block">
+                    <input type="number" class="layui-input"  ng-model="examRow.paper_pass" maxlength="20"/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>开始时间:</label>
+                <div class="layui-input-block">
+                    <input type="text" class="date-time-picker layui-input" ng-change="getPaperDuration()" plugintype="date" ng-model="examRow.paper_start" readonly/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>结束时间:</label>
+                <div class="layui-input-block">
+                    <input type="text" class="date-time-picker layui-input"  ng-change="getPaperDuration()" plugintype="date" ng-model="examRow.paper_end" readonly/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label"><em>*</em>时长:</label>
+                <div class="layui-input-block">
+                    <input type="text" class=" layui-input" ng-model="examRow.paper_duration"  readonly/>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">试卷解析:</label>
+                <div class="layui-input-block">
+                    <textarea class="layui-textarea" ng-model="examRow.paper_explain" maxlength="300"/>
+                </div>
+            </div>
+        </form>
+
+        <div class="form-bars" style="text-align: center">
+            <button class="layui-btn " ng-click="generateSubmit()">生成</button>
+            <button class="layui-btn layui-btn-primary" ng-click="generateExamClose()">取消
+            </button>
+        </div>
+    </div>
+</div>

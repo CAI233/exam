@@ -1,0 +1,85 @@
+#chapterCat .cl li:hover{background:none}
+#chapterCat .cl li{
+    padding: 0;
+}
+#chapterCat #col_comTree{
+    float: left;
+    width: 220px;
+    /*margin: -10px -15px -15px -15px;*/
+    /*padding: 15px;*/
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: auto;
+    overflow-y: auto;
+    padding-bottom:50px;
+}
+#chapterCat .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#chapterCat:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#chapterCat table{
+    table-layout: fixed;
+}
+#chapterCat td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#chapterCat .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+
+#chapterCat .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    border-bottom: 1px dashed #dcdcdc;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#chapterCat .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#chapterCat .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#chapterCat .tag-con {
+    margin-left: 72px
+}
+#chapterCat .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#chapterCat .tag-con a:hover, #chapterCat .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+#chapterCat .content_page_left{
+    position:static;
+    float: left;
+    padding:0;
+}
+#chapterCat .tag-type {
+    margin: 20px auto 10px;
+    border:1px solid #dcdcdc;
+}

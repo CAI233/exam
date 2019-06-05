@@ -1,0 +1,109 @@
+#papers{
+    float: left;
+    width: 100%;
+}
+#papers .book_up{
+    float: left;
+    width: 100px;
+}
+#papers .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+#student_info{
+    float: left;
+    width: 100%;
+    padding: 15px 15px 0;
+}
+#student_info table{
+    table-layout: fixed;
+}
+#student_info td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#yanzheng {
+    margin-bottom: 15px;
+    clear: both;
+    margin-top: 30px;
+    width: 70%;
+    margin-left: 50px;
+}
+.table_control tr td:last-of-type span{min-width:200px;}
+
+.layui-btn-primary:focus,.layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+.layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}
+
+#papers .cont h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#papers .cont {
+    margin:0 auto;
+    width: 1000px;
+    position: relative;
+    background: #fff;
+    padding: 20px 0;
+}
+
+#papers .cont .cont_header{
+    text-align: center;
+    margin-bottom: 20px
+}
+#papers .cont .cont_header p{
+    height:20px;
+    line-height:20px;
+    font-size:16px;
+    margin:5px auto;
+}
+
+#papers #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#papers #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#papers #know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#papers #know_sub>div{
+    padding:15px 20px;
+}
+#papers #know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:0 20px;
+    word-wrap:break-word;
+}
+#papers #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#papers #know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+}
+#papers #know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#papers #know_sub>div .know_space .know_item_right{
+    display:block;
+    padding-left:24px;
+
+}

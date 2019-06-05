@@ -1,0 +1,141 @@
+
+/*#examRelease*/
+
+#examRelease .main .center_content{
+    float:none;
+}
+#examRelease .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#examRelease .main form.center_cont{
+    width:600px;
+    margin:50px auto;
+}
+#examRelease .main form.center_cont em{
+    color:#15a4fa;
+}
+#examRelease .main form.center_cont .layui-form-label{
+    width:110px;
+}
+#examRelease .main form.center_cont .layui-input-block{
+    margin-left:110px;
+}
+#examRelease .main form.center_cont .layui-form-select li{
+    line-height: 36px;
+    overflow: hidden;
+    padding: 0 10px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+#examRelease .main form.center_cont .layui-this{
+    background:#15a4fa;
+    color:#fff;
+}
+#examRelease .active{
+    background:#ccc;
+}
+/*添加学生*/
+#examRelease .main .stu_context .stu_context_head:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#examRelease .main .stu_context .stu_context_head h2{
+    float: left;
+}
+#examRelease .main .stu_context .stu_context_head span{
+    float: right;
+    padding: 5px 0;
+    cursor: pointer;
+}
+
+/*学生弹出层*/
+#examRelease #stu_nums{
+    padding:20px 20px 100px;
+    position:relative;
+    height:600px;
+}
+#examRelease #stu_nums>div.stu_nums_cont{
+    height:100%;
+    /*padding:5px 10px;*/
+    border: 2px solid #e2e2e2;
+    position: relative;
+}
+#examRelease #stu_nums>div.stu_nums_cont:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#examRelease #stu_nums>div .stu_nums_left{
+    width:150px;
+    height:100%;
+    float: left;
+    margin-right: -2px;
+    border-right: 2px solid #e2e2e2;
+    position: absolute;
+    padding: 5px 10px;
+}
+#examRelease #stu_nums>div .stu_nums_right{
+    float: left;
+    width:100%;
+    /*margin-left:-150px;*/
+    padding-left:150px;
+    height: 100%;
+    overflow-y: auto;
+}
+#examRelease #stu_nums dl dd{
+    font-size: 14px;
+    box-sizing: border-box;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+#examRelease #stu_nums>div .stu_nums_left dl dd{
+    text-align:center;
+    cursor: pointer;
+}
+#examRelease #stu_nums>div .stu_nums_left dl dd.layui-this{
+    background-color: #15a4fa;
+    color: #fff;
+}
+#examRelease #stu_nums>div .stu_nums_right dl{
+    padding: 5px 10px;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd{
+    padding-left:20px;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd p{
+    position: relative;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd p:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd span{
+    /*margin-right:20px;*/
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd span{
+    position:absolute;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd span:nth-child(1){
+    left:0;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd span:nth-child(2){
+    right:250px;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd span:nth-child(3){
+    right:100px;
+}
+#examRelease #stu_nums>div .stu_nums_right dl dd a{
+    float:right;
+    color:#15a4fa;
+}
+#examRelease #stu_nums>div.stu_nums_foot{
+    text-align:center;
+    position:absolute;
+    bottom: 20px;
+    left: 50%;
+    margin-left: -30px;
+}

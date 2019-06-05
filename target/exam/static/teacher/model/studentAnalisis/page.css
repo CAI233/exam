@@ -1,0 +1,144 @@
+#studentAnalisis{
+    float: left;
+    width: 100%;
+    background:#F9F9F9;
+    padding: 30px 0;
+}
+#studentAnalisis .main:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+/*顶部样式-----------start*/
+#studentAnalisis .con-content{
+    float: left;
+    width: 100%;
+}
+#studentAnalisis .con-content .top_nav{
+    float: left;
+    width: 100%;
+    /*margin: 40px 82px;*/
+    line-height: 24px;
+    color: #676767;
+    margin-bottom: 10px;
+    margin-top:10px;
+}
+#studentAnalisis .con-content .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#studentAnalisis .con-content .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#studentAnalisis .con-content .top_nav a{
+    cursor: pointer;
+}
+#studentAnalisis .con-content .top_nav label{
+    color: #999;
+}
+#studentAnalisis .con-content .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+/*----------end*/
+#studentAnalisis .paper_title h1{
+    font-size:18px;
+    text-align: center;
+    margin: 0 0 10px;
+    font-weight: bold;
+}
+#studentAnalisis .paper_title h1 i{
+    color:#fff;
+    padding:5px 10px;
+    font-size:14px;
+}
+#studentAnalisis .cur_all{
+    position: relative;
+}
+#studentAnalisis .cur_all .cur_select{
+    position:absolute;
+    top:10px;
+    right:50px;
+}
+#studentAnalisis .cur_all .cur_select a{
+    font-size: 16px;
+    margin: 0 10px;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+#studentAnalisis .cur_all .cur_select a:hover{
+    border-bottom:1px solid #E63A3A;
+}
+#studentAnalisis .cont_cont{
+    background: #fff;
+    margin: 20px 0;
+    padding: 20px;
+}
+#studentAnalisis .cont_cont .cont-sear:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+#studentAnalisis .cont_cont .cont-context .search_head{
+    line-height: 36px;
+    border-bottom: 1px solid #eee;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#studentAnalisis .cont_cont .cont-context .search_head a{
+    font-size: 14px;
+    margin: 0 10px;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+#studentAnalisis .cont_cont .cont-context .search_head a:hover,#studentAnalisis .cont_cont .cont-context .search_head a.active{
+    border-bottom:2px solid #E63A3A;
+}
+
+#studentAnalisis .table_control tr>th,#studentAnalisis .table_control tr>td{
+    text-align:center;
+}
+/*树形表格*/
+#studentAnalisis .table_control{
+    display: inline-block;
+    width: 100%;
+}
+#studentAnalisis .tree-grid-col:nth-child(1),#studentAnalisis .tree-grid-parent .know_name{
+    min-width: 250px;
+}
+#studentAnalisis .tree-grid-col:nth-child(2), #studentAnalisis .tree-grid-col:nth-child(3){
+    text-align: center;
+}
+#studentAnalisis .tree-grid-col:nth-child(5){
+    width: 250px;
+    padding:0 100px 0 10px;
+}
+#studentAnalisis .tree-grid-col:nth-child(5) .layui-progress-text{
+    top:-7px;
+    left:150px;
+}
+#studentAnalisis .tree-grid-parent .tree_level{
+    position: relative;
+    top: -7px;
+    line-height: 18px;
+    font-size: 12px;
+    color: #666;
+    left: 100px;
+}
+
+/*底部分页样式---------------------*/
+#studentAnalisis .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#studentAnalisis .layui-laypage input:focus,#myClasses .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#studentAnalisis .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

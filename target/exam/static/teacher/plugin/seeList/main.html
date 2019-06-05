@@ -1,0 +1,118 @@
+<div class="seeList animated none">
+    <div class="form_title">
+        <a href="javascript:void(0)" ng-click="closeSeeList()" class="back_link">关闭</a>
+        <span class="look_title" ng-if="subjectList">第<em>{{all_param.pageNum*all_param.pageSize+selRow.now_index-all_param.pageSize+1}}</em>题，共<em>{{all_param.total}}</em>题</span>
+        <div class="form_btns" >
+            <button ng-if="(!selRow.bank_id && superManage()) || (selRow.bank_id && !superManage())" class="layui-btn layui-btn-normal layui-btn-small"  ng-click="openExamForm(selRow, all_load)">修改</button>
+            <button class="layui-btn layui-btn-normal layui-btn-small" ng-disabled="!subjectList" ng-click="see_add(selRow)">上一题</button>
+            <button class="layui-btn layui-btn-normal layui-btn-small" ng-disabled="!subjectList"   ng-click="see_min(selRow)">下一题</button>
+        </div>
+    </div>
+    <div class="form_content_Y">
+        <form class="form_html">
+            <!--预览-->
+            <div id="know_sub" >
+                <div ng-if="selRow">
+                    <div class="know_title" ng-bind-html="_trustAsHtml(selRow.subject_question)"></div>
+                    <div class="option_con subject_con" ng-if="selRow.subjectList && selRow.subjectList.length > 0">
+                        <dl class="option_con_li option_con_level">
+                            <dt><b>【难易度】</b></dt>
+                            <dd><span class="know_space"  ng-bind-html="_trustAsHtml(_get_qustion_leve(selRow.subject_level))"></span></dd>
+                        </dl>
+                    </div>
+                    <div ng-if="selRow.subjectList.length==0 || !selRow.subjectList" >
+                        <h3 ng-if="selRow.option && selRow.option.length > 0">选项</h3>
+                        <div class="option_con" ng-if="selRow.option && selRow.option.length > 0">
+                            <ol class="op-item"  type="A" style="padding-left: 2em">
+                                <li ng-repeat="opt in selRow.option" class="op-item-meat" style="margin: 5px 0;text-align:justify;list-style: inherit" ng-bind-html="_trustAsHtml(replacehtml(opt.option_context))"></li>
+                            </ol>
+                        </div>
+                        <div class="option_con" >
+                            <dl class="option_con_li">
+                                <dt><b>【答案】</b></dt>
+                                <dd><span class="know_space"  ng-bind-html="_trustAsHtml(selRow.subject_answer)"></span></dd>
+                            </dl>
+                        </div>
+                        <div class="option_con">
+                            <dl class="option_con_li">
+                                <dt><b>【解析】</b></dt>
+                                <dd>
+                                    <div class="know_space"  ng-if="selRow.subject_analysis" ng-bind-html="_trustAsHtml(selRow.subject_analysis)"></div>
+                                    <div class="un-data" ng-if="!selRow.subject_analysis">暂无解析</div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="option_con" >
+                            <dl class="option_con_li option_con_level">
+                                <dt><b>【难易度】</b></dt>
+                                <dd><span class="know_space"  ng-bind-html="_trustAsHtml(_get_qustion_leve(selRow.subject_level))"></span></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <ol ng-if="selRow.subjectList && selRow.subjectList.length > 0 && !show_bank" style="padding: 0 15px 0 3em;" type="1">
+                        <li ng-repeat="item in selRow.subjectList" style="margin:15px 0;text-align:justify;list-style:inherit;padding-right:60px;position:relative;">
+                            <div class="know_title" style="border:none;padding:0;" ng-bind-html="_trustAsHtml(replacehtml(item.subject_question))"></div>
+                            <div ng-if="!item.subjectList" style="border:1px #ddd solid;">
+                                <div class="option_con" style="border-bottom: 1px #ddd solid">
+                                    <dl class="option_con_li" >
+                                        <dt><b>【答案】</b></dt>
+                                        <dd><span class="know_space"  ng-bind-html="_trustAsHtml(item.subject_answer)"></span></dd>
+                                    </dl>
+                                </div>
+                                <div class="option_con" style="border-bottom: 1px #ddd solid">
+                                    <dl class="option_con_li">
+                                        <dt><b>【解析】</b></dt>
+                                        <dd>
+                                            <div class="know_space"  ng-if="item.subject_analysis" ng-bind-html="_trustAsHtml(item.subject_analysis)"></div>
+                                            <div class="un-data" ng-if="!item.subject_analysis">暂无解析</div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="option_con" >
+                                    <dl class="option_con_li option_con_level">
+                                        <dt><b>【难易度】</b></dt>
+                                        <dd><span class="know_space"  ng-bind-html="_trustAsHtml(_get_qustion_leve(item.subject_level))"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="foot_right" style="position:absolute;right: 0;bottom: 0">
+                                <button class="layui-btn layui-btn-normal layui-btn-small" ng-if="(!selRow.bank_id && superManage()) || (selRow.bank_id && !superManage())" style="background:#E63A3A;color:#fff;" ng-click="crossSetlist(item, all_load,selRow.bank_id)">修改</button>
+                            </div>
+                        </li>
+                    </ol>
+                    <ol ng-if="selRow.emSubjectCacheList && selRow.emSubjectCacheList.length > 0 && show_bank" style="padding: 0 15px 0 3em;" type="1">
+                        <li ng-repeat="item in selRow.emSubjectCacheList" style="margin:15px 0;text-align:justify;list-style:inherit;padding-right:60px;position:relative;">
+                            <div class="know_title" style="border:none;padding:0;" ng-bind-html="_trustAsHtml(replacehtml(item.subject_question))"></div>
+                            <div ng-if="!item.subjectList" style="border:1px #ddd solid;">
+                                <div class="option_con" style="border-bottom: 1px #ddd solid">
+                                    <dl class="option_con_li" >
+                                        <dt><b>【答案】</b></dt>
+                                        <dd><span class="know_space"  ng-bind-html="_trustAsHtml(item.subject_answer)"></span></dd>
+                                    </dl>
+                                </div>
+                                <div class="option_con" style="border-bottom: 1px #ddd solid">
+                                    <dl class="option_con_li">
+                                        <dt><b>【解析】</b></dt>
+                                        <dd>
+                                            <div class="know_space"  ng-if="item.subject_analysis" ng-bind-html="_trustAsHtml(item.subject_analysis)"></div>
+                                            <div class="un-data" ng-if="!item.subject_analysis">暂无解析</div>
+                                        </dd>
+                                    </dl>
+                                </div>
+                                <div class="option_con" >
+                                    <dl class="option_con_li option_con_level">
+                                        <dt><b>【难易度】</b></dt>
+                                        <dd><span class="know_space"  ng-bind-html="_trustAsHtml(_get_qustion_leve(item.subject_level))"></span></dd>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="foot_right" style="position:absolute;right: 0;bottom: 0">
+                                <button class="layui-btn layui-btn-normal layui-btn-small" style="background:#E63A3A;color:#fff;" ng-click="crossSetlist(item, all_load,selRow.bank_id)">修改</button>
+                            </div>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

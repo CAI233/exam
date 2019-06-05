@@ -1,0 +1,210 @@
+<div id="myOptionsBanks" class="animated">
+    <div class="center_header">
+        <div class="main">
+            <div class="center_content">
+                <div class="row_line">
+                    <div class="center_u_info">
+                        <h1>{{_USERINFO.user_real_name}}</h1>
+                        <h2>NO:{{_USERINFO.user_id}}</h2>
+                        <a href="#/editUserInfo"><i class="iconfont icon-monikaoshi"></i>编辑</a>
+                    </div>
+                    <div class="center_search">
+                        <input type="text" placeholder="搜索试题" ng-model="all_param.searchText"><button ng-click="all_load()">搜索</button>
+                    </div>
+                </div>
+                <div class="row_line center_action_plan" ng-if="!superManage()">
+                    <ul>
+                        <li><a href="#/myOptionBanks" class="active">我的题库</a></li>
+                        <li><a href="#/myPapers">我的试卷</a></li>
+                        <li><a href="#/myExamManage">考试管理</a></li>
+                        <li><a href="#/myClasses">我的班级</a></li>
+                    </ul>
+                    <dl>
+                        <dd><a href="javascript:void(0);" ng-click="creat_bank();"><i class="iconfont icon-xinjian1 ic1"></i>新建题库</a></dd>
+                        <dd><a href="#/update_paper"><i class="iconfont icon-shangchuan-tianchong ic2"></i>上传试题</a></dd>
+                        <dd><a href="javascript:void(0);" ng-click="create_exam(true);"><i class="iconfont icon-iconfont-kaoshi ic3"></i>新建考试</a></dd>
+                    </dl>
+                </div>
+                <div class="row_line center_action_plan" ng-if="superManage()">
+                    <ul>
+                        <li><a href="#/publicPapers">公共试卷</a></li>
+                        <li><a href="#/update_paper">上传公共试题</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row_line">
+        <div class="main">
+            <div class="row_line">
+                <div class="opton_bank_left">
+                    <div class="left_col_title"><i class="iconfont icon-monikaoshi"></i>我创建的题库</div>
+                    <div class="left_content" >
+                        <p ng-show="!myBanks || myBanks.length == 0">您还没有自己的题库，快去创建吧~</p>
+                        <ul>
+                            <li ng-repeat="item in myBanks" ng-click="set_df_bank(item)" ng-class="{'active': df_select_bank.id == item.id}">{{item.bank_title}}</li>
+                        </ul>
+                    </div>
+                    <div class="left_col_title"><i class="iconfont icon-iconfontshijuan"></i>我参与的题库</div>
+                    <div class="left_content">
+                        <p ng-show="!otherBanks || otherBanks.length == 0">您没有参与过其他题库</p>
+                        <ul>
+                            <li ng-repeat="item in otherBanks" ng-click="set_df_bank(item)" ng-class="{'active': df_select_bank.id == item.id}">{{item.bank_title}}</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="opton_bank_right"  >
+                    <div class="opton_bank_right_title" ng-if="df_select_bank">
+                        <span><s>{{df_select_bank.bank_title}}</s> <em>(共<i>{{df_select_bank.total}}</i>小题)</em></span>
+                        <label><i class="iconfont icon-shijian1"></i> {{df_select_bank.create_time}}</label>
+
+                        <div class="r_actions" >
+                            <a ng-click="del_bank(df_select_bank.id)" ng-if="!del_false"><i  class="iconfont icon-iconzhenghe62"></i>删除题库</a>
+                            <a ng-click="rev_bank(df_select_bank.id)" ng-if="!del_false"><i class="iconfont icon-bianji"></i>题库设置</a>
+                            <a ng-click="down_bank(df_select_bank)" ng-if="df_select_bank.total!=0 && !superManage()" ><i class="iconfont icon-xiazai"></i>下载题库</a>
+                        </div>
+                    </div>
+                    <p class="not-pp" ng-show="myBanks.length == 0 && otherBanks.length == 0">
+                        <span class="down_foot">您还没有自己的题库，快去创建吧~</span>
+                    </p>
+                    <div class="opton_bank_right_content search-list" ng-if="df_select_bank">
+                        <ul id="J_QuestionList" ng-show="subjectList && subjectList.length > 0">
+                            <li class="uglify-man" ng-repeat="item in subjectList" >
+                                <div class="search-exam">
+                                    <div class="exam-head">
+                                        <p class="exam-head-left">
+                                            <span>题型：<i ng-bind="_get_exam_name_byid(item.subject_curriculum, item.subject_type)"></i></span>
+                                            <span>难易度：<i ng-bind="_get_qustion_leve(item.subject_level)"></i></span>
+                                            <span>更新时间：<i ng-bind="item.update_time"></i></span>
+                                            <span class="exam-foot-right" style="float: right;margin: 0 5px">
+                                                <a class="addbtn"  ng-click="delSub(item.id)" ng-if="!del_false"><i class="iconfont icon-iconzhenghe62"></i>删除</a>
+                                                <a class="addbtn"  ng-click="openExamForm(item, all_load)"><i style="font-size: 13px;" class="iconfont icon-b2"></i>修改</a>
+                                                <a class="addbtn"  ng-click="openSeeList(item,$index)"><i class="iconfont icon-yulan1"></i>预览</a>
+                                                <!--<a class="addbtn {{_now_Collect(item) == true && 'active' || ''}}"  ng-click="_add_Collect(item)"><i class="iconfont {{_now_Collect(item) == true && 'icon-shoucang2' || 'icon-shoucang'}}"></i><em ng-if="_now_Collect(item)">已</em>收藏</a>-->
+                                                <a class="addbtn {{_judgeBasket(item) == true && 'active' || ''}}"  ng-click="_addBasket(item)">
+                                                    <i class="iconfont {{_judgeBasket(item) == true && 'icon-gouwucheman1' || 'icon-gouwuche1'}} "></i>
+                                                    <em ng-if="_judgeBasket(item)">已加入</em>试题篮
+                                                </a>
+                                            </span>
+                                        </p>
+                                    </div>
+                                    <div class="exam-con">
+                                        <div class="exam-q">
+                                            <div class="esam_m_t" ng-bind-html="_trustAsHtml(replacehtml(item.subject_question))" style="text-align:justify"></div>
+                                        </div>
+                                        <div class="exam-s">
+                                            <ol class="op-item" ng-if="item.option && item.option.length > 0"  type="A" style="padding-left: 2em">
+                                                <li ng-repeat="opt in item.option" class="op-item-meat" style="margin: 5px 0;text-align:justify;list-style: inherit" ng-bind-html="_trustAsHtml(replacehtml(opt.option_context))"></li>
+                                            </ol>
+                                        </div>
+                                        <ol ng-if="item.subjectList && item.subjectList.length > 0" class="exam-t" type="1">
+                                            <li ng-repeat="items in item.subjectList" style="margin: 5px 0;text-align:justify;list-style:inherit;">
+                                                <div class="exam-q" >
+                                                    <div style="text-align:justify" ng-bind-html="_trustAsHtml(replacehtml(items.subject_question))"></div>
+                                                </div>
+                                                <div class="exam-s" ng-if="items.option && items.option.length > 0">
+                                                    <ol class="op-item"   type="A" style="padding-left: 2em">
+                                                        <li ng-repeat="opt in items.option" class="op-item-meat" style="margin: 5px 0;text-align:justify;list-style: inherit" ng-bind-html="_trustAsHtml(replacehtml(opt.option_context))"></li>
+                                                    </ol>
+                                                </div>
+                                            </li>
+                                        </ol>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                        <p class="not-pp" ng-show="!subjectList || subjectList.length == 0">
+                            <span class="down_foot">当前题库没有存放试题，快去选题吧~</span>
+                        </p>
+                        <div style="position:relative;" ng-show="subjectList && subjectList.length > 0">
+                            <div id="pager" style="float: left;"></div>
+                            <div style="float:right;line-height:55px;">
+                                共<span style="padding: 0 5px;color: #E63A3A">{{all_param.pages}}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{all_param.total}}</span>条
+                            </div>
+                            <div style="clear:both;"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--新建题库-->
+    <div id="bank_open" style="display:none;">
+        <div class="bank_open_context">
+            <h3 id="open_title">新建题库</h3>
+            <div class="center_cont layui-form">
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">题库标题：</label>
+                    <div class="layui-input-block" >
+                        <input type="text" name="title"  ng-model="now_param.bank_title"  class="layui-input" required lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">题库备注：</label>
+                    <div class="layui-input-block">
+                        <textarea class="layui-textarea" ng-model="now_param.bank_explain" style="resize:none;" maxlength="400" required lay-verify="required"/>
+                    </div>
+                </div>
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">创建者：</label>
+                    <div class="layui-input-block" >
+                        <input type="text" name="title" readonly style="cursor:not-allowed;background: #ccc;" ng-model="now_param.bank_creat" disabled class="layui-input" required lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">协作者：</label>
+                    <div class="layui-input-block" >
+                        <div class="layui-unselect layui-form-select cooper">
+                            <div class="layui-select-title" >
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit" style="top: 100%">
+                                <dd ng-repeat="item in persons" ng-click="item.check=!item.check;persons_check(item)" ng-class="{'layui-this':item.check}">{{item.user_real_name}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bank_open_foot">
+            <button class="layui-btn layui-btn-primary " ng-click="add_bank()"  style="background:#e63a3a;color:#fff;">保存</button>
+        </div>
+    </div>
+
+    <!--试题预览-->
+    <see-list></see-list>
+
+    <!--试题修改--大题 ----->
+    <edit-exam></edit-exam>
+
+    <!--小题修改&&新增-->
+    <cross-set></cross-set>
+
+    <!--下载题库里试题-->
+    <div id="now_allList" style="display:none;">
+        <div ng-repeat="item in all_list" style="list-style:none;">
+            <h3>【题型】{{_get_exam_name_byid(item.subject_curriculum, item.subject_type)}}</h3>
+            <h3>【题干】</h3>
+            <div ng-bind-html="_trustAsHtml(Lreplacehtml(item.subject_question))"></div>
+            <h3 ng-if="item.subjectList==null || item.subjectList==''">【答案】</h3>
+            <div ng-if="item.subjectList==null || item.subjectList==''" ng-bind-html="_trustAsHtml(Lreplacehtml(item.subject_answer))"></div>
+            <h3>【解析】</h3>
+            <div ng-bind-html="_trustAsHtml(Lreplacehtml(item.subject_analysis))"></div>
+            <h3>【难易度】{{_get_qustion_leve(item.subject_level)}}</h3>
+            <h3>【题号】{{item.id}}</h3>
+            <div ng-if="item.subjectList && item.subjectList.length>0">
+                <div ng-repeat="it in item.subjectList">
+                    <h3>【子题题型】{{_get_exam_name_byid(it.subject_curriculum, it.subject_type)}}</h3>
+                    <h3>【子题题干】</h3>
+                    <div ng-bind-html="_trustAsHtml(Lreplacehtml(it.subject_question))"></div>
+                    <h3>【答案】</h3>
+                    <div ng-bind-html="_trustAsHtml(Lreplacehtml(it.subject_answer))"></div>
+                    <h3 ng-if="it.subject_analysis!=null && it.subject_analysis!=''">【解析】</h3>
+                    <div ng-if="it.subject_analysis!=null && it.subject_analysis!=''" ng-bind-html="_trustAsHtml(Lreplacehtml(it.subject_analysis))"></div>
+                    <h3>【难易度】{{_get_qustion_leve(it.subject_level)}}</h3>
+                    <h3>【子题题号】{{it.id}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

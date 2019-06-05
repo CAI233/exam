@@ -1,0 +1,177 @@
+<div id="examAnalisis" class="animated fadeIn">
+    <div class="main">
+        <div class="con-content">
+            <div class="top_nav">
+                <i class="iconfont icon-weizhi"></i>位置：
+                <a href="#/home">首页</a>
+                <em>&gt;</em>
+                <a >统计分析</a>
+                <em>&gt;</em>
+                <a href="#/classesAnalisis" ng-if="status==1">班级统计</a>
+                <a href="#/gradeAnalisis" ng-if="status==2">年级统计</a>
+                <em>&gt;</em>
+                <label>考试分析</label>
+            </div>
+        </div>
+        <!--试卷信息-->
+        <div class="paper_title all_cla" >
+            <h2>试卷信息：</h2>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>试卷名称</th>
+                        <th>考试时长（分钟）</th>
+                        <th>卷面总分</th>
+                        <th>及格分</th>
+                        <th>难度系数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{papers_all.pbankName}}</td>
+                        <td>{{papers_all.paper_duration}}</td>
+                        <td>{{papers_all.paper_full}}</td>
+                        <td>{{papers_all.paper_pass}}</td>
+                        <td>{{_get_paper_leve_name(papers_all.paper_level)}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!--图表-->
+        <div class="all_cla">
+            <div class="layui-col-xs6 cur_all">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <div id="mage_right" style="width:100%;height:500px;"></div>
+                    <!--<div class="cur_select">-->
+                        <!--<a href="">数学</a><a href="">英语</a><a href="">语文</a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="layui-col-xs6 cur_know">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <h2><i class="h_square" ng-style="now_color"></i>{{show_param.subject_level_name}}知识点</h2>
+                    <ul>
+                        <li ng-repeat="item in all_knowledges" class="layui-col-xs6" title="{{replace_now(item)}}"><i class="li_square" ng-style="now_color"></i>{{replace_now(item)}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <!--考试信息-->
+        <div class="all_cla" >
+            <h2>考试信息</h2>
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th>参加班级</th>
+                    <th style="min-width:180px;">考试时间</th>
+                    <th>应参加学生数</th>
+                    <th>缺考学生数</th>
+                    <th>实际参加学生比率</th>
+                    <th>卷面最高分</th>
+                    <th>卷面最低分</th>
+                    <th>平均分</th>
+                    <th>及格率</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{now_classesName}}</td>
+                    <td style="min-width:180px;">始：{{papers_all.paper_start}}<br>终：{{papers_all.paper_end}}</td>
+                    <td >{{paper_alls.should_number}}（人）</td>
+                    <td>{{paper_alls.lack_number}}（人）</td>
+                    <td>{{((paper_alls.should_number-paper_alls.lack_number)/paper_alls.should_number).toFixed(2)*100}}%</td>
+                    <td>{{paper_alls.maximum}}（分）</td>
+                    <td>{{paper_alls.minimum}}（分）</td>
+                    <td>{{paper_alls.avgmun}}（分）</td>
+                    <td>{{(paper_alls.passing_rate*100).toFixed(2)}}%</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <!--学生考试成绩分段-->
+        <div class="all_cla">
+            <h2>学生考试成绩分段表</h2>
+            <table class="layui-table">
+                <thead>
+                    <tr>
+                        <th>分段</th>
+                        <th>分段人数</th>
+                        <th>累计人数</th>
+                    </tr>
+                </thead>
+                <tbody id="show_Dclass">
+                </tbody>
+            </table>
+            <div style="position:relative;" ng-show="level_list && level_list.length > 0">
+                <div id="Dpager" style="float: left;"></div>
+                <div style="float:right;line-height:55px;">
+                    共<span style="padding: 0 5px;color: #E63A3A">{{Dload_param.pages}}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{Dload_param.total}}</span>条
+                </div>
+                <div style="clear:both;"></div>
+            </div>
+        </div>
+
+        <!--学生考试成绩-->
+        <div class="cont_cont all_cla">
+            <h2>学生考试成绩</h2>
+            <div class="cont-context">
+                <div class="search_head" ng-if="status==2">
+                    <a href="javascript:;" ng-click="show_param.now_checkClass_id=null;nowClass_load()" ng-class="{'active':show_param.now_checkClass_id==null}">全部</a>
+                    <a href="javascript:void(0);" ng-click="show_param.now_checkClass_id=item.id;nowClass_load()" ng-class="{'active':show_param.now_checkClass_id==item.id}" ng-repeat="item in class_alls">{{item.name}}</a>
+                </div>
+                <div class="table_control">
+                    <table class="layui-table">
+                        <thead>
+                        <tr>
+                            <th>学生</th>
+                            <th>学号</th>
+                            <th>性别</th>
+                            <th>成绩</th>
+                            <th>考试结果分析</th>
+                        </tr>
+                        </thead>
+                        <tbody id="show_class">
+                        </tbody>
+                    </table>
+                    <div style="position:relative;" ng-show="stus_result && stus_result.length > 0">
+                        <div id="pager" style="float: left;"></div>
+                        <div style="float:right;line-height:55px;">
+                        共<span style="padding: 0 5px;color: #E63A3A">{{load_param.pages}}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{load_param.total}}</span>条
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+        <!--知识点分布列表-->
+        <div class="cont_cont all_cla">
+            <h2>知识点掌握情况</h2>
+            <div class="cont-context">
+                <div class="search_head">
+                    <a href="javascript:void(0);" ng-click="show_param.struct_curriculum=item;pub_load(item)" ng-class="{'active':show_param.struct_curriculum==item}" ng-repeat="item in now_currums">{{_get_curriculum_name(item)}}</a>
+                </div>
+                <div class="table_control">
+                    <div class="tree-grid-parent">
+                        <div class="tree-grid-title tree-grid-row">
+                            <div class="tree-grid-col">知识点</div>
+                            <div class="tree-grid-col" style="text-align: center;">课程</div>
+                            <div class="tree-grid-col" ng-if="!show_true_tf">组卷试题量</div>
+                            <div class="tree-grid-col" style="text-align: center;">题号</div>
+                            <div class="tree-grid-col" style="text-align: center;">答对人次</div>
+                            <div class="tree-grid-col" style="text-align: center;">总人次</div>
+                            <div class="tree-grid-col" style="text-align: center;">正答率</div>
+                            <div class="tree-grid-col" style="text-align: left;" ng-if="!show_true_tf">正确率</div>
+                        </div>
+                        <tree-grid ng-repeat='row in now_knowledges' children='row.children' row='row'></tree-grid>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

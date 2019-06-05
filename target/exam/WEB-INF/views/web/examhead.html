@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../include/public_file.ftl" />
+    <script type="application/javascript" src="${ctxPath}/static/web/js/examhead.js"></script>
+</head>
+<body>
+<!-- 公共头 -->
+<#include "../include/public_header.ftl" />
+
+<div class="w_center" style="padding: 20px 0;" id="examhead">
+    <div class="main">
+        <div id="cont-top" >
+            <div class="top_nav" style="width:1000px;">
+                <i class="iconfont icon-dingwei1"></i>位置：
+                <a href="/examArrange">考试安排</a>
+                <em>&gt;</em>
+                <a>开始考试</a>
+                <em>&gt;</em>
+                <label>考试信息</label>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cont-content">
+                <h3>2018年湖北省普通高等技能考试</h3>
+                <dl id="person">
+                    <h4 >考场守则及注意事项</h4>
+                    <p><b>第一条</b><span>答卷前，考生务必将自己的姓名、准考证号填写在试题卷和答题卡上，并将准考证号条形码粘贴在答题卡上的指定位置。用 统一提供的2B铅笔将答题卡上试卷类型A后的方框涂黑。</span></p>
+                    <p><b>第二条</b><span>选择题的作答：每小题选出答案后，用统一提供的2B铅笔把答题卡上对应题目的答案标号涂黑。如需改动，用橡皮擦干净后，再选涂其他答案标号。写在试题卷、草稿纸和答题卡上的非答题区域均无效。</span></p>
+                    <p><b>第三条</b><span>非选择题的作答：用统一提供的签字笔直接答在答题卡上对应的答题区域内。写在试题卷、草稿纸和答题卡上的非答题区域均无效。</span></p>
+                    <p><b>第四条</b><span>考试结束后，请将本试卷和答题卡一并上交。</span></p>
+                </dl>
+                <div class="footer">
+                    <button class="layui-btn layui-btn-normal" onclick="ToExam()">下一步</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共底 -->
+<#include "../include/public_footer.ftl" />
+</body>
+</html>

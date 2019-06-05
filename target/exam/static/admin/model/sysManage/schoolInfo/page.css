@@ -1,0 +1,7 @@
+#schoolInfo .form_row{
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.layui-textarea{
+    min-height:50px;
+}

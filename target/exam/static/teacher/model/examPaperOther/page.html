@@ -1,0 +1,414 @@
+<div id="examPaperOther" class="animated fadeIn">
+    <div class="main">
+        <div class="con-content">
+            <div class="top_nav">
+                <i class="iconfont icon-weizhi"></i>位置：
+                <a href="#/home">首页</a>
+                <em>&gt;</em>
+                <a >手工组卷</a>
+                <em>&gt;</em>
+                <label>生成试卷</label>
+            </div>
+        </div>
+        <div class="row_line" style="margin-bottom: 50px">
+            <div class="row_left" style="padding: 30px 50px;" ng-style="{'min-height': clientHeight}">
+                <div class="paper-html" style="font-size: 14px;margin: 0 auto;background: #fff">
+                    <style>
+                        .paper-html p{
+                            margin: 0;
+                        }
+                        .xstst p{
+                            text-indent: 2em;
+                        }
+                        .exam-ss p.mlfirst{
+                            text-indent: 0!important;
+                        }
+                    </style>
+                    <h1 ng-if="configParam.paper_subtitle && PrivateBasketExams" style="font-size: 1.8em;text-align: center;margin: 0 0 10px;font-weight: normal;" class="paper_subtitle">{{param.paper_subtitle}}</h1>
+                    <h1 ng-if="configParam.paper_title && PrivateBasketExams" style="font-size: 1.8em;text-align: center;font-weight: 700;margin: 0 0 20px;" class="paper_title">{{param.paper_title}}</h1>
+                    <h3 ng-if="configParam.paper_full && PrivateBasketExams" style="text-align: center;margin: 0 0 20px;font-weight: 500;font-size:1em;">本试卷共{{param.totalNum}}小题。 全卷满分{{param.paper_full}}分。考试用时<label class="paper_duration">{{param.paper_duration}}</label>分钟。</h3>
+                    <h2 ng-if="configParam.success" style="font-size: 1.2em;text-align: center;font-weight: 600;padding-bottom: 20px;margin: 0">★祝考试顺利★</h2>
+                    <div ng-if="configParam.student_info" style="margin: 10px 0;text-align: center;line-height: 30px">
+                        <span>姓名：
+                            <label style="border-bottom: 1px #ccc solid;width: 100px;display: inline-block"></label>
+                        </span>
+                        <span>班级：
+                            <label style="border-bottom: 1px #ccc solid;width: 100px;display: inline-block"></label>
+                        </span>
+                        <span>学号：
+                            <label style="border-bottom: 1px #ccc solid;width: 100px;display: inline-block"></label>
+                        </span>
+                    </div>
+                    <div class="paper_explain" ng-if="configParam.paper_attention" style="margin-bottom: 20px">
+                        <h4 style="font-weight: 600;margin: 0;">注意事项：</h4>
+                        <p style="margin: 0;text-indent: 2em;">1. 答卷前，考生务必将自己的姓名、准考证号填写在试题卷和答题卡上，并将准考证号条形码粘贴在答题卡上的指定位置。用统一提供的2B铅笔将答题卡上试卷类型A后的方框涂黑。</p>
+                        <p style="margin: 0;text-indent: 2em;">2. 选择题的作答：每小题选出答案后，用统一提供的2B铅笔把答题卡上对应题目的答案标号涂黑。如需改动，用橡皮擦干净后，再选涂其他答案标号。写在试题卷、草稿纸和答题卡上的非答题区域均无效。</p>
+                        <p style="margin: 0;text-indent: 2em;">3. 非选择题的作答：用统一提供的签字笔直接答在答题卡上对应的答题区域内。写在试题卷、草稿纸和答题卡上的非答题区域均无效。</p>
+                        <p style="margin: 0;text-indent: 2em;">4. 考试结束后，请将本试卷和答题卡一并上交。</p>
+                    </div>
+                    <div ng-repeat="kc in PrivateBasketExams">
+                        <h1 ng-if="PrivateBasketExams.length > 1 && configParam.show_kc" style="margin-top: 50px;margin-bottom: 10px;text-align: center;font-size: 24px;font-weight: 600">{{kc.subject_name}}部分（{{kc.detail_marks || 0}}分）</h1>
+                        <div class="dt" ng-repeat="tx in kc.children">
+                            <div class="dt_title" style="margin-bottom: 10px;" ng-if="configParam.show_max_tg">
+                                <!--<p style="font-weight: 600;margin: 0;font-size: 1.2em;">{{tx.pbank_title}}（本大题共{{tx.detail_number}}小题，每小题{{ convertNum(tx.detail_marks / tx.detail_number)}}分，共{{tx.detail_marks}}分）</p>-->
+                                <p style="font-weight: 600;margin: 0;font-size: 1.2em;">{{tx.pbank_title}}（本大题共{{tx.detail_number}}小题，共{{tx.detail_marks}}分）</p>
+                            </div>
+                            <div class="xt_list">
+                                <div class="xt" ng-repeat="st in tx.subjectList" style="margin-bottom: 10px" data-id="{{st.id}}" ng-mouseover="showST_mark(st)">
+                                    <div class="bb-actions" ng-if="!st.subject_ptype">
+                                        <div class="layui-btn-group">
+                                            <button class="layui-btn" ng-click="paper_update_exam(st)">换题</button>
+                                            <button class="layui-btn" ng-click="update_exam_st(st)">修改</button>
+                                            <button class="layui-btn" ng-click="set_subject_marks(tx.subjectList, st)">设定得分</button>
+                                            <button class="layui-btn" ng-click="show_subject_use(st)">组卷记录{{st.useNum}}次</button>
+                                            <button class="layui-btn" ng-click="setOrder(tx, st, -1, $index)" ng-if="$index > 0" style="padding: 0 10px"><i class="iconfont icon-xia1"></i></button>
+                                            <button class="layui-btn" ng-click="setOrder(tx, st, 1, $index)" ng-if="$index < tx.subjectList.length - 1" style="padding: 0 10px"><i class="iconfont icon-xia"></i></button>
+                                        </div>
+                                    </div>
+                                    <!--没有小题-->
+                                    <div ng-if="!st.subjectList || st.subjectList.length == 0">
+                                        <div class="xt-tg" style="position: relative;padding-left: 2em;">
+                                            <em style="position: absolute;line-height: 1.68em;left: 0;font-style: normal;">{{st.detail_order}}.</em>
+                                            <span  ng-if="configParam.show_num" ng-bind-html="_trustAsHtml(replacehtml(st.subject_question, st.detail_marks))" style="line-height: 1.68em"></span>
+                                            <span  ng-if="!configParam.show_num" ng-bind-html="_trustAsHtml(st.subject_question)" style="line-height: 1.68em"></span>
+                                        </div>
+                                    </div>
+                                    <!--有小题-->
+                                    <div class="exam-ss" ng-if="st.subjectList && st.subjectList.length > 0">
+                                        <div class="xt-tg xstst" ng-bind-html="_trustAsHtml(replacehtml2(st.subject_question))" style="margin-bottom: 10px;line-height: 1.68em"></div>
+                                        <div class="ss-item" ng-repeat="xst in st.subjectList" data-id="{{xst.id}}" style="margin-bottom: 10px" ng-if="!xst.subject_ptype">
+                                            <div class="layui-btn-group bbb-actions">
+                                                <button class="layui-btn" ng-click="update_exam_xst(xst)">修改小题</button>
+                                                <button class="layui-btn" ng-click="set_subject_marks(st.subjectList, xst)">设定得分</button>
+                                            </div>
+                                            <div class="xt-tg" style="position: relative;padding-left: 2em;">
+                                                <em style="position: absolute;line-height: 1.68em;left: 0;font-style: normal;">{{xst.detail_order}}.</em>
+                                                <span ng-if="configParam.show_num" ng-bind-html="_trustAsHtml(replacehtml(xst.subject_question, xst.detail_marks))" style="line-height: 1.68em"></span>
+                                                <span ng-if="!configParam.show_num" ng-bind-html="_trustAsHtml(xst.subject_question)" style="line-height: 1.68em"></span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="row_right hasTopFix">
+                <div class="right_fix">
+                    <div class="right_fix_content">
+                        <div class="top_actions">
+                            <div class="form_line">
+                                <button class="layui-btn" ng-click="savePaper()" style="display: inline-block;width: 100%;">保存试卷</button>
+                            </div>
+                            <div class="form_line">
+                                <button class="layui-btn" ng-click="configPaper()" style="display: inline-block;width: 100%;">试卷设置</button>
+                            </div>
+                            <div class="form_line" ng-if="param.id">
+                                <button class="layui-btn" ng-click="lookPaper()" style="display: inline-block;width: 100%">试卷预览</button>
+                            </div>
+                            <div class="form_line">
+                                <button class="layui-btn" ng-click="resetQuestion()" style="display: inline-block;width: 100%;margin-bottom: 5px;">重新选题</button>
+                            </div>
+                            <div class="row_line">
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.paper_title = !configParam.paper_title;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.paper_title}">
+                                    <i class="layui-icon"></i>
+                                    <span>主标题</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.paper_subtitle = !configParam.paper_subtitle;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.paper_subtitle}">
+                                    <i class="layui-icon"></i>
+                                    <span>副标题</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.paper_attention = !configParam.paper_attention;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.paper_attention}">
+                                    <i class="layui-icon"></i>
+                                    <span>注意事项</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.success = !configParam.success;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.success}">
+                                    <i class="layui-icon"></i>
+                                    <span>考试顺利</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.student_info = !configParam.student_info;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.student_info}">
+                                    <i class="layui-icon"></i>
+                                    <span>考生信息</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.show_kc = !configParam.show_kc;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.show_kc}">
+                                    <i class="layui-icon"></i>
+                                    <span>显示课程</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.paper_full = !configParam.paper_full;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.paper_full}">
+                                    <i class="layui-icon"></i>
+                                    <span>总分总时</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.show_num = !configParam.show_num;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.show_num}">
+                                    <i class="layui-icon"></i>
+                                    <span>小题分数</span>
+                                </div>
+                                <div lay-skin="primary" class="layui-unselect layui-form-checkbox" ng-click="configParam.show_max_tg = !configParam.show_max_tg;paperEdit = true;"
+                                     ng-class="{'layui-form-checked': configParam.show_max_tg}">
+                                    <i class="layui-icon"></i>
+                                    <span>显示大题</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="footer_content">
+                            <div class="form_line form_dinfo">
+                                <label class="layui-col-xs6">总分数：
+                                    <em>{{param.paper_full}}分</em>
+                                </label>
+                                <label class="layui-col-xs6" style="text-align: right">小题数：
+                                    <em>{{param.totalNum}}</em>
+                                </label>
+                            </div>
+                            <div class="form_line txs">
+                                <div class="form_line">
+                                    <div ng-repeat="kc in PrivateBasketExams">
+                                        <h3 ng-if="PrivateBasketExams.length > 1" class="ck-title">{{kc.subject_name}}部分（{{kc.detail_marks || 0}}分）</h3>
+                                        <div class="form_line" ng-repeat="item in kc.children">
+                                            <div class="form_line title">
+                                                <label>{{item.pbank_title}}（本大题共{{item.detail_number}}小题，每小题{{ convertNum(item.detail_marks / item.detail_number)}}分，共{{item.detail_marks}}分）</label>
+                                            </div>
+                                            <div class="row_line">
+                                                <span ng-repeat="shiti in item.subjectList">
+                                                    <label class="col" ng-click="select_to_st(shiti)" ng-if="!shiti.subjectList || shiti.subjectList.length == 0">{{shiti.detail_order}}</label>
+                                                    <label class="col" ng-repeat="xst in shiti.subjectList" ng-click="select_to_st(shiti)"  ng-if="!xst.subject_ptype">{{xst.detail_order}}</label>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--试卷配置-->
+    <div id="paper_config" style="display: none">
+        <form class="layui-form" ng-submit="savePaper()">
+            <div class="layui-form-item">
+                <label class="layui-form-label">主标题</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" placeholder="请填写主标题" autocomplete="off" ng-model="param.paper_title" required>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">副标题</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" placeholder="请填写副标题" autocomplete="off" ng-model="param.paper_subtitle" required>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">及格分</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" placeholder="请填写数字" autocomplete="off" ng-model="param.paper_pass" required>
+                    </div>
+                </div>
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">考试用时</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" placeholder="请填写数字" autocomplete="off" ng-model="param.paper_duration" required>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">试卷类型</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select layui-form-selected">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="" ng-model="param.paper_type_name">
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in paperDataTypes" ng-class="{'layui-this':param.paper_type == item.id}" ng-click="param.paper_type=item.id;param.paper_type_name=item.dic_name">{{item.dic_name}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <div class="layui-col-xs6">
+                    <label class="layui-form-label">难度</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select layui-form-selected">
+                            <div class="layui-select-title">
+                                <input type="text" class="layui-input layui-unselect" readonly="" ng-model="param.paper_level_name">
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in paperLevelTypes" ng-class="{'layui-this':param.paper_level == item.id}" ng-click="param.paper_level=item.id;param.paper_level_name=item.dic_name">{{item.dic_name}}</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label class="layui-form-label">协作者</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select layui-form-selected">
+                        <div class="layui-select-title" style="border: 1px solid #e6e6e6;min-height: 38px;padding: 0 30px 7px 10px">
+                            <span ng-repeat="item in teachers" ng-if="item.select" ng-click="item.select = false">{{item.user_real_name}}
+                                <i class="iconfont icon-guanbi1"></i>
+                            </span>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit" style="padding: 0!important;top:99%" ng-click="stopEvent($event)">
+                            <dd class="layui-select-tips" style="padding:5px!important;">
+                                <input type="text" class="layui-input layui-unselect" placeholder="搜索老师名称" ng-model="param.teacher_search">
+                            </dd>
+                            <ul>
+                                <li ng-repeat="item in teachers | filter : {user_real_name: param.teacher_search}" ng-class="{'layui-this': item.select}"
+                                    ng-click="addTeacher(item)">{{item.user_real_name}}</li>
+                            </ul>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item" style="margin-bottom:10px;">
+                <label class="layui-form-label">试卷描述</label>
+                <div class="layui-input-block">
+                    <textarea class="layui-textarea" placeholder="请输入内容" ng-model="param.paper_explain"></textarea>
+                </div>
+            </div>
+            <div class="layui-form-item" ng-if="!superManage()">
+                <label class="layui-form-label">可见性</label>
+                <div class="layui-input-block">
+                    <div lay-skin="primary" style="padding-left: 0" class="layui-unselect layui-form-checkbox" ng-class="{'layui-form-checked':param.is_open == 1}" ng-click="param.is_open = param.is_open == 1 ? 0 : 1">
+                        <i class="layui-icon"></i><span>公开所有人可见</span>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" type="submit" style="background-color: #e63a3a">保存设置</button>
+                    <button class="layui-btn layui-btn-primary" type="button" onclick="javaScript:layer.closeAll()">取消</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--试卷打分-->
+    <div id="paper_set_marks" style="display: none">
+        <form class="layui-form" ng-submit="form_set_subject_marks()">
+            <div class="layui-form-item" ng-if="!set_marks_array.subjectList || set_marks_array.subjectList.length == 0">
+                <label class="layui-form-label">{{' 第'+ set_marks_array.detail_order+'小题'}}</label>
+                <div class="layui-input-block">
+                    <input type="text" class="layui-input" placeholder="请填写分数" autocomplete="off" ng-model="set_marks_array.detail_marks" required>
+                </div>
+            </div>
+            <div class="form_line" ng-if="set_marks_array.subjectList && set_marks_array.subjectList.length > 0" style="">
+                <div class="layui-form-item" ng-repeat="item in set_marks_array.subjectList">
+                    <label class="layui-form-label">{{' 第'+ item.detail_order +'小题'}}</label>
+                    <div class="layui-input-block">
+                        <input type="text" class="layui-input" placeholder="请填写分数" autocomplete="off" ng-model="item.detail_marks" required>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-input-block">
+                    <button class="layui-btn" type="submit" style="background-color: #e63a3a" ng-click="save_subject_marks()">保存得分</button>
+                    <button class="layui-btn layui-btn-primary" type="button" onclick="javaScript:layer.closeAll()">取消</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <!--换题-->
+    <div id="paper_update_exam" style="display: none">
+        <div class="shiti_title"  style="min-height: 42px">
+            <div class="info_left" ng-if="huantiData && huantiData.length > 0">
+                <label>题型：
+                    <span>{{_get_exam_name_byid(huantiData[0].subject_curriculum, huantiData[0].subject_type)}}</span>
+                </label>
+                <label>难易度：
+                    <span>{{_get_qustion_leve(huantiData[0].subject_level)}}</span>
+                </label>
+                <label>1年内使用次数：
+                    <span>{{huantiData[0].useNum}}次</span>
+                </label>
+            </div>
+            <div class="mm_actions">
+                <button class="layui-btn layui-btn-small" ng-show="now_index!=0" ng-click="get_down_level_service()">降低难度</button>
+                <button class="layui-btn layui-btn-small" ng-show="now_index!=2" ng-click="get_up_level_service()">增加难度</button>
+                <button class="layui-btn layui-btn-small" ng-show="huantiParam.pageNum > 1" ng-click="get_last_huanti_service()">上一题</button>
+                <button class="layui-btn layui-btn-small" ng-show="huantiParam.pageNum < huantiParam.pages" ng-click="get_next_huanti_service()">下一题</button>
+            </div>
+        </div>
+        <div class="shiti_content">
+            <div ng-if="huantiData && huantiData.length > 0">
+                <div class="know_title" ng-bind-html="_trustAsHtml(replacehtml2(huantiData[0].subject_question))"></div>
+                <dl ng-if="!huantiData[0].subjectList || huantiData[0].subjectList.length == 0">
+                    <dt>【答案】</dt>
+                    <dd ng-bind-html="_trustAsHtml(huantiData[0].subject_answer)"></dd>
+                </dl>
+                <dl ng-if="!huantiData[0].subjectList || huantiData[0].subjectList.length == 0">
+                    <dt>【解析】</dt>
+                    <dd ng-if="huantiData[0].subject_analysis" ng-bind-html="_trustAsHtml(huantiData[0].subject_analysis)"></dd>
+                    <dd ng-if="!huantiData[0].subject_analysis">
+                        <p class="un-data">暂无解析</p>
+                    </dd>
+                </dl>
+                <div ng-if="huantiData[0].subjectList && huantiData[0].subjectList.length > 0">
+                    <div class="ch_know" ng-repeat="chst in huantiData[0].subjectList">
+                        <div class="know_title" ng-bind-html="_trustAsHtml(chst.subject_question)"></div>
+                        <dl ng-if="!chst.subjectList || chst.subjectList.length == 0">
+                            <dt>【答案】</dt>
+                            <dd ng-bind-html="_trustAsHtml(chst.subject_answer)"></dd>
+                        </dl>
+                        <dl ng-if="!chst.subjectList || chst.subjectList.length == 0">
+                            <dt>【解析】</dt>
+                            <dd ng-if="chst.subject_analysis" ng-bind-html="_trustAsHtml(chst.subject_answer)"></dd>
+                            <dd ng-if="!chst.subject_analysis">
+                                <p class="un-data">暂无解析</p>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div ng-if="huantiData && huantiData.length == 0">
+                <p style="text-align: center;line-height: 200px">没有试题可以替换</p>
+            </div>
+        </div>
+        <div class="shiti_footer">
+            <button class="layui-btn" type="button" style="background-color: #e63a3a" ng-click="knowledgeChange()">替换</button>
+            <button class="layui-btn layui-btn-primary" type="button" onclick="javaScript:layer.closeAll()">取消</button>
+        </div>
+    </div>
+    <!--组卷记录-->
+    <div id="suject_use_list" style="display: none;padding: 0 10px">
+        <table class="layui-table">
+            <colgroup>
+                <col width="150">
+                <col >
+                <col width="150">
+            </colgroup>
+            <thead>
+            <tr>
+                <th>试卷编号</th>
+                <th>试卷名称</th>
+                <th>组卷时间</th>
+            </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="item in use_subject_data">
+                    <td>{{item.paper_code}}</td>
+                    <td>{{item.paper_title}}</td>
+                    <td>{{item.create_time}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--试题修改--大题-->
+    <edit-exam></edit-exam>
+    <!--小题修改&&新增-->
+    <cross-set></cross-set>
+</div>

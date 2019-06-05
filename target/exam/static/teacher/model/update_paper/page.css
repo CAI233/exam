@@ -1,0 +1,374 @@
+
+#update_paper .main .center_content{
+    float:none;
+}
+#update_paper .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#update_paper .main .center_cont{
+    margin-top:20px;
+}
+#update_paper .tag-type{
+    margin: 20px auto 15px;
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+#update_paper .tag-type .knowledge{
+   max-width:733px;
+    /*margin:15px 0;*/
+    margin-bottom:10px;
+}
+#update_paper .tag-type .knowledge .layui-form-item{
+    margin-bottom:0;
+}
+#update_paper .tag-type .knowledge .layui-form-label{
+    width:70px;
+    padding:0;
+    line-height:40px;
+    text-align:left;
+}
+#update_paper .tag-type .knowledge .layui-input-block{
+    margin-left:70px;
+    position:relative;
+}
+#update_paper .tag-type .layui-form-selected .accordion_tree_parent{
+    display:block;
+}
+#update_paper .tag-type .accordion_tree_parent{
+    display:none;
+    padding:5px 15px;
+    position:absolute;
+    background:#fff;
+    z-index:1;
+    height: 300px;
+    overflow-y: auto;
+    border: 1px #ccc solid;
+}
+#update_paper .tag-type .left_box{
+    float:left;
+}
+#update_paper .tag-type .right_box{
+    /*position: absolute;*/
+    right: 0;
+    top: 0;
+    bottom: 0;
+    outline: 1px dashed;
+    padding: 15px;
+    color:#e63a3a;
+    float: right
+}
+#update_paper .tag-type .right_box p{
+    line-height:25px;
+}
+#update_paper .tag-items {
+    height:40px;
+    line-height: 40px;
+    width:100%;
+    overflow: inherit;
+    z-index: 1;
+    /*margin:15px 0;*/
+    max-width:733px;
+}
+
+#update_paper .tag-items .tag-conbox .layui-form-select dl{
+    left:120px;
+    top:0;
+}
+#update_paper .tag-tit {
+    float: left;
+    width: 90px;
+    margin-right: -90px;
+    color: #666;
+    text-align:left;
+}
+
+#update_paper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#update_paper .tag-con {
+    margin-left: 70px;
+}
+
+#update_paper .tag-con a {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0 20px 0 0;
+    padding: 1px 10px;
+    cursor: pointer;
+}
+#update_paper .tag-con a:hover, #update_paper .tag-con a.type-active {
+    background: #e63a3a;;
+    color: #fff;
+    border-radius: 5px
+}
+#update_paper .tag-con .tag-con_a,#update_paper .tag-con .tag-con_a:hover{
+    background:none;
+    color:#333;
+    margin:0;
+}
+#update_paper .tag-con .tag-con_span{
+    float:right;
+}
+#update_paper .tag-con .tag-con_span i{
+    display: inline-block;
+    width: 100px;
+    height: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    border:1px solid #C9C9C9;
+    /*background: red;*/
+    border-radius: 5px;
+    margin: 0 5px;
+    position:relative;
+}
+#update_paper .tag-con .tag-con_span i em{
+    position:absolute;
+    display: inline-block;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: 9px;
+    border-radius: 5px;
+    background: #3F98F1;
+    width:60%;
+}
+#update_paper .tag-right{
+    float: left;
+}
+#update_paper .tag-right button{
+    border: 1px solid #C9C9C9;
+}
+#update_paper .tag-right button:nth-child(2){
+    background: #e63a3a;
+    color: #fff;
+    width: 100px;
+}
+/*模板-------statrt*/
+#update_paper .main_context>h2{
+    height: 30px;
+    line-height: 30px;
+}
+#update_paper .main_context>h2 .down_template{
+    padding:0 15px;
+    background: #e63a3a;
+    color: #fff;
+    float:right;
+    cursor:pointer;
+}
+
+#update_paper .main_context>h2 div.layui-form-item .layui-form-select dl dd:hover{
+    background:#fff;
+}
+#update_paper .main_context>h2 div.layui-form-item .layui-form-select dl dd:hover>button{
+    border-color:#e63a3a;
+    color:#fff;
+    background:#e63a3a;
+}
+#update_paper .box-select-s{
+    padding: 4px;
+    border: 1px #ddd solid;
+    min-height: 40px;
+}
+#update_paper .box-select-s a{
+    display: inline-block;
+    margin: 4px 4px 4px 4px;
+    line-height: 16px;
+    padding: 3px 6px;
+    background: #dcdcdc;
+}
+#update_paper .box-select-s a i{
+    float: right;
+    font-size: 14px;
+    margin-left: 5px;
+    margin-top: 1px;
+}
+#update_paper .rbtn{
+    float: right;
+    border: 1px #ddd solid;
+    width: 110px;
+}
+/*新增题库-------start*/
+#update_paper #addBank .layui-form-label{
+    width:110px;
+}
+
+/*-----------end*/
+
+/*试题错误---------提示----start*/
+#update_paper .ckeck_Detai{
+    text-decoration:underline;
+    color:#e63a3a;
+}
+#update_paper .ckeck_Getai{
+    text-decoration:underline;
+    color:#4facfa;
+}
+
+/*-----------end*/
+/*临时成功试题----------start*/
+#update_paper .form_content {
+    /*position: absolute;*/
+    width: 850px;
+    vertical-align: middle;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+    position: fixed;
+}
+#update_paper .form_content .form_title {
+    float: left;
+    width: 100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#update_paper .form_content .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#update_paper .form_content .form_title .form_btns {
+    float: right;
+}
+#update_paper .form_content .form_html {
+    padding: 10px;
+    width:100%;
+}
+#update_paper .form_content h2{
+    text-align:center;
+}
+#update_paper .form_content .sub_link{
+    position:absolute;
+    left:10px;
+}
+    /*样式-------start*/
+#update_paper .search-list{
+    /*margin-top:15px;*/
+    width:100%;
+    float: left;
+    font-size: 14px;
+}
+#update_paper .search-list .not_pages{
+    line-height:200px;
+    text-align: center;
+    color: #999;
+    background:url('../../img/none_3.png') no-repeat center;
+    padding-top:150px;
+}
+#update_paper .search-list ul > li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#update_paper .search-list ol li{
+    line-height: 30px;
+}
+#update_paper .search-list ol li p{
+    text-indent: 0!important;
+}
+#update_paper .esam_m_t p:nth-child(2){
+    /*margin-top: -1.5em;*/
+}
+#update_paper .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #f4f4f4;
+}
+#update_paper .exam-head-left, #update_paper .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#update_paper .exam-head-left span {
+    margin: 0 0 0 20px;
+}
+#update_paper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+    display: none;
+}
+#update_paper .searchTxt{
+    background: #E63A3A!important;
+    color: #fff!important;
+    padding: 0 2px;
+}
+#update_paper .search-exam > .exam-con {
+    padding: 20px;
+}
+#update_paper .exam-q {
+    color: #333;
+    line-height: 1.68em;
+    font-size: 14px;
+}
+#update_paper .exam-s {
+    margin-top: 15px;
+}
+#update_paper .exam-t{
+    margin: 10px;
+    position: relative;
+    padding-left: 2em;
+}
+#update_paper .exam-t .exam-s{
+    margin-left: 20px;
+    color: #333
+}
+#update_paper .exam-s span.op-item {
+    position: relative;
+    padding:5px 17px;
+    color: #333;
+    zoom: 1;
+    display: block;
+    min-height: 20px;
+}
+#update_paper .op-item .op-item-meat {
+    margin-top: 0px;
+}
+#update_paper .exam-foot {
+    height: 50px;
+    border-top: 1px dashed #dcdcdc;
+}
+#update_paper .exam-foot-right .addbtn i {
+    margin-right:5px;
+}
+#update_paper .exam-foot-right .addbtn:hover,#update_paper .exam-foot-right .addbtn.active{
+    color:#E63A3A;
+}
+#update_paper .exam-foot-right .addbtn, #update_paper .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    color: #777;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#update_paper .exam-foot-right a b {
+    margin-right: 2px;
+}
+
+    /*--------end*/
+/*------------end*/
+/*底层分页样式-------start*/
+#update_paper .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#update_paper .layui-laypage input:focus,#update_paper .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#update_paper .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/

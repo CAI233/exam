@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../include/public_file.ftl" />
+    <script type="application/javascript" src="${ctxPath}/static/web/js/myCenter.js"></script>
+</head>
+<body>
+<!-- 公共头 -->
+<#include "../include/public_header.ftl" />
+
+<div class="w_center" style="padding: 20px 0;background:rgb(249,249,249);min-height:717px;" id="myCenter">
+    <div id="cont-top">
+        <div class="top_nav">
+            <i class="iconfont icon-dingwei1"></i>位置：
+            <a href="#/myCenter">个人资料</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="cont-content">
+            <h3>基本资料</h3>
+            <dl id="person">
+
+            </dl>
+        </div>
+    </div>
+</div>
+<!-- 公共底 -->
+<#include "../include/public_footer.ftl" />
+</body>
+</html>

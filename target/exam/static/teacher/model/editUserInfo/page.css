@@ -1,0 +1,33 @@
+#editUserInfo{
+    float: left;
+    width: 100%;
+}
+
+#editUserInfo .main .center_content{
+    float:none;
+}
+#editUserInfo .main .center_content:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#editUserInfo .main .center_cont{
+    width:600px;
+    margin:50px auto;
+}
+#editUserInfo .main .center_cont .layui-form-label{
+    width:100px;
+}
+#editUserInfo .layui-form-radio i:hover, .layui-form-radioed i{
+    color:#e63a3a;
+}
+#editUserInfo .layui-form-item .layui-form-checkbox[lay-skin=primary]{
+    margin-left:15px;
+}
+#editUserInfo .layui-form-item .layui-form-checked[lay-skin=primary] i{
+    background:#e63a3a;
+    border-color:#e63a3a;
+}
+#editUserInfo .layui-form-item .layui-form-checkbox[lay-skin=primary]:hover i{
+    border-color:#e63a3a;
+}

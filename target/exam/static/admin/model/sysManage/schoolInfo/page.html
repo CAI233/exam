@@ -1,0 +1,79 @@
+<div id="schoolInfo">
+    <div class="form_content animated">
+        <form class="form_html" style="width: 800px;margin:50px auto;">
+            <div class="form_row">
+                <label class="form_label col-xs-2">学校中文名称:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.school_name"/>
+                </div>
+            </div>
+            <div class="form_rows">
+                <label class="form_label col-xs-2">学校英文名称:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.school_name_en"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">所属地区:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.school_area"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">注册地址:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.regist_address"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">教学地址:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.school_address"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">主要联系人:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.contract_name"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">联系方式:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input" maxlength="11" ng-change="show_phone(selRow.phone)"
+                           ng-model="selRow.phone" />
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">传真:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.tel_phone"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">主页:</label>
+                <div class="form_group col-xs-8">
+                    <input type="text" class="layui-input"
+                           ng-model="selRow.home_page"/>
+                </div>
+            </div>
+            <div class="form_row">
+                <label class="form_label col-xs-2">描述:</label>
+                <div class="form_group col-xs-8">
+                    <textarea type="text" class="layui-textarea" ng-model="selRow.description"></textarea>
+                </div>
+            </div>
+            <div class="form_row center" style="text-align: center;">
+                <button class="btn btn-primary" ng-click="_form_submit(true)" style="width: 150px;">保存</button>
+            </div>
+            <div style="clear:both;"></div>
+        </form>
+    </div>
+</div>

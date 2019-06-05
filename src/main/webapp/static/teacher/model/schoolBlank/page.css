@@ -1,0 +1,305 @@
+#schoolBlank{
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+}
+#schoolBlank .form_content .form_html{
+    margin: 0 auto;
+}
+#schoolBlank .exam-q img{
+    vertical-align: middle !important;
+}
+/*#schoolBlank .exam-s p{*/
+    /*text-indent: 2em;*/
+/*}*/
+/*顶部样式-----------start*/
+#schoolBlank .top_nav{
+    float: left;
+    width: 100%;
+    /*margin: 40px 82px;*/
+    line-height: 24px;
+    color: #676767;
+    margin-bottom: 10px;
+}
+#schoolBlank .con-content{
+    float: left;
+    width: 100%;
+}
+#schoolBlank .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#schoolBlank .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#schoolBlank .top_nav a{
+    cursor: pointer;
+}
+#schoolBlank .top_nav label{
+    color: #999;
+}
+#schoolBlank .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+/*----------end*/
+#schoolBlank .main>.tag-type{padding: 20px 0;float: left;width: 100%}
+#schoolBlank .main>.tag-type .logo a{
+    display:inline-block;
+    height:60px;
+    width:150px;
+    background:url('../../img/l-logo.png') no-repeat center center;
+    background-size: contain;
+
+}
+#schoolBlank .main>.tag-type .search .layui-input-block{
+    margin-left: 15px;
+}
+#schoolBlank .main>.tag-type .search .layui-input:hover,#schoolBlank .main>.tag-type .search .layui-input:focus{
+    border:1px solid #E63A3A !important;
+}
+#schoolBlank .main>.tag-type .search button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background:#E63A3A;
+    color:#fff;
+}
+#schoolBlank .content_page_left:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#schoolBlank .content_page_left{
+    position:static;
+    padding:0;
+    float: left;
+    width: 300px;
+}
+#schoolBlank .content_page_right{
+    float: right;
+    width: calc(100% - 320px);
+    width: -moz-calc(100% - 320px);
+    width: -webkit-calc(100% - 320px);
+}
+#schoolBlank .content_page_left .accordion_tree_parent{
+    padding:15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+}
+#schoolBlank .content_page_right .tag-type{
+    background:#f4f4f4;
+    /*float: left;*/
+    width: 100%;
+    padding: 5px 0;
+}
+#schoolBlank .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1;
+}
+#schoolBlank .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#schoolBlank .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#schoolBlank .tag-con {
+    margin-left: 72px
+}
+#schoolBlank .tag-con a {
+    display: inline-block;
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 2px 10px;
+    cursor: pointer;
+    color: #666;
+}
+#schoolBlank .tag-con a:hover, #schoolBlank .tag-con a.type-active {
+    background: #E63A3A;
+    color: #fff;
+    border-radius: 5px
+}
+
+#schoolBlank .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#schoolBlank .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#schoolBlank .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#schoolBlank .layui-form-item{
+    margin-bottom:0;
+}
+
+#schoolBlank .content_page_right .sort{
+    position: relative;
+    margin :15px 0 2px;
+    height: 20px;
+    color: #676767;
+}
+#schoolBlank .content_page_right .sort > span{
+    float: left;
+}
+#schoolBlank .content_page_right .sort > label{
+    float: right;
+}
+#schoolBlank .content_page_right .sort > label em{
+    margin: 0 5px;
+    font-weight: bold;
+    color: #E63A3A;
+}
+#schoolBlank .content_page_right .sort a{
+    margin-right:15px;
+    float: left;
+    line-height: 20px;
+}
+#schoolBlank .content_page_right .sort a i{
+    float: right;
+}
+#schoolBlank .content_page_right .sort a:hover{
+    color: #E63A3A;
+}
+#schoolBlank .content_page_right .sort a.at{
+    color: #E63A3A;
+}
+/*试题展示*/
+
+#schoolBlank .search-list{
+    /*margin-top:15px;*/
+    width:100%;
+    float: left;
+    font-size: 14px;
+}
+#schoolBlank .search-list .not_pages{
+    line-height:200px;
+    text-align: center;
+    color: #999;
+    background:url('../../img/none_3.png') no-repeat center;
+    padding-top:150px;
+}
+#schoolBlank .search-list ul > li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#schoolBlank .search-list ol li{
+    line-height: 30px;
+}
+#schoolBlank .search-list ol li p{
+    text-indent: 0!important;
+}
+#schoolBlank .esam_m_t p:nth-child(2){
+    /*margin-top: -1.5em;*/
+}
+#schoolBlank .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #f4f4f4;
+}
+#schoolBlank .exam-head-left, #schoolBlank .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#schoolBlank .exam-head-left span {
+    margin: 0 0 0 20px;
+}
+#schoolBlank .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+    display: none;
+}
+#schoolBlank .searchTxt{
+    background: #E63A3A!important;
+    color: #fff!important;
+    padding: 0 2px;
+}
+#schoolBlank .search-exam > .exam-con {
+    padding: 20px;
+    line-height: 1.68em;
+}
+#schoolBlank .exam-q {
+    color: #333;
+}
+#schoolBlank .exam-s {
+    margin-top: 15px;
+}
+#schoolBlank .exam-t{
+    margin: 10px;
+    position: relative;
+    padding-left: 2em;
+}
+#schoolBlank .exam-t .exam-s{
+    margin-left: 20px;
+    color: #333
+}
+#schoolBlank .exam-s span.op-item {
+    position: relative;
+    padding:5px 17px;
+    color: #333;
+    zoom: 1;
+    display: block;
+    min-height: 20px;
+}
+#schoolBlank .op-item .op-item-meat {
+    margin-top: 0px;
+}
+#schoolBlank .exam-foot {
+    height: 50px;
+    border-top: 1px dashed #dcdcdc;
+}
+#schoolBlank .exam-foot-right .addbtn i {
+    margin-right:5px;
+}
+#schoolBlank .exam-foot-right .addbtn:hover,#schoolBlank .exam-foot-right .addbtn.active{
+     color:#E63A3A;
+ }
+#schoolBlank .exam-foot-right .addbtn, #schoolBlank .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    color: #777;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#schoolBlank .exam-foot-right a b {
+    margin-right: 2px;
+}
+/*底部分页样式---------------------*/
+#schoolBlank .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#schoolBlank .layui-laypage input:focus,#schoolBlank .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#schoolBlank .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/
+#schoolBlank .esam_m_t p{
+    text-indent: 2em !important;
+    /*line-height: 1.5rem!important;*/
+}
+

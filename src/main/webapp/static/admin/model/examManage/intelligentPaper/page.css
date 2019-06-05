@@ -1,0 +1,848 @@
+#intelligentPaper .content_page_left .title {
+    border-bottom: 1px solid #E2E7EB;
+    background: rgb(105, 155, 252);
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#intelligentPaper .layui-form-select dl dd.layui-this{
+    background: #4498ee;
+}
+#intelligentPaper .box {
+    cursor: pointer;
+}
+
+#intelligentPaper .box label i.active {
+    color: #4498ee;
+}
+
+
+#intelligentPaper body, #intelligentPaper button {
+    font-family: "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", arial, "\5b8b\4f53"
+}
+
+#intelligentPaper .op-item em, #intelligentPaper .text-select em {
+    font-weight: 400
+}
+
+#intelligentPaper .exam-s, #intelligentPaper .lx-teacher, #intelligentPaper .op-item {
+    clear: both
+}
+
+#intelligentPaper .basket, #intelligentPaper .kefu {
+    transition: all .2s linear
+}
+
+#intelligentPaper .analyticbox-tips a:hover, #intelligentPaper .footer-top a:hover, #intelligentPaper .notice-pjq:hover {
+    text-decoration: underline
+}
+
+#intelligentPaper body {
+    background: #FFF;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 1;
+    font-size: 12px
+}
+
+#intelligentPaper i {
+    display: inline-block;
+}
+
+#intelligentPaper img {
+    border: 0;
+    vertical-align: top
+}
+
+#intelligentPaper .exam-q img, #intelligentPaper .split {
+    vertical-align: middle
+}
+
+#intelligentPaper .g-mn {
+    width: 100%;
+    float: left
+}
+
+#intelligentPaper .op-item {
+    line-height: 24px;
+    display: block
+}
+
+#intelligentPaper .op-item em {
+    display: inline-block
+}
+
+#intelligentPaper .op-item u {
+    border-bottom: 1px solid #333
+}
+
+#intelligentPaper .op-item .op-item-nut {
+    float: left;
+    position: absolute;
+    height: 24px
+}
+
+#intelligentPaper .topbox, #intelligentPaper .topinner {
+    height: 40px;
+    background: #f6f6f6
+}
+
+#intelligentPaper .op-item .op-item-meat {
+    display: block;
+    padding-left: 24px
+}
+
+#intelligentPaper .op-item .op-item-meat span {
+    font-size: 14px !important
+}
+
+#intelligentPaper .op-item .checkbox .op-item-meat, #intelligentPaper .op-item .radiobox .op-item-meat {
+    padding-left: 40px
+}
+
+#intelligentPaper .op-items-xv .op-item .radiobox .op-item-meat {
+    padding-left: 20px
+}
+
+#intelligentPaper .op-item .checked {
+    color: #27AE61
+}
+
+#intelligentPaper .btn:hover {
+    background: #308eef
+}
+
+
+#intelligentPaper .lx-teacher a {
+    float: left;
+    margin-top: 25px;
+    width: 50%;
+    color: #fff
+}
+
+#intelligentPaper .lx-teacher a:hover {
+    background-color: #ff8a00
+}
+
+
+#intelligentPaper .icona-top {
+    position: relative;
+    top: 4px
+}
+
+#intelligentPaper .kefu, #intelligentPaper .return {
+    position: fixed
+}
+
+#intelligentPaper .return {
+    right: 162px;
+    bottom: 30px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background: #474443;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+#intelligentPaper .exam-head-left,#intelligentPaper .exam-foot-left{
+    float: left;
+}
+#intelligentPaper .exam-head-left .line, #intelligentPaper .exam-head-left span, #intelligentPaper .header-inner a, #intelligentPaper .pagenum a, #intelligentPaper .q-blank, #intelligentPaper .search-list-right a {
+    display: inline-block
+}
+
+#intelligentPaper .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px
+}
+
+#intelligentPaper .search-list ul li:hover {
+    border: 1px solid #308eef
+}
+
+
+#intelligentPaper .search-list-right a i, #intelligentPaper .test-txt p span i {
+    margin: -2px 5px 0 0
+}
+
+#intelligentPaper .search-list-right {
+    float: left;
+    width: 320px;
+    margin-left: -330px
+}
+
+#intelligentPaper .search-list-right a {
+    margin: 37px 20px 37px 0;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333
+}
+
+
+#intelligentPaper .search-exam {
+    background: #fff
+}
+
+#intelligentPaper .dj-search-exam {
+    border: 1px solid #dcdcdc
+}
+
+#intelligentPaper .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px
+}
+
+#intelligentPaper .exam-foot-right, #intelligentPaper .exam-head-right {
+    float: right
+}
+
+#intelligentPaper .exam-head-left, #intelligentPaper .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px
+}
+
+#intelligentPaper .exam-head-left span {
+    margin: 0 20px
+}
+
+#intelligentPaper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+
+#intelligentPaper .exam-head-right a:hover {
+    color: #4498ee
+}
+
+#intelligentPaper .exam-con {
+    cursor: pointer
+}
+
+#intelligentPaper .exam-q {
+    font-size: 14px !important;
+    color: #333;
+    line-height: 24px
+}
+
+#intelligentPaper .uglify-man .analyticbox-brick, #intelligentPaper .visible-ake .analyticbox-brick-normal, #intelligentPaper .visible-ake .exam-qlist {
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 20px
+}
+
+#intelligentPaper .uglify-man .exam-qlist {
+    border: 0;
+    padding-top: 0
+}
+
+#intelligentPaper .analyticbox-brick {
+    margin: 0 20px
+}
+
+#intelligentPaper .exam-q img {
+    max-width: 100%
+}
+
+#intelligentPaper .exam-q table td {
+    vertical-align: top
+}
+
+#intelligentPaper .exam-q .filling {
+    border-bottom: 1px solid #ccc;
+    padding: 0 16px;
+    color: #ff1c1c
+}
+
+#intelligentPaper .exam-qlist .exam-q, #intelligentPaper .search-exam > .exam-con > .exam-q {
+    padding-bottom: 20px
+}
+
+#intelligentPaper .exam-q .q-blank2 {
+    color: #999
+}
+
+#intelligentPaper .exam-qlist .exam-con {
+    border: none
+}
+
+#intelligentPaper .exam-qlist .exam-con .exam-s {
+    margin-left: 60px
+}
+
+#intelligentPaper .exam-s {
+    zoom: 1
+}
+
+#intelligentPaper .exam-con .w .exam-s {
+    margin-left: 80px
+}
+
+#intelligentPaper .search-exam > .exam-con {
+    margin: 20px 20px 0
+}
+
+#intelligentPaper .exam-con .w {
+    width: 100%;
+    float: left
+}
+
+#intelligentPaper .op-order-sub {
+    float: left;
+    width: 80px;
+    margin-right: -80px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px
+}
+
+#intelligentPaper .analyticbox > span, #intelligentPaper .q-blank {
+    width: 60px;
+    text-align: center
+}
+
+#intelligentPaper .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1
+}
+
+#intelligentPaper .exam-s span.op-item img {
+    vertical-align: middle
+}
+
+#intelligentPaper .op-items0 .op-item {
+    margin-right: 40px
+}
+
+#intelligentPaper .exam-a {
+    height: 40px;
+    background: #eff7f0
+}
+
+#intelligentPaper .exam-a span {
+    line-height: 40px;
+    margin-left: 18px;
+    font-size: 12px;
+    color: #333
+}
+
+#intelligentPaper .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc
+}
+
+#intelligentPaper .exam-foot-left a i {
+    margin: -2px 5px 0 0;
+    color: #4498ee;
+}
+
+#intelligentPaper .exam-foot-left a {
+    margin-right: 25px;
+    font-size: 14px;
+    color: #333;
+    line-height: 50px
+}
+
+#intelligentPaper .exam-foot-left a:hover {
+    color: #4498ee
+}
+
+#intelligentPaper .exam-foot-right span {
+    margin-right: 30px;
+    font-size: 12px;
+    color: #999;
+    line-height: 50px
+}
+
+#intelligentPaper .exam-foot-right a b {
+    margin-right: 2px
+}
+
+#intelligentPaper .exam-foot-right .addbtn, #intelligentPaper .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    margin: 7px 0;
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#intelligentPaper .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 14px
+}
+
+#intelligentPaper .exam-foot-right .removebtn {
+    background: #adadad;
+    font-size: 14px
+}
+
+#intelligentPaper .analyticbox .analyticbox-body, #intelligentPaper .analyticbox > span, #intelligentPaper .exam-mynum {
+    line-height: 24px;
+    font-size: 14px
+}
+
+#intelligentPaper .exam-foot-right .addbtn:hover {
+    background: #078ee8
+}
+
+#intelligentPaper .exam-foot-right .removebtn:hover {
+    background: #919191
+}
+
+#intelligentPaper .q-blank {
+    border-bottom: 1px solid #dedede;
+    color: #ff1c1c;
+    vertical-align: baseline
+}
+
+#intelligentPaper .analyticbox > span {
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    float: left
+}
+
+#intelligentPaper .analyticbox .analyticbox-body {
+    color: #333;
+    margin-left: 60px;
+    padding-bottom: 20px
+}
+
+#intelligentPaper .analyticbox-tips {
+    font-size: 14px;
+    color: #999;
+    padding-bottom: 20px
+}
+
+#intelligentPaper .analyticbox-tips a {
+    color: #ff8a00
+}
+
+#intelligentPaper .cancel {
+    margin-left: 10px;
+    background: #dfdfdf;
+    color: #333
+}
+
+#intelligentPaper .confirm:hover {
+    background: #295
+}
+
+#intelligentPaper .cancel:hover {
+    background: #b9b9b9
+}
+
+#intelligentPaper .basket {
+    position: fixed;
+    padding-left: 40px;
+    right: -150px;
+    top: 50%;
+    margin-top: -150px;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    z-index: 999
+}
+
+#intelligentPaper .basket-tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: #4498ee;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff
+}
+
+#intelligentPaper .basket-tit p i {
+    margin-left: 12px
+}
+
+#intelligentPaper .basket-tit p {
+    margin-top: 20px
+}
+
+#intelligentPaper .basket.active {
+    right: 11px;
+}
+
+#intelligentPaper .basket-tit p em {
+    display: block;
+    width: 1em;
+    margin: 10px auto 0;
+    line-height: 18px;
+    font-weight: 400
+}
+
+#intelligentPaper .basket-tit span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #FFBE8F;
+    display: block
+}
+
+#intelligentPaper .basket-tit span i {
+    margin:11px 0 0 13px
+}
+
+#intelligentPaper .basket-con {
+    float: left;
+    width: 150px;
+    border: 1px solid #DAD4CE;
+    border-left: 0;
+    min-height: 215px
+}
+
+#intelligentPaper .basket-con span {
+    color: #fe8a00
+}
+
+#intelligentPaper .basket-head {
+    background: #d5eaff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #333;
+    margin: 2px;
+    padding-left: 13px
+}
+
+#intelligentPaper .baskrt-list {
+    min-height: 130px
+}
+
+#intelligentPaper .baskrt-list p {
+    margin: 20px 20px 0 15px;
+    cursor: pointer
+}
+
+#intelligentPaper .baskrt-list p i {
+    float: right;
+    color: #ccc;
+}
+#intelligentPaper .baskrt-list p:hover i {
+    color: red;
+}
+
+#intelligentPaper .basket-btn {
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 10px 20px;
+    padding: 0 30px;
+    font-size: 12px;
+    color: #fff;
+    background: #4498ee;
+    border-radius: 5px
+}
+
+#intelligentPaper .basket-btn:hover {
+    background: #078ee8;
+    color: #fff
+}
+
+
+#intelligentPaper .search-list {
+    margin-top: 15px
+}
+
+#intelligentPaper .tag-con .show-more, #intelligentPaper .type-con .show-more {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #999;
+    padding-right: 16px;
+    font-size: 12px;
+    cursor: pointer
+}
+
+#intelligentPaper .tag-con .show-more:hover, #intelligentPaper .type-con .show-more:hover {
+    color: #666
+}
+
+#intelligentPaper .tag-con .show-more:hover i, #intelligentPaper .type-con .show-more:hover i {
+    border-color: #999
+}
+
+#intelligentPaper .dj-detail h1, #intelligentPaper .dj-detail ul li a {
+    font-size: 14px;
+    font-family: "Microsoft YaHei"
+}
+
+#intelligentPaper .icon-trash:hover {
+    opacity: .8
+}
+
+#intelligentPaper .exam-head > .icon-trash {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: none
+}
+
+#intelligentPaper .search-list ul li:hover .exam-head > .icon-trash {
+    display: block
+}
+
+#intelligentPaper .Govip-btn {
+    margin-top: 33px;
+    float: left;
+    margin-left: -310px;
+    width: 220px
+}
+
+#intelligentPaper .select-btn, #intelligentPaper .sort, #intelligentPaper .tag-con a, #intelligentPaper .tag-tit {
+    font-size: 12px
+}
+
+#intelligentPaper .tag-type {
+    border: 1px solid #dcdcdc;
+    z-index: 2
+}
+#intelligentPaper .content_page>h3{
+    position: relative;
+    height: 40px;
+    margin:5px 0;
+    padding-left: 25px;
+    line-height: 40px;
+    background: rgb(236,240,241);
+}
+#intelligentPaper .content_page>h3>a{
+    position: absolute;
+    right: 20px;
+    top: 0;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+#intelligentPaper .content_page .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+.generateExam>form>div.row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;}
+
+/*#intelligentPaper .tag-conleft{width:348px;margin:0 20px;}*/
+#intelligentPaper .tag-conleft>ul>li{position:relative;}
+#intelligentPaper .tag-conleft>ul>li>div:nth-child(2){position:absolute;top:0;right:20px;}
+#intelligentPaper .tag-conleft>ul>li span{
+    margin-left:30px;
+}
+#intelligentPaper .tag-conleft>ul>li .tag_con_right>input{
+    width:30px;
+    margin:0 5px;
+    -moz-appearance:textfield;
+}
+#intelligentPaper .tag-conleft>ul>li .tag_con_right>input::-webkit-inner-spin-button,
+#intelligentPaper .tag-conleft>ul>li .tag_con_right>input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/*------------------------------*/
+
+#intelligentPaper .sort-left, #intelligentPaper .switch-detail, #intelligentPaper .total {
+    line-height: 22px
+}
+
+#intelligentPaper .sort {
+    margin: 15px auto 0;
+    overflow: hidden;
+    color: #999
+}
+
+#intelligentPaper .sort-left {
+    margin-left: 15px;
+    float: left
+}
+
+#intelligentPaper .sort .sort-left i {
+    margin: -2px 0 0 3px;
+}
+
+#intelligentPaper .sort-left a {
+    margin-left: 15px;
+    color: #333
+}
+
+#intelligentPaper .sort-left a:hover, #intelligentPaper a.sort-active {
+    color: #333;
+    font-weight: 700
+}
+
+#intelligentPaper .switch-detail {
+    margin-left: 20px
+}
+
+#intelligentPaper .switch-detail .checkbox {
+    color: #333;
+    cursor: pointer
+}
+
+#intelligentPaper .switch-detail .icona-check {
+    float: left;
+    margin-top: 4px;
+    margin-right: 3px
+}
+
+#intelligentPaper .total {
+    margin-right: 25px;
+    float: right;
+    color: #333
+}
+
+#intelligentPaper .select-btn {
+    float: right;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #4498ee;
+    border: 1px solid #4498ee
+}
+
+#intelligentPaper .select-btn:hover {
+    color: #078ee8;
+    border: 1px solid #078ee8
+}
+
+#intelligentPaper .tree-checkbox{
+    background-position-y: -28px;
+}
+#intelligentPaper .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    border-bottom: 1px dashed #dcdcdc;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#intelligentPaper .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#intelligentPaper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#intelligentPaper .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#intelligentPaper .tag-con a:hover, #subImport .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+#intelligentPaper .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#intelligentPaper .tag-type .tag-items{
+    border-bottom: 1px dashed #dcdcdc;
+}
+
+#intelligentPaper .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#intelligentPaper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#intelligentPaper .tag-items .tag-con {
+    margin-left: 72px
+}
+#intelligentPaper .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#intelligentPaper .tag-con a:hover, #intelligentPaper .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#intelligentPaper .con-answer{
+    display:inline-block;
+    float: left;
+}
+#intelligentPaper .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#intelligentPaper .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#intelligentPaper .tag-type .layui-form-item{
+    margin-bottom:0;
+}
+#intelligentPaper .tag-type .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#intelligentPaper .tag-type .layui-input-block{
+    margin-left: 72px;
+}
+#intelligentPaper .tag-type {
+    margin: 20px auto 10px;
+    border:1px solid #dcdcdc;
+}
+

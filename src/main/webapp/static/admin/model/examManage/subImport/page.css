@@ -1,0 +1,358 @@
+#subImport{
+    float: left;
+    width: 100%;
+}
+#subImport .book_up{
+    float: left;
+    width: 100px;
+}
+#subImport .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+#subImport .bars .layui-btn-primary{
+    border:none;
+}
+#subImport .bars .layui-btn-primary:hover{
+    background:#16A3FB;
+    border-color: #16A3FB;
+    color:#fff;
+}
+#subImport .bars .layui-form-select dl dd:hover{
+    background:#fff;
+}
+#subImport .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    margin: 10px 0;
+}
+#subImport .tree-checkbox{
+    background-position-y: -28px;
+}
+#subImport .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}
+#subImport .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    /*border-bottom: 1px dashed #dcdcdc;*/
+    width:100%;
+    /*overflow: hidden;*/
+    z-index: 1
+}
+#subImport .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: left;
+}
+
+#subImport .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#subImport .tag-con {
+    margin-left: 72px
+}
+#subImport .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#subImport .tag-con a:hover, #subImport .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+#subImport .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#subImport .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#subImport .con-answer a:hover{
+    background: white;
+    color: black;
+}
+
+/*#subImport #subject_setting .layui-form-item{*/
+    /*margin-bottom:0;*/
+/*}*/
+/*#subImport #subject_setting .layui-form-label{*/
+    /*width:72px;*/
+    /*padding:0 15px 0 0;*/
+    /*line-height:40px;*/
+/*}*/
+/*#subImport #subject_setting .layui-input-block{*/
+    /*margin-left: 72px;*/
+/*}*/
+#subImport .load_ul{
+    position:absolute;
+    top: 40px;
+    left: 20px;
+    display:none;
+}
+#subImport .tag-tit em{color: red}
+#subImport .layui-form-select dl{
+    max-height:225px;
+}
+
+#subImport .ckeck_Detai{
+    text-decoration:underline;
+    color:#e63a3a;
+}
+#subImport .ckeck_Getai{
+    text-decoration:underline;
+    color:#4facfa;
+}
+/*临时成功试题----------start*/
+#subImport .form_content {
+    /*position: absolute;*/
+    width: 850px;
+    vertical-align: middle;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+    position: fixed;
+}
+#subImport .form_content .form_title {
+    float: left;
+    width: 100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#subImport .form_content .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#subImport .form_content .form_title .form_btns {
+    float: right;
+}
+#subImport .form_content .form_html {
+    padding: 10px;
+    width:100%;
+}
+#subImport .form_content h2{
+    text-align:center;
+}
+#subImport .form_content .sub_link{
+    position:absolute;
+    left:10px;
+}
+/*样式-------start*/
+#subImport .search-list{
+    /*margin-top:15px;*/
+    width:100%;
+    float: left;
+    font-size: 14px;
+}
+#subImport .search-list .not_pages{
+    line-height:200px;
+    text-align: center;
+    color: #999;
+    /*background:url('../../img/none_3.png') no-repeat center;*/
+    padding-top:150px;
+}
+#subImport .search-list ul > li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#subImport .search-list ol li{
+    line-height: 30px;
+}
+#subImport .search-list ol li p{
+    text-indent: 0!important;
+}
+#subImport .esam_m_t p:nth-child(2){
+    /*margin-top: -1.5em;*/
+}
+#subImport .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #f4f4f4;
+}
+#subImport .exam-head-left, #subImport .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#subImport .exam-head-left span {
+    margin: 0 0 0 20px;
+}
+#subImport .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+    display: none;
+}
+#subImport .searchTxt{
+    background: #E63A3A!important;
+    color: #fff!important;
+    padding: 0 2px;
+}
+#subImport .search-exam > .exam-con {
+    padding: 20px;
+}
+#subImport .exam-q {
+    color: #333;
+    line-height: 1.68em;
+    font-size: 14px;
+}
+#subImport .exam-s {
+    margin-top: 15px;
+}
+#subImport .exam-t{
+    margin: 10px;
+    position: relative;
+    padding-left: 2em;
+}
+#subImport .exam-t .exam-s{
+    margin-left: 20px;
+    color: #333
+}
+#subImport .exam-s span.op-item {
+    position: relative;
+    padding:5px 17px;
+    color: #333;
+    zoom: 1;
+    display: block;
+    min-height: 20px;
+}
+#subImport .op-item .op-item-meat {
+    margin-top: 0px;
+}
+#subImport .exam-foot {
+    height: 50px;
+    border-top: 1px dashed #dcdcdc;
+}
+#subImport .exam-foot-right .addbtn i {
+    margin-right:5px;
+}
+#subImport .exam-foot-right .addbtn:hover,#subImport .exam-foot-right .addbtn.active{
+    color:#4498ee;
+}
+#subImport .exam-foot-right .addbtn, #subImport .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    color: #777;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 10px;
+}
+#subImport .exam-foot-right a b {
+    margin-right: 2px;
+}
+    /*-----end*/
+/*--------end*/
+/*大题修改页面----------*/
+/*EditExam*/
+#subImport .EditExam{position:absolute;width:100%;background:#fff;height:100%;overflow-x:hidden;overflow-y:auto;z-index:999;top:0;right:0}
+#subImport .EditExam .form_html{width: 100%;}
+#subImport .EditExam .form_html .form_label{text-align:right;padding:0}
+#subImport .EditExam .form_html .row{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
+#subImport .EditExam .form_title{float:left;width:100%;background:#f1f3f5;padding:10px 15px;border-bottom:1px #e5e5e5 solid}
+#subImport .EditExam .form_title .back_link{float:left;line-height:34px;color:#999}
+#subImport .EditExam .form_title .back_link i{font-size:12px}
+#subImport .EditExam .form_title .form_btns{float:right}
+#subImport .EditExam{width:850px;border-left:1px solid #ccc;position:fixed}
+#subImport .EditExam .form_html{width:100%}
+#subImport .EditExam .layui-input-block{margin-left:80px}
+#subImport .EditExam .level-item{display:inline-block;padding:2px 6px;margin:7px 10px 7px 0;line-height:20px;cursor:pointer}
+#subImport .EditExam .level-item.active{background:#e63a3a;color:#fff}
+#subImport .EditExam .layui-form-label{text-align:left}
+#subImport .EditExam .layui-form-item{margin-bottom:0}
+#subImport .EditExam .box-select-s{padding:4px;border:1px #ddd solid;min-height:40px}
+#subImport .EditExam .box-select-s a{display:inline-block;margin:4px 4px 4px 4px;line-height:16px;padding:3px 6px;background:#dcdcdc}
+#subImport .EditExam .box-select-s a i{float:right;font-size:14px;margin-left:5px;margin-top:1px}
+#subImport .EditExam .layui-form-selected .accordion_tree_parent{display:block}
+#subImport .EditExam .accordion_tree_parent{display:none;padding:5px 15px;position:absolute;background:#fff;z-index:1;height:300px;overflow-y:auto;border:1px #ccc solid}
+#subImport .form_title .layui-btn{background:#4498ee!important;color:#fff!important}
+#subImport .EditExam .layui-form-label {float:left;display:block;padding:9px 15px;width:80px;font-weight:400;}
+/*--------------end*/
+/*------------end*/
+/*预览-----------start*/
+#subImport .seeList{background:#fff;height:100%;overflow-x:hidden;overflow-y:auto;z-index:999;top:0;right:0;width: 850px;border-left: 1px solid #ccc;position: fixed;}
+#subImport .form_sm{width:400px;right:0;top:0;border-left:1px #ddd solid;overflow:hidden}
+#subImport .seeList .form_html{width:100%;;padding:10px 15px;margin:10px auto 0 auto}
+#subImport .form_sm .form_html{width:100%;float:left;margin:0;padding:15px;}
+#subImport .seeList .form_title .form_btns button{background:#E63A3A;}
+#subImport .seeList .form_title .form_btns button:hover,.seeList .form_title .form_btns button:focus{border-color: #E63A3A!important; }
+#subImport .seeList .form_html .form_label{text-align:right;padding:0}
+#subImport .seeList .form_html .row{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
+#subImport .seeList .form_title{float:left;width:100%;background:#f1f3f5;padding:10px 15px;border-bottom:1px #e5e5e5 solid}
+#subImport .seeList .form_title .back_link{float:left;line-height:34px;color:#999}
+#subImport .seeList .form_title .back_link i{font-size:12px}
+#subImport .seeList .form_title .form_btns{float:right}
+#subImport .form_content_Y{float:left;width:100%;overflow-x:hidden;overflow-y:auto;height:calc(100% - 60px);height:-moz-calc(100% - 60px);height:-webkit-calc(100% - 60px)}
+#subImport #know_sub h3,.seeList #know_sub h2{background:#F8F8F8;padding:10px}
+#subImport .seeList #know_sub h2{height:50px;line-height:50px;font-size:14px;padding-left:10px}
+#subImport .seeList #know_sub h3{font-size:14px;font-weight:700;padding:10px}
+#subImport .seeList #know_sub img{vertical-align:middle!important}
+#subImport .seeList #know_sub>div .know_title{padding:10px 20px;word-wrap:break-word;margin-bottom:10px;font-size:14px;line-height:1.68em}
+#subImport .seeList #know_sub .know_title p{text-indent:2em!important;font-size:14px}
+#subImport .seeList #know_sub ol .know_title p{text-indent:0!important;font-size:14px}
+#subImport .seeList #know_sub>div .know_context{min-height:20px;line-height:20px;font-size:14px}
+#subImport .seeList #know_sub>div .know_space{position:relative;word-wrap:break-word}
+#subImport .seeList .un-data{color:#999}
+#subImport .seeList #know_sub>div .know_space .know_span{margin:0 10px}
+#subImport .seeList #know_sub>div .know_space .know_item_left{position:absolute}
+#subImport .seeList #know_sub>div .know_space .know_item_right{display:block}
+#subImport .seeList #know_sub .option_con{padding:10px 15px}
+#subImport .seeList .option_con_li{display:inline-block;width:100%;line-height:24px;font-size:14px}
+#subImport .seeList .option_con_li>dt{float:left;width:60px}
+#subImport .seeList .option_con_li>dd{float:left;width:calc(100% - 60px);width:-moz-calc(100% - 60px);width:-webkit-calc(100% - 60px)}
+#subImport .seeList .option_con_level>dt{float:left;width:75px}
+#subImport .seeList .option_con_level>dd{float:left;width:calc(100% - 75px);width:-moz-calc(100% - 75px);width:-webkit-calc(100% - 75px)}
+#subImport .seeList .subject_con{padding: 0px 15px;margin-top: -10px;margin-bottom: -10px;}
+/*预览-----------end*/
+/*小题修改*/
+#subImport .crossSet{position:absolute;width:100%;background:#fff;height:100%;overflow-x:hidden;overflow-y:auto;z-index:999;top:0;right:0}
+#subImport .crossSet .form_html{width:100%;}
+#subImport .crossSet .form_html .form_label{text-align:right;padding:0}
+#subImport .crossSet .form_html .row{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:flex}
+#subImport .crossSet .form_title{float:left;width:100%;background:#f1f3f5;padding:10px 15px;border-bottom:1px #e5e5e5 solid}
+#subImport .crossSet .form_title .back_link{float:left;line-height:34px;color:#999}
+#subImport .crossSet .form_title .back_link i{font-size:12px}
+#subImport .crossSet .form_title .form_btns{float:right}
+#subImport .crossSet{width:850px;border-left:1px solid #ccc;position:fixed}
+#subImport .crossSet .form_html{width:100%}
+#subImport .crossSet .layui-input-block{margin-left:80px}
+#subImport .crossSet .level-item{display:inline-block;padding:2px 6px;margin:7px 10px 7px 0;line-height:20px;cursor:pointer}
+#subImport .crossSet .level-item.active{background:#e63a3a;color:#fff}
+#subImport .crossSet .layui-form-label{float:left;display:block;padding:9px 15px;width:80px;font-weight:400;text-align:left;}
+#subImport .crossSet .layui-form-item{margin-bottom:0}
+#subImport .crossSet .box-select-s{padding:4px;border:1px #ddd solid;min-height:40px}
+#subImport .crossSet .box-select-s a{display:inline-block;margin:4px 4px 4px 4px;line-height:16px;padding:3px 6px;background:#dcdcdc}
+#subImport .crossSet .box-select-s a i{float:right;font-size:14px;margin-left:5px;margin-top:1px}
+#subImport .crossSet .layui-form-selected .accordion_tree_parent{display:block}
+#subImport .crossSet .accordion_tree_parent{display:none;padding:5px 15px;position:absolute;background:#fff;z-index:1;height:300px;overflow-y:auto;border:1px #ccc solid}
+#subImport .seeList .look_title{float:left;color:#787878;margin-left:30px;line-height:34px}
+#subImport .seeList .look_title em{color:#4498ee;padding:0 5px}
+
+
+#subImport .layui-btn-primary:hover{
+    border:1px solid #4498ee;
+}
+

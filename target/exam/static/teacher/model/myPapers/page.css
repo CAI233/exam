@@ -1,0 +1,254 @@
+#myPapers{
+    float: left;
+    width: 100%;
+    margin-bottom: 100px;
+}
+#myPapers .tag-type {
+    margin: 20px auto 10px;
+    border: 1px solid #e6e6e6;
+    /*border-radius: 5px;*/
+    padding: 10px;
+    background-color: #f2f2f2;
+}
+#myPapers .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0 10px;
+}
+
+#myPapers .tag-con {
+    margin-left: 72px
+}
+#myPapers .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    /*font-size:14px;*/
+}
+#myPapers .tag-con a:hover, #myPapers .tag-con a.type-active {
+    background:#e63a3a;
+    color: white;
+    border-radius: 5px
+}
+
+#myPapers .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#myPapers .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#myPapers .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#myPapers .layui-form-item{
+    margin-bottom:0;
+}
+#myPapers .layui-form-label{
+    width:72px;
+    padding:0;
+    line-height:40px;
+}
+#myPapers .layui-input-block{
+    margin-left: 85px;
+}
+#myPapers .search-list{
+    margin-top:15px;
+    float:left;
+    width:100%;
+}
+#myPapers .search-list .not-pp{
+    text-align: center;
+    line-height: 200px;
+    color: #999;
+    background:url('../../img/none_2.png') no-repeat center;
+    padding-top:150px;
+}
+#myPapers .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#myPapers .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px;
+}
+#myPapers .exam-head-left, #myPapers .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#myPapers .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+#myPapers .exam-head-left a{
+    cursor: pointer;
+}
+#myPapers .search-exam > .exam-con {
+    padding: 20px 20px;
+}
+#myPapers .exam-con {
+    cursor: pointer;
+}
+#myPapers .exam-q {
+    font-size: 16px !important;
+    color: #333;
+    line-height: 24px;
+}
+#myPapers .exam-s {
+    zoom: 1;
+    margin-top: 20px;
+}
+#myPapers .exam-s  a{
+    float: right ;
+    margin-top: -2em;
+    line-height: 2.5;
+    font-size: 14px;
+    margin-right: 30px;
+}
+#myPapers .exam-s  button{
+    float: right;
+    margin-top: -2em;
+    color: white;
+    background-color: #e63a3a;
+    border-radius: 5px;
+    width:100px;
+    font-size: 14px;
+
+}
+#myPapers .exam-s  span{
+    color: #8d8d8d;
+    margin-right: 20px;
+}
+#myPapers .exam-t{
+    margin: 10px;
+
+}
+#myPapers .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#myPapers .exam-s, #myPapers .lx-teacher, #myPapers .op-item {
+    clear: both;
+}
+#myPapers .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1;
+    clear: none;
+}
+#myPapers .op-item .op-item-meat {
+    display: block;
+    margin-top: 0px;
+}
+#myPapers .exam-foot {
+    height: 50px;
+    border-top: 1px dashed #dcdcdc;
+}
+#myPapers .exam-head-left{
+    font-size: 12px;
+    color: #666;
+    padding: 5px 20px;
+}
+#myPapers .exam-head-left a{
+    font-size: 16px;
+    float: right;
+    color: #8d8d8d;
+    margin-right: 7px;
+}
+#myPapers .exam-head-left a span {
+    display:inline-block;
+    font-size: 13px;
+    margin-left: 3px;
+}
+#myPapers .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+/*试卷设置样式---------start*/
+#myPapers #paper_config {
+    padding: 30px 60px 0 30px;
+}
+#myPapers #paper_config .layui-form-item{
+    margin-bottom:15px;
+}
+#myPapers #paper_config .layui-form-item .layui-select-title span {
+    display: inline-block;
+    background: #d5d8da;
+    margin: 7px 7px 0 0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+#myPapers #paper_config .layui-form-label{
+    width: 110px;
+    padding: 9px 15px;
+    line-height: normal;
+}
+#myPapers #paper_config .layui-input-block{
+    margin-left:110px;
+}
+#myPapers #paper_config .layui-form-select li{
+    margin: 5px;
+}
+#myPapers #paper_config .layui-form-select li.layui-this{
+    background-color: #E63A3A !important;
+    color:#fff!important;
+    margin: 5px;
+}
+#myPapers #paper_config .layui-form-checked[lay-skin=primary] i{
+    background:#E63A3A;
+    border-color:#E63A3A;
+}
+#myPapers #paper_config .layui-form-checkbox[lay-skin=primary]:hover i{
+    /*background:none;*/
+    border-color:#E63A3A;
+}
+/*.layui-form-checked[lay-skin=primary] i*/
+/*--------------end*/
+/*底部分页样式---------------------*/
+#myPapers .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#myPapers .layui-laypage input:focus,#examKnowledge .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#myPapers .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+
+#myPapers .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+#myPapers .tag-conbox {
+    width: 100%;
+    float: right
+}
+#myPapers .layui-form-radio i:hover, .layui-form-radioed i{
+    color:#e63a3a;
+}

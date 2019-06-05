@@ -1,0 +1,43 @@
+#papersAnalyse{}
+#analyse{}
+#papersAnalyse h3{
+    font-size:16px;
+    border-bottom:2px solid gray ;
+}
+#papersAnalyse .content_page:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#papersAnalyse .contain_context:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#papersAnalyse .contain_context{
+    padding-left:15px;
+    margin-top:50px;
+}
+#papersAnalyse .ana_context:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+
+#papersAnalyse .table_list>tr{
+    min-height:40px;
+    padding:5px;
+    box-sizing:border-box;
+}
+#papersAnalyse  .ana_context{
+    min-width:1200px;
+}
+#papersAnalyse .ana_contexts:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#papersAnalyse .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}

@@ -1,0 +1,424 @@
+#subjectManage{
+    float: left;
+    width: 100%;
+}
+#subjectManage img{
+    vertical-align: middle !important;
+}
+#subjectManage .book_up{
+    float: left;
+    width: 100px;
+}
+#subjectManage .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+
+#question_bank{
+    float: left;
+    width: 100%;
+    padding: 15px 15px 0;
+}
+#question_bank table{
+    table-layout: fixed;
+}
+#question_bank td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#subjectManage .table_control>table.layui-table{
+    margin-top:0;
+}
+#subjectManage .layui-btn-primary:focus,.layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#subjectManage .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}
+
+/*试题预览--------------start*/
+#subjectManage #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+    position:relative;
+}
+#subjectManage #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#subjectManage #know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#subjectManage #know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    word-wrap:break-word;
+}
+#subjectManage #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#subjectManage #know_sub>div .know_space{
+    margin: 5px auto;
+    min-height: 20px;
+    position: relative;
+    word-wrap: break-word;
+}
+#subjectManage #know_sub>div .know_space .know_span{
+    margin:0 10px;
+}
+#subjectManage #know_sub .option_con{
+    /*border-bottom: 1px #f4f4f4 solid;*/
+}
+#subjectManage #know_sub .option_con .option_con_li{
+    display: inline-block;
+    width: 100%;
+    margin-top: 20px;
+}
+#subjectManage #know_sub .option_con .option_con_li > dt{
+    float: left;
+    width: 60px;
+    line-height: 1.35em;
+}
+#subjectManage #know_sub .option_con .option_con_li > dd {
+    float: left;
+    width: calc(100% - 60px);
+    width: -moz-calc(100% - 60px);
+    width: -webkit-calc(100% - 60px);
+    line-height: 1.35em;
+}
+/*--------------end*/
+#subjectManage select{
+    border: none;
+    background: none;
+}
+#subjectManage .book_up{
+    float: left;
+    width: 100px;
+}
+#subjectManage .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+
+#subjectManage .form-left{
+    float: left;
+    width:40%;
+    margin-top: 100px;
+}
+#subjectManage .form-right{
+    float: left;
+    width:50%;
+}
+
+#subjectManage .form-left-bottom{
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+#subjectManage .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#subjectManage .table_control td > span {
+     display: initial;
+    word-break: break-all;
+    overflow: hidden;
+    max-width: 300px;
+    text-overflow: ellipsis;
+}
+#subjectManage .form_content{
+    width: 800px;
+    border-left: 1px solid #ccc;
+}
+#subjectManage .form_content .form_html{
+    width:100%;
+    font-size: 14px !important;
+}
+#subjectManage .form_content1 {
+    position: absolute;
+    width: 600px;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+}
+#subjectManage .form_content1 .form_title {
+    float: left;
+    width: 100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#subjectManage .form_content1 .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#subjectManage .form_content1 .form_title .form_btns {
+    float: right;
+}
+#subjectManage .form_content1 .form_html {
+    padding: 20px;
+}
+#subjectManage .form_content1 h2{
+    text-align:center;
+}
+#subjectManage .form_content1 .sub_link{
+    position:absolute;
+    left:10px;
+}
+#subjectManage .form_content2 {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+}
+
+#subjectManage .form_content2 #child_table table tr{
+    text-align:center;
+}
+#subjectManage .form_content2 #child_table table tr:nth-child(even){background:#f2f2f2;}
+#subjectManage .form_content3 {
+    position: absolute;
+    width: 800px;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+}
+
+#subjectManage .form_content3 .form_title{
+    float: left;
+    width: 100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#subjectManage .form_content3 .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#subjectManage .form_content3 .form_title .form_btns {
+    float: right;
+}
+#subjectManage .form_content3 .form_html {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px auto 0 auto;
+}
+#subjectManage .row {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+#subjectManage .search-list{
+    margin-top:15px;
+    float:left;
+    width:100%;
+}
+#subjectManage .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+#subjectManage .search-exam {
+    background: #fff;
+}
+#subjectManage .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px;
+}
+#subjectManage .exam-head-left, #subjectManage .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#subjectManage .exam-head-left span {
+    margin: 0 20px;
+}
+#subjectManage .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+#subjectManage .search-exam > .exam-con {
+    margin: 20px;
+}
+#subjectManage .exam-con {
+    cursor: pointer;
+}
+#subjectManage .exam-q {
+    font-size: 14px !important;
+    color: #333;
+    line-height: 1.35em;
+}
+#subjectManage .exam-s {
+    zoom: 1;
+}
+#subjectManage .exam-t{
+    margin: 30px;
+
+}
+#subjectManage .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#subjectManage .exam-s, #subjectManage .lx-teacher, #subjectManage .op-item {
+    clear: both;
+}
+#subjectManage .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1;
+    clear: none;
+}
+#subjectManage .op-item .op-item-meat {
+    display: block;
+    margin-top: 0px;
+}
+#subjectManage .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc;
+}
+#subjectManage .exam-foot-right, #subjectManage .exam-head-right {
+    float: right;
+}
+#subjectManage .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 20px;
+}
+#subjectManage .exam-foot-right .addbtn b {
+    background: #4498ee;
+    font-size: 14px;
+}
+
+#subjectManage .exam-foot-right .addbtn, #subjectManage .exam-foot-right .removebtn {
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0;
+    padding: 0 15px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+}
+#subjectManage .exam-foot-right a b {
+    margin-right: 2px;
+}
+#subjectManage .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#subjectManage .tag-type .tag-items{
+    border-bottom: 1px dashed #dcdcdc;
+}
+
+#subjectManage .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#subjectManage .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#subjectManage .tag-con {
+    margin-left: 72px
+}
+#subjectManage .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 1px 10px;
+    cursor: pointer;
+    /*font-size:14px;*/
+}
+#subjectManage .tag-con a:hover, #subjectManage .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#subjectManage .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#subjectManage .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#subjectManage .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#subjectManage .layui-form-item{
+    margin-bottom:0;
+}
+#subjectManage .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#subjectManage .layui-input-block{
+    margin-left: 72px;
+}
+#subjectManage .tag-type {
+    margin: 20px auto 10px;
+    border:1px solid #dcdcdc;
+}
+#exam_content .exam-con .exam-t ol li:before{
+    content:')';
+    position: absolute;
+    left:-5px;
+}
+#subjectManage .esam_m_t p {
+    text-indent: 2em;
+}
+#subjectManage #know_sub .know_title p{
+    text-indent: 2em!important;
+    font-size: 14px;
+}
+#subjectManage #know_sub ol .know_title p{
+    text-indent: 0!important;
+    font-size: 14px;
+}

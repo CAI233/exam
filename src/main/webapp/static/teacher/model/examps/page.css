@@ -1,0 +1,289 @@
+#examps{
+    float: left;
+    width: 100%;
+    margin-bottom: 50px;
+    color: #666;
+}
+#examps .tag-type {
+    margin: 20px auto 10px;
+    border: 1px solid #ddd;
+    padding: 10px;
+    background-color: #f4f4f4;
+}
+/*头部搜索------------------*/
+#examps .main>.tag-type:nth-child(1){padding: 20px 0;border: none;background: none;margin:0;}
+#examps .main>.tag-type .logo a{
+    display:inline-block;
+    height:60px;
+    width:150px;
+    background:url('../../img/l-logo.png') no-repeat center center;
+    background-size: contain;
+
+}
+#examps .main>.tag-type .search .layui-input-block{
+    margin-left: 15px;
+}
+#examps .main>.tag-type .search .layui-input:hover,#examps .main>.tag-type .search .layui-input:focus{
+    border:1px solid #E63A3A !important;
+}
+#examps .main>.tag-type .search button{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background:#E63A3A;
+    color:#fff;
+}
+/*头部搜索---------------end*/
+#examps .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1;
+    /*border-bottom: 1px dashed #8D8D8D;*/
+    padding: 0 10px;
+}
+#examps .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#examps .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#examps .tag-con {
+    margin-left: 72px
+}
+#examps .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 2px 10px;
+    cursor: pointer;
+    /*font-size:14px;*/
+}
+#examps .tag-con a:hover, #examps .tag-con a.type-active {
+    background:#e63a3a;
+    color: white;
+    border-radius: 5px
+}
+
+#examps .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#examps .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#examps .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#examps .layui-form-item{
+    margin-bottom:0;
+}
+#examps .layui-form-label{
+    width:72px;
+    padding:0;
+    line-height:40px;
+}
+#examps .layui-input-block{
+    margin-left: 85px;
+}
+#examps .search-list{
+    margin-top:15px;
+    float:left;
+    width:100%;
+}
+#examps .search-list .not-pp{
+    text-align: center;
+    line-height: 200px;
+    color: #999;
+    background:url('../../img/none_2.png') no-repeat center;
+    padding-top:150px;
+}
+#examps .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+}
+/*#examps .search-exam {*/
+    /*background: #fff;*/
+/*}*/
+#examps .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px;
+}
+#examps .exam-head-left, #examps .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#examps .exam-head-left span {
+    margin: 0 20px;
+}
+#examps .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+#examps .search-exam > .exam-con {
+    padding: 20px 20px;
+}
+#examps .exam-q {
+    font-size: 16px !important;
+    color: #333;
+    line-height: 24px;
+}
+#examps .exam-s {
+    zoom: 1;
+    margin-top: 20px;
+}
+#examps .exam-s  a{
+    float: left;
+    margin-top: -2em;
+    line-height: 2.5;
+    font-size: 12px;
+    margin-right: 20px;
+    color: #8d8d8d;
+    cursor: pointer;
+}
+#examps .exam-s  a span{
+    line-height: 38px;
+    display: block;
+}
+#examps .exam-s .actions{
+    float: right;
+}
+#examps .exam-s  a i{
+    float: left;
+    margin-right: 5px;
+}
+#examps .exam-s  a:hover{
+    color: #e63a3a;
+}
+#examps .exam-s  button{
+    float: left;
+    margin-top: -2em;
+    color: white;
+    background-color: #e63a3a;
+    border-radius: 5px;
+    width:100px;
+    font-size: 14px;
+
+}
+#examps .exam-s  span{
+    margin-right: 20px;
+}
+#examps .exam-t{
+    margin: 10px;
+
+}
+#examps .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#examps .exam-s, #examps .lx-teacher, #examps .op-item {
+    clear: both;
+}
+#examps .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1;
+    clear: none;
+}
+#examps .op-item .op-item-meat {
+    display: block;
+    margin-top: 0px;
+}
+#examps .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc;
+}
+#examps .exam-foot-right, #examps .exam-head-right {
+    float: right;
+}
+#examps .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 20px;
+}
+#examps .exam-s .addbtn:hover,#examps .exam-s .addbtn.active{
+    color:#E63A3A;
+}
+#examps .exam-foot-right .addbtn b {
+    background: #4498ee;
+    font-size: 14px;
+}
+
+#examps .exam-foot-right .addbtn, #examps .exam-foot-right .removebtn {
+    height: 28px;
+    line-height: 28px;
+    margin: 5px 0;
+    padding: 0 15px;
+    border-radius: 3px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+    font-size: 16px;
+}
+#examps .exam-foot-right a b {
+    margin-right: 2px;
+}
+/*底部分页样式---------------------*/
+#examps .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#examps .layui-laypage input:focus,#examKnowledge .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#examps .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/
+
+#examps .con-content{
+    float: left;
+    width: 100%;
+}
+#examps .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#examps .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#examps .top_nav a{
+    cursor: pointer;
+}
+#examps .top_nav label{
+    color: #999;
+}
+#examps .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+#examps .top_nav{
+    float: left;
+    width: 100%;
+    line-height: 24px;
+    color: #676767;
+    margin-top: -10px;
+}

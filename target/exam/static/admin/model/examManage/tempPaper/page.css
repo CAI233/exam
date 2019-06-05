@@ -1,0 +1,72 @@
+
+#tempPaper #col_comTree{
+    float: left;
+    width: 320px;
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 41px);
+    height: -moz-calc(100% - 41px);
+    height: -webkit-calc(100% - 41px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#tempPaper .form_content3 .form_html{
+    width: 100%;
+    float: right;
+    padding-left: 320px;
+    height: 90%;
+}
+#tempPaper .content_page_left{
+    width: 320px;
+    margin-top: 60px;
+    height: calc(100% - 60px);
+    height: -moz-calc(100% - 60px);
+    height: -webkit-calc(100% - 60px);
+    padding: 0;
+}
+#tempPaper .tree-checkbox{
+    background-position: -208px -29px;
+}
+#tempPaper .tree-checkbox1{
+    background-position: -224px -29px;
+}
+
+
+
+#tempPaper .dati-model-plan{
+    display: inline-block;
+    width: 100%;
+}
+#tempPaper .dati-model{
+    float: left;
+    width: 100%;
+    padding: 15px;
+    border: 1px #ccc solid;
+}
+#tempPaper .dati-model .row{
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+#tempPaper .dati-model .layui-form-item{
+    float: left;
+}
+#tempPaper .col-xs-666{
+    float: left;
+    width: calc(75% - 145px);
+    width: -moz-calc(75% - 145px);
+    width: -webkit-calc(75% - 145px);
+    padding-left: 15px;
+}
+#tempPaper .row_select input{
+    background: #f63!important;
+    color: #fff!important;
+    font-weight: bold !important;
+}
+#tempPaper .layui-form-onswitch{
+    border-color: #1E9FFF;
+    background-color: #1E9FFF;
+}
+#tempPaper .layui-form-select dl dd.layui-this{
+    background-color: #1E9FFF;
+}

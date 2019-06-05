@@ -1,0 +1,232 @@
+<div class="subjectHtml" id="updateSubHtml">
+    <form class="form_html" style="padding: 20px 15%">
+        <div class="layui-form-item" ng-if="status">
+            <label class="layui-form-label"><em>*</em>选择题型:</label>
+            <div class="layui-input-block">
+                <div class="layui-unselect layui-form-select">
+                    <div class="layui-select-title">
+                        <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                               placeholder="请选择" ng-model="selRow.subject_type_name"/>
+                        <i class="layui-edge"></i>
+                    </div>
+                    <dl class="layui-anim layui-anim-upbit">
+                        <dd ng-repeat="item in typeData"
+                            ng-click="selRow.subject_type=item.id;selRow.subject_type_name=item.text; initOption(item)"
+                            ng-class="{'layui-this':selRow.subject_type_name == item.text}">{{item.text}}
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="layui-form-item col-xs-8">
+                <label class="layui-form-label"><em>*</em>选择年级:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                   placeholder="请选择" ng-model="selRow.grade_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in selgradeData"
+                                ng-click="selRow.subject_grade=item.id;selRow.grade_name=item.dic_name; selectSelGra(item)"
+                                ng-class="{'layui-this':selRow.grade_name == item.dic_name}">{{item.dic_name}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item col-xs-8">
+                <label class="layui-form-label"><em>*</em>专业分类:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                   placeholder="请选择" ng-model="selRow.specialty_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in selspecialtyData"
+                                ng-click="selRow.subject_specialty=item.id;selRow.specialty_name=item.dic_name; selectSelSpe(item)"
+                                ng-class="{'layui-this':selRow.specialty_name == item.dic_name}">{{item.dic_name}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="layui-form-item col-xs-8">
+                <label class="layui-form-label"><em>*</em>课程分类:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                   placeholder="请选择" ng-model="selRow.curriculum_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in selcurriculumData"
+                                ng-click="selRow.subject_curriculum=item.id;selRow.curriculum_name=item.dic_name; selectSelCurr(item)"
+                                ng-class="{'layui-this':selRow.curriculum_name == item.dic_name}">{{item.dic_name}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item col-xs-8">
+                <label class="layui-form-label"><em>*</em>章节分类:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly"
+                                   placeholder="请选择" ng-model="selRow.chapter_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <ul id="selchaTree"></ul>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="layui-form-item col-xs-12">
+                <label class="layui-form-label"><em>*</em>知识点分类:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly"
+                                   placeholder="请选择" ng-model="selRow.know_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <ul id="selknowTree"></ul>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">-->
+        <!--<div class="layui-form-item col-xs-12">-->
+        <!--<label class="layui-form-label"><em>*</em>题目标题:</label>-->
+        <!--<div class="layui-input-block">-->
+        <!--<input type="text" class="layui-input" ng-model="selRow.subject_title" maxlength="20"/>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <div class="row">
+            <div class="layui-form-item col-xs-12">
+                <label class="layui-form-label"><em>*</em>题目题干:</label>
+                <div class="layui-input-block">
+                    <iframe id="myIframe"
+                            ng-src="{{ctxPath+'/static/admin/plugin/ueditor/edit.html'}}"
+                            scrolling="no" style="border: 1px #ddd solid" width="100%" height="200"
+                            frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="layui-form-item col-xs-12" ng-show="selRow.subject_type == 3 || selRow.subject_type == 5">
+                <label class="layui-form-label"><em>*</em>题目答案:</label>
+                <div class="layui-input-block" ng-click="openQuestion(2)" style="border: 1px solid #e6e6e6;"
+                     ng-show="selRow.subject_type == 5">
+                    <div style="margin-right: 10px;margin-left: 10px; font-size: 14px; line-height: 38px;"
+                         ng-bind-html="_trustAsHtml(selRow.subject_answer)">
+                    </div>
+                </div>
+                <div class="layui-input-block" ng-show="selRow.subject_type == 3">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                   placeholder="请选择" ng-model="selRow.subject_answer"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in ['正确', '错误']"
+                                ng-click="selRow.subject_answer = item; selectAnswer(item)"
+                                ng-class="{'layui-this':selRow.subject_answer == item}">{{item}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="layui-form-item col-xs-8" ng-if="selRow.subject_type != 6">
+                <label class="layui-form-label"><em>*</em>题目分数:</label>
+                <div class="layui-input-block">
+                    <!--<input type="text" class="layui-input" ng-change="show_socre(selRow.subject_marks)" ng-model="selRow.subject_marks" maxlength="2" />-->
+                    <input type="text" class="layui-input" ng-model="selRow.subject_marks"
+                           onkeyup="this.value=this.value.replace(/\D/g,'')" maxlength="2"/>
+                </div>
+            </div>
+            <div class="layui-form-item col-xs-8" ng-if="selRow.subject_type != 6">
+                <label class="layui-form-label"><em>*</em>难易度:</label>
+                <div class="layui-input-block">
+                    <div class="layui-unselect layui-form-select">
+                        <div class="layui-select-title">
+                            <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                                   placeholder="请选择" ng-model="selRow.subject_level_name"/>
+                            <i class="layui-edge"></i>
+                        </div>
+                        <dl class="layui-anim layui-anim-upbit">
+                            <dd ng-repeat="item in levelData"
+                                ng-click="selRow.subject_level=item.id;selRow.subject_level_name=item.text;"
+                                ng-class="{'layui-this':selRow.subject_level_name == item.text}">{{item.text}}
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="layui-form-item col-xs-12" ng-if="selRow.subject_type != 6">
+                <label class="layui-form-label">题目解析:</label>
+                <div class="layui-input-block" ng-click="openQuestion(3)" style="border: 1px solid #e6e6e6;">
+                    <div style="margin-right: 10px;margin-left: 10px;font-size: 14px; line-height: 38px;"
+                         ng-bind-html="_trustAsHtml(selRow.subject_analysis)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--<div class="row">-->
+        <div class="layui-form-item" ng-repeat="opt in selRow.option" style="padding-left:15px;"
+             ng-show="selRow.subject_type == 1 || selRow.subject_type == 2 || selRow.subject_type == 4">
+            <div class="col-xs-10" style="padding-left: 0;">
+                <label class="layui-form-label"><em>*</em>答案{{$index + 1}}:</label>
+                <div class="layui-input-block" ng-click="openQuestion($index + 4)"
+                     style="border: 1px solid #e6e6e6;">
+                    <div style="margin-right: 10px;margin-left: 10px; font-size: 14px; line-height: 38px;"
+                         ng-bind-html="_trustAsHtml(opt.option_context)">
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-1" style="height: 38px;" ng-hide="true">
+                <a class="a-link" href="javascript:void(0)" ng-show="$index > 0"
+                   style="font-size:28px; color: red;" ng-click="_delOption(opt)">－</a>
+                <a class="a-link" href="javascript:void(0)" ng-show="$index < 1"
+                   style="font-size:28px; color: green;" ng-click="_addOption()">＋</a>
+            </div>
+            <div class="col-xs-1" style="height: 38px;" ng-show="selRow.subject_type == 2">
+                <div class="box" style="margin-top: 11px">
+                    <label class="check" ng-click="changeRight($index + 1)"><i
+                            ng-class="{'active':opt.option_right==1}"></i></label>
+                </div>
+            </div>
+            <div class="col-xs-1" style="height: 38px;" ng-show="selRow.subject_type == 1">
+                <div class="box" style="margin-top: 11px">
+                    <input type="radio" name="option_right" ng-model="opt.option_right"
+                           ng-checked="opt.option_right==1" ng-click="changeRight($index + 1)">
+                </div>
+            </div>
+        </div>
+        <!--</div>-->
+    </form>
+
+    <div class="form_bars" style="text-align: center;margin-top: 20px">
+        <button class="layui-btn" ng-click="_form_submit()"> 保存</button>
+        <button class="layui-btn layui-btn-primary" ng-click="closeLayer()">取消</button>
+    </div>
+</div>

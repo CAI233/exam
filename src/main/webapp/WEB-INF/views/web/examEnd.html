@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../include/public_file.ftl" />
+    <script type="application/javascript" src="${ctxPath}/static/web/js/examEnd.js"></script>
+</head>
+<body>
+<!-- 公共头 -->
+<#include "../include/public_header.ftl" />
+
+<div class="w_center" style="padding: 20px 0;background:rgb(249,249,249);min-height:717px;" id="examEnd">
+    <div class="main">
+        <div id="cont-top" >
+            <div class="top_nav" style="width:1000px;">
+                <i class="iconfont icon-dingwei1"></i>位置：
+                <a href="/examArrange">考试安排</a>
+                <em>&gt;</em>
+                <a>开始考试</a>
+                <em>&gt;</em>
+                <label>结束考试</label>
+            </div>
+        </div>
+        <div class="content">
+            <div class="cont-content">
+                <div id="content">
+                    <!--<p class="score">0分</p>-->
+                    <!--<p class="hint">考试结束，很遗憾你没有通过考试！</p>-->
+                </div>
+                <div class="footer">
+                    <a class="layui-btn layui-btn-normal" href="/examRecord">关闭</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 公共底 -->
+<#include "../include/public_footer.ftl" />
+</body>
+</html>

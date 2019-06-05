@@ -1,0 +1,146 @@
+<div id="schoolBlank" class="animated fadeIn">
+    <div class="main">
+        <!--顶部查询条件-->
+        <div class="tag-type">
+            <div class="logo" style="float: left;">
+                <a href="#/home" title="首页"></a>
+            </div>
+            <div class="search " style="padding: 15px;width: 500px;float: right;">
+                <div class="layui-input-block">
+                    <input type="text" name="title"  ng-model="param.searchText"  class="layui-input" style="padding-right:70px;border:1px solid #E63A3A;" placeholder="试题名称/关键字">
+                    <button class="layui-btn layui-btn-primary " ng-click="reload()" >搜索</button>
+                </div>
+            </div>
+            <div style="clear: both;"></div>
+        </div>
+        <div class="con-content">
+            <div class="top_nav">
+                <i class="iconfont icon-weizhi"></i>位置：
+                <a href="#/home">首页</a>
+                <em>&gt;</em>
+                <a>试题库</a>
+                <em>&gt;</em>
+                <label>学校题库</label>
+            </div>
+        </div>
+        <div class="content_page_left">
+            <div class="layui-form-item" style="border-bottom:1px solid #ccc;background: #E63A3A;color: #fff;margin-bottom: 0">
+                <div class="dropdown col-xs-12">
+                    <div class="input_group"
+                         style="display: block;text-align: center;height: 40px;line-height: 40px;cursor: pointer;">
+                        <a class="title text-overflow" style="color: #fff;font-size:15px">选择知识点</a>
+                    </div>
+                </div>
+            </div>
+            <!--知识点公共树-->
+            <div class="accordion_tree_parent">
+                <accordion   expander='expander' knowledge="knowledges"  children='expander.children' ng-repeat='expander in knowledges | orderBy : "create_time"'></accordion>
+            </div>
+        </div>
+        <div class="content_page_right">
+            <div class="tag-type">
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">题型：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type"
+                                       ng-click="all_param.subject_type=null;reload()"
+                                       ng-class="{'type-active':!all_param.subject_type}">全部</a>
+                                    <a data-name="question_channel_type" ng-repeat="item in questionDataTypes"
+                                    ng-click="all_param.subject_type=item.id;reload()"
+                                    ng-class="{'type-active':all_param.subject_type==item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">难易度：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a data-name="question_channel_type"
+                                       ng-click="all_param.subject_level=null;reload()"
+                                       ng-class="{'type-active':!all_param.subject_level}">全部</a>
+                                    <a data-name="question_channel_type" ng-repeat="item in questionLevelTypes"
+                                    ng-click="all_param.subject_level=item.id;reload()"
+                                    ng-class="{'type-active':all_param.subject_level==item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="sort" ng-if="subjectList && subjectList.length!=0">
+                <span>排序：</span>
+                <a class="select-btn" ng-class="{'at':all_param.timeOrder}" href="javascript:void(0);" ng-click="sort_time()">时间 <i class="iconfont" ng-class="{'icon-xia':all_param.timeOrder == 'desc','icon-xia1':all_param.timeOrder != 'desc'}"></i></a>
+                <a class="select-btn" ng-class="{'at':all_param.countOrder}" href="javascript:void(0);" ng-click="sort_nums()">组卷次数 <i class="iconfont" ng-class="{'icon-xia':all_param.countOrder == 'desc','icon-xia1':all_param.countOrder != 'desc'}"></i></a>
+                <label>共有<em>{{all_param.total}}</em>道试题</label>
+            </div>
+            <!--试题列表-->
+            <div class="search-list">
+                <p class="not_pages" ng-if="!subjectList"><span>试题正在加载，请稍后~</span></p>
+                <p class="not_pages" ng-if="subjectList && subjectList.length==0"><span>当前条件下没有试题，请重新选择~</span></p>
+                <ul id="J_QuestionList">
+                    <li class="uglify-man" ng-repeat="item in subjectList" >
+                        <div class="search-exam">
+                            <div class="exam-head">
+                                <p class="exam-head-left">
+                                    <span>题型：<i ng-bind="_get_exam_name_byid(item.subject_curriculum, item.subject_type)"></i></span>
+                                    <span>难易度：<i ng-bind="_get_qustion_leve(item.subject_level)"></i></span>
+                                    <span>更新时间：<i ng-bind="item.update_time"></i></span>
+                                    <span >组卷次数：<i ng-bind="item.countorder = item.countorder !=null ? item.countorder : 0 "></i></span>
+                                    <span class="exam-foot-right" style="float: right;margin: 0 5px">
+                                        <a ng-if="!superManage()" class="addbtn"  ng-click="delSub(item)" ><i class="iconfont icon-iconzhenghe62"></i>删除</a>
+                                        <a ng-if="!superManage()" class="addbtn"  ng-click="openExamForm(item, all_load)"><i style="font-size: 13px;" class="iconfont icon-b2"></i>修改</a>
+                                        <a class="addbtn"  ng-click="openSeeList(item,$index)"><i class="iconfont icon-yulan1"></i>预览</a>
+                                        <a class="addbtn {{_judgeBasket(item) == true && 'active' || ''}}" ng-if="!superManage()" ng-click="_addBasket(item)">
+                                            <i class="iconfont {{_judgeBasket(item) == true && 'icon-gouwucheman1' || 'icon-gouwuche1'}} "></i>
+                                            <em ng-if="_judgeBasket(item)">已加入</em>试题篮
+                                        </a>
+                                    </span>
+                                </p>
+                            </div>
+                            <div class="exam-con">
+                                <div class="exam-q">
+                                    <div class="esam_m_t" ng-bind-html="_trustAsHtml(replacehtml(item.subject_question))" style="text-align:justify"></div>
+                                </div>
+                                <!--不显示小题-->
+                                <!--<div class="exam-s" ng-hide="false">-->
+                                    <!--<ol ng-if="item.subjectList && item.subjectList.length > 0" class="exam-t" type="1">-->
+                                        <!--<li ng-repeat="items in item.subjectList" style="margin: 5px 0;text-align:justify;list-style:inherit;">-->
+                                            <!--<div ng-bind-html="_trustAsHtml(replacehtml(items.subject_question))"></div>-->
+                                        <!--</li>-->
+                                    <!--</ol>-->
+                                <!--</div>-->
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div style="position:relative;" ng-show="subjectList && subjectList.length > 0">
+                    <div id="pager" style="float: left;"></div>
+                    <div style="float:right;line-height:55px;">
+                        共<span style="padding: 0 5px;color: #E63A3A">{{all_param.pages}}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{all_param.total}}</span>条
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--试题预览-->
+    <see-list></see-list>
+
+    <!--试题修改--大题 ----->
+    <edit-exam></edit-exam>
+
+    <!--小题修改&&新增-->
+    <cross-set></cross-set>
+
+
+
+</div>

@@ -1,0 +1,116 @@
+#teachinfo .cl li:hover{background:none}
+#teachinfo .cl li{
+    padding: 0;
+}
+#teachinfo .box .check{
+    width: 100%;
+}
+#teachinfo .box .check i{
+    width:100%;
+}
+#teachinfo select{
+    border: none;
+    background: none;
+}
+#teachinfo .form_sm .form_html{
+    height:800px
+}
+
+#teachinfo .book_up{
+    float: left;
+    width: 100px;
+}
+#teachinfo .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+
+#teachinfo .form-left{
+    float: left;
+    width:40%;
+    margin-top: 100px;
+}
+#teachinfo .form-right{
+    float: left;
+    width:50%;
+}
+
+#teachinfo .form-left-bottom{
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+.xxx-form-select {
+    position: relative
+}
+
+.xxx-form-select .layui-input {
+    padding-right: 30px;
+    cursor: pointer
+}
+
+.xxx-form-select dl dd, .xxx-form-select dl dt {
+    padding: 0 10px;
+    line-height: 36px;
+    white-space: nowrap;
+    margin: 2px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.xxx-form-select dl dt {
+    font-size: 12px;
+    color: #999
+}
+
+.xxx-form-select dl dd {
+    cursor: pointer
+}
+
+.xxx-form-select dl dd:hover {
+    background-color: #f2f2f2
+}
+
+.xxx-form-select .layui-select-group dd {
+    padding-left: 20px
+}
+
+.xxx-form-select dl dd.layui-this {
+    background-color: #dedede;
+    color: #000
+}
+.xxx-form-select dl {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 42px;
+    padding: 0px 0;
+    z-index: 999;
+    border: 1px solid #d2d2d2;
+    max-height: 300px;
+    overflow-y: auto;
+    background-color: #fff;
+    border-radius: 2px;
+    box-sizing: border-box;
+}
+.xxx-form-selected dl {
+    display: block
+}
+.xxx-form-select dl, .layui-nav-child {
+    min-width: 100%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, .12);
+}
+
+.xxx-form-select .layui-edge {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+    cursor: pointer;
+    border-width: 6px;
+    border-top-color: #c2c2c2;
+    border-top-style: solid;
+    transition: all .3s;
+    -webkit-transition: all .3s
+}
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}

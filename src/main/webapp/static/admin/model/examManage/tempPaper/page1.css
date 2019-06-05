@@ -1,0 +1,558 @@
+#tempPaper .list_bar_row{float:none;}
+#tempPaper .list_bar_row:after{content:"";display:block;clear:both;}
+#tempPaper .search-list{
+    padding:0 0 0 0;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#tempPaper .search-list ul{list-style:none;width: 100%;margin-top: 10px}
+#tempPaper .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+    cursor:pointer;
+}
+#tempPaper .tag-items ul li {
+    /*border: 1px solid #dcdcdc;*/
+    /*margin-bottom: 10px;*/
+    cursor:pointer;
+}
+
+#tempPaper .search-list ul li.active{
+    background:rgb(206,229,219);
+}
+#tempPaper .exam-head {
+    height: 40px;
+    line-height: 40px;
+    /*background: #eee;*/
+    padding-right: 20px;
+}
+#tempPaper .exam-head-left{
+     font-size: 12px;
+     color: #666;
+     line-height: 50px;
+ }
+#tempPaper .exam-head-left a{
+    font-size: 14px;
+    float: right;
+    color: #0a0a0a;
+    line-height: 50px;
+}
+#tempPaper .exam-head-left span {
+    margin: 0 20px;
+    display:inline-block;
+}
+#tempPaper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 50px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+
+#tempPaper .search-exam > .exam-con {
+    margin: 10px 20px;
+    /*cursor: pointer;*/
+}
+#tempPaper .search-exam > .exam-con  .exam-q {
+    /*padding-bottom: 20px;a*/
+    font-size: 14px !important;
+    color: #333;
+    line-height: 24px;
+}
+#tempPaper .exam-con .exam-s {
+    zoom: 1;
+    clear:both;
+}
+#tempPaper .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1;
+    min-height: 30px;
+}
+#tempPaper .exam-t{
+    margin: 10px;
+
+}
+#tempPaper .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#tempPaper .op-item .op-item-nut {
+    float: left;
+    position: absolute;
+    height: 24px;
+}
+#tempPaper .op-item .op-item-meat {
+    display: block;
+}
+#tempPaper .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc;
+}
+#tempPaper .exam-foot-right{
+    float: right;
+}
+#tempPaper .exam-foot-right a{
+    height: 35px;
+    line-height: 35px;
+    margin: 7px 0;
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+#tempPaper .exam-foot-right a.updatebtn{
+    /*background:rgb(22,163,151);*/
+    color: #333;
+    font-size: 14px;
+}
+#tempPaper .exam-foot-right a.removebtn{
+    /*background:rgb(236,240,241);*/
+    color:red;
+}
+
+/*试题类栏*/
+#tempPaper .form_content .editset{width:200px;position:fixed;top:200px;right:12px;text-align:center;}
+#tempPaper .form_content .editset>h3{padding:0 20px;line-height:45px;background:rgb(22,163,251);color:white;}
+#tempPaper .form_content .editset>div{text-align:left;}
+#tempPaper .exam-head-left>span{margin:0 10px;}
+#tempPaper .editset .exam-con{padding:10px;margin:10px 0;border:1px dashed gray;}
+#tempPaper .editset .exam-con>p{padding: 5px 0; font-weight: bold;}
+#tempPaper .editset .exam-con span{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    outline:1px solid gray;
+    text-align:center;
+    line-height:24px;
+    margin:10px 5px;
+    cursor:pointer;
+}
+#tempPaper .editset .exam-con span:hover{background:rgb(0,150,136);color:white;}
+
+#tempPaper #test1{
+    text-align:center;
+    height:100%;
+}
+#tempPaper #test1>div{
+    display:block;
+}
+#tempPaper .form_content2 {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 999;
+    top: 0;
+    right: 0;
+}
+/*试题类栏*/
+#tempPaper .form_content2 .editset{width:200px;position:fixed;top:200px;right:12px;text-align:center;}
+#tempPaper .form_content2 .editset>h3{padding:0 20px;line-height:45px;background:rgb(22,163,251);color:white;}
+#tempPaper .form_content2 .editset>div{text-align:left;}
+#tempPaper .exam-head-left>span{margin:0 10px;}
+#tempPaper .editset .exam-con{padding:10px;margin:10px 0;border:1px dashed gray;}
+#tempPaper .editset .exam-con>p{padding: 5px 0; font-weight: bold;}
+#tempPaper .editset .exam-con span{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    outline:1px solid gray;
+    text-align:center;
+    line-height:24px;
+    margin:10px 5px;
+    cursor:pointer;
+}
+#tempPaper .cont .cont_header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#tempPaper .cont .cont_header p{
+    font-size:16px;
+    margin:10px auto;
+}
+#tempPaper .cont .cont_header label{
+    font-weight: bold;
+}
+#tempPaper .cont h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#tempPaper .cont h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+#tempPaper .cont {
+    /*margin:0 auto;*/
+    position: relative;
+    background: #fff;
+    padding: 20px 5%;
+    height:100%;
+    border: 1px solid #dcdcdc;
+    margin: 10px;
+    overflow-y: scroll;
+}
+
+#tempPaper .cont-right {
+    position: relative;
+    background: #fff;
+    padding: 10px;
+    height:100%;
+    border: 1px solid #dcdcdc;
+    margin: 10px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#tempPaper .form_content_Y{
+    /*background-color: #ddd;*/
+    z-index: 1;
+}
+#tempPaper .tag-type {
+    border: 1px solid #dcdcdc;
+    z-index: 2
+}
+
+#tempPaper .tag-items {
+    line-height: 40px;
+    margin: 0 20px -1px;
+    border-bottom: 1px dashed #dcdcdc;
+    /*overflow: hidden;*/
+    z-index: 1
+}
+
+#tempPaper .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#tempPaper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#tempPaper .tag-con {
+    margin-left: 72px
+}
+
+#tempPaper .tag-con a {
+    line-height: 20px;
+    padding: 5px 10px;
+    display: inline-block;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+#tempPaper .select-btn {
+    float: right;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #4498ee;
+    border: 1px solid #4498ee
+}
+#tempPaper .total {
+    float: right;
+    color: #333;
+    line-height: 40px;
+    display: flex;
+}
+#tempPaper .sort {
+    margin: 15px auto 0;
+    overflow: hidden;
+    color: #999
+}
+#tempPaper .tag-con a:hover, #tempPaper .type-con a:hover, #tempPaper a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px;
+}
+#tempPaper .tag-con a:hover, #tempPaper a.type-active {
+    background: #4498ee; /* color:#fff; */
+    border-radius: 5px;
+}
+#tempPaper #J_QuestionList .exam-head {
+    height: 50px;
+    line-height: 40px;
+    /*background: #eee;*/
+    /*padding-right: 20px*/
+    padding: 10px;
+}
+
+#tempPaper .exam-head-left span {
+    margin: 0 20px
+}
+
+#tempPaper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+#tempPaper .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 14px
+}
+.tree-checkbox{
+    background-position: -208px -29px;
+}
+.tree-checkbox1{
+    background-position: -224px -29px;
+}
+#tempPaper .basket {
+    position: fixed;
+    padding-left: 40px;
+    right: -150px;
+    top: 50%;
+    margin-top: -150px;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    z-index: 999
+}
+#tempPaper .basket-tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: #4498ee;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff
+}
+#tempPaper .basket-tit p i {
+    margin-left: 12px
+}
+
+#tempPaper .basket-tit p {
+    margin-top: 20px
+}
+
+#tempPaper .basket.active {
+    right: 11px;
+}
+
+#tempPaper .basket-tit p em {
+    display: block;
+    width: 1em;
+    margin: 10px auto 0;
+    line-height: 18px;
+    font-weight: 400
+}
+
+#tempPaper .basket-tit span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #FFBE8F;
+    display: block
+}
+
+#tempPaper .basket-tit span i {
+    margin:11px 0 0 13px
+}
+
+#tempPaper .basket-con {
+    float: left;
+    width: 150px;
+    border: 1px solid #DAD4CE;
+    border-left: 0;
+    min-height: 215px
+}
+
+#tempPaper .basket-con span {
+    color: #fe8a00
+}
+
+#tempPaper .basket-head {
+    background: #d5eaff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #333;
+    margin: 2px;
+    padding-left: 13px
+}
+
+#tempPaper .baskrt-list {
+    min-height: 130px
+}
+
+#tempPaper .baskrt-list p {
+    margin: 20px 20px 0 15px;
+    cursor: pointer
+}
+
+#tempPaper .baskrt-list p i {
+    float: right;
+    color: #ccc;
+}
+#tempPaper .baskrt-list p:hover i {
+    color: red;
+}
+
+#tempPaper .basket-btn {
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 10px 20px;
+    padding: 0 30px;
+    font-size: 12px;
+    color: #fff;
+    background: #4498ee;
+    border-radius: 5px
+}
+
+#tempPaper .basket-btn:hover {
+    background: #078ee8;
+    color: #fff
+}
+#know_subject h2,#know_subject h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#know_subject h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#know_subject h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#know_subject>div{
+    padding:15px 20px;
+}
+#know_subject>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#know_subject>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#know_subject>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+    word-wrap:break-word;
+}
+#know_subject>div .know_space .know_span{
+    margin:0 10px;
+}
+#know_subject>div .know_space .know_item_left{
+    position:absolute;
+}
+#know_subject>div .know_space .know_item_right{
+    display:block;
+}
+
+#tempPaper .form_content2 ul li {
+    margin-bottom: 10px;
+    cursor:pointer;
+    border-radius: 5px;
+}
+#tempPaper .form_content2 ul li input{
+    border-radius: 5px;
+}
+#tempPaper .form_content2 ul{
+    margin-left: 90px;
+}
+#tempPaper .form_content2 ul li a{
+    line-height: 7;
+}
+#tempPaper #sub_amount input{
+    border-radius: 5px
+}
+#tempPaper .form_content3 .title {
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+}
+＃xiaoti .title {
+    height: 38px;
+    line-height: 38px;
+    width: 100%;
+}
+
+#tempPaper .header .cont_header{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#tempPaper .header .cont_header p{
+    font-size:16px;
+    margin:10px auto;
+}
+#tempPaper .header .cont_header label{
+    font-weight: bold;
+}
+#tempPaper .header h1 {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+#tempPaper .header h2 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+#tempPaper .form_content3 .col-xs-1 a{
+    line-height: 8;
+}
+
+#tempPaper #col_comTree{
+    float: left;
+    width: 320px;
+    margin: 0;
+    padding: 0;
+    height: calc(100% - 41px);
+    height: -moz-calc(100% - 41px);
+    height: -webkit-calc(100% - 41px);
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+#tempPaper .form_content3 .form_html{
+    width: 100%;
+    float: right;
+    padding-left: 320px;
+    height: 90%;
+}
+#tempPaper .content_page_left{
+    width: 320px;
+    margin-top: 60px;
+    height: calc(100% - 60px);
+    height: -moz-calc(100% - 60px);
+    height: -webkit-calc(100% - 60px);
+    padding: 0;
+}
+
+
+
+
+

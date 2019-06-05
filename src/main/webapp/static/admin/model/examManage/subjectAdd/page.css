@@ -1,0 +1,201 @@
+#subjectAdd{
+    float: left;
+    width: 100%;
+}
+#subjectAdd .form_content  .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#subjectAdd .form_content .form_html{
+    margin:0 auto;
+    padding:0 15px;
+}
+#subjectAdd .book_up{
+    float: left;
+    width: 100px;
+}
+#subjectAdd .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+
+#question_bank{
+    float: left;
+    width: 100%;
+    padding: 15px 15px 0;
+}
+#question_bank table{
+    table-layout: fixed;
+}
+#question_bank td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+#subjectAdd .tree-checkbox{
+    background-position-y: -28px;
+}
+#subjectAdd .layui-btn-primary:hover{
+    border-color:#16A3FB;
+}
+
+#subjectAdd .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+
+#subjectAdd .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}
+#subjectAdd .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    /*border-bottom: 1px dashed #dcdcdc;*/
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#subjectAdd .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#subjectAdd .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#subjectAdd .tag-con {
+    margin-left: 72px
+}
+#subjectAdd .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#subjectAdd .tag-con a:hover, #subjectAdd .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#subjectAdd .con-answer{
+    display:inline-block;
+    float: left;
+    margin-left: 10px
+}
+#subjectAdd .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#subjectAdd .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#subjectAdd .layui-form-item{
+    margin-bottom:0;
+}
+#subjectAdd .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#subjectAdd .layui-input-block{
+    margin-left: 72px;
+}
+#subjectAdd .form_content1 {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 999;
+    top: 0;
+    right: 0;
+}
+#subjectAdd .form_content1 .form_title {
+    float: left;
+    width: 100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#subjectAdd .form_content1 .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#subjectAdd .form_content1 .form_title .form_btns {
+    float: right;
+}
+#subjectAdd .form_content1 .form_html {
+    width: 980px;
+    padding: 10px 15px;
+    margin: 10px auto 0 auto;
+}
+#subjectAdd .form_content1 h2{
+    text-align:center;
+}
+#subjectAdd .form_content1 .sub_link{
+    position:absolute;
+    left:10px;
+}
+#subjectAdd #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+    position:relative;
+}
+#subjectAdd #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#subjectAdd #know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#subjectAdd #know_sub>div{
+    padding:15px 20px;
+}
+#subjectAdd #know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#subjectAdd #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#subjectAdd #know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+    word-wrap:break-word;
+}
+#subjectAdd #know_sub>div .know_space .know_span{
+    margin:0 10px;
+}
+
+#subjectAdd #know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#subjectAdd #know_sub>div .know_space .know_item_right{
+    display:block;
+}

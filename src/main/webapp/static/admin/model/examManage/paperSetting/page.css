@@ -1,0 +1,322 @@
+#paperSetting .list_bar_row{float:none;}
+#paperSetting .list_bar_row:after{content:"";display:block;clear:both;}
+#paperSetting .search-list{padding:0 200px 0 0;position:relative;}
+#paperSetting .search-list ul{list-style:none;}
+#paperSetting .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px;
+    cursor:pointer;
+}
+
+#paperSetting img{
+    vertical-align: middle !important;
+}
+#paperSetting .search-list ul li.active{
+    background:rgb(206,229,219);
+}
+#paperSetting .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px;
+}
+#paperSetting .exam-head-left{
+    font-size: 12px;
+    color: #666;
+    line-height: 40px;
+}
+#paperSetting .exam-head-left span {
+    margin: 0 20px;
+    display:inline-block;
+}
+#paperSetting .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+
+#paperSetting .search-exam > .exam-con {
+    margin: 10px 20px;
+    /*cursor: pointer;*/
+}
+#paperSetting .search-exam > .exam-con > .exam-q {
+    /*padding-bottom: 20px;*/
+    font-size: 14px !important;
+    color: #333;
+    line-height: 24px;
+}
+
+#paperSetting .exam-q img {
+    max-width: 100%;
+}
+#paperSetting .exam-con .exam-s {
+    zoom: 1;
+    clear:both;
+}
+#paperSetting .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1;
+    min-height: 20px;
+}
+#paperSetting .op-item .op-item-nut {
+    float: left;
+    position: absolute;
+    height: 24px;
+}
+#paperSetting .op-item .op-item-meat {
+    display: block;
+    line-height: 20px;
+}
+#paperSetting .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc;
+}
+#paperSetting .exam-foot-right{
+    float: right;
+}
+#paperSetting .exam-foot-right a{
+    height: 35px;
+    line-height: 35px;
+    /*margin: 7px 0;*/
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+#paperSetting .exam-foot-right a.updatebtn{
+    /*background:rgb(22,163,151);*/
+    color:rgb(22,163,251);
+}
+#paperSetting .exam-foot-right a.removebtn{
+    /*background:rgb(236,240,241);*/
+    color:red;
+}
+
+/*试题类栏*/
+#paperSetting .content_page .editset{width:200px;position:fixed;top:200px;right:12px;text-align:center;}
+#paperSetting .content_page .editset>h3{padding:0 20px;line-height:45px;background:rgb(22,163,251);color:white;}
+#paperSetting .content_page .editset>div{text-align:left;}
+#paperSetting .exam-head-left>span{margin:0 10px;}
+#paperSetting .editset .exam-con{padding:10px;margin:10px 0;border:1px dashed gray;}
+#paperSetting .editset .exam-con>p{padding: 5px 0; font-weight: bold;}
+#paperSetting .editset .exam-con span{
+    display:inline-block;
+    width:24px;
+    height:24px;
+    outline:1px solid gray;
+    text-align:center;
+    line-height:24px;
+    margin:10px 5px;
+    cursor:pointer;
+}
+#paperSetting .editset .exam-con span:hover{background:#16A3FB;color:white;}
+
+#paperSetting #test1{
+    text-align:center;
+    height:100%;
+}
+#paperSetting #test1>div{
+    display:block;
+}
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#know_sub>div{
+    padding:15px 20px;
+}
+#know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+    word-wrap:break-word;
+}
+#know_sub>div .know_space .know_span{
+    margin:0 10px;
+}
+#know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#know_sub>div .know_space .know_item_right{
+    display:block;
+
+}
+
+.layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#paperSetting input[readonly="readonly"]{
+    background:#fbfbfb;
+    color:#c9c9c9;
+}
+#paperSetting input[readonly="readonly"]:hover{
+    cursor: not-allowed;
+
+}
+#paperSetting .layui-form-select dl dd.layui-this{
+
+}
+#paperSetting .exam-t{
+    margin: 10px;
+    font-size: 14px;
+    color: #333;
+}
+#paperSetting .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#paperSetting .exam-t .exam-s span.op-item {
+    position: relative;
+    padding: 0;
+    font-size: 14px;
+    color: #333;
+    zoom: 1
+}
+#paperSetting .form_content1 {
+    position: absolute;
+    width: 800px;
+    background: #fff;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    border-left: 1px solid #ccc;
+}
+#paperSetting .form_content1 .form_title {
+    float: left;
+    width:100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#paperSetting .form_content1 .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#paperSetting .form_content1 .form_title .form_btns {
+    float: right;
+}
+#paperSetting .form_content1 .form_html {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px auto 0 auto;
+}
+#paperSetting .form_content1 .sub_link{
+    position:absolute;
+    left:10px;
+}
+#paperSetting .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#paperSetting .tag-type .tag-items{
+    border-bottom: 1px dashed #dcdcdc;
+}
+
+#paperSetting .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#paperSetting .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#paperSetting .tag-con {
+    margin-left: 72px
+}
+#paperSetting .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+    /*font-size:14px;*/
+}
+#paperSetting .tag-con a:hover, #paperSetting .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#paperSetting .con-answer{
+    display:inline-block;
+    float: left;
+}
+#paperSetting .con-answer a{
+    margin:0 0 0 5px;
+    padding:5px 5px;
+}
+#paperSetting .con-answer a:hover{
+    background: white;
+    color: black;
+}
+#paperSetting .layui-form-item{
+    margin-bottom:0;
+}
+#paperSetting .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#paperSetting .layui-input-block{
+    margin-left: 72px;
+}
+#paperSetting .tag-type {
+    margin: 20px auto 10px;
+    border:1px solid #dcdcdc;
+}
+#paperSetting .form_content{
+    width: 800px;
+    border-left: 1px solid #ccc;
+}
+#paperSetting .form_content .form_html{
+    width:100%;
+}

@@ -1,0 +1,617 @@
+#handworkPaper:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#handworkPaper .content_page_left .title {
+    border-bottom: 1px solid #E2E7EB;
+    /*background: rgb(105, 155, 252);*/
+    color: #000;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    /*height: 40px;*/
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+#handworkPaper img{
+    vertical-align: middle !important;
+}
+
+#handworkPaper  .row{
+    display: -webkit-box;
+    display: -moz-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+}
+#handworkPaper .layui-form-select dl dd.layui-this{
+    background: #4498ee;
+}
+#handworkPaper .box {
+    cursor: pointer;
+}
+
+#handworkPaper .box label i.active {
+    color: #4498ee;
+}
+
+
+#handworkPaper body, #handworkPaper button {
+    font-family: "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", arial, "\5b8b\4f53"
+}
+
+#handworkPaper .op-item em{
+    font-weight: 400
+}
+
+#handworkPaper .analyticbox-tips a:hover, #handworkPaper .footer-top a:hover, #handworkPaper .notice-pjq:hover {
+    text-decoration: underline
+}
+
+#handworkPaper body {
+    background: #FFF;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 1;
+    font-size: 12px
+}
+
+#handworkPaper i {
+    display: inline-block;
+}
+
+
+#handworkPaper .op-item {
+    display: block;
+    min-height: 20px;
+    margin: 5px 0;
+}
+
+#handworkPaper .op-item em {
+    display: inline-block
+}
+
+#handworkPaper .op-item u {
+    border-bottom: 1px solid #333
+}
+
+
+#handworkPaper .op-item .op-item-meat {
+    display: block;
+}
+
+#handworkPaper .op-item .op-item-meat span {
+    font-size: 14px !important
+}
+
+#handworkPaper .op-item .checked {
+    color: #27AE61
+}
+
+#handworkPaper .btn:hover {
+    background: #308eef
+}
+
+#handworkPaper .kefu, #handworkPaper .return {
+    position: fixed
+}
+
+#handworkPaper .return {
+    right: 162px;
+    bottom: 30px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background: #474443;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+#handworkPaper .exam-head-left{
+    float: left;
+}
+#handworkPaper .exam-head-left .line{
+    display: inline-block
+}
+
+#handworkPaper .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px
+}
+
+#handworkPaper .search-list ul li:hover {
+    border: 1px solid #308eef
+}
+
+#handworkPaper .search-exam {
+    background: #fff
+}
+
+
+#handworkPaper .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px
+}
+
+#handworkPaper .exam-foot-right {
+    float: right
+}
+
+#handworkPaper .exam-head-left{
+    font-size: 12px;
+    color: #666;
+    line-height: 40px
+}
+
+#handworkPaper .exam-head-left span {
+    margin: 0 20px
+}
+
+#handworkPaper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+
+#handworkPaper .exam-con {
+    cursor: pointer
+}
+
+#handworkPaper .exam-q {
+    font-size: 14px !important;
+    color: #333;
+    line-height: 24px
+}
+
+#handworkPaper .exam-q img {
+    max-width: 100%
+}
+
+#handworkPaper .exam-q table td {
+    vertical-align: top
+}
+
+#handworkPaper .exam-s {
+    zoom: 1
+}
+
+#handworkPaper .exam-con .w .exam-s {
+    margin-left: 80px
+}
+
+#handworkPaper .search-exam > .exam-con {
+    margin: 20px 20px 0
+}
+
+#handworkPaper .exam-con>.exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1
+}
+
+#handworkPaper .exam-s span.op-item img {
+    vertical-align: middle
+}
+
+#handworkPaper .exam-a {
+    height: 40px;
+    background: #eff7f0
+}
+
+#handworkPaper .exam-a span {
+    line-height: 40px;
+    margin-left: 18px;
+    font-size: 12px;
+    color: #333
+}
+
+#handworkPaper .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc
+}
+
+#handworkPaper .exam-foot-right span {
+    margin-right: 30px;
+    font-size: 12px;
+    color: #999;
+    line-height: 50px
+}
+
+#handworkPaper .exam-foot-right a b {
+    margin-right: 2px
+}
+
+#handworkPaper .exam-foot-right .addbtn, #handworkPaper .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    margin: 7px 0;
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#handworkPaper .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 14px
+}
+
+#handworkPaper .exam-foot-right .removebtn {
+    background: #adadad;
+    font-size: 14px
+}
+
+#handworkPaper .exam-foot-right .addbtn:hover {
+    background: #078ee8
+}
+
+#handworkPaper .exam-foot-right .removebtn:hover {
+    background: #919191
+}
+
+#handworkPaper .basket {
+    position: fixed;
+    padding-left: 40px;
+    right: -150px;
+    top: 50%;
+    margin-top: -150px;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    z-index: 2;
+}
+
+#handworkPaper .basket-tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: #4498ee;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff
+}
+
+#handworkPaper .basket-tit p i {
+    margin-left: 12px
+}
+
+#handworkPaper .basket-tit p {
+    margin-top: 20px
+}
+
+#handworkPaper .basket.active {
+    right: 11px;
+}
+
+#handworkPaper .basket-tit p em {
+    display: block;
+    width: 1em;
+    margin: 10px auto 0;
+    line-height: 18px;
+    font-weight: 400
+}
+
+#handworkPaper .basket-tit span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #FFBE8F;
+    display: block
+}
+
+#handworkPaper .basket-tit span i {
+    margin:11px 0 0 13px
+}
+
+#handworkPaper .basket-con {
+    float: left;
+    width: 150px;
+    border: 1px solid #DAD4CE;
+    border-left: 0;
+    min-height: 215px
+}
+
+#handworkPaper .basket-con span {
+    color: #fe8a00
+}
+
+#handworkPaper .basket-head {
+    background: #d5eaff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #333;
+    margin: 2px;
+    padding-left: 13px
+}
+
+#handworkPaper .baskrt-list {
+    min-height: 130px
+}
+
+#handworkPaper .baskrt-list p {
+    margin: 20px 20px 0 15px;
+    cursor: pointer
+}
+
+#handworkPaper .baskrt-list p i {
+    float: right;
+    color: #ccc;
+}
+#handworkPaper .baskrt-list p:hover i {
+    color: red;
+}
+
+#handworkPaper .basket-btn {
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 10px 20px;
+    padding: 0 30px;
+    font-size: 12px;
+    color: #fff;
+    background: #4498ee;
+    border-radius: 5px
+}
+
+#handworkPaper .basket-btn:hover {
+    background: #078ee8;
+    color: #fff
+}
+
+#handworkPaper .select-btn, #handworkPaper .sort, #handworkPaper .tag-con a, #handworkPaper .tag-tit {
+    font-size: 12px
+}
+
+#handworkPaper .sort-left, #handworkPaper .switch-detail, #handworkPaper .total {
+    line-height: 22px
+}
+
+#handworkPaper .tag-con .con-items>li{
+    float:left;
+    height:20px;
+    line-height:20px;
+    box-sizing:border-box;
+    padding:5px;
+    margin-left:5px;
+
+
+}
+#handworkPaper .sort {
+    margin: 5px auto;
+    overflow: hidden;
+    color: #999
+}
+
+#handworkPaper .sort-left {
+    margin-left: 15px;
+    float: left
+}
+
+#handworkPaper .sort .sort-left i {
+    margin: -2px 0 0 3px;
+}
+
+#handworkPaper .sort-left a {
+    margin-left: 15px;
+    color: #333
+}
+
+#handworkPaper .sort-left a:hover, #handworkPaper a.sort-active {
+    color: #333;
+    font-weight: 700
+}
+
+#handworkPaper .total {
+    margin-right: 25px;
+    float: right;
+    color: #333
+}
+
+#handworkPaper .select-btn {
+    float: right;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #4498ee;
+    border: 1px solid #4498ee
+}
+#handworkPaper #col_comTree{
+    float: left;
+    width: 300px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom:50px;
+}
+#handworkPaper .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#handworkPaper .select-btn:hover {
+    color: #078ee8;
+    border: 1px solid #078ee8
+}
+.layui-btn-primary:focus,.layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#know_sub>div{
+    padding:15px 20px;
+}
+#know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+    word-wrap:break-word;
+}
+#know_sub>div .know_space .know_span{
+    margin:0 10px;
+}
+#know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#know_sub>div .know_space .know_item_right{
+    display:block;
+}
+#handworkPaper #search_context{
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        background: white;
+        z-index: 3;
+        margin: -15px
+}
+#handworkPaper .exam-t{
+    margin: 10px;
+
+}
+#handworkPaper .exam-t .exam-s{
+    margin-left: 20px;
+    font-size: 14px;
+    color: #333
+}
+#handworkPaper .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    border-bottom: 1px dashed #dcdcdc;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#handworkPaper .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#handworkPaper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#handworkPaper .tag-con {
+    margin-left: 72px
+}
+#handworkPaper .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#handworkPaper .tag-con a:hover, #handworkPaper .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#handworkPaper .tag-type {
+    /*width: 980px;*/
+    margin: 0px auto 15px;
+    border:1px solid #dcdcdc;
+}
+#handworkPaper .tag-type .layui-form-item{
+    margin-bottom:0;
+}
+#handworkPaper .tag-type .layui-form-label{
+    width:72px;
+    padding:0 15px 0 0;
+    line-height:40px;
+}
+#handworkPaper .tag-type .layui-input-block{
+    margin-left: 72px;
+}
+#handworkPaper .generateExam .layui-form-item{
+    margin-top:5px;
+    margin-bottom:5px;
+}
+#handworkPaper .generateExam .tag-tit {
+    float: left;
+    width: 90px;
+    margin-right: -90px;
+    color: #666;
+    text-align: right
+}
+#handworkPaper .generateExam .tag-con {
+    margin-left: 90px
+}
+#handworkPaper .generateExam em{
+    color: red;
+}
+#handworkPaper .content_page_left:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#handworkPaper .content_page_left{
+    position:static;
+    padding:0;
+    float: left;
+    width: 300px;
+}
+#handworkPaper .content_page_right{
+    position: relative;
+}
+#handworkPaper .form_content{
+    width: 800px;
+    border-left: 1px solid #ccc;
+}
+#handworkPaper .form_content .form_html{
+    width:100%;
+}

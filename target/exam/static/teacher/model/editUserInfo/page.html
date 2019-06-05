@@ -1,0 +1,77 @@
+<div id="editUserInfo" class="animated fadeIn">
+    <div class="center_header">
+        <div class="main">
+            <div class="center_content">
+                <div class="row_line">
+                    <div class="center_u_info">
+                        <h1>{{_USERINFO.user_real_name}}</h1>
+                        <h2>NO:{{_USERINFO.user_id}}</h2>
+                    </div>
+                    <div class="center_search">
+                        <input type="text" placeholder="搜索试题"><button>搜索</button>
+                    </div>
+                </div>
+                <div class="row_line center_action_plan" ng-if="!superManage()">
+                    <ul>
+                        <li><a href="#/myOptionBanks">我的题库</a></li>
+                        <li><a href="#/myPapers">我的试卷</a></li>
+                        <li><a href="#/myExamManage">考试管理</a></li>
+                        <li><a href="#/myClasses">我的班级</a></li>
+                    </ul>
+                    <dl>
+                        <dd><a href="javascript:void(0);" ng-click="creat_bank();"><i class="iconfont icon-xinjian1 ic1"></i>新建题库</a></dd>
+                        <dd><a href="#/update_paper"><i class="iconfont icon-shangchuan-tianchong ic2"></i>上传试题</a></dd>
+                        <dd><a href="javascript:void(0);" ng-click="create_exam(true);"><i class="iconfont icon-iconfont-kaoshi ic3"></i>新建考试</a></dd>
+                    </dl>
+                </div>
+                <div class="row_line center_action_plan" ng-if="superManage()">
+                    <ul>
+                        <li><a href="#/publicPapers">公共试卷</a></li>
+                        <li><a href="#/update_paper">上传公共试题</a></li>
+                    </ul>
+                </div>
+            </div>
+            <form class="center_cont layui-form">
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">用户姓名：</label>
+                    <div class="layui-input-block" >
+                        <input type="text" name="title"  ng-model="now_user.user_real_name"  class="layui-input"  lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">用户账号：</label>
+                    <div class="layui-input-block">
+                        <input type="text" name="title" readonly style="cursor:not-allowed;background: #ccc;"  ng-model="now_user.user_name" class="layui-input"  lay-verify="required">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label class="layui-form-label">性&nbsp;&nbsp;&nbsp;&nbsp;别：</label>
+                    <div class="layui-unselect layui-form-checkbox" ng-class="{'layui-form-checked':now_user.sex=='男'}"  lay-skin="primary" ng-click="now_sex(0,event);"><span>男</span><i class="layui-icon"></i></div>
+                    <div class="layui-unselect layui-form-checkbox" ng-class="{'layui-form-checked':now_user.sex=='女'}"  lay-skin="primary" ng-click="now_sex(1,event);"><span>女</span><i class="layui-icon"></i></div>
+                </div>
+
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">身份证号：</label>
+                    <div class="layui-input-block" >
+                        <input type="text" name="title"  ng-model="now_user.card_id"  class="layui-input"  lay-verify="required | identity">
+                    </div>
+                </div>
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">邮&nbsp;&nbsp;&nbsp;&nbsp;箱：</label>
+                    <div class="layui-input-block" >
+                        <input type="email" name="title"  ng-model="now_user.email"  class="layui-input"  lay-verify="required | email">
+                    </div>
+                </div>
+                <div class="layui-form-item " >
+                    <label class="layui-form-label">手机号码：</label>
+                    <div class="layui-input-block" >
+                        <input type="text" name="title"  ng-model="now_user.phone"  class="layui-input"  lay-verify="required | phone">
+                    </div>
+                </div>
+                <div class="layui-form-item" style="text-align:center;">
+                    <button style="background:#e63a3a;color:#fff;width: 150px;" class="layui-btn layui-btn-primary " ng-click="_compile()" lay-submit lay-filter="formDemo">保存</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

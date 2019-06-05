@@ -1,0 +1,103 @@
+#studentinfo .cl li:hover{background:none}
+#studentinfo .cl li{
+    padding: 0;
+}
+/*#studentinfo .list_bar_row .bars{*/
+    /*width:100%;*/
+/*}*/
+/*#studentinfo .list_bar_row .bars .bar_form{*/
+    /*float:right;*/
+/*}*/
+/*#studentinfo .list_bar_row .bars .bar_form .layui-form-radio i:hover,#studentinfo .list_bar_row .bars .bar_form .layui-form-radioed i{*/
+    /*color:#16A3FB;*/
+/*}*/
+#studentinfo .box .check{
+    width: 100%;
+}
+#studentinfo .box .check i{
+    width:100%;
+}
+#studentinfo select{
+    border: none;
+    background: none;
+}
+#studentinfo .form_sm .form_html{
+    height:800px
+}
+
+#studentinfo .book_up{
+    float: left;
+    width: 100px;
+}
+#studentinfo .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+
+#studentinfo .form-left{
+    float: left;
+    width:40%;
+    margin-top: 100px;
+}
+#studentinfo .form-right{
+    float: left;
+    width:50%;
+}
+
+#studentinfo .form-left-bottom{
+    margin: 0 auto 0 80px;
+    padding-top: 20px;
+}
+
+/*批量班级替换-----start*/
+#studentinfo .form_content2 {
+    width: 300px;
+    border-left: 1px solid #ccc;
+}
+
+#studentinfo .form_content2 .form_title{
+    float: left;
+    width: 100%;
+    background: #f1f3f5;
+    padding: 10px 15px;
+    border-bottom: 1px #e5e5e5 solid;
+}
+#studentinfo .form_content2 .form_title .back_link {
+    float: left;
+    line-height: 34px;
+    color: #999;
+}
+#studentinfo .form_content2 .form_title .form_btns {
+    float: right;
+}
+#studentinfo .form_content2 .form_html {
+    width: 100%;
+    padding: 10px 15px;
+    margin: 10px auto 0 auto;
+}
+#studentinfo .form_content2 .form_html ul li{
+    cursor: pointer;
+    padding: 0 10px;
+    line-height: 36px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+#studentinfo .form_content2 .check_this{
+    background:#16A3FB;
+    color:#fff;
+}
+/*批量班级替换-----end*/
+
+#studentinfo .layui-form-select dl dd.layui-this{
+    background:#16A3FB;
+}
+#studentinfo .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+
+#studentinfo .col-xs-3 .layui-form-label{
+    width:45px;
+}
+#studentinfo .col-xs-3 .layui-input-block{
+    margin-left:50px;
+}

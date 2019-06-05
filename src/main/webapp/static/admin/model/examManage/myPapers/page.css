@@ -1,0 +1,122 @@
+#myTestPaper{
+    float: left;
+    width: 100%;
+}
+#myPapers .book_up{
+    float: left;
+    width: 100px;
+}
+#myPapers .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}
+
+#myPapers div.bars{
+    margin-bottom:10px;
+}
+
+#myPapers #student_info{
+    float: left;
+    width: 100%;
+    padding: 15px 15px 0;
+}
+#myPapers #student_info table{
+    table-layout: fixed;
+}
+#myPapers #student_info td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#myPapers #yanzheng {
+    margin-bottom: 15px;
+    clear: both;
+    margin-top: 30px;
+    width: 70%;
+    margin-left: 50px;
+}
+#myPapers .table_control tr td:last-of-type span{min-width:200px;}
+
+#myPapers .layui-btn-primary:focus,.layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#myPapers .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}
+#myPapers .content_page_head{
+    margin-bottom:15px;
+}
+#myPapers .content_page_head .layui-form-checked[lay-skin=primary] i{
+    background-color: #16A3FB;
+    color: #fff;
+}
+#myPapers .content_page_head .layui-form-checkbox[lay-skin=primary]:hover i{
+    border-color:#16A3FB;
+}
+#myPapers .cont h1 {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#myPapers .cont {
+    margin:0 auto;
+    width: 1000px;
+    position: relative;
+    background: #fff;
+    padding: 20px 0;
+}
+
+#myPapers .cont .cont_header{
+    text-align: center;
+    margin-bottom: 20px
+}
+#myPapers .cont .cont_header p{
+    height:20px;
+    line-height:20px;
+    font-size:16px;
+    margin:5px auto;
+}
+#myPapers #know_sub h2,#know_sub h3{
+    background:#F8F8F8;
+    margin:5px auto;
+}
+#myPapers #know_sub h2{
+    height:50px;
+    line-height:50px;
+    font-size:18px;
+    padding-left:10px;
+}
+#myPapers #know_sub h3{
+    font-size:16px;
+    font-weight:bold;
+}
+#myPapers #know_sub>div{
+    padding:15px 20px;
+}
+#myPapers #know_sub>div .know_title{
+    min-height:25px;
+    line-height:25px;
+    font-size:15px;
+    padding:20px;
+    word-wrap:break-word;
+}
+#myPapers #know_sub>div .know_context{
+    min-height:20px;
+    line-height:20px;
+    font-size:14px;
+}
+#myPapers #know_sub>div .know_space{
+    padding:0 20px;
+    font-size:14px;
+    margin:5px auto;
+    min-height: 20px;
+    position:relative;
+}
+#myPapers #know_sub>div .know_space .know_item_left{
+    position:absolute;
+}
+#myPapers #know_sub>div .know_space .know_item_right{
+    display:block;
+    padding-left:24px;
+
+}

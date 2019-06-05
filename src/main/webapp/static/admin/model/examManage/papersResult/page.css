@@ -1,0 +1,14 @@
+#papersResult{}
+#papersResult .layui-input, .layui-textarea {
+    display: block;
+    width: 100%;
+    padding-left: 10px;
+    padding-right: 64px;
+}
+#papersResult .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#papersResult .layui-form-select dl dd.layui-this {
+    background-color: #16A3FB;
+    color: #fff;
+}

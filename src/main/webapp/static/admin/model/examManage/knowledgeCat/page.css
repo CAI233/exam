@@ -1,0 +1,109 @@
+#knowledgeCat .cl li:hover{background:none}
+#knowledgeCat .cl li{
+    padding: 0;
+}
+#knowledgeCat #col_comTree{
+    float: left;
+    width: 220px;
+    height: calc(100% + 20px);
+    height: -moz-calc(100% + 20px);
+    height: -webkit-calc(100% + 20px);
+    overflow-x: auto;
+    overflow-y: auto;
+}
+
+#knowledgeCat .form_content .name_left{
+    height:38px;
+    line-height:38px;
+    display:inline-block;
+    width:50px;
+    float:left;
+    text-align:right;
+    font-size:14px;
+    padding-right:5px;
+    border:1px solid #e6e6e6;
+    border-right:none;
+}
+#knowledgeCat .form_content .name_left>i{
+    width: 100%;
+    display:inline-block;
+    height:20px;
+    vertical-align:text-bottom;
+    line-height:20px;
+    border-right:2px solid #e6e6e6;
+    padding-right:5px;
+}
+#knowledgeCat .form_content .name_left+input{
+    border-left:none;
+    width:calc(100% - 50px);
+    width:-moz-calc(100% - 50px);
+    width:-webkit-calc(100% - 50px);
+}
+#knowledgeCat .tree-node {
+    height: 24px;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+#knowledgeCat:after{
+    content:"";
+    display:block;
+    clear:both;
+}
+#knowledgeCat table{
+    table-layout: fixed;
+}
+#knowledgeCat td{
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+#knowledgeCat .layui-btn-primary:focus, .layui-btn-primary:hover {
+    border-color: #16A3FB;
+}
+#knowledgeCat .tag-items {
+    line-height: 40px;
+    margin-bottom:-1px;
+    border-bottom: 1px dashed #dcdcdc;
+    width:100%;
+    overflow: hidden;
+    z-index: 1
+}
+#knowledgeCat .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#knowledgeCat .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#knowledgeCat .tag-con {
+    margin-left: 72px
+}
+#knowledgeCat .tag-con a {
+    display: inline-block;
+    /*height: 20px;*/
+    line-height: 20px;
+    margin: 0 10px;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#knowledgeCat .tag-con a:hover, #knowledgeCat .tag-con a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+#knowledgeCat .content_page_left{
+    position:static;
+    float: left;
+    padding:0;
+}
+#knowledgeCat .tag-type {
+    margin: 20px auto 10px;
+    border:1px solid #dcdcdc;
+}

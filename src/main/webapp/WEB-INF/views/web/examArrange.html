@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <#include "../include/public_file.ftl" />
+    <script type="application/javascript" src="${ctxPath}/static/web/js/examArrange.js"></script>
+</head>
+<body>
+<!-- 公共头 -->
+<#include "../include/public_header.ftl" />
+
+<div class="w_center" style="padding: 20px 0;min-height:717px;">
+    <div class="main">
+        <table class="layui-table" lay-skin="line" style="border-collapse:separate;">
+            <thead>
+            <tr>
+                <th>考试科目</th>
+                <th>考试时间</th>
+                <th>考试地点</th>
+                <th>考试方式</th>
+                <th>考试状态</th>
+                <th>及格分/卷面总分</th>
+                <th style="text-align:center;">操作</th>
+            </tr>
+            </thead>
+            <tbody id="examArrange_tbody"></tbody>
+        </table>
+        <div id="not_show" style="display:none;">
+            <p style="line-height:300px;text-align:center;font-size:14px;">当前没有考试记录！</p>
+        </div>
+        <div id="data_pager" style="margin-top: 20px;"></div>
+    </div>
+</div>
+<!-- 公共底 -->
+<#include "../include/public_footer.ftl" />
+</body>
+</html>

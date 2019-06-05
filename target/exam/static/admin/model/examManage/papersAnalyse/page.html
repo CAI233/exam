@@ -1,0 +1,123 @@
+<div id="papersAnalyse">
+    <div class="del_sum" style="display:none;width:600px;height:20px;line-height:20px;margin:100px auto;">
+        <p style="text-align:center;font-size:20px;">当前没有已考试结束的试卷</p>
+    </div>
+    <div class="content_main" style="opacity: 0;">
+        <div class="content_page" >
+            <div class="layui-form-item col-xs-4" style="position: relative;padding-left: 15px;margin-top: 5px;margin-bottom: 5px;">
+                <div class="layui-form-item " >
+                    <label class="layui-form-label"><em>*</em>试卷名称：</label>
+                    <div class="layui-input-block">
+                        <div class="layui-unselect layui-form-select">
+                            <div class="layui-select-title">
+                                <input type="text"class="layui-input layui-unselect"
+                                       readonly="readonly" value="" placeholder="请选择"
+                                       ng-model="selRow.paper_title">
+                                <i class="layui-edge"></i>
+                            </div>
+                            <dl class="layui-anim layui-anim-upbit">
+                                <dd ng-repeat="item in bankDataList"
+                                    ng-click="selRow.bank_id=item.id;selRow.paper_title=item.paper_title;check(item.id,$index)"
+                                    ng-class="{'layui-this': selRow.paper_title == item.paper_title}">{{item.paper_title}}
+                                </dd>
+                            </dl>
+                        </div>
+                    </div>
+                </div>
+                <button class="layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="reload()" style="position: absolute;top: 0;right:-64px;"
+                        ng-mouseover="btnTip($event,'查询')"></button>
+                <!--<button class="layui-btn layui-btn-normal" style="position: absolute;top: 0;right: -180px;">导出EXCL</button>-->
+            </div>
+
+
+        </div>
+        <div class="contain_context col-xs-12">
+            <h3>试卷总体分析</h3>
+            <div class="col-xs-10" style="padding-left:0">
+                <table style="width:100%;text-align:center;" class="layui-table">
+                    <tr style="background:#D5D5D5;">
+                        <td colspan="3">总分：<span>{{objective.scores+subjective.scores}}</span></td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">分值分布</td>
+                        <td >客观题（占比）</td>
+                        <td >{{((objective.scores/(objective.scores+subjective.scores))*100).toFixed(2)}}%</td>
+                    </tr>
+                    <tr>
+                        <td>主观题（占比）</td>
+                        <td>{{((subjective.scores/(objective.scores+subjective.scores))*100).toFixed(2)}}%</td>
+                    </tr>
+                    <tr>
+                        <td rowspan="2">题量分布</td>
+                        <td >客观题（占比）</td>
+                        <td >{{((objective.nums/(objective.nums+subjective.nums))*100).toFixed(2)}}%</td>
+                    </tr>
+                    <tr>
+                        <td>主观题（占比）</td>
+                        <td>{{((subjective.nums/(objective.nums+subjective.nums))*100).toFixed(2)}}%</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="ana_context">
+                <div class="col-xs-6" style="padding-left:0;">
+                    <h3>试卷题量分析分布</h3>
+                    <div style="width:100%">
+                        <table style="width:100%;text-align:center;" class="layui-table">
+                            <tr style="background:#D5D5D5;">
+                                <td>题型</td>
+                                <td>题目量（占比）</td>
+                                <td>分值（占比）</td>
+                            </tr>
+                            <tr ng-repeat="(key,value) in sum_ch">
+                                <td>{{['单选题','多选题','判断题','填空题','问答题','综合题','写作题'][key-1]}}</td>
+                                <td>{{value.nums}}（{{((value.nums/all_sums)*100).toFixed(2)}}%）</td>
+                                <td>{{value.scores}}（{{((value.scores/all_marks)*100).toFixed(2)}}%）</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="padding-right:0;">
+                    <h3>试卷难度结构分布</h3>
+                    <div>
+                        <div id="main" style="width:400px;height:300px;"></div>
+                    </div>
+                </div>
+            </div>
+            <h3>答题情况</h3>
+            <div class="ana_context">
+                <div class="col-xs-6" style="padding-left:0;">
+                    <div style="width:100%">
+                        <table style="width:100%;text-align:center;" class="layui-table">
+                        <tr style="background:#D5D5D5;">
+                            <td>题号</td>
+                            <td>知识点</td>
+                            <td>答对人数</td>
+                            <td>答错人数</td>
+                            <td>错题率</td>
+                            <td>分值（占比）</td>
+
+                        </tr>
+                        <tr ng-repeat="item in res_data">
+                            <td>{{$index+1}}</td>
+                            <td>{{item.know_nameName}}</td>
+                            <td>{{item.true_nums}}</td>
+                            <td>{{selRow.person_total-item.true_nums}}</td>
+                            <td>{{(((selRow.person_total-item.true_nums)/selRow.person_total)*100).toFixed(2)}}%</td>
+                            <td>{{((item.detail_marks/selRow.paper_full)*100).toFixed(2)}}%</td>
+                            <!--<td>{{(item.subject_marks,selRow.paper_full)}}</td>-->
+
+                        </tr>
+                    </table>
+                    </div>
+                </div>
+                <div class="col-xs-6" style="padding-right:0;">
+                    <div>
+                        <div id="mains" style="width:800px;height:600px;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 列表 -->
+        <!--<grid-table data-control="tableControl"></grid-table>-->
+    </div>
+</div>

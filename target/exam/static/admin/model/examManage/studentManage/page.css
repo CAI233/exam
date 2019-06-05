@@ -1,0 +1,13 @@
+#studentManage{
+    float: left;
+    width: 100%;
+}
+
+#studentManage .book_up{
+    float: left;
+    width: 100px;
+}
+
+#studentManage .book_up .file-action .btn:nth-child(2){
+    border-left:none !important;
+}

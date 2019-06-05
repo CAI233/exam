@@ -1,0 +1,230 @@
+<div id="home" class="animated fadeIn">
+    <div class="c_header">
+        <div class="main">
+            <div class="cc_logo"></div>
+            <form ng-submit="toSearchPage()">
+                <div class="search_t group_plan">
+                    <label>{{search_param.search_name}} <i class="iconfont icon-jiantou"></i></label>
+                    <ul class="group_content">
+                        <li ng-click="search_param.search_type = 2;search_param.search_name='试卷'">试卷</li>
+                        <li ng-click="search_param.search_type = 1;search_param.search_name='试题'">试题</li>
+                    </ul>
+                </div>
+                <input type="text" placeholder="模糊搜索" ng-model="search_param.s"/>
+                <button type="submit">搜索</button>
+            </form>
+        </div>
+    </div>
+    <div class="c_center">
+        <div class="main">
+            <div class="layui-row">
+                <div class="layui-col-70" style="padding-right: 40px">
+                    <div class="col_title">
+                        <label><i class="iconfont icon-shijuan" style="color: #5a5a5a;font-size: 22px"></i>最新试卷</label>
+                        <ul>
+                            <li ng-click="load()" ng-class="{'active': !param.paper_curriculum}">全部</li>
+                            <li ng-repeat="item in curriculums" ng-click="load(item.id)" ng-class="{'active': param.paper_curriculum == item.id}" title="{{item.dic_name}}">{{item.dic_name}}</li>
+                        </ul>
+                        <a href="#/examps">更多&gt;</a>
+                        <!--<a href="#/examps">更多<i class="iconfont icon-gengduo"></i></a>-->
+                    </div>
+                    <div class="col_content">
+                        <ul class="shijuans">
+                            <li ng-repeat="item in papers">
+                                <a ng-click="lookPaper(item)" target="_blank">
+                                    <p title="{{item.paper_title}}">
+                                        <em>※</em>
+                                        「<span title="{{_get_curriculum_name(item.paper_curriculum)}}"> {{_get_curriculum_name(item.paper_curriculum)}} </span>」
+                                        {{item.paper_title}}
+                                    </p>
+                                    <p style="width:40%;">
+                                        （<i style="font-size:12px;">{{item.paper_code}}</i>）&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        {{_get_paper_type_name(item.paper_type)}}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                        {{_get_paper_leve_name(item.paper_level)}}
+                                    </p>
+                                    <label style="color: #999;">{{item.create_time}}</label>
+                                </a>
+                            </li>
+                        </ul>
+                        <p class="un-data un-data-1" ng-show="!papers || papers.length==0">最近没有试卷更新~</p>
+                    </div>
+                </div>
+
+                <div class="layui-col-30" style="padding-left: 40px">
+                    <div class="col_title">
+                        <label><i class="iconfont icon-monikaoshi" style="font-size: 22px;color: #5a5a5a"></i>最近考试</label>
+                        <a href="#/myExamManage">更多&gt;</a>
+                    </div>
+                    <div class="col_content">
+                        <div class="ks_item" ng-repeat="item in sub_detail_list">
+                            <div class="ks_title">
+                                <p>{{item.paper_title}}</p>
+                                <label>{{item.paper_start}}</label>
+                            </div>
+                            <div class="ks_action">
+                                <label ng-bind-html="getStates(item.status)"></label>
+                                <div class="actions">
+                                    <span ng-show="item.status == 1" ng-click="pub_list(item)"><i class="iconfont icon-fabu"></i>发布</span>
+                                    <span ng-show="item.status == 1" ng-click="rev_list(item)"><i class="iconfont icon-bianji"></i>修改</span>
+                                    <span ng-show="item.status == 1" ng-click="del_list(item)"><i class="iconfont icon-iconzhenghe62"></i>删除</span>
+                                    <span ng-show="item.status == 1"><i class="iconfont icon-yulan1"></i><a href=".{{item.paper_url}}"  target="_blank">查看试卷</a></span>
+
+                                    <span ng-show="item.status == 2" ng-click="downPaper(item)"><i class="iconfont icon-xiazai"></i>试卷下载</span>
+                                    <span ng-show="item.status == 2" ng-click="downAnswer(item)"><i class="iconfont icon-xiazai"></i>答案下载</span>
+                                    <span ng-show="item.status == 2" ng-click="put_list(item)"><i class="iconfont icon-chexiao"></i>撤销</span>
+                                    <span ng-show="item.status == 2"><i class="iconfont icon-yulan1"></i><a href=".{{item.paper_url}}"  target="_blank">查看试卷</a></span>
+
+                                    <!--<span ng-show="item.status == 3" ng-click="downPaper(item)"><i class="iconfont icon-xiazai"></i>试卷下载</span>-->
+                                    <!--<span ng-show="item.status == 3" ng-click="downAnswer(item)"><i class="iconfont icon-xiazai"></i>答案下载</span>-->
+                                    <!--<span ng-show="item.status == 3" ng-click="import_list(item)"><i class="iconfont icon-daoru1" style="font-size:13px;"></i>导入成绩</span>-->
+                                    <span ng-show="item.status == 3"><i class="iconfont icon-yulan1"></i><a href=".{{item.paper_url}}"  target="_blank">查看试卷</a></span>
+
+
+
+                                    <span ng-show="item.status == 4 || item.status == 6 || item.status == 7" ng-click="downPaper(item)"><i class="iconfont icon-xiazai"></i>试卷下载</span>
+                                    <span ng-show="item.status == 4 || item.status == 6 || item.status == 7" ng-click="downAnswer(item)"><i class="iconfont icon-xiazai"></i>答案下载</span>
+                                    <span ng-show="item.status == 4 || item.status == 5 || item.status == 6 || item.status == 7" ng-click="import_list(item)" ng-class="{'not_check':item.status == 5}"><i class="iconfont icon-daoru1" style="font-size:13px;"></i>导入成绩</span>
+                                    <!--<span ng-show="item.status == 4 || item.status == 5 || item.status == 6 || item.status == 7" ng-click="ana_list(item)" ng-class="{'not_check':item.status == 5}"><i class="iconfont icon-fenxi"></i>考试分析</span>-->
+                                    <span ng-show="item.status == 4 || item.status == 5 || item.status == 6 || item.status == 7"><i class="iconfont icon-yulan1"></i><a href=".{{item.paper_url}}"  target="_blank">查看试卷</a></span>
+                                </div>
+                            </div>
+                        </div>
+                        <p class="un-data" ng-show="sub_detail_list && sub_detail_list.length == 0">
+                            <span class="down_foot">你还没有发布过考试，快去 <a href="javascript:;" ng-click="create_exam(true);">新建考试</a>吧~</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--导入成绩-->
+    <div class="input-file" id="pub_file"style="display:none">
+        <input type="file" multiple="multiple" autocomplete="off"
+               id="exam-import" class="form-control file-pretty" name="file"
+               data-id="file" data-ajax="true"/>
+    </div>
+
+    <!--考试下载-->
+    <div id="down_test" style="display:none;padding:20px;">
+        <form class="down_cont layui-form">
+            <div class="down_text">{{down_paper==1 && '试卷下载：'||''}} {{down_paper==2 && '答案下载：'||''}}</div>
+            <div class="down_select layui-form-item">
+                <div class="layui-input-block" >
+                    <div ng-if="down_paper==1" class="layui-unselect " lay-skin="primary" ng-click="select(now_examAll,1)" lay-skin="primary"><span>试卷</span><i class="iconfont {{now_index==1 && 'icon-danxuan' || 'icon-guanbi2'}}"></i></div>
+                    <div ng-if="down_paper==1" class="layui-unselect " lay-skin="primary" ng-click="select(now_examAll,2)"><span>答题卡</span><i class="iconfont {{now_index==2 && 'icon-danxuan' || 'icon-guanbi2'}}"></i></div>
+                    <div ng-if="down_paper==2" class="layui-unselect " lay-skin="primary" ng-click="select(now_examAll,3)"><span>学生答案回收</span><i class="iconfont {{now_index==3 && 'icon-danxuan' || 'icon-guanbi2'}}"></i></div>
+                    <div ng-if="down_paper==2" class="layui-unselect " lay-skin="primary" ng-click="select(now_examAll,4)"><span>客观题答案</span><i class="iconfont {{now_index==4 && 'icon-danxuan' || 'icon-guanbi2'}}"></i></div>
+                    <div ng-if="down_paper==2" class="layui-unselect " lay-skin="primary" ng-click="select(now_examAll,5)"><span>所有答案</span><i class="iconfont {{now_index==5 && 'icon-danxuan' || 'icon-guanbi2'}}"></i></div>
+                </div>
+            </div>
+            <div class="down_foot" >
+                <button class="layui-btn layui-btn-primary" ng-click="down_get()">确认下载</button>
+            </div>
+        </form>
+    </div>
+
+    <!--答题卡-->
+    <div id="now_answerCard" style="display:none;">
+        <div ng-repeat="(k,v) in now_examAll.answerCard" style="box-sizing:border-box;width:750px;margin:20px;">
+            <h2 style="font-size:16px;font-weight:600;">{{_get_curriculum_name(k)}}</h2>
+            <div ng-repeat="(a,b) in v">
+                <h3 ng-if="a==1 && b.length>0" style="margin:5px 0;font-size:16px;">单选题</h3>
+                <h3 ng-if="a==1 && b.length>0" style="padding:10px 0;font-size:18px;text-align:center;">请用2B铅笔将选择题的答案填涂在以下方框内。</h3>
+                <div ng-if="a==1" style="border:1px solid #DE127A;padding:15px 0;">
+                    <p style="margin:0 50px 0 10px;float:left;" ng-repeat="c in b">
+                        <span ng-bind-html="_trustAsHtml(c.detail_order)" style="display: inline-block;width: 20px;height: 20px;line-height: 20px;font-weight:bold;text-align: right;margin:5px 5px 0;"></span>
+                        <span style="display:inline-block;width:25px;text-align:center;margin:5px 5px 0;border:1px solid #DE127A;box-sizing:border-box;color:#DE127A;font-weight:bold;" ng-repeat="item in ['A','B','C','D']">{{item}}</span>
+                    </p>
+                    <div style="clear:both;"></div>
+                </div>
+                <h3 ng-if="a==2 && b.length>0" style="margin:5px 0;font-size:16px;">多选题</h3>
+                <h3 ng-if="a==2 && b.length>0" style="padding:10px 0;font-size:18px;text-align:center;">请用2B铅笔将选择题的答案填涂在以下方框内。</h3>
+                <div ng-if="a==2" style="border:1px solid #DE127A;padding:15px 0;">
+                    <p style="margin:0 50px 0 10px;float:left;" ng-repeat="c in b">
+                        <span ng-bind-html="_trustAsHtml(c.detail_order)" style="display: inline-block;width: 20px;height: 20px;line-height: 20px;font-weight:bold;text-align: right;margin:5px 5px 0;"></span>
+                        <span style="display:inline-block;width:25px;text-align:center;margin:5px 5px 0;border:1px solid #DE127A;box-sizing:border-box;color:#DE127A;font-weight:bold;" ng-repeat="item in ['A','B','C','D']">{{item}}</span>
+                    </p>
+                    <div style="clear:both;"></div>
+                </div>
+                <h3 ng-if="a==3 && b.length>0" style="margin:5px 0;font-size:16px;">判断题</h3>
+                <h3 ng-if="a==3 && b.length>0" style="padding:10px 0;font-size:18px;text-align:center;">对的打√,错的打×。</h3>
+                <div ng-if="a==3" style="border:1px solid #DE127A;padding:15px 0;">
+                    <p style="margin:0 50px 0 10px;float:left;" ng-repeat="c in b">
+                        <span ng-bind-html="_trustAsHtml(c.detail_order+'题（'+c.detail_marks+'分）')" style="display: inline-block;max-width: 120px;height: 20px;line-height: 20px;font-weight:bold;text-align: right;margin:5px 5px 0;"></span>(&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;)
+                    </p>
+                    <div style="clear:both;"></div>
+                </div>
+
+                <div ng-if="a==4" style="margin:10px 0;" >
+                    <!--<h3 ng-if="a==2 && a.length>0" style="padding:10px 0;font-size:16px;text-align:center;color:#DE127A;">请在各题目的答题区域内作答，超出黑色矩形边框限定区域的答案无效</h3>-->
+                    <div ng-repeat="c in sortObjectType(b)" style="width:750px;">
+                        <h3 style="margin:5px 0;font-size:16px;;" ng-if="c.subject_type != b[$index-1].subject_type">{{_get_exam_name_byid(k,c.subject_type)}}</h3>
+                        <div style="border: 1px solid #000;border-radius:5px;" ng-if="c.subject_type!=10066">
+                            <span style="display:inline-block;width:120px;height:20px;line-height:20px;margin:30px 0 5px 25px;float: left;" ng-bind-html="_trustAsHtml(c.detail_order+'题（'+c.detail_marks+'分）')"></span>
+                            <p style="margin-top:5px;margin-bottom:4px;padding:0 20px 0 50px;">
+                                <span style="display:inline-block;width:100%;height:20px;line-height:25px;border-bottom:1px dashed #DE127A;margin:15px 0;"></span>
+                                <span style="display:inline-block;width:100%;height:20px;line-height:25px;border-bottom:1px dashed #DE127A;margin:15px 0;"></span>
+                                <span style="display:inline-block;width:100%;height:20px;line-height:25px;border-bottom:1px dashed #DE127A;margin:15px 0;"></span>
+                            </p>
+                            <div style="clear:both;"></div>
+                        </div>
+                        <!--写作题-->
+                        <div ng-if="c.subject_type==10066" style="border: 1px solid #000;border-radius:5px;">
+                            <span style="display:inline-block;width:120px;height:20px;line-height:20px;margin:30px 0 5px 25px;float: left;" ng-bind-html="_trustAsHtml(c.detail_order+'题（'+c.detail_marks+'分）')"></span>
+                            <p style="margin-top:5px;margin-bottom:4px;padding:0 20px 0 50px;">
+                                <span ng-repeat="i in [1,2,3,4,5,6,7,8,9,10]" style="display:inline-block;width:100%;height:20px;line-height:25px;border-bottom:1px dashed #DE127A;margin:15px 0;"></span>
+
+                            </p>
+                        </div>
+                        <h3 style="padding:10px 0;font-size:16px;text-align:center;color:#DE127A;">请在各题目的答题区域内作答，超出黑色矩形边框限定区域的答案无效</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--答案-->
+    <div id="now_answer" style="display:none;">
+        <div ng-repeat="(k,v) in now_examAll.answerCard" style="margin:20px;">
+            <h2 style="font-weight:bold;">{{_get_curriculum_name(k)}}</h2>
+            <div ng-repeat="(a,b) in v">
+                <h3 ng-if="a==1 && b.length>0" style="margin:10px 0;">单选题</h3>
+                <div ng-if="a==1" style="width:800px;">
+                    <div style="margin:10px 0;padding-left:15px;" ng-repeat="c in b" >
+                        <p ng-bind-html="_trustAsHtml(c.detail_order+'（'+replac_allN(c.subject_answer)+'）')" style="height: 20px;line-height: 20px;"></p>
+                        <p ng-if="c.subject_analysis!=''" style="min-height: 20px;text-align: left;line-height:20px;margin:5px 0;position:relative;" ng-bind-html="_trustAsHtml(replac_allA(c.subject_analysis))"></p>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <h3 ng-if="a==2 && b.length>0" style="margin:10px 0;">多选题</h3>
+                <div ng-if="a==2" style="width:800px;">
+                    <div style="margin:10px 0;padding-left:15px;" ng-repeat="c in b" >
+                        <p ng-bind-html="_trustAsHtml(c.detail_order+'（'+replac_allN(c.subject_answer)+'）')" style="height: 20px;line-height: 20px;"></p>
+                        <p ng-if="c.subject_analysis!=''" style="min-height: 20px;text-align: left;line-height:20px;margin:5px 0;position:relative;" ng-bind-html="_trustAsHtml(replac_allA(c.subject_analysis))"></p>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <h3 ng-if="a==3 && b.length>0" style="margin:10px 0;">判断题</h3>
+                <div ng-if="a==3" style="width:800px;">
+                    <div style="margin:10px 0;padding-left:15px;" ng-repeat="c in b" >
+                        <p ng-bind-html="_trustAsHtml(c.detail_order+'（'+replac_allN(c.subject_answer)+'）')" style="height: 20px;line-height: 20px;"></p>
+                        <p ng-if="c.subject_analysis!=''" style="min-height: 20px;text-align: left;line-height:20px;margin:5px 0;position:relative;" ng-bind-html="_trustAsHtml(replac_allA(c.subject_analysis))"></p>
+                    </div>
+                    <div style="clear:both;"></div>
+                </div>
+                <div ng-if="a==4" style="margin:10px 0;" >
+                    <div ng-repeat="c in sortObjectType(b)" >
+                        <h3 style="margin:5px 0;" ng-if="c.subject_type != b[$index-1].subject_type">{{_get_exam_name_byid(k,c.subject_type)}}</h3>
+                        <div style="width:800px;min-height:50px;margin-bottom:15px;padding-left:15px;">
+                            <p style="display:inline-block;width: 20px;height: 20px;line-height:20px;text-align:right;" ng-bind-html="_trustAsHtml(c.detail_order)"></p>
+                            <!--<p style="text-align:left;min-height:20px;line-height: 20px;margin-top:5px;margin-bottom:5px;position:relative;" ><span style="position:absolute;top:0;left:0;">答案：</span><span style="display:inline-block;max-width: 750px;margin-left:40px;" ng-bind-html="_trustAsHtml(replac_allN(c.subject_answer))"></span></p>-->
+                            <p style="text-align:left;min-height:20px;line-height: 20px;margin-top:5px;margin-bottom:5px;position:relative;" ng-bind-html="_trustAsHtml(replac_allS(c.subject_answer))"></p>
+                            <p ng-if="c.subject_analysis!=''" style="text-align: left;min-height:20px;line-height: 20px;margin-top:5px;margin-bottom:5px;position:relative;" ng-bind-html="_trustAsHtml(replac_allA(c.subject_analysis))"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

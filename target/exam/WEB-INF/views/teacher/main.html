@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html;charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
+    <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <title>技能高考管理平台</title>
+    <script type="text/javascript">
+        var ctxPath = "${ctxPath}";
+        var returnCitySN = {"cip": "255.255.255.255", "cid": "000000", "cname": "未知"};
+    </script>
+    <link href="${ctxPath}/static/teacher/img/fav.ico" rel="shortcut icon" type="image/x-icon"/>
+    <!--layui-->
+    <link rel="stylesheet" href="${ctxPath}/static/teacher/plugin/layui/css/layui.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/teacher/font/iconfont.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/teacher/css/basic.css"/>
+    <link rel="stylesheet" href="${ctxPath}/static/teacher/css/animate.css"/>
+
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/jquery/jquery.cookie.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/jquery/jquery.form.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/jquery/xdate.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/layui/layui.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/js/layui_public.js"></script>
+
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/angular/angular.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/angular/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/angular/ocLazyLoad.min.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/js/app_public.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/js/app_directives.js"></script>
+    <script type="text/javascript" src="${ctxPath}/static/teacher/js/app_services.js"></script>
+    <!-- 上传 -->
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/prettyfile/bootstrap-prettyfile.js"></script>
+    <!--chart-->
+    <script type="text/javascript" src="${ctxPath}/static/teacher/plugin/chart/echarts.min.js"></script>
+</head>
+<body  ng-app="myApp" ng-controller="mainController" class="un-login">
+    <div class="p_header">
+        <div class="main">
+            <div class="p_header_content">
+                <a href="#/home" class="logo"></a>
+                <div class="menu_search">
+                    <label>当前课程：<em>{{curriculum.dic_name}}</em></label><i class="iconfont icon-jiantou"></i>
+                    <div class="ddl">
+                        <dl>
+                            <dt>课程</dt>
+                            <dd>
+                                <label ng-repeat="item in curriculums" ng-click="set_curriculum(item)" ng-class="{'active': item.id == curriculum.id}">{{item.dic_name}}</label>
+                            </dd>
+                        </dl>
+                    </div>
+                </div>
+                <ul class="menu">
+                    <li><a href="#/home" ng-class="{'active': skipPage && skipPage.name=='home'}">首页</a></li>
+                    <li class="group_plan">
+                        <a ng-class="{'active': skipPage && (skipPage.name=='exams' || skipPage.name=='schoolBlank')}">试题库</a>
+                        <dl class="group_content">
+                            <dd><a href="#/exams">公共题库</a></dd>
+                            <dd><a href="#/schoolBlank">学校题库</a></dd>
+                        </dl>
+                    </li>
+                    <li><a href="#/examps" ng-class="{'active': skipPage && skipPage.name=='examps'}">试卷库</a></li>
+                    <li class="group_plan">
+                        <a ng-class="{'active': skipPage && (skipPage.name=='examTemplate' || skipPage.name=='examKnowledge')}">智能组卷</a>
+                        <dl class="group_content">
+                            <dd><a href="#/examTemplate">模板组卷</a></dd>
+                            <!--<dd><a href="#/examKnowledge">知识点组卷</a></dd>-->
+                        </dl>
+                    </li>
+                    <li class="group_plan">
+                        <!--<a href="#/staAnalysis" ng-class="{'active': skipPage && (skipPage.name=='classesAnalisis' || skipPage.name=='specialtyAnalisis')}">统计分析</a>-->
+                        <a ng-class="{'active': skipPage && (skipPage.name=='classesAnalisis' || skipPage.name=='specialtyAnalisis')}">统计分析</a>
+                        <dl class="group_content">
+                            <dd><a href="#/classesAnalisis">班级统计</a></dd>
+                            <dd><a href="#/gradeAnalisis">年级统计</a></dd>
+                        </dl>
+                    </li>
+                </ul>
+                <div class="c_right">
+                    <a href="javaScript:void(0)" ng-click="showShopFn()"><i class="iconfont icon-gouwuche"><s>{{BasketExams.length}}</s></i><label class="mr">试题篮</label></a>
+                    <a href="#/myPapers" ng-if="!superManage()" title="个人中心"><label class="mr">个人中心（{{_USERINFO.user_real_name}}）</label></a>
+                    <a href="#/publicPapers" ng-if="superManage()" title="个人中心"><label class="mr">个人中心（{{_USERINFO.user_real_name}}）</label></a>
+                    <a href="javaScript:void(0)" ng-click="loginup()"><label>注销</label></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p_center">
+        <div class="parent_view" ui-view=""></div>
+    </div>
+    <div class="p_footer" >
+        <div class="main">
+            <div class="row_line">
+                <div class="layui-col-xs6">
+                    <div class="row_line r1">
+                        <!--<a href="">常见问题</a>-->
+                        <!--<a href="">组卷教程</a>-->
+                        <!--<a href="">上传试题教程</a>-->
+                        <!--<a href="">发布试题教程</a>-->
+                    </div>
+                    <p>网络文化经营许可证［2013］0715-020号  互联网经营许可证  鄂字5号 </p>
+                    <p>Copyright @ 2010-2015  <a href="">www.exam.com</a> Inc.All Right Reserved. 鄂ICP备17006451号-1</p>
+                </div>
+                <div class="layui-col-xs6">
+                    <div class="layui-col-xs8" style="padding-left: 20px">
+                        <div class="row_line r1"></div>
+                        <p>地址：武汉市汉口发展大道183号(汉口火车站旁白金领域A1211)</p>
+                        <p>电话：(027)85617688,85613688&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱：wenfsd@vip.sohu.com</p>
+                    </div>
+                    <div class="layui-col-xs4">
+                        <!--<p style="text-align: center">微信公众号</p>-->
+                        <!--<div><img src="/static/teacher/img/weixin.png" style="width: 85px;display: block;margin: 5px auto 0 auto"></div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="p_shop">
+        <div class="shop_plan">
+            <div class="exam_title">
+                <label class="ll" ng-click="showShopFn()">关闭 <i class="iconfont icon-gengduo"></i></label>
+                <label class="mm" ng-click="_delQuestionAll()" ng-show="BasketExams.length > 0"><i class="iconfont icon-iconzhenghe62"></i>一键删除({{BasketExams.length}})</label>
+            </div>
+            <div class="exam_list">
+                <ul ng-repeat="kc in curriculums;" ng-show="kc.hasst && kc.hasst > 0">
+                    <li style="font-size: 14px;font-weight: bold" ng-show="showCurriculumsTitle > 1">{{kc.dic_name}}部分</li>
+                    <li ng-repeat="item in kc.children" ng-show="item.children.length > 0">
+                        {{item.dic_name}}：<em>{{item.children.length}}</em>小题
+                        <a title="删除" ng-click="_delQuestionArray(item)"><i class="iconfont icon-iconzhenghe62"></i></a>
+                    </li>
+                </ul>
+                <p class="not-question" ng-show="!BasketExams || BasketExams.length == 0">
+                    <span class="down_foot">赶快把喜欢的试题加入试题篮吧~</span>
+                </p>
+            </div>
+            <div class="exam_other">
+                <div class="actions">
+                    <div><button ng-click="openExamPaper()" ng-disabled="!BasketExams || BasketExams.length == 0">生成试卷</button></div>
+                    <div><button ng-if="superManage()" ng-disabled="!BasketExams || BasketExams.length == 0" ng-click="downList()" >下载试题</button></div>
+                    <div><button ng-click="openToStoreroom()" ng-if="!superManage()"  ng-disabled="!BasketExams || BasketExams.length == 0">添加到试题库</button></div>
+                </div>
+                <div class="storerooms">
+                    <div class="rooms_title">
+                        <label>加入题库</label>
+                        <span ng-click="addStoreroom()" class="rooms_1" title="添加试题库"><i class="iconfont icon-xinjian" style="font-size: 17px"></i> 添加</span>
+                        <span ng-click="closeStoreroom_2()" class="rooms_2" style="display: none"><i class="iconfont icon-fanhui01"></i> 返回</span>
+                    </div>
+                    <div class="rooms">
+                        <div class="rooms_1">
+                            <ul>
+                                <li ng-repeat="item in myBankList" ng-click="root_param.selDfBank = item" ng-class="{'active': root_param.selDfBank.id == item.id}"><i class="iconfont icon-wenjianjia"></i> {{item.bank_title}}</li>
+                            </ul>
+                        </div>
+                        <div class="rooms_2" style="display: none">
+                            <input type="text" placeholder="请输入试题库名称" ng-model="root_param.bank_title" id="p_add_bank_name">
+                        </div>
+                    </div>
+                    <div class="rooms_actions">
+                        <div class="rooms_1">
+                            <button class="bm1" ng-click="add_test()">确定</button>
+                            <button ng-click="closeStoreroom()">取消</button>
+                        </div>
+                        <div class="rooms_2" style="display: none">
+                            <button class="bm1" ng-click="_addBookRoot()">确定</button>
+                            <button ng-click="closeStoreroom_2()">取消</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="scroll_p_shop">
+        <span title="试题篮" ng-click="showShopFn()"><i class="iconfont icon-gouwuche"></i><s>{{BasketExams.length}}</s></span>
+        <span title="回到顶部"  ng-click="toPageTop()"><i class="iconfont icon-huidaodingbu"></i></span>
+    </div>
+    <!--下载所有试题-->
+    <div id="now_BasketList" style="display:none;">
+        <div ng-repeat="item in now_BasketList" style="list-style:none;">
+            <h3>【题型】{{_get_exam_name_byid(item.subject_curriculum, item.subject_type)}}</h3>
+            <h3>【题干】</h3>
+            <div ng-bind-html="_trustAsHtml(Lreplacehtml(item.subject_question))"></div>
+            <h3 ng-if="item.subjectList==null || item.subjectList==''">【答案】</h3>
+            <div ng-if="item.subjectList==null || item.subjectList==''" ng-bind-html="_trustAsHtml(Lreplacehtml(item.subject_answer))"></div>
+            <h3>【解析】</h3>
+            <div ng-bind-html="_trustAsHtml(Lreplacehtml(item.subject_analysis))"></div>
+            <h3>【难易度】{{_get_qustion_leve(item.subject_level)}}</h3>
+            <h3>【题号】{{item.id}}</h3>
+            <div ng-if="item.subjectList && item.subjectList.length>0">
+                <div ng-repeat="it in item.subjectList">
+                    <h3>【子题题型】{{_get_exam_name_byid(it.subject_curriculum, it.subject_type)}}</h3>
+                    <h3>【子题题干】</h3>
+                    <div ng-bind-html="_trustAsHtml(Lreplacehtml(it.subject_question))"></div>
+                    <h3>【答案】</h3>
+                    <div ng-bind-html="_trustAsHtml(Lreplacehtml(it.subject_answer))"></div>
+                    <h3 ng-if="it.subject_analysis!=null && it.subject_analysis!=''">【解析】</h3>
+                    <div ng-if="it.subject_analysis!=null && it.subject_analysis!=''" ng-bind-html="_trustAsHtml(Lreplacehtml(it.subject_analysis))"></div>
+                    <h3>【难易度】{{_get_qustion_leve(it.subject_level)}}</h3>
+                    <h3>【子题题号】{{it.id}}</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+</body>
+</html>

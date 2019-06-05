@@ -1,0 +1,87 @@
+<div id="Select_Curr" style="display: none" >
+    <div class="col-xs-4">
+        <div class="layui-unselect layui-form-select">
+            <div class="layui-select-title">
+                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                       placeholder="请选择年级" ng-model="currTableControl.gra_name"/>
+                <i class="layui-edge"></i>
+            </div>
+            <dl class="layui-anim layui-anim-upbit">
+                <dd ng-repeat="item in currTableControl.graData"
+                    ng-click="currTableControl.gra_id=item.id;currTableControl.gra_name=item.dic_name; currTableControl.selectGra(item)"
+                    ng-class="{'layui-this':currTableControl.gra_name == item.dic_name}">{{item.dic_name}}
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="layui-unselect layui-form-select">
+            <div class="layui-select-title">
+                <input type="text" class="layui-input layui-unselect" readonly="readonly" value=""
+                       placeholder="请选择专业" ng-model="currTableControl.spe_name"/>
+                <i class="layui-edge"></i>
+            </div>
+            <dl class="layui-anim layui-anim-upbit">
+                <dd ng-repeat="item in currTableControl.speData"
+                    ng-click="currTableControl.spe_id=item.id;currTableControl.spe_name=item.dic_name; currTableControl.selectSpe(item)"
+                    ng-class="{'layui-this':currTableControl.spe_name == item.dic_name}">{{item.dic_name}}
+                </dd>
+            </dl>
+        </div>
+    </div>
+    <div class="col-xs-4">
+        <div class="input_group">
+            <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="currTableControl.searchText">
+            <span class="group_addon layui-btn layui-btn-normal" ng-click="currTableControl.reload_curr()"> 搜  索 </span>
+        </div>
+    </div>
+    <div class="data_array_org">
+        <div class="table_control">
+            <table class="layui-table" lay-even="" lay-skin="row"
+                   ng-class="{'un-check': !currTableControl.config.check}">
+                <colgroup>
+                    <col width="50" ng-if="currTableControl.config.check">
+                    <col ng-repeat="t in currTableControl.config.columns" width="{{t.width}}">
+                </colgroup>
+                <thead>
+                <tr>
+                    <th style="min-width:50px;width: 50px;text-align: left" ng-if="currTableControl.config.check">
+                        <div class="box" ng-click="currTableControl.unSelectAll()">
+                            <label class="check">
+                                <i ng-class="{'active': currTableControl.config.selectAll}"></i>
+                            </label>
+                        </div>
+                    </th>
+                    <th ng-repeat="t in currTableControl.config.columns" align="{{t.align}}"
+                        ng-click="currTableControl.orderBy(t)">
+                        {{t.title}}
+                        <label ng-show="t.order && currTableControl.config.param.orderField == t.field" ng-if="t.order">
+                            <i class="iconfont icon-jiantou3xia paixu"
+                               ng-class="{'tran_180': t.orderType == 'asc'}"></i>
+                        </label>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="row in currTableControl.rows" ng-click="currTableControl.unSelectRow(row)"
+                        ng-class="{'sel': row.select}">
+                        <td style="min-width:50px;width: 50px" ng-if="currTableControl.config.check">
+                            <div class="box">
+                                <label class="check">
+                                    <i ng-class="{'active': row.select}"></i>
+                                </label>
+                            </div>
+                        </td>
+                        <td ng-repeat="col in row.data" align="{{col.align}}" ng-bind-html="col.value"></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="table_pager" id="curr_table_pager" style="text-align: left" ></div>
+            <div class="for_btns">
+                <button class="layui-btn layui-btn-normal" ng-click="currTableControl.config_btn()">确定</button>
+                <button class="layui-btn layui-btn-primary" ng-click="currTableControl.df_btn()">取消</button>
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,75 @@
+<div id="examTemplate" class="animated fadeIn">
+    <div class="c_header" >
+        <div class="main">
+            <div class="con-content">
+                <div class="top_nav">
+                    <i class="iconfont icon-weizhi"></i>位置：
+                    <a href="#/home">首页</a>
+                    <em>&gt;</em>
+                    <a>智能组卷</a>
+                    <em>&gt;</em>
+                    <label>模板组卷</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="con">
+                    <ul >
+                        <li ng-repeat=" item in examTempList">
+                            <h3 style="text-align: center">{{item.template_title}}</h3>
+                            <div class="txt">
+                                <p>课程:&nbsp;&nbsp;&nbsp;&nbsp;<span ng-repeat="it in retu_currm(item.curriculums)" style="margin-right:5px;">{{_get_curriculum_name(it)}}</span></p>
+                                <!--<p>年级:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.gradeName}}</span></p>-->
+                                <!--<p>专业:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.specialtyName}}</span></p>-->
+                                <p>试卷类别:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.type_name}}</span></p>
+                                <p>及格分数:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.test_pass}}</span></p>
+                                <p>试卷总分:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.test_total}}</span></p>
+                                <p>考试时长:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.test_long}}</span></p>
+                                <p>模板描述:&nbsp;&nbsp;&nbsp;&nbsp;<span>{{item.remark}}</span></p>
+                                <div class="mouse">
+                                    <button class="layui-btn" style="background-color:white;color: black;border: 1px solid #989898;margin-top: 60px"ng-click="previewTemp(item)">预览模板</button>
+                                    <button class="layui-btn" style="background-color:#e63a3a;margin-top: 10px;" ng-click="useTemp(item)">立即使用</button>
+                                </div>
+                            </div>
+
+                        </li>
+                    </ul>
+                    <div style="position:relative;" ng-show="examTempList && examTempList.length > 0">
+                        <div id="pager" style="float: left;padding-left:90px;"></div>
+                        <div style="float:right;line-height:55px;margin-right:90px;">
+                            共<span style="padding: 0 5px;color: #E63A3A">{{param.pages}}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{param.total}}</span>条
+                        </div>
+                        <div style="clear:both;"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!--模板预览-->
+    <div class="form_content animated none">
+        <div class="form_title">
+            <a href="javascript:void(0)" ng-click="formClose()" class="back_link">关闭</a>
+            <p style="line-height: 34px;font-size: 16px;font-weight:bold;text-align: center;">{{template_list.template_title}}</p>
+            <div class="form_btns" >
+
+                <!--<button class="layui-btn layui-btn-normal layui-btn-small"  ng-click="see_add(selRow)">上一题</button>-->
+                <!--<button class="layui-btn layui-btn-normal layui-btn-small"  ng-click="see_min(selRow)">下一题</button>-->
+            </div>
+        </div>
+        <div class="form_content_Y">
+            <form class="form_html">
+                <div class="tem_context">
+                    <ol ng-repeat="item in Tem_list" style="margin-bottom: 20px">
+                        <p style="font-weight: 600;font-size: 1.4em;margin:5px 0;">{{item.subject_large_title}}</p>
+                        <!--<div style="font-size: 14px;color:#999999;">{{item.subject_remark}}</div>-->
+                        <li ng-repeat="it in item.xiaotiList" style="">
+                            <p style="line-height:30px;font-size:14px;color:#333333;">{{it.subject_sort}}.【包含知识点】<span style="float: right;color:#666666;">({{it.subject_marks}}分)</span></p>
+                            <p style="font-size:14px;margin:5px 5px;padding-left:10px;color:#666666;" ng-repeat="its in it.know_name.split(',') | orderBy" >{{its}}</p>
+                        </li>
+                    </ol>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

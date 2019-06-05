@@ -1,0 +1,49 @@
+<div id="papersResult">
+    <div class="content_main">
+        <div class="content_page">
+            <div class="layui-form-item col-xs-4" style="position: relative;padding-left: 15px;margin-top: 5px;margin-bottom: 5px;">
+                <label class="layui-form-label"><em>*</em>试卷名称：</label>
+                <div class="layui-input-block">
+                    <input type="text" name="title" ng-model="param.searchText" class="layui-input ng-pristine ng-untouched ng-valid" placeholder="请输入搜索条件">
+                </div>
+                <button class="layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="reload()" style="position: absolute;top: 0;right:0;"
+                ng-mousemove="btnTip($event,'查询')"></button>
+                <button class="layui-btn layui-btn-primary iconfont icon-qingkong" ng-click="Dreload()" style="position: absolute;top: 0;right: -64px;"
+                        ng-mousemove="btnTip($event,'清空')"></button>
+                <!--<button class="layui-btn layui-btn-normal" style="position: absolute;top: 0;right: -180px;">导出EXCL</button>-->
+            </div>
+
+        </div>
+        <!-- 列表 -->
+        <grid-table data-control="tableControl"></grid-table>
+    </div>
+    <div id="rank_show" style="display:none;">
+        <div style="margin-top:15px;">
+            <div class="col-xs-4">
+                <div class="input_group">
+                    <input class="layui-input" type="text" placeholder="模糊搜索" ng-model="aparam.searchText">
+                    <span class="group_addon layui-btn layui-btn-normal iconfont icon-sousuo1" ng-click="_chaData()"
+                          ng-mousemove="btnTip($event,'查询')"></span>
+                    <span class="group_addon layui-btn  layui-btn-primary iconfont icon-qingkong" ng-click="_DechaData()"
+                          ng-mousemove="btnTip($event,'清空')"></span>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12" style="overflow:hidden;">
+            <table class="layui-table">
+                <thead>
+                <tr>
+                    <th>名次</th>
+                    <th>姓名</th>
+                    <th>总分</th>
+                    <th>试卷分析</th>
+                </tr>
+                </thead>
+                <tbody id="show">
+
+                </tbody>
+            </table>
+        </div>
+        <div id="test1" ></div>
+    </div>
+</div>

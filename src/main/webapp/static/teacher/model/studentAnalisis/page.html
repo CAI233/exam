@@ -1,0 +1,66 @@
+<div id="studentAnalisis" class="animated fadeIn">
+    <div class="main">
+        <div class="con-content">
+            <div class="top_nav">
+                <i class="iconfont icon-weizhi"></i>位置：
+                <a href="#/home">首页</a>
+                <em>&gt;</em>
+                <a>统计分析</a>
+                <em>&gt;</em>
+                <a href="javascript:;"  ng-if="status==1">班级统计</a>
+                <a href="javascript:;"  ng-if="status==2">年级统计</a>
+                <em>&gt;</em>
+                <a href="javascript:;" ng-click="goBack()">考试分析</a>
+                <em>&gt;</em>
+                <label>考生分析</label>
+            </div>
+        </div>
+        <div class="paper_title" style="padding: 30px 0;">
+            <h1 >{{now_stu}}（{{stu_score}}分）
+                <!--<i ng-if="stu_score<(now_total*0.3)" style="background:#FF7272;">极差</i>-->
+                <!--<i ng-if="stu_score>=(now_total*0.3) && stu_score<(now_total*0.6)" style="background:#FFBB12;">差</i>-->
+                <!--<i ng-if="stu_score>=(now_total*0.6) && stu_score<(now_total*0.8)" style="background:#66D99F;">良</i>-->
+                <!--<i ng-if="stu_score>=(now_total*0.8) && stu_score<(now_total*1)" style="background:#32B7F5;">优良</i>-->
+            </h1>
+        </div>
+        <div class="cont_head">
+            <div class="layui-col-xs6" style="background: #f9f9f9;padding-right: 15px">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <div id="mage_left" style="width:100%;height:500px;"></div>
+                </div>
+            </div>
+            <div class="layui-col-xs6 cur_all" style="padding-left: 15px;background: #f9f9f9">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <div id="mage_right" style="width:100%;height:500px;"></div>
+                    <!--<div class="cur_select">-->
+                        <!--<a href="">数学</a><a href="">英语</a><a href="">语文</a>-->
+                    <!--</div>-->
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div class="cont_cont">
+            <h2 style="font-weight:bold;">知识点掌握情况</h2>
+            <div class="cont-context">
+                <div class="search_head">
+                    <a href="javascript:void(0);" ng-click="param.struct_curriculum=item;pub_load(item)" ng-class="{'active':param.struct_curriculum==item}" ng-repeat="item in now_exam_currum">{{_get_curriculum_name(item)}}</a>
+                </div>
+                <div class="table_control">
+                    <div class="tree-grid-parent">
+                        <div class="tree-grid-title tree-grid-row">
+                            <div class="tree-grid-col">知识点</div>
+                            <div class="tree-grid-col">课程</div>
+                            <div class="tree-grid-col">组卷试题量</div>
+                            <div class="tree-grid-col" style="text-align: center;">题号</div>
+                            <div class="tree-grid-col" style="text-align: left;">正确率</div>
+
+                        </div>
+                        <tree-grid ng-repeat='row in now_knowledges' children='row.children' row='row'></tree-grid>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

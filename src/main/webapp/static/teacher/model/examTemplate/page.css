@@ -1,0 +1,129 @@
+#examTemplate{
+    position: relative;
+}
+#examTemplate .row{
+    width: 100%;
+    float:left;
+}
+#examTemplate .con ul {
+    padding: 20px 80px;
+    min-height: calc(780px - 150px);
+    min-height: -moz-calc(780px - 150px);
+    min-height: -webkit-calc(780px - 150px);
+}
+#examTemplate .c_header{
+    min-height: 780px;
+}
+#examTemplate .con h3 {
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+}
+#examTemplate .con ul li{
+    display: inline-table;
+    margin-bottom:20px;
+}
+#examTemplate .txt {
+   padding: 10px;
+    width: 240px;
+    height: 220px;
+    border: 1px solid #D8D8D8;
+    margin: 10px 10px;
+    box-sizing: border-box;
+    background-color: #FCFCFC;
+    overflow: hidden;
+    position: relative;
+}
+#examTemplate .txt p{
+    color: #8D8D8D;
+    line-height: 2.5;
+    padding: 0 10px;
+}
+#examTemplate .txt span{
+    color: #0a0a0a;
+}
+
+#examTemplate .mouse {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding: 0 50px;
+    background: rgba(0,0,0,0.5);
+    transition:  all 0.5s;
+}
+#examTemplate .txt .mouse{
+    display: none;
+}
+#examTemplate .txt:hover .mouse{
+    display: block;
+}
+#examTemplate .mouse  button{
+    border-radius: 3px;
+    width: 110px;
+}
+#examTemplate .mouse .layui-btn+.layui-btn{
+    margin-left: 0;
+}
+#examTemplate .top_nav{
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+    line-height: 24px;
+    color: #676767;
+}
+#examTemplate .con-content{
+    float: left;
+    width: 100%;
+}
+#examTemplate .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#examTemplate .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#examTemplate .top_nav a{
+    cursor: pointer;
+}
+#examTemplate .top_nav label{
+    color: #999;
+}
+#examTemplate .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+/*模板预览------------start*/
+#examTemplate .form_content{
+    width: 600px;
+    border-left: 1px solid #ccc;
+    position: fixed;
+}
+#examTemplate .form_content .form_html{
+    width:100%;
+    padding-top:0;
+}
+#examTemplate .form_content .form_title .form_btns button{
+    background:#E63A3A;
+}
+#examTemplate .form_content .form_title .form_btns button:hover,#examKnowledge .form_content .form_title .form_btns button:focus{
+    border-color: #E63A3A!important;
+}
+/*--------------end*/
+/*底部分页样式---------------------*/
+#examTemplate .layui-laypage a:hover{
+    color:#E63A3A;
+}
+#examTemplate .layui-laypage input:focus,#examTemplate .layui-laypage select:focus {
+    border-color: #E63A3A!important;
+}
+#examTemplate .layui-laypage .layui-laypage-curr .layui-laypage-em{
+    background:#E63A3A;
+}
+/*end---------------------------*/
+
+

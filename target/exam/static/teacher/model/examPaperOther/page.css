@@ -1,0 +1,354 @@
+#examPaperOther{
+    float: left;
+    width: 100%;
+    background: #f4f4f4;
+    min-height: 800px;
+}
+
+#examPaperOther .con-content{
+    float: left;
+    width: 100%;
+}
+#examPaperOther .top_nav{
+    float: left;
+    width: 100%;
+    margin: 20px 0 10px;
+    line-height: 24px;
+    color: #676767;
+}
+#examPaperOther .top_nav i{
+    float: left;
+    font-size: 23px;
+    color: #999;
+}
+#examPaperOther .top_nav em{
+    font-family: serif;
+    padding: 0 5px;
+}
+#examPaperOther .top_nav a{
+    cursor: pointer;
+}
+#examPaperOther .top_nav label{
+    color: #999;
+}
+#examPaperOther .top_nav a:hover{
+    cursor: pointer;
+    color: #e63a3a;
+}
+#examPaperOther .row_left{
+    float: left;
+    width: calc(100% - 330px);
+    width: -moz-calc(100% - 330px);
+    width: -webkit-calc(100% - 330px);
+    background: #fff;
+}
+#examPaperOther .row_right{
+    float: right;
+    width: 300px;
+    background: #fff;
+}
+#examPaperOther .form_line{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#examPaperOther .form_line .form_label{
+    float: left;
+    width: 70px;
+    line-height: 30px;
+}
+#examPaperOther .form_line .form_con{
+    float: left;
+    width: calc(100% - 70px);
+    width: -moz-calc(100% - 70px);
+    width: -webkit-calc(100% - 70px);
+}
+#examPaperOther .form_line .form_con input{
+    height: 30px;
+}
+#examPaperOther .form_dinfo{
+    border-bottom: 1px #ccc dashed;
+    padding-bottom: 10px;
+}
+#examPaperOther .form_dinfo em{
+    padding: 0 5px;
+    color: #e63a3a;
+}
+#examPaperOther .txs .title label{
+    font-size: 14px;
+    font-weight: bold;
+}
+#examPaperOther .txs .title span{
+    float: right;
+    padding: 0 5px;
+    cursor: pointer;
+}
+#examPaperOther .txs .title span:hover{
+    color: #e63a3a;
+}
+#examPaperOther .txs .col{
+    float: left;
+    width: 24px;
+    height: 24px;
+    border: 1px #ddd solid;
+    text-align: center;
+    line-height: 24px;
+    margin: 0 3px 5px 0;
+    cursor: pointer;
+    font-family: serif;
+}
+#examPaperOther .txs .col:hover{
+    background: #e63a3a;
+    color: #fff;
+}
+#examPaperOther .ck-title{
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+#examPaperOther .dt_title{
+
+}
+#examPaperOther .xt_list .xt{
+    position: relative;
+    border:1px #fff solid;
+}
+#examPaperOther .xt_list .hover{
+    background: #f5f8fa;
+}
+#examPaperOther .xt_list .xt:hover{
+    border-color: #e63a3a;
+}
+#examPaperOther .xt_list .xt .bb-actions{
+    position: absolute;
+    top: -30px;
+    right: 0;
+    display: none;
+}
+#examPaperOther .xt_list .xt .bb-actions .layui-btn{
+    line-height: 30px;
+    height: 30px;
+    background-color: #e63a3a;
+    font-size: 12px!important;
+}
+#examPaperOther .xt_list .xt:hover .bb-actions{
+    display: block;
+}
+#examPaperOther .row_right{
+    position: relative;
+    height: 100%;
+}
+#examPaperOther .row_right .right_fix{
+    position: fixed;
+    width: 300px;
+    background: #fff;
+    top: 114px;
+    bottom: 0;
+}
+#examPaperOther .row_right .right_fix_content{
+    float: left;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+#examPaperOther .top_actions{
+    float: left;
+    width: 100%;
+    height: 300px;
+    background: #fff;
+    padding: 15px 15px 0 15px;
+    border-bottom: 1px #ddd solid;
+    overflow: hidden;
+}
+#examPaperOther .footer_content{
+    float: left;
+    width: 100%;
+    height: calc(100% - 300px);
+    height: -moz-calc(100% - 300px);
+    height: -webkit-calc(100% - 300px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 15px 15px 0 15px;
+}
+#examPaperOther .layui-form-checkbox{
+    min-width: 33.33%;
+    text-align: left;
+    float: left;
+    margin-bottom: 10px;
+    padding-left: 10px;
+}
+#examPaperOther .layui-form-checkbox i{
+    float: left;
+}
+#examPaperOther .layui-form-checkbox span{
+    float: left;
+    padding: 0 5px;
+    font-size: 12px;
+}
+#examPaperOther .top_actions .layui-btn{
+    background-color: #fff;
+    border: 1px #ddd solid;
+    color: #666;
+    border-radius: 30px;
+    line-height: 36px;
+}
+#examPaperOther .top_actions .layui-btn:hover{
+    color: #e63a3a;
+}
+#examPaperOther .top_actions .layui-form-checked[lay-skin="primary"] i{
+    background-color: #e63a3a;
+    border-color: #e63a3a;
+}
+
+#examPaperOther .top_actions .layui-form-radio{
+    margin: 0;
+    width: 25%;
+    float: left;
+}
+#examPaperOther .top_actions .layui-form-radio i{
+    margin-right: 5px;
+    font-size: 16px;
+}
+#examPaperOther .layui-form-radio i:hover, #examPaperOther .layui-form-radioed i{
+    color: #e63a3a;
+}
+#examPaperOther .contenteditable:hover{
+    background: #f0e1d8;
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+}
+#examPaperOther [contenteditable='true']{
+    background: #f0e1d8;
+    color: #000;
+    cursor: text;
+    font-weight: bold;
+}
+#paper_config {
+    padding: 30px 60px 0 30px;
+}
+#paper_config .layui-form-label{
+    width: 110px;
+}
+.layui-select-title span{
+    display: inline-block;
+    background: #d5d8da;
+    margin:7px 7px 0 0;
+    border-radius: 3px;
+    padding: 2px 5px;
+    cursor: pointer;
+}
+#paper_set_marks{
+    padding: 30px 60px 0 30px;
+}
+#paper_set_marks .layui-form-label{
+    width: 110px;
+    padding: 9px 0;
+    text-align: left;
+}
+
+#paper_update_exam .shiti_title{
+    float: left;
+    width: 100%;
+    padding: 5px 0 7px 15px;
+    background: #f4f4f4;
+    line-height: 30px;
+}
+#paper_update_exam .shiti_title .info_left{
+    float: left;
+}
+#paper_update_exam .shiti_title .info_left label{
+    float: left;
+    color: #787878;
+    border-right: 1px #ccc solid;
+    line-height: 16px;
+    margin: 7px 10px 7px 0;
+    padding-right: 10px;
+}
+#paper_update_exam .shiti_title .info_left label:last-child{
+    border: none;
+}
+#paper_update_exam .shiti_title .mm_actions{
+    float: right;
+}
+#paper_update_exam .shiti_title .mm_actions button{
+    background: #e63a3a;
+    float: left;
+    margin: 0 15px 0 0;
+}
+
+#paper_update_exam .shiti_content{
+    float: left;
+    height: 340px;
+    width: 100%;
+    padding: 30px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    border-bottom: 1px #ccc dashed;
+}
+#paper_update_exam .shiti_footer{
+    float: left;
+    text-align: center;
+    padding-top: 15px;
+    width: 100%;
+}
+#paper_update_exam  .know_title{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    line-height: 20px;
+}
+#paper_update_exam  .know_title p{
+    text-indent: 2em;
+}
+#paper_update_exam  .know_options{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+}
+#paper_update_exam  ol{
+    float: left;
+    width: 100%;
+}
+#paper_update_exam  dl{
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    line-height: 30px;
+}
+#paper_update_exam  dt{
+    float: left;
+    width: 60px;
+    font-weight: bold;
+}
+#paper_update_exam  dd{
+    float: left;
+    width: calc(100% - 80px);
+    width: -moz-calc(100% - 80px);
+    width: -webkit-calc(100% - 80px);
+}
+#examPaperOther p.mlfirst{
+    text-indent: 0!important;
+}
+#examPaperOther .ss-item{
+    position: relative;
+}
+#examPaperOther .ss-item > .layui-btn-group{
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: none;
+    z-index: 99;
+}
+#examPaperOther .ss-item > .layui-btn-group button{
+    background: #e63a3a;
+    line-height: 28px;
+    font-size: 12px!important;
+    height: 30px;
+    padding: 0 7px;
+    cursor: pointer;
+}
+#examPaperOther .ss-item:hover > .layui-btn-group{
+    display: block;
+}

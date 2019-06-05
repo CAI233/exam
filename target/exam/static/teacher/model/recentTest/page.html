@@ -1,0 +1,78 @@
+<div id="recentTest" class="animated fadeIn">
+    <div class="main">
+        <div class="con-content">
+            <div class="top_nav">
+                <i class="iconfont icon-weizhi"></i>位置：
+                <a href="#/home">首页</a>
+                <em>&gt;</em>
+                <a href="#/myClasses">我的班级</a>
+                <em>&gt;</em>
+                <label>最近成绩</label>
+            </div>
+        </div>
+        <div class="cont_head">
+            <div class="layui-col-xs12 cur_all" style="background: #f9f9f9;">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <div id="mage_top" style="width:100%;height:500px;"></div>
+                    <div class="cur_select">
+                        <a href="javascript:void(0)" ng-class="{'active':param.currum_id==item.id}" ng-click="param.currum_id=item.id;get_load(item)" ng-repeat="item in curriculums" ng-if="item.dic_name!='专业课'">{{item.dic_name}}</a>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-col-xs6" style="background: #f9f9f9;">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <div id="mage_left" style="width:100%;height:500px;"></div>
+                </div>
+            </div>
+            <div class="layui-col-xs6 " style="background: #f9f9f9">
+                <div class="layui-col-xs12" style="background: #fff;padding: 15px">
+                    <div id="mage_right" style="width:100%;height:500px;"></div>
+                </div>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+
+        <div class="cont_cont">
+            <h3 style="font-size:18px;margin-bottom:10px;">知识点掌握情况</h3>
+            <!--<div class="cont-sear">-->
+                <!--<div class="layui-form-item layui-col-xs6" style="position: relative;float: right;">-->
+                    <!--<div class="layui-unselect layui-form-select" style="position: absolute;top: 0;width:120px;z-index:1;">-->
+                        <!--<div class="layui-select-title">-->
+                            <!--<input type="text" placeholder="请选择" value="" readonly="" class="layui-input layui-unselect" style="border:1px solid #e63a3a!important;">-->
+                            <!--<i class="layui-edge"></i>-->
+                        <!--</div>-->
+                        <!--<dl class="layui-anim layui-anim-upbit layui-select-group" style="">-->
+                            <!--<dd lay-value="" >极差</dd>-->
+                            <!--<dd lay-value="" class="">差</dd>-->
+                            <!--<dd lay-value="" class="">良</dd>-->
+                            <!--<dd lay-value="" class="">优良</dd>-->
+                        <!--</dl>-->
+                    <!--</div>-->
+                    <!--<div class="layui-input-block" style="margin-right:64px;margin-left:0;">-->
+                        <!--<input style="padding-left:130px;border:1px solid #e63a3a!important;" type="text" name="search" placeholder="请输入关键词搜索"  class="layui-input ng-pristine ng-untouched ng-valid" lay-verify="required">-->
+                    <!--</div>-->
+                    <!--<button ng-click="" class="layui-btn layui-btn-primary " style="position: absolute;top: 0;right: 0;background:#e63a3a;color:#fff;">搜索</button>-->
+                <!--</div>-->
+            <!--</div>-->
+            <div class="cont-context">
+                <div class="search_head">
+                    <a href="javascript:void(0);" ng-click="param.curriculum_id=item.id;pub_load(item)" ng-class="{'active':param.curriculum_id==item.id}" ng-repeat="item in curriculums" ng-if="item.dic_name!='专业课'">{{item.dic_name}}</a>
+                </div>
+                <div class="table_control">
+                    <div class="tree-grid-parent">
+                        <div class="tree-grid-title tree-grid-row">
+                            <div class="tree-grid-col">知识点</div>
+                            <div class="tree-grid-col">课程</div>
+                            <div class="tree-grid-col">组卷试题量</div>
+                            <div class="tree-grid-col" style="text-align: left">正确率</div>
+                        </div>
+                        <tree-grid ng-repeat='row in now_knowledges' children='row.children' row='row'></tree-grid>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

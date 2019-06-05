@@ -1,0 +1,786 @@
+#ghostPaper .content_page_left .title {
+    border-bottom: 1px solid #E2E7EB;
+    background: rgb(105, 155, 252);
+    color: #fff;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 2px;
+    height: 40px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+#ghostPaper .layui-form-select dl dd.layui-this{
+    background: #4498ee;
+}
+#ghostPaper .box {
+    cursor: pointer;
+}
+
+#ghostPaper .box label i.active {
+    color: #4498ee;
+}
+
+
+#ghostPaper body, #ghostPaper button {
+    font-family: "Microsoft YaHei", "\5fae\8f6f\96c5\9ed1", arial, "\5b8b\4f53"
+}
+
+#ghostPaper .op-item em, #ghostPaper .text-select em {
+    font-weight: 400
+}
+
+#ghostPaper .exam-s, #ghostPaper .lx-teacher, #ghostPaper .op-item {
+    clear: both
+}
+
+#ghostPaper .basket, #ghostPaper .kefu {
+    transition: all .2s linear
+}
+
+#ghostPaper .analyticbox-tips a:hover, #ghostPaper .footer-top a:hover, #ghostPaper .notice-pjq:hover {
+    text-decoration: underline
+}
+
+#ghostPaper body {
+    background: #FFF;
+    color: #333;
+    word-break: break-all;
+    word-wrap: break-word;
+    line-height: 1;
+    font-size: 12px
+}
+
+#ghostPaper i {
+    display: inline-block;
+}
+
+#ghostPaper img {
+    border: 0;
+    vertical-align: top
+}
+
+#ghostPaper .exam-q img, #ghostPaper .split {
+    vertical-align: middle
+}
+
+#ghostPaper .g-mn {
+    width: 100%;
+    float: left
+}
+
+#ghostPaper .op-item {
+    line-height: 24px;
+    display: block
+}
+
+#ghostPaper .op-item em {
+    display: inline-block
+}
+
+#ghostPaper .op-item u {
+    border-bottom: 1px solid #333
+}
+
+#ghostPaper .op-item .op-item-nut {
+    float: left;
+    position: absolute;
+    height: 24px
+}
+
+#ghostPaper .topbox, #ghostPaper .topinner {
+    height: 40px;
+    background: #f6f6f6
+}
+
+#ghostPaper .op-item .op-item-meat {
+    display: block;
+    padding-left: 24px
+}
+
+#ghostPaper .op-item .op-item-meat span {
+    font-size: 14px !important
+}
+
+#ghostPaper .op-item .checkbox .op-item-meat, #ghostPaper .op-item .radiobox .op-item-meat {
+    padding-left: 40px
+}
+
+#ghostPaper .op-items-xv .op-item .radiobox .op-item-meat {
+    padding-left: 20px
+}
+
+#ghostPaper .op-item .checked {
+    color: #27AE61
+}
+
+
+
+
+#ghostPaper .btn:hover {
+    background: #308eef
+}
+
+
+#ghostPaper .lx-teacher a {
+    float: left;
+    margin-top: 25px;
+    width: 50%;
+    color: #fff
+}
+
+#ghostPaper .lx-teacher a:hover {
+    background-color: #ff8a00
+}
+
+
+#ghostPaper .icona-top {
+    position: relative;
+    top: 4px
+}
+
+#ghostPaper .kefu, #ghostPaper .return {
+    position: fixed
+}
+
+#ghostPaper .return {
+    right: 162px;
+    bottom: 30px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    background: #474443;
+    cursor: pointer;
+    z-index: 999;
+    display: none;
+}
+#ghostPaper .exam-head-left,#ghostPaper .exam-foot-left{
+    float: left;
+}
+#ghostPaper .exam-head-left .line, #ghostPaper .exam-head-left span, #ghostPaper .header-inner a, #ghostPaper .pagenum a, #ghostPaper .q-blank, #ghostPaper .search-list-right a {
+    display: inline-block
+}
+
+#ghostPaper .search-list ul li {
+    border: 1px solid #dcdcdc;
+    margin-bottom: 10px
+}
+
+#ghostPaper .search-list ul li:hover {
+    border: 1px solid #308eef
+}
+
+
+#ghostPaper .search-list-right a i, #ghostPaper .test-txt p span i {
+    margin: -2px 5px 0 0
+}
+
+#ghostPaper .search-list-right {
+    float: left;
+    width: 320px;
+    margin-left: -330px
+}
+
+#ghostPaper .search-list-right a {
+    margin: 37px 20px 37px 0;
+    height: 35px;
+    line-height: 35px;
+    font-size: 14px;
+    color: #333
+}
+
+
+#ghostPaper .search-exam {
+    background: #fff
+}
+
+#ghostPaper .dj-search-exam {
+    border: 1px solid #dcdcdc
+}
+
+#ghostPaper .exam-head {
+    height: 40px;
+    line-height: 40px;
+    background: #eee;
+    padding-right: 20px
+}
+
+#ghostPaper .exam-foot-right, #ghostPaper .exam-head-right {
+    float: right
+}
+
+#ghostPaper .exam-head-left, #ghostPaper .exam-head-right {
+    font-size: 12px;
+    color: #666;
+    line-height: 40px
+}
+
+#ghostPaper .exam-head-left span {
+    margin: 0 20px
+}
+
+#ghostPaper .exam-head-left .line {
+    margin: 0 5px;
+    width: 1px;
+    height: 20px;
+    line-height: 40px;
+    background: #d2d2d2;
+    vertical-align: middle;
+}
+
+#ghostPaper .exam-head-right a:hover {
+    color: #4498ee
+}
+
+#ghostPaper .exam-con {
+    cursor: pointer
+}
+
+#ghostPaper .exam-q {
+    font-size: 14px !important;
+    color: #333;
+    line-height: 24px
+}
+
+#ghostPaper .uglify-man .analyticbox-brick, #ghostPaper .visible-ake .analyticbox-brick-normal, #ghostPaper .visible-ake .exam-qlist {
+    border-top: 1px dashed #dcdcdc;
+    padding-top: 20px
+}
+
+#ghostPaper .uglify-man .exam-qlist {
+    border: 0;
+    padding-top: 0
+}
+
+#ghostPaper .analyticbox-brick {
+    margin: 0 20px
+}
+
+#ghostPaper .exam-q img {
+    max-width: 100%
+}
+
+#ghostPaper .exam-q table td {
+    vertical-align: top
+}
+
+#ghostPaper .exam-q .filling {
+    border-bottom: 1px solid #ccc;
+    padding: 0 16px;
+    color: #ff1c1c
+}
+
+#ghostPaper .exam-qlist .exam-q, #ghostPaper .search-exam > .exam-con > .exam-q {
+    padding-bottom: 20px
+}
+
+#ghostPaper .exam-q .q-blank2 {
+    color: #999
+}
+
+#ghostPaper .exam-qlist .exam-con {
+    border: none
+}
+
+#ghostPaper .exam-qlist .exam-con .exam-s {
+    margin-left: 60px
+}
+
+#ghostPaper .exam-s {
+    zoom: 1
+}
+
+#ghostPaper .exam-con .w .exam-s {
+    margin-left: 80px
+}
+
+#ghostPaper .search-exam > .exam-con {
+    margin: 20px 20px 0
+}
+
+#ghostPaper .exam-con .w {
+    width: 100%;
+    float: left
+}
+
+#ghostPaper .op-order-sub {
+    float: left;
+    width: 80px;
+    margin-right: -80px;
+    text-align: center;
+    font-size: 14px;
+    line-height: 20px
+}
+
+#ghostPaper .analyticbox > span, #ghostPaper .q-blank {
+    width: 60px;
+    text-align: center
+}
+
+#ghostPaper .exam-s span.op-item {
+    position: relative;
+    padding: 0 17px;
+    font-size: 14px;
+    color: #333;
+    zoom: 1
+}
+
+#ghostPaper .exam-s span.op-item img {
+    vertical-align: middle
+}
+
+#ghostPaper .op-items0 .op-item {
+    margin-right: 40px
+}
+
+#ghostPaper .exam-a {
+    height: 40px;
+    background: #eff7f0
+}
+
+#ghostPaper .exam-a span {
+    line-height: 40px;
+    margin-left: 18px;
+    font-size: 12px;
+    color: #333
+}
+
+#ghostPaper .exam-foot {
+    height: 50px;
+    padding: 0 18px;
+    border-top: 1px dashed #dcdcdc
+}
+
+#ghostPaper .exam-foot-left a i {
+    margin: -2px 5px 0 0;
+    color: #4498ee;
+}
+
+#ghostPaper .exam-foot-left a {
+    margin-right: 25px;
+    font-size: 14px;
+    color: #333;
+    line-height: 50px
+}
+
+#ghostPaper .exam-foot-left a:hover {
+    color: #4498ee
+}
+
+#ghostPaper .exam-foot-right span {
+    margin-right: 30px;
+    font-size: 12px;
+    color: #999;
+    line-height: 50px
+}
+
+#ghostPaper .exam-foot-right a b {
+    margin-right: 2px
+}
+
+#ghostPaper .exam-foot-right .addbtn, #ghostPaper .exam-foot-right .removebtn {
+    height: 35px;
+    line-height: 35px;
+    margin: 7px 0;
+    padding: 0 24px;
+    border-radius: 5px;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#ghostPaper .exam-foot-right .addbtn {
+    background: #4498ee;
+    font-size: 14px
+}
+
+#ghostPaper .exam-foot-right .removebtn {
+    background: #adadad;
+    font-size: 14px
+}
+
+#ghostPaper .analyticbox .analyticbox-body, #ghostPaper .analyticbox > span, #ghostPaper .exam-mynum {
+    line-height: 24px;
+    font-size: 14px
+}
+
+#ghostPaper .exam-foot-right .addbtn:hover {
+    background: #078ee8
+}
+
+#ghostPaper .exam-foot-right .removebtn:hover {
+    background: #919191
+}
+
+#ghostPaper .q-blank {
+    border-bottom: 1px solid #dedede;
+    color: #ff1c1c;
+    vertical-align: baseline
+}
+
+#ghostPaper .analyticbox > span {
+    font-weight: 700;
+    color: #000;
+    position: relative;
+    float: left
+}
+
+#ghostPaper .analyticbox .analyticbox-body {
+    color: #333;
+    margin-left: 60px;
+    padding-bottom: 20px
+}
+
+#ghostPaper .analyticbox-tips {
+    font-size: 14px;
+    color: #999;
+    padding-bottom: 20px
+}
+
+#ghostPaper .analyticbox-tips a {
+    color: #ff8a00
+}
+
+#ghostPaper .cancel {
+    margin-left: 10px;
+    background: #dfdfdf;
+    color: #333
+}
+
+#ghostPaper .confirm:hover {
+    background: #295
+}
+
+#ghostPaper .cancel:hover {
+    background: #b9b9b9
+}
+
+#ghostPaper .basket {
+    position: fixed;
+    padding-left: 40px;
+    right: -150px;
+    top: 50%;
+    margin-top: -150px;
+    background: #fff;
+    border-radius: 5px 0 0 5px;
+    z-index: 999
+}
+
+#ghostPaper .basket-tit {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 40px;
+    height: 100%;
+    background: #4498ee;
+    cursor: pointer;
+    font-size: 14px;
+    color: #fff
+}
+
+#ghostPaper .basket-tit p i {
+    margin-left: 12px
+}
+
+#ghostPaper .basket-tit p {
+    margin-top: 20px
+}
+
+#ghostPaper .basket.active {
+    right: 11px;
+}
+
+#ghostPaper .basket-tit p em {
+    display: block;
+    width: 1em;
+    margin: 10px auto 0;
+    line-height: 18px;
+    font-weight: 400
+}
+
+#ghostPaper .basket-tit span {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 40px;
+    border-top: 1px solid #FFBE8F;
+    display: block
+}
+
+#ghostPaper .basket-tit span i {
+    margin:11px 0 0 13px
+}
+
+#ghostPaper .basket-con {
+    float: left;
+    width: 150px;
+    border: 1px solid #DAD4CE;
+    border-left: 0;
+    min-height: 215px
+}
+
+#ghostPaper .basket-con span {
+    color: #fe8a00
+}
+
+#ghostPaper .basket-head {
+    background: #d5eaff;
+    height: 35px;
+    line-height: 35px;
+    font-size: 12px;
+    color: #333;
+    margin: 2px;
+    padding-left: 13px
+}
+
+#ghostPaper .baskrt-list {
+    min-height: 130px
+}
+
+#ghostPaper .baskrt-list p {
+    margin: 20px 20px 0 15px;
+    cursor: pointer
+}
+
+#ghostPaper .baskrt-list p i {
+    float: right;
+    color: #ccc;
+}
+#ghostPaper .baskrt-list p:hover i {
+    color: red;
+}
+
+#ghostPaper .basket-btn {
+    cursor: pointer;
+    display: block;
+    height: 26px;
+    line-height: 26px;
+    margin: 10px 20px;
+    padding: 0 30px;
+    font-size: 12px;
+    color: #fff;
+    background: #4498ee;
+    border-radius: 5px
+}
+
+#ghostPaper .basket-btn:hover {
+    background: #078ee8;
+    color: #fff
+}
+
+#ghostPaper .search-type .type-items + .type-items {
+    border-top: 1px dashed #dcdcdc
+}
+
+#ghostPaper .type-tit {
+    position: relative;
+    float: left;
+    width: 50px;
+    margin-right: -50px;
+    font-size: 12px;
+    color: #666;
+    text-align: right
+}
+
+#ghostPaper .type-conbox {
+    width: 100%;
+    float: right
+}
+
+#ghostPaper .type-con {
+    margin-left: 50px
+}
+
+#ghostPaper .tag-con, #ghostPaper .type-con {
+    margin-right: 50px;
+    height: 40px
+}
+
+#ghostPaper .tag-items .expand-mode, #ghostPaper .type-items .expand-mode {
+    height: auto;
+    overflow: inherit;
+}
+
+#ghostPaper .type-con a {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px;
+    padding: 0 10px;
+    font-size: 12px;
+    color: #333
+}
+
+#ghostPaper .tag-con a:hover, #ghostPaper .type-con a:hover, #ghostPaper a.type-active {
+    background: #4498ee;
+    color: #fff;
+    border-radius: 5px
+}
+
+#ghostPaper .search-list {
+    margin-top: 15px
+}
+
+#ghostPaper .tag-con .show-more, #ghostPaper .type-con .show-more {
+    position: absolute;
+    right: 10px;
+    top: 0;
+    color: #999;
+    padding-right: 16px;
+    font-size: 12px;
+    cursor: pointer
+}
+
+#ghostPaper .tag-con .show-more:hover, #ghostPaper .type-con .show-more:hover {
+    color: #666
+}
+
+#ghostPaper .tag-con .show-more:hover i, #ghostPaper .type-con .show-more:hover i {
+    border-color: #999
+}
+
+#ghostPaper .dj-detail h1, #ghostPaper .dj-detail ul li a {
+    font-size: 14px;
+    font-family: "Microsoft YaHei"
+}
+
+#ghostPaper .icon-trash:hover {
+    opacity: .8
+}
+
+#ghostPaper .exam-head > .icon-trash {
+    float: right;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: none
+}
+
+#ghostPaper .search-list ul li:hover .exam-head > .icon-trash {
+    display: block
+}
+
+#ghostPaper .Govip-btn {
+    margin-top: 33px;
+    float: left;
+    margin-left: -310px;
+    width: 220px
+}
+
+#ghostPaper .select-btn, #ghostPaper .sort, #ghostPaper .tag-con a, #ghostPaper .tag-tit {
+    font-size: 12px
+}
+
+#ghostPaper .tag-type {
+    border: 1px solid #dcdcdc;
+    z-index: 2
+}
+
+#ghostPaper .tag-items {
+    line-height: 40px;
+    margin: 0 20px -1px;
+    border-bottom: 1px dashed #dcdcdc;
+    overflow: hidden;
+    z-index: 1
+}
+
+#ghostPaper .tag-tit {
+    float: left;
+    width: 72px;
+    margin-right: -72px;
+    color: #666;
+    text-align: right
+}
+
+#ghostPaper .tag-conbox {
+    width: 100%;
+    float: right
+}
+
+#ghostPaper .tag-con {
+    margin-left: 72px
+}
+
+#ghostPaper .tag-con a {
+    display: inline-block;
+    height: 20px;
+    line-height: 20px;
+    margin: 8px;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+#ghostPaper .sort-left, #ghostPaper .switch-detail, #ghostPaper .total {
+    line-height: 22px
+}
+
+#ghostPaper .tag-con a:hover, #ghostPaper a.type-active {
+    background: #4498ee; /* color:#fff; */
+    border-radius: 5px;
+}
+
+#ghostPaper .sort {
+    margin: 15px auto 0;
+    overflow: hidden;
+    color: #999
+}
+
+#ghostPaper .sort-left {
+    margin-left: 15px;
+    float: left
+}
+
+#ghostPaper .sort .sort-left i {
+    margin: -2px 0 0 3px;
+}
+
+#ghostPaper .sort-left a {
+    margin-left: 15px;
+    color: #333
+}
+
+#ghostPaper .sort-left a:hover, #ghostPaper a.sort-active {
+    color: #333;
+    font-weight: 700
+}
+
+#ghostPaper .switch-detail {
+    margin-left: 20px
+}
+
+#ghostPaper .switch-detail .checkbox {
+    color: #333;
+    cursor: pointer
+}
+
+#ghostPaper .switch-detail .icona-check {
+    float: left;
+    margin-top: 4px;
+    margin-right: 3px
+}
+
+#ghostPaper .total {
+    margin-right: 25px;
+    float: right;
+    color: #333
+}
+
+#ghostPaper .select-btn {
+    float: right;
+    margin-right: 15px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: #4498ee;
+    border: 1px solid #4498ee
+}
+
+#ghostPaper .select-btn:hover {
+    color: #078ee8;
+    border: 1px solid #078ee8
+}
+
+

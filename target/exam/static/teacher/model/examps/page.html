@@ -1,0 +1,114 @@
+<div id="examps" class="animated fadeIn">
+    <div class="c_header">
+        <div class="main">
+            <!--顶部查询条件-->
+            <div class="tag-type">
+                <div class="logo" style="float: left;">
+                    <a href="#/home" title="首页"></a>
+                </div>
+                <div class="search " style="padding: 15px;width: 500px;float: right;">
+                    <div class="layui-input-block">
+                        <input type="text" name="title"  ng-model="param.searchText"  class="layui-input" style="padding-right:70px;border:1px solid #E63A3A;" placeholder="试卷名称/试卷编号">
+                        <button class="layui-btn layui-btn-primary " ng-click="reload()" >搜索</button>
+                    </div>
+                </div>
+                <div style="clear: both;"></div>
+            </div>
+            <div class="con-content">
+                <div class="top_nav">
+                    <i class="iconfont icon-weizhi"></i>位置：
+                    <a href="#/home">首页</a>
+                    <em>&gt;</em>
+                    <label>试卷库</label>
+                </div>
+            </div>
+            <div class="tag-type">
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">课程：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a  ng-click="all_param.paper_curriculum = null;reload()"
+                                        ng-class="{'type-active':all_param.paper_curriculum == null}">全部</a>
+                                    <a  ng-repeat="item in curriculums" ng-click="all_param.paper_curriculum = item.id;reload()"
+                                        ng-class="{'type-active':all_param.paper_curriculum == item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">试卷难度：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a  ng-click="all_param.paper_level = null;reload()"
+                                       ng-class="{'type-active':all_param.paper_level == null}">全部</a>
+                                    <a  ng-repeat="item in paperLevelTypes" ng-click="all_param.paper_level = item.id;reload()"
+                                       ng-class="{'type-active':all_param.paper_level == item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="tag-items ">
+                        <div class="tag-tit">试卷类型：</div>
+                        <div class="tag-conbox">
+                            <div class="tag-con">
+                                <div class="con-items">
+                                    <a ng-click="all_param.paper_type = null;reload()"
+                                       ng-class="{'type-active':all_param.paper_type == null}">全部</a>
+                                    <a  ng-repeat="item in paperDataTypes" ng-click="all_param.paper_type = item.id;reload()"
+                                       ng-class="{'type-active':all_param.paper_type == item.id}">{{item.dic_name}}</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!--试卷列表-->
+            <div class="search-list" >
+                <p class="not-pp" ng-if="loadding"><span>正在加载，请稍后~</span></p>
+                <p class="not-pp" ng-if="exampsList.length==0 && !loadding"><span>没有搜到相关内容，试试其他关键词哦~</span></p>
+                <ul id="J_QuestionList">
+                    <li class="uglify-man" ng-repeat="item in exampsList">
+                        <div class="search-exam">
+                            <div class="exam-con">
+                                <div class="exam-q">
+                                    <!--<span ng-click="_now_papers(item.id)">{{item.paper_title}}</span>-->
+                                    <span>{{item.paper_title}}/{{item.paper_code}}</span>
+                                </div>
+                                <div class="exam-s">
+                                    <span>组卷时间：{{item.create_time}}</span>
+                                    <span>课程： <i style="margin-right:5px;" ng-repeat="it in retu_currm(item.paper_curriculum)">{{_get_curriculum_name(it)}}</i></span>
+                                    <span>类型：{{retu_type(item.paper_type)}}</span>
+                                    <span>时长：{{item.paper_duration}}分钟</span>
+                                    <span>总分：{{item.paper_full}}</span>
+                                    <span>难度：{{_get_paper_leve_name(item.paper_level)}}</span>
+                                    <!--按钮-->
+                                    <div class="actions">
+                                        <a ng-click="lookPaper(item)" target="_blank"><span><i class="iconfont icon-yulan1"></i>预览</span></a>
+                                        <a class="addbtn {{item.is_keep==1 && 'active' || ''}}" ng-click="add_paper(item)"><span><i class="iconfont {{item.is_keep==1 &&  'icon-shoucang2' || 'icon-shoucang'}}"></i><em ng-if="item.is_keep==1">已</em>收藏</span></a>
+                                        <button class="layui-btn layui-btn-primary" ng-click="exampsDown(item.id)">下载</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <!--分页-->
+                <div style="position:relative;" ng-show="exampsList && exampsList.length > 0">
+                    <div id="pager"></div>
+                    <div style="position:absolute;top:15px;right:20px;">
+                        共<span style="padding: 0 5px;color: #E63A3A">{{ all_param.pages }}</span>页，合计<span style="padding: 0 5px;color: #E63A3A">{{ all_param.total }}</span>条
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
